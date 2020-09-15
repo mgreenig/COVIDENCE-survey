@@ -10,7 +10,7 @@ This is a repository containing Python scripts for cleaning, transforming, and t
 that will be statistically analysed in the study. We hope to identify what types of patients are more or less likely to contract COVID-19.
 
 **Due to privacy considerations, no patient-level data is included in this repository**. 
-However, we do include multiple data sets generated from scipts that automatically pull data from public internet resources (e.g. the BNF). 
+However, we do include multiple data sets generated from scripts that automatically pull data from public internet resources (e.g. the BNF). 
 Most scripts can be run without the patient-level data.
 
 ## Objectives
