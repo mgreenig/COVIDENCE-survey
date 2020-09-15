@@ -220,10 +220,9 @@ The script outputs a CSV file (not included) containing the patient-level inform
 ### Mapping postcodes to Index of Multiple Deprivation (IMD)
 
 We also provide the [`Map_IMD_data.py`](Map_IMD_data.py) script for mapping the patient postcodes provided to the survey (not included) to values of the [Index of Multiple Deprivation](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019) (IMD).
-This script first imports a postcode metadata set (included in this repository) - `/data/postcode_data.csv` - obtained from [this](https://www.doogal.co.uk/ukpostcodes.php) website.
+This script first imports a postcode metadata set (not included due to size constraints) - `/data/postcode_data.csv` - obtained from [this](https://www.doogal.co.uk/ukpostcodes.php) website.
 
-
-It then imports the excel spreadsheet `/data/UK_postcode_IMDs.xlsx`, which contains postcode-IMD pairs in for postcodes in England, Wales, and Scotland: 
+It then imports the excel spreadsheet `/data/UK_postcode_IMDs.xlsx` (included), which contains postcode-IMD pairs in for postcodes in England, Wales, and Scotland: 
 
 ``` python
 england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')

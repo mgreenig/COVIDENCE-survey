@@ -149,4 +149,5 @@ data/Covidence*
 data/england_postcodes.csv
 data/drugbank.xml
 data/england_postcodes.csv
+data/postcode_data.csv
 scrapped/
