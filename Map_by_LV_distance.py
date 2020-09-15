@@ -31,7 +31,7 @@ if __name__ == '__main__':
             distances = {alias: lv.dist_abs(answer, alias) for alias in potential_matches}
             # get matches that are a distance of 1 away
             matches = [alias for alias, distance in distances.items() if distance == 1]
-            # if there are any matches that are a distance of 1 away, take the one that appears at the highest frequency
+            # if there are multiple matches that are a distance of 1 away, take the one that appears at the highest frequency
             if matches:
                 best_match = max(matches, key = lambda alias: np.mean([drug_frequencies[db_id] for db_id in drug_dictionary[alias]]))
                 mapped_by_lv_distance[answer] = best_match

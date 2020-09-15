@@ -104,8 +104,8 @@ if __name__ == '__main__':
 
     print('Active ingredients pulled, adding to drug dictionary...')
 
-    # dictionary for drugbank IDs mapped to drugs
-    drug_ingredient_IDs = {}
+    # dictionary for EMC aliases mapped to drugbank IDs of active ingredients
+    alias_drugbank_IDs = {}
 
     # list for drug names with ambiguous active ingredients
     ambiguous_drug_names = []
@@ -117,20 +117,20 @@ if __name__ == '__main__':
         # get drug dictionary IDs for ingredients
         active_ingredient_IDs = set().union(*[drug_dictionary.get(ingr) for ingr in ingredients if drug_dictionary.get(ingr)])
         # if the drug is already in the dictionary and the existing value does not match the active ingredient IDs, add to ambiguous list
-        if drug_shortened in drug_ingredient_IDs and drug_ingredient_IDs[drug_shortened] != active_ingredient_IDs:
+        if drug_shortened in alias_drugbank_IDs and alias_drugbank_IDs[drug_shortened] != active_ingredient_IDs:
             ambiguous_drug_names.append(drug_shortened)
         # otherwise if the drug is not present in the dictionary, add it
-        elif drug_shortened not in drug_ingredient_IDs:
-            drug_ingredient_IDs[drug_shortened] = active_ingredient_IDs
+        elif drug_shortened not in alias_drugbank_IDs:
+            alias_drugbank_IDs[drug_shortened] = active_ingredient_IDs
 
     # remove ambiguous entries from the dictionary
-    drug_ingredient_IDs = {drug: ingrs for drug, ingrs in drug_ingredient_IDs.items() if drug not in ambiguous_drug_names}
+    alias_drugbank_IDs = {drug: ingrs for drug, ingrs in alias_drugbank_IDs.items() if drug not in ambiguous_drug_names}
 
-    # loop through active ingredient mappings
-    for drug in drug_ingredient_IDs:
+    # loop through alias-drugbank mappings
+    for drug in alias_drugbank_IDs:
         # if drugbank ids were obtained for the drug's active ingredients, add to the drug dictionary
-        if drug_ingredient_IDs[drug]:
-            drug_dictionary[drug] = drug_ingredient_IDs[drug]
+        if alias_drugbank_IDs[drug]:
+            drug_dictionary[drug] = alias_drugbank_IDs[drug]
 
     # save the dictionary to a pickle
     pickle.dump(drug_dictionary, open('data/drug_dictionary.p', 'wb'))

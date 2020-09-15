@@ -88,9 +88,6 @@ if __name__ == '__main__':
     # scramble england postcodes for confidentiality
     england_postcodes = england_postcodes.reindex(np.random.permutation(england_postcodes.index))
 
-    # send postcodes to a csv for use on the English IMD web api
-    england_postcodes.to_csv('data/england_postcodes.csv', index = False, header = False)
-
     # load in the data generated from the English IMD web api
     england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
 
@@ -130,7 +127,7 @@ if __name__ == '__main__':
 
     # loop through northern irish postcodes and get IMD ranks using the get_postcode_rank() function
     pool = Pool(cpu_count())
-    postcode_ranks = pool.map(get_postcode_rank, NI_postcodes)
+    postcode_ranks = pool.imap(get_postcode_rank, NI_postcodes)
     NI_postcode_imd_ranks = {postcode: rank for postcode, rank in zip(NI_postcodes, postcode_ranks)}
     pool.close()
 
