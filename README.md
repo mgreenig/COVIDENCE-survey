@@ -7,7 +7,7 @@ physical wellbeing, and mental health. If you are interested in participating, p
 about the study please contact Chief Investigator Adrian Martineau (a.martineau@qmul.ac.uk) or Principal Investigator Hayley Holt (h.holt@qmul.ac.uk).
 
 This is a repository containing Python scripts for cleaning, transforming, and the mapping answers from the survey to patient features
-that will be analysed statistically in the study. We hope to identify what types of patients are more or less likely to contract COVID-19.
+that will be statistically analysed in the study. We hope to identify what types of patients are more or less likely to contract COVID-19.
 
 **Due to privacy considerations, no patient-level data is included in this repository**. 
 However, we do include multiple data sets generated from scipts that automatically pull data from public internet resources (e.g. the BNF). 
@@ -61,7 +61,7 @@ The script pulls the active ingredients of these missing medications and adds an
 of its active ingredients. This generates an updated version of the drug dictionary that contains aliases from both the 
 EMC and DrugBank. This updated file is saved as a pickle file under `/data/drug_dictionary.p`. This file is included in the repository.
 
-To reproduce the workflow, simply run via the command line from the repository directory:
+To reproduce the workflow, simply run via the command line from the repository:
 
 ``` 
 python Get_EMC_drugs.py
