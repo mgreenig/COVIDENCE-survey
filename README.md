@@ -47,7 +47,7 @@ However, because these data are not publicly available, they have been omitted f
 Users can request a download [here](https://www.drugbank.ca/releases/latest). 
 In order to reproduce this workflow, the downloaded XML file should be named `drugbank.xml` and moved to the `/data` directory.
 
-To parse the XML file and map drug aliases to the IDs of their standard identifiers, we provide the [`Parse_drugbank.py`](Parse_drugbank.py) script,
+To parse the XML file and map drug aliases to the IDs of their active ingredients, we provide the [`Parse_drugbank.py`](Parse_drugbank.py) script,
 which returns a dictionary - `drug_dictionary` - containing medication names as keys mapped to the DrugBank IDs of their active ingredients.
 
 ### Electronic Medicines Compendium (EMC)
