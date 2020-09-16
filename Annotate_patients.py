@@ -123,4 +123,5 @@ steroid_mask = q142_cleaned.str.contains('(\s|^)corticosteroid(s|\s|$)', case = 
 steroid_idx = q142_cleaned[steroid_mask].index.get_level_values(0)
 patient_feature_df.loc[steroid_idx, 'corticosteroids'] = 1
 
+# save the drug class data as a csv file
 patient_feature_df.to_csv('data/Covidence_12Aug20_Drug_Classes.csv', index = False)

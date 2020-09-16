@@ -73,31 +73,34 @@ weights = 'm?(milli)?(micro)?(mc)?(mic)?\s*g(ram)?'
 volumes = 'm?(milli)?(micro)?(mc)?(mic)?\s*l(iter)?'
 # weight and volume patterns combined
 units = '(({weight}|{volume}|%|unit|i\.*u\.*)s*)'.format(weight=weights, volume=volumes)
-# weights/volumes compiled into a regex pattern for dosages
+# units pattern compiled into a regex pattern for dosages
 dosage_pattern = '([\d.]+/)*([\d.]+\s*|\s+){units}((/|{units})|\s+|$)|(\s+[\d.x]+\s*/\s*[\d.]+(\s+|$))'.format(units=units)
 dosage_regex = re.compile(dosage_pattern)
+
 # pattern for different drug formulations
 formulation_pattern = '(^|\s+)(capsule|drop|cream|ointment|tab(let)*|lotion|pill|spray|shampoo|patch(e)*|inhaler|gel|injection|pump|pen|solution|aqueous|oil|app(lication)*|implant|foam)s*(\s+|$)'
 formulation_regex = re.compile(formulation_pattern)
+
 # pattern for different routes of administration
 routes_of_admin_pattern = '(^|\s+)((oral|nasal|ocular|auricular|topical)(ly)?|mouth|eye|nose|ear|skin|scalp)(\s+|$)'
 RoA_regex = re.compile(routes_of_admin_pattern)
+
 # pattern for numbers
 numbers_pattern = '(once|one|1)|(twice|two|2)|(three|3)|(four|4)|(five|5)|(six|6)|(seven|7)|(eight|8)|(nine|9)'
 # pattern for frequency of taking drugs (e.g. 2x a day)
-frequency_pattern = '({numbers})?\s*(times|x)?\s*(a|per|every|each)?\s*({numbers})?\s*(da(y|ily)|(week|month)(ly)?)'.format(
-    numbers=numbers_pattern)
+frequency_pattern = '({numbers})?\s*(times|x)?\s*(a|per|every|each)?\s*({numbers})?\s*(da(y|ily)|(week|month)(ly)?)'.format(numbers=numbers_pattern)
 frequency_regex = re.compile(frequency_pattern)
+
 # pattern for parenthetical qualifiers
 qualifier_regex = re.compile('\(+.*\)+')
 
 all_patterns = [frequency_regex, dosage_regex, formulation_regex, RoA_regex, qualifier_regex]
 
-original_answers = q142_filtered.copy()
-
+# loop through regex patterns and filter each one from the answers
 for pattern in all_patterns:
     q142_filtered = q142_filtered.str.replace(pattern, '')
 
+# post processing
 q142_cleaned = q142_filtered.str.split('/')
 q142_cleaned = q142_cleaned.apply(pd.Series).stack()
 q142_cleaned = q142_cleaned.str.strip()
@@ -108,6 +111,7 @@ q142_cleaned = q142_cleaned.str.lower()
 # objects for tracking the frequency of drugbank ids in the drug dictionary
 all_db_ids = set().union(*drug_dictionary.values())
 drug_frequencies = {db_id: 0 for db_id in all_db_ids}
+
 # lists for mapped answers in different categories
 mapped_survey_answers = []
 first_name_mapped_survey_answers = []
@@ -115,20 +119,25 @@ unmapped_survey_answers = []
 
 # loop through answers and map them
 for answer in q142_cleaned:
+
     # try to get the drugbank ids for the whole answer
     db_ids = drug_dictionary.get(answer)
+
     # regex pattern to isolate first word
     first_word = re.sub('[^\w]+.*$', '', answer)
     first_word_db_ids = drug_dictionary.get(first_word)
+
     # if the name is already in the drug dictionary add to the mapped list
     if db_ids:
         mapped_survey_answers.append(answer)
         mapped_db_ids = db_ids
+
     # if its first name is in the bnf add it to the first name mapped list and add answer to the drug dictionary
     elif first_word_db_ids:
         drug_dictionary[answer] = drug_dictionary[first_word]
         first_name_mapped_survey_answers.append(answer)
         mapped_db_ids = first_word_db_ids
+
     # otherwise add it to the unmapped list
     else:
         unmapped_survey_answers.append(answer)
@@ -146,14 +155,18 @@ drug_encodings = {}
 encoded_drug_dict = {}
 # list for ambigious encodings (distinct phonetically-identical drugs) - these will be removed from the dictionary
 ambiguous_encodings = []
+
 # loop through the drug dictionary and encode every entry, saving the corresponding drugbank ids under the encoding
 for drug in drug_dictionary:
-    encoding = mp.encode(drug)
+    
     # save the encoding for each drug
+    encoding = mp.encode(drug)
     drug_encodings[drug] = encoding
+
     # if the encoding is not in the encoding dictionary, add it
     if encoding not in encoded_drug_dict:
         encoded_drug_dict[encoding] = drug_dictionary[drug]
+
     # if the encoding is already in the dictionary and there exists different ids for the same encoding, save it
     elif drug_dictionary[drug] != encoded_drug_dict[encoding]:
         ambiguous_encodings.append(encoding)
