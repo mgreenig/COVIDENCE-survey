@@ -27,10 +27,14 @@ are associated with patients developing COVID-19.
 ## Dependencies
 
 This pipeline requires the following packages:
-- bs4==4.9.1
+- beautifulsoup4==4.9.1
 - pandas==1.1.0
 - abydos==0.5.0
 - numpy==1.19.1
+
+For the plotting done in [`Drug_mapping_plots.ipynb`](Drug_mapping_plots.ipynb):
+- matplotlib==3.3.1
+- seaborn==0.10.1
 
 ## 1) Medication data
 
@@ -38,7 +42,7 @@ This pipeline requires the following packages:
 
 We use data from the [DrugBank](https://www.drugbank.ca/)
 database as a list of drug names mapped to standard identifiers for active ingredients. 
-DrugBank kindly makes their entire database available as an XML file to users who sign up, request a download, and specify the data will be used. 
+DrugBank kindly makes their entire database available as an XML file to users who sign up, request a download, and specify how the data will be used. 
 However, because these data are not publicly available, they have been omitted from this repository. 
 Users can request a download [here](https://www.drugbank.ca/releases/latest). 
 In order to reproduce this workflow, the downloaded XML file should be named `drugbank.xml` and moved to the `/data` directory.
