@@ -237,6 +237,6 @@ welsh_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'welsh
 ```
 
 and maps the respondent postcodes to IMD deciles and ranks. 
-For Northern Irish postcodes, we use urllib and Beautiful Soup to input the respondent postcodes into the [web API](https://deprivation.nisra.gov.uk/) provided by the Northern Irish government and save the resulting output.
+For Northern Irish postcodes, we use urllib and BeautifulSoup to input the respondent postcodes into the [web API](https://deprivation.nisra.gov.uk/) provided by the Northern Irish government and save the resulting output.
 
 The patient mappings to IMD ranks and deciles are saved as a CSV file (not included in this repository).
