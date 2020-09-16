@@ -6,7 +6,7 @@ The first part of the study follows a cohort of approximately 10,000 UK resident
 physical wellbeing, and mental health. If you are interested in participating, please follow the link above. For any specific inquiries
 about the study please contact Chief Investigator Adrian Martineau (a.martineau@qmul.ac.uk) or Principal Investigator Hayley Holt (h.holt@qmul.ac.uk).
 
-This is a repository containing Python scripts for cleaning, transforming, and the mapping answers from the survey to patient features
+This is a repository containing Python scripts for cleaning, transforming, and mapping answers from the survey to patient features
 that will be statistically analysed in the study. We hope to identify what types of patients are more or less likely to contract COVID-19.
 
 **Due to privacy considerations, no patient-level data is included in this repository**. 
