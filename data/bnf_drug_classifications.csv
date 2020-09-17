@@ -1,1626 +1,1630 @@
-entry,drugs,primary,secondary,db_id
-0,abacavir,nucleoside reverse transcriptase inhibitors,None,DB01048
-1,abacavir; dolutegravir; lamivudine,nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors,DB08930; DB00709; DB01048
-2,abacavir; lamivudine,nucleoside reverse transcriptase inhibitors,None,DB00709; DB01048
-3,abacavir; lamivudine; zidovudine,nucleoside reverse transcriptase inhibitors,None,DB00495; DB00709; DB01048
-4,abatacept,t-cell activation inhibitors,None,DB01281
-5,abemaciclib,protein kinase inhibitors,None,DB12001
-6,abiraterone acetate,anti-androgens,None,DB05812
-7,acamprosate calcium,None,None,DB00659
-8,acarbose,None,None,DB00284
-9,acebutolol,"beta blocking agents, selective",None,DB01193
-10,aceclofenac,non-steroidal anti-inflammatory drugs,None,DB06736
-11,acenocoumarol,vitamin k antagonists,None,DB01418
-12,acetazolamide,carbonic anhydrase inhibitors,None,DB00819
-13,acetylcholine chloride,parasympathomimetics,None,DB03128
-14,acetylcysteine,"antidotes and chelators, other",ocular lubricants; mucolytics,DB06151
-15,aciclovir,nucleoside analogues,None,DB00787
-16,acipimox,nicotinic acid derivatives,None,DB09055
-17,acitretin,retinoid and related drugs,None,DB00459
-18,aclidinium bromide,"antimuscarinics, other",None,DB08897
-19,aclidinium bromide; formoterol,"antimuscarinics, other",selective beta2-agonists (long-acting),DB08897; DB00983
-20,acrivastine,non-sedating antihistamines,None,DB09488
-21,adalimumab,tumor necrosis factor alpha (tnf-a) inhibitors,None,DB00051
-22,adapalene,retinoid and related drugs,None,DB00210
-23,adapalene; benzoyl peroxide,retinoid and related drugs,peroxides,DB00210; DB09096
-24,adefovir dipivoxil,nucleotide analogues,None,DB00718
-25,adenosine,"antiarrhythmics, other",None,DB00640
-26,adrenaline; articaine hydrochloride,"anaesthetics, local",None,DB00668; DB09009
-27,adrenaline/epinephrine,"sympathomimetics, vasoconstrictor",None,
-28,afatinib,protein kinase inhibitors,None,DB08916
-29,aflibercept,vascular endothelial growth factor inhibitors,"antineoplastics, other",DB08885
-30,agalsidase alfa,enzymes,None,DB00103
-31,agalsidase beta,enzymes,None,DB00103
-32,agomelatine,None,None,DB06594
-33,albendazole,anthelmintics,None,DB00518
-34,albumin solution,plasma products,None,DB00062
-35,alclometasone dipropionate,corticosteroids,None,DB00240
-36,alcohol,None,None,DB02325; DB00898
-37,aldesleukin,None,None,DB00041
-38,alectinib,protein kinase inhibitors,None,DB11363
-39,alemtuzumab,"monoclonal antibodies, anti-lymphocyte",None,DB00087
-40,alendronic acid,bisphosphonates,None,DB00630
-41,alendronic acid; colecalciferol,bisphosphonates,vitamin d and analogues,DB00630; DB00169
-42,alfacalcidol,vitamin d and analogues,None,DB01436
-43,alfentanil,opioids,None,DB00802
-44,alfuzosin hydrochloride,alpha-adrenoceptor blockers,None,DB00346
-45,alginic acid,"antacids, alginate",None,DB13518
-46,alglucosidase alfa,enzymes,None,DB01272
-47,alimemazine tartrate,sedating antihistamines,None,DB01246
-48,alirocumab,"lipid modifying drugs, other",None,DB09302
-49,aliskiren,None,None,DB09026
-50,alitretinoin,retinoid and related drugs,None,DB00523
-51,allopurinol,xanthine oxidase inhibitors,None,DB00437
-52,almond oil,softening drugs,None,DB10500
-53,almotriptan,triptans,None,DB00918
-54,alogliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None,DB06203
-55,alogliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides,DB00331; DB06203
-56,alpha tocopherol,vitamin e,None,DB00058
-57,alpha tocopheryl acetate,vitamin e,None,DB00058
-58,alprazolam,benzodiazepines,None,DB00404
-59,alprostadil,prostaglandins and analogues,None,DB00770
-60,alteplase,tissue plasminogen activators,None,DB00009
-61,aluminium acetate,astringents,None,DB01370
-62,aluminium chloride hexahydrate,astringents,None,DB01370
-63,alverine citrate,antispasmodics,None,DB01616
-64,amantadine hydrochloride,dopamine receptor agonists,"antivirals, influenza",DB00915
-65,ambrisentan,endothelin receptor antagonists,None,DB06403
-66,amifampridine,cholinergic receptor stimulating drugs,None,DB11640
-67,amikacin,aminoglycosides,None,DB00479
-68,amiloride hydrochloride,"potassium-sparing diuretics, other",None,DB00594
-69,amiloride; bumetanide,"potassium-sparing diuretics, other",loop diuretics,DB00594; DB00887
-70,aminophylline,xanthines,None,DB01223
-71,aminosalicylic acid,"antimycobacterials, other",None,DB00233
-72,amiodarone hydrochloride,"antiarrhythmics, class iii",None,DB01118
-73,amisulpride,"antipsychotics, second-generation",None,DB06288
-74,amitriptyline hydrochloride,tricyclic antidepressants,None,DB00321
-75,amlodipine,calcium-channel blockers,None,DB00381
-76,amlodipine; valsartan,calcium-channel blockers,angiotensin ii receptor antagonists,DB00177; DB00381
-77,amorolfine,"antifungals, other",None,DB09056
-78,amoxicillin,"penicillins, broad-spectrum",None,DB01060
-79,amphotericin,polyene antifungals,None,DB00681
-80,ampicillin,"penicillins, broad-spectrum",None,DB00415
-81,amsacrine,"antineoplastics, other",None,DB00276
-82,anagrelide,None,None,DB00261
-83,anakinra,interleukin inhibitors,None,DB00026
-84,anastrozole,aromatase inhibitors,None,DB01217
-85,andexanet alfa,"antidotes and chelators, other",None,DB14562
-86,"anethol; borneol, camphene, cineole, fenchone; pinene",terpenes,None,
-87,anidulafungin,echinocandin antifungals,None,DB00362
-88,antazoline; xylometazoline,antihistamines,None,DB08799; DB06694
-89,anthrax vaccine,bacterial vaccines,None,DB11003
-90,anti-d (rh0) immunoglobulin,immunoglobulins,None,DB11597
-91,antithymocyte immunoglobulin (rabbit),immunoglobulins,None,DB00098
-92,apalutamide,anti-androgens,None,DB11901
-93,apixaban,factor xa inhibitors,None,DB06605
-94,apomorphine hydrochloride,dopamine receptor agonists,None,DB00714
-95,apraclonidine,alpha2-adrenoceptor agonists,None,DB00964
-96,apremilast,phosphodiesterase type-4 inhibitors,None,DB05676
-97,aprepitant,neurokinin receptor antagonists,None,DB00673
-98,arachis oil,softening laxatives,None,DB13964
-99,argatroban monohydrate,"thrombin inhibitors, direct",None,DB00278
-100,aripiprazole,"antipsychotics, second-generation","antipsychotics, second-generation (depot injections)",DB01238
-101,arsenic trioxide,"antineoplastics, other",None,DB01169
-102,artemether; lumefantrine,antimalarials,None,DB06697; DB06708
-103,artenimol; piperaquine phosphate,antimalarials,None,DB11638; DB13941
-104,ascorbic acid,vitamin c,None,DB00126
-105,asenapine,"antipsychotics, second-generation",None,DB06216
-106,asfotase alfa,enzymes,None,DB09105
-107,asparaginase,"antineoplastics, other",None,DB08886; DB00023
-108,aspirin,antiplatelet drugs,non-steroidal anti-inflammatory drugs,DB00945
-109,aspirin; codeine,non-steroidal anti-inflammatory drugs,opioids,DB00945; DB00318
-110,aspirin; metoclopramide,non-steroidal anti-inflammatory drugs,dopamine receptor antagonists,DB01233; DB00945
-111,ataluren,drugs for neuromuscular disorders,None,DB05016
-112,atazanavir,"protease inhibitors, hiv",None,DB01072
-113,atazanavir; cobicistat,"protease inhibitors, hiv",pharmacokinetic enhancers,DB09065; DB01072
-114,atenolol,"beta blocking agents, selective",None,DB00335
-115,atenolol; nifedipine,"beta blocking agents, selective",calcium-channel blockers,DB00335; DB01115
-116,atezolizumab,monoclonal antibodies,None,DB11595
-117,atomoxetine,centrally acting sympathomimetics,None,DB00289
-118,atorvastatin,statins,None,DB01076
-119,atosiban,None,None,DB09059
-120,atovaquone,"antiprotozoals, other",None,DB01117
-121,atovaquone; proguanil hydrochloride,antimalarials,None,DB01117; DB01131
-122,atracurium besilate,"neuromuscular blocking drugs, non-depolarising",None,DB00732
-123,atropine sulfate,"antimuscarinics, other",None,DB00572
-124,avanafil,phosphodiesterase type-5 inhibitors,None,DB06237
-125,avelumab,monoclonal antibodies,None,DB11945
-126,aviptadil; phentolamine mesilate,peripheral vasodilators,None,DB00692; DB06260
-127,axitinib,protein kinase inhibitors,None,DB06626
-128,azacitidine,antimetabolites,None,DB00928
-129,azathioprine,antimetabolites,None,DB00993
-130,azelaic acid,None,None,DB00548
-131,azelastine hydrochloride,antihistamines,None,DB00972
-132,azilsartan medoxomil,angiotensin ii receptor antagonists,None,DB08822
-133,azithromycin,macrolides,None,DB00207
-134,aztreonam,None,None,DB00355
-135,bacillus calmette-guérin,"immunostimulants, other",None,DB15667
-136,bacillus calmette-guérin vaccine,bacterial vaccines,None,DB15667
-137,baclofen,"muscle relaxants, centrally acting",None,DB00181
-138,balsalazide sodium,aminosalicylates,None,DB01014
-139,bambuterol hydrochloride,selective beta2-agonists (long-acting),None,DB01408
-140,baricitinib,jak inhibitors,None,DB11817
-141,barrier creams; ointments,None,None,DB11074
-142,basiliximab,"monoclonal antibodies, anti-lymphocyte",None,DB00074
-143,beclometasone dipropionate,corticosteroids,None,DB00394
-144,beclometasone; formoterol,corticosteroids,selective beta2-agonists (long-acting),DB00394; DB00983
-145,beclometasone; formoterol; glycopyrronium,corticosteroids,"antimuscarinics, other; selective beta2-agonists (long-acting)",DB00394; DB00983; DB00986
-146,bedaquiline,"antimycobacterials, other",None,DB08903
-147,bee venom extract,allergen-type vaccines,None,DB10955
-148,belatacept,t-cell activation inhibitors,None,DB06681
-149,belimumab,"monoclonal antibodies, anti-lymphocyte",None,DB08879
-150,bendamustine hydrochloride,alkylating agents,None,DB06769
-151,bendroflumethiazide,thiazides and related diuretics,None,DB00436
-152,benperidol,"antipsychotics, first-generation",None,DB12867
-153,benralizumab,monoclonal antibodies,None,DB12023
-154,benzalkonium chloride,"antiseptics and disinfectants, other",None,DB11105
-155,benzathine benzylpenicillin,"penicillins, beta-lactamase sensitive",None,
-156,benzoic acid; salicylic acid,None,None,DB00936; DB03793
-157,"benzoin tincture, compound",None,None,DB11222
-158,benzoyl peroxide,peroxides,None,DB09096
-159,benzoyl peroxide; clindamycin,peroxides,lincosamides,DB09096; DB01190
-160,benzydamine hydrochloride,non-steroidal anti-inflammatory drugs,None,DB09084
-161,benzyl benzoate,parasiticides,None,DB00676
-162,"benzyl benzoate; bismuth oxide, bismuth subgallate, hydrocortisone acetate, peru balsam; zinc oxide",corticosteroids,None,DB09321; DB14572; DB00676; DB01294
-163,benzylpenicillin sodium,"penicillins, beta-lactamase sensitive",None,DB01053
-164,betahistine dihydrochloride,None,None,DB06698
-165,betaine,None,None,DB06756
-166,betamethasone,corticosteroids,None,DB00443
-167,betamethasone; clioquinol,corticosteroid combinations with anti-infectives,None,DB00443; DB04815
-168,betamethasone; clotrimazole,corticosteroid combinations with anti-infectives,None,DB00257; DB00443
-169,betamethasone; fusidic acid,corticosteroid combinations with anti-infectives,None,DB00443; DB02703
-170,betamethasone; neomycin,corticosteroid combinations with anti-infectives,None,DB00994; DB00443
-171,betamethasone; salicylic acid,corticosteroid combinations with anti-infectives,None,DB00936; DB00443
-172,betaxolol,"beta blocking agents, selective",None,DB00195
-173,bethanechol chloride,None,None,DB01019
-174,bevacizumab,monoclonal antibodies,None,DB00112
-175,bexarotene,retinoid and related drugs,None,DB00307
-176,bezafibrate,fibrates,None,DB01393
-177,bezlotoxumab,antitoxins,None,DB13140
-178,bicalutamide,anti-androgens,None,DB01128
-179,bictegravir; emtricitabine; tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors,DB09299; DB00879; DB11799
-180,bilastine,non-sedating antihistamines,None,DB11591
-181,bimatoprost,prostamides,None,DB00905
-182,bimatoprost; timolol,prostamides,"beta blocking agents, non-selective",DB00373; DB00905
-183,binimetinib,protein kinase inhibitors,None,DB11967
-184,biphasic insulin aspart,"insulins, intermediate-acting combined with rapid-acting",None,
-185,biphasic insulin lispro,"insulins, intermediate-acting combined with rapid-acting",None,
-186,biphasic isophane insulin,"insulins, intermediate-acting",None,
-187,bisacodyl,stimulant laxatives,None,DB09020
-188,bismuth subsalicylate,antacids,None,DB01294
-189,bisoprolol fumarate,"beta blocking agents, selective",None,DB00612
-190,bivalirudin,"thrombin inhibitors, direct",None,DB00006
-191,bleomycin,cytotoxic antibiotics and related substances,None,DB00290
-192,blinatumomab,monoclonal antibodies,None,DB09052
-193,"borneol; camphene, cineole, menthol, menthone; pinene",terpenes,None,DB11288
-194,bortezomib,proteasome inhibitors,None,DB00188
-195,bosentan,endothelin receptor antagonists,None,DB00559
-196,bosutinib,protein kinase inhibitors,None,DB06616
-197,botulinum toxin type a,neurotoxins (botulinum toxins),None,DB00083
-198,botulinum toxin type b,neurotoxins (botulinum toxins),None,DB00042
-199,botulism antitoxin,antitoxins,None,DB14115
-200,brentuximab vedotin,monoclonal antibodies,None,DB08870
-201,brigatinib,protein kinase inhibitors,None,DB12267
-202,brimonidine tartrate,alpha2-adrenoceptor agonists,None,DB00484
-203,brimonidine; timolol,alpha2-adrenoceptor agonists,"beta blocking agents, non-selective",DB00373; DB00484
-204,brinzolamide,carbonic anhydrase inhibitors,None,DB01194
-205,brinzolamide; brimonidine,carbonic anhydrase inhibitors,alpha2-adrenoceptor agonists,DB00484; DB01194
-206,brinzolamide; timolol,carbonic anhydrase inhibitors,"beta blocking agents, non-selective",DB00373; DB01194
-207,brivaracetam,antiepileptics,None,DB05541
-208,brodalumab,interleukin inhibitors,None,DB11776
-209,brolucizumab,vascular endothelial growth factor inhibitors,None,DB14864
-210,bromfenac,non-steroidal anti-inflammatory drugs,None,DB00963
-211,bromocriptine,dopamine receptor agonists,None,DB01200
-212,budesonide,corticosteroids,None,DB01222
-213,budesonide; formoterol,corticosteroids,selective beta2-agonists (long-acting),DB00983; DB01222
-214,bumetanide,loop diuretics,None,DB00887
-215,bupivacaine hydrochloride,"anaesthetics, local",None,DB00297
-216,bupivacaine; adrenaline,"anaesthetics, local","sympathomimetics, vasoconstrictor",DB00668; DB00297
-217,bupivacaine; fentanyl,"anaesthetics, local",opioids,DB00813; DB00297
-218,buprenorphine,opioids,None,DB00921
-219,buprenorphine; naloxone,opioid receptor antagonists,opioids,DB01183; DB00921
-220,bupropion hydrochloride,serotonin and noradrenaline re-uptake inhibitors,None,DB01156
-221,buserelin,gonadotrophin-releasing hormones,None,DB06719
-222,buspirone hydrochloride,None,None,DB00490
-223,busulfan,alkylating agents,None,DB01008
-224,c1-esterase inhibitor,complement regulatory proteins,None,DB06404
-225,cabazitaxel,taxanes,None,DB06772
-226,cabergoline,dopamine receptor agonists,None,DB00248
-227,cabozantinib,protein kinase inhibitors,None,DB08875
-228,calamine; zinc oxide,antipruritics,None,DB11576; DB09321; DB09345
-229,calcipotriol,vitamin d and analogues,None,DB02300
-230,calcipotriol; betamethasone,corticosteroids,vitamin d and analogues,DB02300; DB00443
-231,calcitonin (salmon),bone resorption inhibitors,None,DB06773; DB13189; DB00017
-232,calcitriol,vitamin d and analogues,None,DB00136
-233,calcium acetate,calcium,None,DB00258
-234,calcium acetate; magnesium carbonate,phosphate binders,None,DB09481; DB00258
-235,calcium carbonate,calcium,None,DB06724
-236,calcium carbonate; calcium lactate gluconate,calcium,None,DB06724; DB13365
-237,calcium chloride,calcium,None,DB01164
-238,calcium gluconate,calcium,None,DB11126
-239,calcium lactate,calcium,None,DB13231
-240,calcium phosphate,calcium,None,DB11348
-241,calcium polystyrene sulfonate,cation exchange compounds,None,DB01373
-242,camellia sinensis,plant alkaloids,None,DB11111
-243,canagliflozin,sodium glucose co-transporter 2 inhibitors,None,DB08907
-244,canagliflozin; metformin,sodium glucose co-transporter 2 inhibitors,biguanides,DB00331; DB08907
-245,canakinumab,monoclonal antibodies,None,DB06168
-246,candesartan cilexetil,angiotensin ii receptor antagonists,None,DB00796
-247,cangrelor,antiplatelet drugs,None,DB06441
-248,cannabidiol,antiepileptics,None,DB09061
-249,cannabis extract,cannabinoids,None,DB14009
-250,capecitabine,antimetabolites,None,DB01101
-251,caplacizumab,antithrombotic drugs,None,DB06081
-252,capreomycin,"antimycobacterials, other",None,DB00314
-253,capsaicin,plant alkaloids,None,DB06774
-254,captopril,ace inhibitors,None,DB01197
-255,carbamazepine,antiepileptics,None,DB00564
-256,carbetocin,oxytocin and analogues,None,DB01282
-257,carbimazole,None,None,DB00389
-258,carbocisteine,mucolytics,None,DB04339
-259,carbomers,ocular lubricants,None,
-260,carboplatin,platinum compounds,None,DB00958
-261,carboprost,prostaglandins and analogues,None,DB00429
-262,carfilzomib,proteasome inhibitors,None,DB08889
-263,carglumic acid,amino acids and derivatives,None,DB06775
-264,cariprazine,"antipsychotics, second-generation",None,DB06016
-265,carmellose sodium,ocular lubricants,None,DB11059
-266,carmustine,alkylating agents,None,DB00262
-267,carvedilol,alpha- and beta-adrenoceptor blockers,None,DB01136
-268,caspofungin,echinocandin antifungals,None,DB00520
-269,castor oil; collodion; colophony,None,None,DB11165; DB11113
-270,cefaclor,"cephalosporins, second-generation",None,DB00833
-271,cefadroxil,"cephalosporins, first-generation",None,DB01140
-272,cefalexin,"cephalosporins, first-generation",None,DB00567
-273,cefepime,"cephalosporins, other",None,DB01413
-274,cefixime,"cephalosporins, third-generation",None,DB00671
-275,cefotaxime,"cephalosporins, third-generation",None,DB00493
-276,cefoxitin,"cephalosporins, second-generation",None,DB01331
-277,cefradine,"cephalosporins, first-generation",None,DB01333
-278,ceftaroline fosamil,"cephalosporins, other",None,DB06590
-279,ceftazidime,"cephalosporins, third-generation",None,DB00438
-280,ceftazidime; avibactam,"cephalosporins, third-generation with beta-lactamase inhibitor",None,DB09060; DB00438
-281,ceftobiprole,"cephalosporins, other",None,DB04918
-282,ceftolozane; tazobactam,"cephalosporins, third-generation with beta-lactamase inhibitor",None,DB09050; DB01606
-283,ceftriaxone,"cephalosporins, third-generation",None,DB01212
-284,cefuroxime,"cephalosporins, second-generation",None,DB01112
-285,celecoxib,non-steroidal anti-inflammatory drugs,None,DB00482
-286,celiprolol hydrochloride,"beta blocking agents, selective",None,DB04846
-287,cemiplimab,monoclonal antibodies,None,DB14707
-288,cenegermin,None,None,DB13926
-289,ceritinib,protein kinase inhibitors,None,DB09063
-290,certolizumab pegol,tumor necrosis factor alpha (tnf-a) inhibitors,None,DB08904
-291,cetirizine hydrochloride,non-sedating antihistamines,None,DB00341
-292,cetrimide; undecenoic acid,undecenoates,None,DB11117; DB01718
-293,cetrorelix,anti-gonadotrophin-releasing hormones,None,DB00050
-294,cetuximab,monoclonal antibodies,None,DB00002
-295,"charcoal, activated",None,None,DB09278
-296,chenodeoxycholic acid,bile acids,None,DB06777
-297,chloral hydrate,non-benzodiazepine hypnotics and sedatives,None,DB01563
-298,chlorambucil,alkylating agents,None,DB00291
-299,chloramphenicol,"antibacterials, other",None,DB00446
-300,chlordiazepoxide hydrochloride,benzodiazepines,None,DB00475
-301,chlorhexidine,"antiseptics and disinfectants, other",None,DB00878
-302,chlorhexidine gluconate; isopropyl alcohol,"antiseptics and disinfectants, other",None,DB02325; DB00878
-303,chlorhexidine; cetrimide,"antiseptics and disinfectants, other",None,DB01718; DB00878
-304,chlorhexidine; lidocaine,"antiseptics and disinfectants, other","anaesthetics, local",DB00281; DB00878
-305,chlorhexidine; neomycin,aminoglycosides,None,DB00994; DB00878
-306,chlorhexidine; nystatin,"antiseptics and disinfectants, other",None,DB00646; DB00878
-307,chlormethine,alkylating agents,None,DB00888
-308,chloroprocaine hydrochloride,"anaesthetics, local",None,DB01161
-309,chloroquine,antimalarials,None,DB00608
-310,chloroquine; proguanil,antimalarials,None,DB00608; DB01131
-311,chlorphenamine maleate,sedating antihistamines,None,DB01114
-312,chlorpromazine hydrochloride,"antipsychotics, first-generation",None,DB00477
-313,chlortalidone,thiazides and related diuretics,None,DB00310
-314,cholera vaccine,bacterial vaccines,None,DB14443
-315,cholic acid,bile acids,None,DB02659
-316,choline salicylate,salicylic acid and derivatives,None,DB14006
-317,choriogonadotropin alfa,gonadotrophins,None,DB00097
-318,ciclesonide,corticosteroids,None,DB01410
-319,ciclosporin,calcineurin inhibitors and related drugs,None,DB00091
-320,cidofovir,nucleoside analogues,None,DB00369
-321,cilostazol,antiplatelet drugs,None,DB01166
-322,cimetidine,h2-receptor antagonists,None,DB00501
-323,cinacalcet,bone resorption inhibitors,None,DB01012
-324,cinchocaine hydrochloride; fluocortolone caproate; fluocortolone pivalate,corticosteroids,amides,DB00527; DB08971
-325,cinchocaine; hydrocortisone,corticosteroids,amides,DB00741; DB00527
-326,cinchocaine; prednisolone,corticosteroids,amides,DB00527; DB00860
-327,cinnarizine,sedating antihistamines,None,DB00568
-328,cinnarizine; dimenhydrinate,sedating antihistamines,None,DB00985; DB00568
-329,ciprofibrate,fibrates,None,DB09064
-330,ciprofloxacin,quinolones,None,DB00537
-331,ciprofloxacin; dexamethasone,corticosteroid combinations with anti-infectives,None,DB00537; DB01234
-332,ciprofloxacin; fluocinolone acetonide,corticosteroid combinations with anti-infectives,None,DB00537; DB00591
-333,cisatracurium,"neuromuscular blocking drugs, non-depolarising",None,DB00565
-334,cisplatin,platinum compounds,None,DB00515
-335,citalopram,selective serotonin re-uptake inhibitors,None,DB00215
-336,citric acid,None,None,DB04272
-337,citric acid; magnesium carbonate,osmotic laxatives,None,DB09481; DB04272
-338,citric acid; potassium citrate,"alkalising drugs, urinary",None,DB09125; DB04272
-339,cladribine,antimetabolites,None,DB00242
-340,clarithromycin,macrolides,None,DB01211
-341,clemastine,sedating antihistamines,None,DB00283
-342,clindamycin,lincosamides,None,DB01190
-343,clobazam,benzodiazepines,None,DB00349
-344,clobetasol propionate,corticosteroids,None,DB01013
-345,clobetasol propionate; neomycin sulfate; nystatin,corticosteroid combinations with anti-infectives,None,DB00994; DB00646; DB01013
-346,clobetasone butyrate,corticosteroids,None,DB13158
-347,clobetasone butyrate; nystatin; oxytetracycline,corticosteroid combinations with anti-infectives,None,DB00595; DB00646; DB13158
-348,clofarabine,antimetabolites,None,DB00631
-349,clofazimine,"antimycobacterials, other",None,DB00845
-350,clomethiazole,non-benzodiazepine hypnotics and sedatives,None,DB06470
-351,clomifene citrate,None,None,DB00882
-352,clomipramine hydrochloride,tricyclic antidepressants,None,DB01242
-353,clonazepam,benzodiazepines,None,DB01068
-354,clonidine hydrochloride,"antihypertensives, centrally acting",None,DB00575
-355,clopidogrel,antiplatelet drugs,None,DB00758
-356,clotrimazole,imidazole antifungals,None,DB00257
-357,clozapine,"antipsychotics, second-generation",None,DB00363
-358,co-amilofruse,loop diuretics,"potassium-sparing diuretics, other",DB00695; DB00594
-359,co-amilozide,thiazides and related diuretics,"potassium-sparing diuretics, other",DB00999; DB00594
-360,co-amoxiclav,None,None,
-361,co-beneldopa,dopamine precursors,None,
-362,co-careldopa,dopamine precursors,None,
-363,co-codamol,opioids,None,DB00318; DB00316
-364,co-cyprindiol,anti-androgens,None,DB00977; DB04839
-365,co-danthramer,stimulant laxatives,None,DB11333; DB04816
-366,co-danthrusate,stimulant laxatives,softening laxatives,DB04816; DB11089; DB11365
-367,co-fluampicil,"penicillins, broad-spectrum",None,
-368,co-flumactone,aldosterone antagonists,thiazides and related diuretics,
-369,co-magaldrox,"antacids, aluminium and magnesium",None,
-370,co-phenotrope,antipropulsives,None,
-371,co-simalcite,"antacids, aluminium and magnesium",None,
-372,co-tenidone,"beta blocking agents, selective",thiazides and related diuretics,DB00335; DB00310
-373,co-triamterzide,thiazides and related diuretics,"potassium-sparing diuretics, other",
-374,co-trimoxazole,sulfonamides,"antibacterials, other",DB01015; DB00440
-375,coal tar,tars,None,DB11082
-376,coal tar; calamine,tars,antipruritics,DB11576; DB09321; DB11082; DB09345
-377,coal tar; coconut oil; salicylic acid,tars,salicylic acid and derivatives,DB00936; DB11082; DB14322
-378,coal tar; dithranol; salicylic acid,tars,salicylic acid and derivatives; antracen derivatives,DB00936; DB11082; DB11157
-379,coal tar; salicylic acid,tars,salicylic acid and derivatives,DB00936; DB11082
-380,coal tar; salicylic acid; precipitated sulfur,tars,salicylic acid and derivatives,DB00936; DB11082; DB06724
-381,coal tar; zinc oxide,tars,astringents,DB09321; DB11082
-382,cobicistat,pharmacokinetic enhancers,None,DB09065
-383,cobimetinib,protein kinase inhibitors,None,DB05239
-384,codeine phosphate,opioids,cough suppressants,DB00318
-385,colchicine,plant alkaloids,None,DB01394
-386,colecalciferol,vitamin d and analogues,None,DB00169
-387,colecalciferol; calcium carbonate,vitamin d and analogues,calcium,DB06724; DB00169
-388,colecalciferol; calcium phosphate,vitamin d and analogues,calcium,DB11348; DB00169
-389,colesevelam hydrochloride,bile acid sequestrants,None,DB00930
-390,colestipol hydrochloride,bile acid sequestrants,None,DB00375
-391,colestyramine,bile acid sequestrants,None,DB01432
-392,colistimethate sodium,None,None,DB01111
-393,conestat alfa,complement regulatory proteins,None,DB09228
-394,conjugated oestrogens (equine),oestrogens,None,DB00286
-395,conjugated oestrogens; bazedoxifene acetate,oestrogens,None,DB00286; DB06401
-396,conjugated oestrogens; medroxyprogesterone,oestrogens combined with progestogens,None,DB00286; DB00603
-397,cranberry juice,None,None,DB10631
-398,crisantaspase,"antineoplastics, other",None,DB08886
-399,crizotinib,protein kinase inhibitors,None,DB08865
-400,crotamiton,antipruritics,None,DB00265
-401,cyanocobalamin,vitamin b group,None,DB00115
-402,cyclizine,antihistamines,None,DB01176
-403,cyclopentolate hydrochloride,"antimuscarinics, other",None,DB00979
-404,cyclophosphamide,alkylating agents,None,DB00531
-405,cycloserine,"antimycobacterials, other",None,DB00260
-406,cyproheptadine hydrochloride,sedating antihistamines,None,DB00434
-407,cyproterone acetate,anti-androgens,None,DB04839
-408,cytarabine,antimetabolites,None,DB00987
-409,cytomegalovirus immunoglobulin,immunoglobulins,None,DB13886
-410,dabigatran etexilate,"thrombin inhibitors, direct",None,DB06695
-411,dabrafenib,protein kinase inhibitors,None,DB08912
-412,dacarbazine,alkylating agents,None,DB00851
-413,dacomitinib,protein kinase inhibitors,None,DB11963
-414,dairy products,None,None,
-415,dalbavancin,glycopeptide antibacterials,None,DB06219
-416,dalteparin sodium,heparins,None,DB06779
-417,danaparoid sodium,heparinoids,None,DB06754
-418,danazol,anti-gonadotrophin-releasing hormones,None,DB01406
-419,dantrolene sodium,None,None,DB01219
-420,dapagliflozin,sodium glucose co-transporter 2 inhibitors,None,DB06292
-421,dapagliflozin; metformin,sodium glucose co-transporter 2 inhibitors,biguanides,DB06292; DB00331
-422,dapoxetine,selective serotonin re-uptake inhibitors,None,DB04884
-423,dapsone,"antimycobacterials, other",None,DB00250
-424,daptomycin,"antibacterials, other",None,DB00080
-425,daratumumab,monoclonal antibodies,None,DB09331
-426,darbepoetin alfa,epoetins,None,DB00012
-427,darifenacin,"antimuscarinics, urinary",None,DB00496
-428,darolutamide,anti-androgens,None,DB12941
-429,darunavir,"protease inhibitors, hiv",None,DB01264
-430,darunavir; cobicistat,"protease inhibitors, hiv",pharmacokinetic enhancers,DB09065; DB01264
-431,"darunavir; cobicistat, emtricitabine; tenofovir alafenamide","protease inhibitors, hiv",nucleoside reverse transcriptase inhibitors; pharmacokinetic enhancers,DB09299; DB01264
-432,dasabuvir,"antivirals, other",None,DB09183
-433,dasatinib,protein kinase inhibitors,None,DB01254
-434,daunorubicin,anthracyclines and related drugs,None,DB00694
-435,daunorubicin; cytarabine,anthracyclines and related drugs,antimetabolites,DB00694; DB00987
-436,decitabine,antimetabolites,None,DB01262
-437,deferasirox,iron chelators,None,DB01609
-438,deferiprone,iron chelators,None,DB08826
-439,deflazacort,corticosteroids,None,DB11921
-440,degarelix,anti-gonadotrophin-releasing hormones,None,DB06699
-441,delamanid,"antimycobacterials, other",None,DB11637
-442,demeclocycline hydrochloride,tetracyclines and related drugs,None,DB00618
-443,denosumab,monoclonal antibodies,None,DB06643
-444,dequalinium chloride,"antiseptics and disinfectants, other",None,DB04209
-445,desferrioxamine mesilate,iron chelators,None,DB00746
-446,desflurane,volatile liquid anaesthetics,None,DB01189
-447,desloratadine,non-sedating antihistamines,None,DB00967
-448,desmopressin,vasopressin and analogues,None,DB00035
-449,desogestrel,progestogens,None,DB00304
-450,dexamethasone,corticosteroids,None,DB01234
-451,dexamethasone; framycetin sulfate; gramicidin,corticosteroid combinations with anti-infectives,None,DB00452; DB00027; DB01234
-452,dexamethasone; glacial acetic acid; neomycin sulfate,corticosteroid combinations with anti-infectives,None,DB00994; DB03166; DB01234
-453,"dexamethasone; hypromellose, neomycin; polymyxin b sulfate",corticosteroid combinations with anti-infectives,None,DB00781; DB01234
-454,dexamethasone; tobramycin,corticosteroid combinations with anti-infectives,None,DB00684; DB01234
-455,dexamfetamine sulfate,amfetamines,None,DB01576
-456,dexibuprofen,non-steroidal anti-inflammatory drugs,None,DB09213
-457,dexketoprofen,non-steroidal anti-inflammatory drugs,None,DB09214
-458,dexmedetomidine,non-benzodiazepine hypnotics and sedatives,None,DB00633
-459,dexrazoxane,iron chelators,None,DB00380
-460,diamorphine hydrochloride,opioids,None,DB01452
-461,diazepam,benzodiazepines,None,DB00829
-462,diazoxide,glycogenolytic hormones,None,DB01119
-463,diclofenac,non-steroidal anti-inflammatory drugs,None,DB00586
-464,diclofenac potassium,non-steroidal anti-inflammatory drugs,None,DB00586
-465,diclofenac sodium,non-steroidal anti-inflammatory drugs,None,DB00586
-466,diclofenac sodium; misoprostol,non-steroidal anti-inflammatory drugs,prostaglandins and analogues,DB00929; DB00586
-467,dicobalt edetate,"antidotes and chelators, other",None,
-468,dicycloverine hydrochloride,"antimuscarinics, other",None,DB00804
-469,"dicycloverine hydrochloride; aluminium hydroxide, magnesium oxide; simeticone","antimuscarinics, other",None,DB00804; DB01370; DB09512
-470,dienogest,progestogens,None,DB09123
-471,dienogest; estradiol valerate,oestrogens combined with progestogens,None,DB13956; DB09123
-472,diethyl phthalate; methyl salicylate,"antiseptics and disinfectants, other",None,DB13598; DB09543
-473,diethylcarbamazine,anthelmintics,None,DB00711
-474,diethylstilbestrol,oestrogens,None,DB00255
-475,diflucortolone valerate,corticosteroids,None,DB09095
-476,digoxin,None,None,DB00390
-477,digoxin-specific antibody,None,None,DB00076
-478,dihydrocodeine tartrate,opioids,None,DB01551
-479,dihydrocodeine; paracetamol,opioids,None,DB01551; DB00316
-480,dihydrotachysterol,vitamin d and analogues,None,DB01070
-481,diltiazem hydrochloride,calcium-channel blockers,None,DB00343
-482,dimethyl fumarate,immunomodulating drugs,None,DB08908
-483,dimeticone,parasiticides,None,
-484,dinoprostone,prostaglandins and analogues,None,DB00917
-485,dinutuximab beta,monoclonal antibodies,None,DB09077
-486,diphtheria antitoxin,antitoxins,None,
-487,diphtheria; tetanus; poliomyelitis vaccine,"bacterial and viral vaccines, combined",None,DB11604
-488,"diphtheria; tetanus, pertussis; poliomyelitis vaccine","bacterial and viral vaccines, combined",None,
-489,"diphtheria; tetanus, pertussis, hepatitis b, poliomyelitis; haemophilus influenzae type b vaccine","bacterial and viral vaccines, combined",None,DB10990
-490,"diphtheria; tetanus, pertussis, poliomyelitis; haemophilus influenzae type b vaccine","bacterial and viral vaccines, combined",None,DB10990
-491,dipipanone hydrochloride; cyclizine,opioids,None,DB01491; DB01176
-492,dipyridamole,antiplatelet drugs,None,DB00975
-493,dipyridamole; aspirin,antiplatelet drugs,None,DB00975; DB00945
-494,"disodium hydrogen citrate; glucose, potassium chloride; sodium chloride",oral rehydration salts,None,DB09153
-495,disopyramide,None,None,DB00280
-496,disulfiram,None,None,DB00822
-497,dithranol,antracen derivatives,None,DB11157
-498,dithranol; salicylic acid; zinc oxide,antracen derivatives,None,DB00936; DB09321; DB11157
-499,dobutamine,"sympathomimetics, inotropic",None,DB00841
-500,docetaxel,taxanes,None,DB01248
-501,docusate sodium,softening laxatives,softening drugs; stimulant laxatives,DB11089; DB11365
-502,dolutegravir,hiv-integrase inhibitors,None,DB08930
-503,dolutegravir; rilpivirine,hiv-integrase inhibitors,non-nucleoside reverse transcriptase inhibitors,DB08930; DB08864
-504,domperidone,dopamine receptor antagonists,None,DB01184
-505,donepezil hydrochloride,"anticholinesterases, centrally acting",None,DB00843
-506,dopamine hydrochloride,"sympathomimetics, inotropic",None,DB00988
-507,doravirine,non-nucleoside reverse transcriptase inhibitors,None,DB12301
-508,dornase alfa,mucolytics,None,DB00003
-509,dorzolamide,carbonic anhydrase inhibitors,None,DB00869
-510,dorzolamide; timolol,carbonic anhydrase inhibitors,"beta blocking agents, non-selective",DB00373; DB00869
-511,dosulepin hydrochloride,tricyclic antidepressants,None,DB09167
-512,doxapram hydrochloride,None,None,DB00561
-513,doxazosin,alpha-adrenoceptor blockers,None,DB00590
-514,doxepin,tricyclic antidepressants,antipruritics,DB01142
-515,doxorubicin hydrochloride,anthracyclines and related drugs,None,DB00997
-516,doxycycline,tetracyclines and related drugs,None,DB00254
-517,doxylamine; pyridoxine,antihistamines,vitamin b group,DB00366; DB00165
-518,dried prothrombin complex,coagulation proteins,None,DB13133; DB13192; DB12872; DB00025; DB14473
-519,dronedarone,"antiarrhythmics, class iii",None,DB04855
-520,droperidol,"antipsychotics, first-generation",None,DB00450
-521,dulaglutide,glucagon-like peptide-1 receptor agonists,None,DB09045
-522,duloxetine,serotonin and noradrenaline re-uptake inhibitors,None,DB00476
-523,dupilumab,interleukin inhibitors,None,DB12159
-524,durvalumab,monoclonal antibodies,None,DB11714
-525,dutasteride,5α-reductase inhibitors,None,DB01126
-526,econazole nitrate,imidazole antifungals,None,DB01127
-527,eculizumab,monoclonal antibodies,None,DB01257
-528,edoxaban,factor xa inhibitors,None,DB09075
-529,efavirenz,non-nucleoside reverse transcriptase inhibitors,None,DB00625
-530,efavirenz; emtricitabine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors,DB00625; DB00879; DB00300
-531,eflornithine,"antiprotozoals, other",None,DB06243
-532,elbasvir; grazoprevir,hcv inhibitors,"protease inhibitors, hepatitis",DB11575; DB11574
-533,eletriptan,triptans,None,DB00216
-534,eliglustat,glucosylceramide synthase inhibitors,None,DB09039
-535,elosulfase alfa,enzymes,None,DB09051
-536,elotuzumab,monoclonal antibodies,None,DB06317
-537,eltrombopag,thrombopoietin receptor agonists,None,DB06210
-538,elvitegravir,hiv-integrase inhibitors,None,DB09101
-539,"elvitegravir; cobicistat, emtricitabine; tenofovir alafenamide",nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors; pharmacokinetic enhancers,DB09101; DB09299
-540,"elvitegravir; cobicistat, emtricitabine; tenofovir disoproxil",nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors; pharmacokinetic enhancers,DB00300; DB09101
-541,emicizumab,haemostatics,None,DB13923
-542,"emollient bath; shower products, antimicrobial-containing",emollients,None,DB09321
-543,"emollient bath; shower products, paraffin-containing",emollients,None,DB09321
-544,"emollient bath; shower products, soya-bean oil-containing",emollients,None,DB09321
-545,"emollient bath; shower products, tar-containing",emollients,None,DB09321
-546,"emollient creams; ointments, antimicrobial-containing",emollients,None,
-547,"emollient creams; ointments, colloidal oatmeal-containing",emollients,None,
-548,"emollient creams; ointments, paraffin-containing",emollients,None,
-549,"emollients, urea-containing",emollients,None,
-550,empagliflozin,sodium glucose co-transporter 2 inhibitors,None,DB09038
-551,empagliflozin; linagliptin,sodium glucose co-transporter 2 inhibitors,dipeptidylpeptidase-4 inhibitors (gliptins),DB08882; DB09038
-552,empagliflozin; metformin,sodium glucose co-transporter 2 inhibitors,biguanides,DB00331; DB09038
-553,emtricitabine,nucleoside reverse transcriptase inhibitors,None,DB00879
-554,emtricitabine; rilpivirine; tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors,DB00879; DB09299; DB08864
-555,emtricitabine; rilpivirine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors,DB00879; DB00300; DB08864
-556,emtricitabine; tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,None,DB00879; DB09299
-557,emtricitabine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,None,DB00879; DB00300
-558,enalapril maleate,ace inhibitors,None,DB00584
-559,enalapril; hydrochlorothiazide,ace inhibitors,thiazides and related diuretics,DB00584; DB00999
-560,encorafenib,protein kinase inhibitors,None,DB11718
-561,enfuvirtide,None,None,DB00109
-562,enoxaparin sodium,heparins,None,DB01225
-563,enoximone,phosphodiesterase type-3 inhibitors,None,DB04880
-564,entacapone,catechol-o-methyltransferase inhibitors,None,DB00494
-565,entecavir,nucleoside analogues,None,DB00442
-566,enteral feeds,None,None,
-567,enzalutamide,anti-androgens,None,DB08899
-568,ephedrine hydrochloride,"sympathomimetics, vasoconstrictor",None,DB01364
-569,epinastine hydrochloride,antihistamines,None,DB00751
-570,epirubicin hydrochloride,anthracyclines and related drugs,None,DB00445
-571,eplerenone,aldosterone antagonists,None,DB00700
-572,epoetin alfa,epoetins,None,DB00016
-573,epoetin beta,epoetins,None,DB00016
-574,epoetin zeta,epoetins,None,DB00016
-575,epoprostenol,prostaglandins and analogues,None,DB01240
-576,eprosartan,angiotensin ii receptor antagonists,None,DB00876
-577,eptifibatide,glycoprotein iib/iiia inhibitors,None,DB00063
-578,erdosteine,mucolytics,None,DB05057
-579,erenumab,calcitonin gene-related peptide inhibitors,None,DB14039
-580,ergocalciferol,vitamin d and analogues,None,DB00153
-581,ergocalciferol; calcium lactate; calcium phosphate,vitamin d and analogues,calcium,DB00153; DB13231; DB11348
-582,ergometrine maleate,ergot alkaloids,None,DB01253
-583,ergometrine; oxytocin,ergot alkaloids,oxytocin and analogues,DB00107; DB01253
-584,ergotamine tartrate,ergot alkaloids,None,DB00696
-585,ergotamine tartrate; caffeine hydrate; cyclizine hydrochloride,ergot alkaloids,sedating antihistamines,DB01176; DB00696; DB00201
-586,eribulin,"antineoplastics, other",None,DB08871
-587,erlotinib,protein kinase inhibitors,None,DB00530
-588,ertapenem,carbapenems,None,DB00303
-589,ertugliflozin,sodium glucose co-transporter 2 inhibitors,None,DB11827
-590,erythromycin,macrolides,None,DB00199
-591,erythromycin; zinc acetate,macrolides,None,DB14487; DB00199
-592,escitalopram,selective serotonin re-uptake inhibitors,None,DB01175
-593,esketamine,nmda receptor antagonists,None,DB11823
-594,eslicarbazepine acetate,antiepileptics,None,DB09119
-595,esmolol hydrochloride,"beta blocking agents, selective",None,DB00187
-596,esomeprazole,proton pump inhibitors,None,DB00736
-597,estradiol,oestrogens,None,DB00783
-598,estradiol; dydrogesterone,oestrogens combined with progestogens,None,DB00378; DB00783
-599,estradiol; levonorgestrel,oestrogens combined with progestogens,None,DB00783; DB00367
-600,estradiol; medroxyprogesterone,oestrogens combined with progestogens,None,DB00783; DB00603
-601,estradiol; nomegestrol,oestrogens combined with progestogens,None,DB00783; DB11636
-602,estradiol; norethisterone,oestrogens combined with progestogens,None,DB00783; DB00717
-603,estramustine phosphate,alkylating agents,None,DB14674
-604,estriol,oestrogens,None,DB04573
-605,etanercept,tumor necrosis factor alpha (tnf-a) inhibitors,None,DB00005
-606,etelcalcetide,bone resorption inhibitors,None,DB12865
-607,ethambutol hydrochloride,"antimycobacterials, other",None,DB00330
-608,ethinylestradiol,oestrogens,None,DB00977
-609,ethinylestradiol; desogestrel,oestrogens combined with progestogens,None,DB00977; DB00304
-610,ethinylestradiol; drospirenone,oestrogens combined with progestogens,None,DB00977; DB01395
-611,ethinylestradiol; etonogestrel,oestrogens combined with progestogens,None,DB00977; DB00294
-612,ethinylestradiol; gestodene,oestrogens combined with progestogens,None,DB00977; DB06730
-613,ethinylestradiol; levonorgestrel,oestrogens combined with progestogens,None,DB00977; DB00367
-614,ethinylestradiol; norelgestromin,oestrogens combined with progestogens,None,DB00977; DB06713
-615,ethinylestradiol; norethisterone,oestrogens combined with progestogens,None,DB00977; DB00717
-616,ethinylestradiol; norgestimate,oestrogens combined with progestogens,None,DB00977; DB00957
-617,ethosuximide,antiepileptics,None,DB00593
-618,etodolac,non-steroidal anti-inflammatory drugs,None,DB00749
-619,etomidate,intravenous anaesthetics,None,DB00292
-620,etonogestrel,progestogens,None,DB00294
-621,etoposide,None,None,DB00773
-622,etoricoxib,non-steroidal anti-inflammatory drugs,None,DB01628
-623,etravirine,non-nucleoside reverse transcriptase inhibitors,None,DB06414
-624,eucalyptus; menthol,menthol and derivatives,None,DB00825; DB14156; DB14123; DB15537; DB10470
-625,european viper snake venom antiserum,antitoxins,None,DB14688
-626,everolimus,protein kinase inhibitors,None,DB01590
-627,evolocumab,"lipid modifying drugs, other",None,DB09303
-628,exemestane,aromatase inhibitors,None,DB00990
-629,exenatide,glucagon-like peptide-1 receptor agonists,None,DB01276
-630,ezetimibe,cholesterol absorption inhibitors,None,DB00973
-631,"factor ix fraction, dried",coagulation proteins,None,DB13192
-632,factor viia (recombinant),coagulation proteins,None,DB13192
-633,"factor viii fraction, dried",coagulation proteins,None,DB13192
-634,factor viii inhibitor bypassing fraction,None,None,DB13151
-635,"factor xiii fraction, dried",coagulation proteins,None,DB13192
-636,famciclovir,nucleoside analogues,None,DB00426
-637,famotidine,h2-receptor antagonists,None,DB00927
-638,fampridine,cholinergic receptor stimulating drugs,None,DB06637
-639,febuxostat,xanthine oxidase inhibitors,None,DB04854
-640,felbinac,non-steroidal anti-inflammatory drugs,None,DB07477
-641,felodipine,calcium-channel blockers,None,DB01023
-642,fenofibrate,fibrates,None,DB01039
-643,fentanyl,opioids,None,DB00813
-644,fenticonazole nitrate,imidazole antifungals,None,DB13434
-645,ferric carboxymaltose,"iron, injectable",None,DB08917
-646,ferric maltol,"iron, oral",None,DB15598
-647,ferrous fumarate,"iron, oral",None,DB14491
-648,ferrous fumarate; folic acid,"iron, oral",folates,DB00158; DB14491
-649,ferrous gluconate,"iron, oral",None,DB14488
-650,ferrous sulfate,"iron, oral",None,DB01373; DB13257
-651,ferrous sulfate; ascorbic acid,"iron, oral",vitamin c,DB00126; DB01373; DB13257
-652,ferrous sulfate; folic acid,"iron, oral",folates,DB00158; DB01373; DB13257
-653,fesoterodine fumarate,"antimuscarinics, urinary",None,DB06702
-654,fexofenadine hydrochloride,non-sedating antihistamines,None,DB00950
-655,"fibrinogen, dried",coagulation proteins,None,DB09222
-656,fidaxomicin,"antibacterials, other",None,DB08874
-657,filgrastim,granulocyte-colony stimulating factors,None,DB00099
-658,finasteride,5α-reductase inhibitors,None,DB01216
-659,fingolimod,immunomodulating drugs,None,DB08868
-660,flavoxate hydrochloride,"antimuscarinics, urinary",None,DB01148
-661,flecainide acetate,"antiarrhythmics, class ic",None,DB01195
-662,flucloxacillin,"penicillins, penicillinase-resistant",None,DB00301
-663,fluconazole,triazole antifungals,None,DB00196
-664,flucytosine,"antifungals, other",None,DB01099
-665,fludarabine phosphate,antimetabolites,None,DB01073
-666,fludrocortisone acetate,corticosteroids,None,DB00687
-667,fludroxycortide,corticosteroids,None,DB00846
-668,flumazenil,None,None,DB01205
-669,flumetasone pivalate; clioquinol,corticosteroids,None,DB00663; DB04815
-670,fluocinolone acetonide,corticosteroids,None,DB00591
-671,fluocinolone acetonide; clioquinol,corticosteroid combinations with anti-infectives,None,DB00591; DB04815
-672,fluocinolone acetonide; neomycin,corticosteroid combinations with anti-infectives,None,DB00994; DB00591
-673,fluocinonide,corticosteroids,None,DB01047
-674,fluorescein sodium,None,None,DB00693
-675,fluorescein; lidocaine,"anaesthetics, local",None,DB00281; DB00693
-676,fluorometholone,corticosteroids,None,DB00324
-677,fluorouracil,antimetabolites,None,DB00544
-678,fluorouracil; salicylic acid,antimetabolites,salicylic acid and derivatives,DB00936; DB00544
-679,fluoxetine,selective serotonin re-uptake inhibitors,None,DB00472
-680,flupentixol,"antipsychotics, first-generation",None,DB00875
-681,flupentixol decanoate,"antipsychotics, first-generation (depot injections)",None,DB00875
-682,fluphenazine decanoate,"antipsychotics, first-generation (depot injections)",None,DB00623
-683,flurazepam,benzodiazepines,None,DB00690
-684,flurbiprofen,non-steroidal anti-inflammatory drugs,None,DB00712
-685,flutamide,anti-androgens,None,DB00499
-686,fluticasone,corticosteroids,None,DB13867
-687,fluticasone; azelastine,corticosteroids,non-sedating antihistamines,DB13867; DB00972
-688,fluticasone; formoterol,corticosteroids,selective beta2-agonists (long-acting),DB00983; DB13867
-689,fluticasone; salmeterol,corticosteroids,selective beta2-agonists (long-acting),DB00938; DB13867
-690,fluticasone; umeclidinium; vilanterol,corticosteroids,"antimuscarinics, other; selective beta2-agonists (long-acting)",DB09082; DB09076; DB13867
-691,fluticasone; vilanterol,corticosteroids,selective beta2-agonists (long-acting),DB09082; DB13867
-692,fluvastatin,statins,None,DB01095
-693,fluvoxamine maleate,selective serotonin re-uptake inhibitors,None,DB00176
-694,folic acid,folates,None,DB00158
-695,folinic acid,folates,None,DB00650
-696,follitropin alfa,gonadotrophins,None,DB00066
-697,follitropin alfa; lutropin alfa,gonadotrophins,None,DB00044; DB00066
-698,follitropin delta,gonadotrophins,None,DB00066
-699,fondaparinux sodium,factor xa inhibitors,None,DB00569
-700,formaldehyde,aldehydes and derivatives,None,DB03843
-701,formoterol fumarate,selective beta2-agonists (long-acting),None,DB00983
-702,fosamprenavir,"protease inhibitors, hiv",None,DB01319
-703,fosaprepitant,neurokinin receptor antagonists,None,DB06717
-704,foscarnet sodium,"antivirals, other",None,DB00529
-705,fosfomycin,"antibacterials, other",None,DB00828
-706,fosinopril sodium,ace inhibitors,None,DB00492
-707,fosphenytoin sodium,antiepileptics,None,DB01320
-708,fostamatinib,haemostatics,None,DB12010
-709,framycetin sulfate,aminoglycosides,None,DB00452
-710,fremanezumab,calcitonin gene-related peptide inhibitors,None,DB14041
-711,fresh frozen plasma,plasma products,None,
-712,frovatriptan,triptans,None,DB00998
-713,fulvestrant,anti-oestrogens,None,DB00947
-714,furosemide,loop diuretics,None,DB00695
-715,furosemide; triamterene,loop diuretics,"potassium-sparing diuretics, other",DB00384; DB00695
-716,fusidic acid,"antibacterials, other",None,DB02703
-717,gabapentin,antiepileptics,None,DB00996
-718,galantamine,"anticholinesterases, centrally acting",None,DB00674
-719,galcanezumab,calcitonin gene-related peptide inhibitors,None,DB14042
-720,galsulfase,enzymes,None,DB01279
-721,ganciclovir,nucleoside analogues,None,DB01004
-722,ganirelix,anti-gonadotrophin-releasing hormones,None,DB06785
-723,gefitinib,protein kinase inhibitors,None,DB00317
-724,gelatin,plasma substitutes,None,DB11242
-725,gemcitabine,antimetabolites,None,DB00441
-726,gemeprost,prostaglandins and analogues,None,DB08964
-727,gemfibrozil,fibrates,None,DB01241
-728,gemtuzumab ozogamicin,monoclonal antibodies,None,DB00056
-729,gentamicin,aminoglycosides,None,DB00798
-730,gentamicin; hydrocortisone,aminoglycosides,corticosteroids,DB00798; DB00741
-731,gilteritinib,protein kinase inhibitors,None,DB12141
-732,glatiramer acetate,"immunostimulants, other",None,DB05259
-733,glecaprevir; pibrentasvir,"protease inhibitors, hepatitis",non-structural protein 5a inhibitors,DB13878; DB13879
-734,glibenclamide,sulfonylureas,None,DB01016
-735,gliclazide,sulfonylureas,None,DB01120
-736,glimepiride,sulfonylureas,None,DB00222
-737,glipizide,sulfonylureas,None,DB01067
-738,glucagon,glycogenolytic hormones,None,DB00040
-739,glucosamine,None,None,DB01296
-740,glucose,sugars,None,DB09341; DB01914
-741,glutaraldehyde,aldehydes and derivatives,None,
-742,glycerol,stimulant laxatives,None,DB09462
-743,glycerol phenylbutyrate,ammonia lowering drugs,None,DB08909
-744,glycerol; magnesium sulfate; phenol,"antiseptics and disinfectants, other",None,DB00653; DB03255; DB09462
-745,glyceryl trinitrate,nitrates,None,DB00727
-746,glycine,irrigating solutions,None,DB00145
-747,glycopyrronium bromide,"antimuscarinics, other",None,DB00986
-748,glycopyrronium; indacaterol,"antimuscarinics, other",selective beta2-agonists (long-acting),DB05039; DB00986
-749,golimumab,tumor necrosis factor alpha (tnf-a) inhibitors,None,DB06674
-750,gonadorelin,gonadotrophin-releasing hormones,None,DB00644
-751,goserelin,gonadotrophin-releasing hormones,None,DB00014
-752,granisetron,serotonin (5ht3) receptor antagonists,None,DB00889
-753,grapefruit juice,None,None,DB10534
-754,grass pollen extract,allergen-type vaccines,None,DB10394
-755,griseofulvin,"antifungals, other",None,DB00400
-756,guanfacine,alpha2-adrenoceptor agonists,None,DB01018
-757,guselkumab,interleukin inhibitors,None,DB11834
-758,haem arginate,None,None,
-759,haemophilus influenzae type b; meningococcal group c vaccine,bacterial vaccines,None,DB10990; DB13890
-760,haloperidol,"antipsychotics, first-generation",None,DB00502
-761,haloperidol decanoate,"antipsychotics, first-generation (depot injections)",None,DB00502
-762,heparin (unfractionated),heparins,None,DB01109
-763,heparinoid,heparinoids,None,
-764,hepatitis a; b vaccine,viral vaccines,None,DB01783; DB01377; DB00898; DB00126; DB11136; DB14500; DB14483; DB13178; DB00627; DB00140; DB00121; DB09270; DB00640; DB03614; DB14001; DB00165; DB11105; DB06757; DB02325; DB09125; DB00162; DB00122; DB00152; DB14513; DB00115; DB06755; DB02701; DB00676; DB11627; DB00158; DB14702; DB05382
-765,hepatitis a vaccine,viral vaccines,None,DB10989
-766,hepatitis a; typhoid vaccine,viral vaccines,None,DB11627; DB14022
-767,hepatitis b immunoglobulin,immunoglobulins,None,DB05276
-768,hepatitis b vaccine,viral vaccines,None,DB11627
-769,hexetidine,"antiseptics and disinfectants, other",None,DB08958
-770,homatropine hydrobromide,"antimuscarinics, other",None,DB11181
-771,human alpha1-proteinase inhibitor,enzyme inhibitors,None,DB15631
-772,human papillomavirus vaccines,viral vaccines,None,DB15631
-773,hyaluronidase,enzymes,None,DB14740
-774,hydralazine hydrochloride,vasodilator antihypertensives,None,DB01275
-775,hydrochlorothiazide,thiazides and related diuretics,None,DB00999
-776,hydrocortisone,corticosteroids,None,DB00741
-777,hydrocortisone butyrate,corticosteroids,None,DB14540
-778,"hydrocortisone; benzalkonium chloride, dimeticone; nystatin",corticosteroid combinations with anti-infectives,None,DB00741; DB00646; DB11105
-779,hydrocortisone; chlorhexidine hydrochloride; nystatin,corticosteroid combinations with anti-infectives,None,DB00741; DB00646; DB00878
-780,hydrocortisone; clotrimazole,corticosteroid combinations with anti-infectives,None,DB00257; DB00741
-781,hydrocortisone; fusidic acid,corticosteroid combinations with anti-infectives,None,DB00741; DB02703
-782,hydrocortisone; lidocaine,corticosteroids,amides,DB00741; DB00281
-783,hydrocortisone; miconazole,corticosteroid combinations with anti-infectives,None,DB00741; DB01110
-784,hydrocortisone; neomycin; polymyxin b sulfate,corticosteroid combinations with anti-infectives,None,DB00994; DB00741; DB00781
-785,hydrocortisone; oxytetracycline,corticosteroid combinations with anti-infectives,None,DB00741; DB00595
-786,hydrocortisone; pramocaine,corticosteroids,None,DB00741; DB09345
-787,hydrogen peroxide,"antiseptics and disinfectants, other",None,DB11091
-788,hydromorphone hydrochloride,opioids,None,DB00327
-789,hydroxocobalamin,vitamin b group,None,DB00200
-790,hydroxycarbamide,"antineoplastics, other",None,DB01005
-791,hydroxychloroquine sulfate,disease-modifying anti-rheumatic drugs,None,DB01611
-792,hydroxyethylcellulose,ocular lubricants,None,DB11602
-793,hydroxypropyl guar; polyethylene glycol; propylene glycol,ocular lubricants,None,DB15379; DB01839; DB09287
-794,hydroxyzine hydrochloride,sedating antihistamines,None,DB00557
-795,hyoscine butylbromide,"antimuscarinics, other",None,DB00747
-796,hyoscine hydrobromide,"antimuscarinics, other",None,DB00747
-797,hypromellose,ocular lubricants,None,DB11075
-798,hypromellose; dextran 70,ocular lubricants,None,DB11075; DB09255
-799,ibandronic acid,bisphosphonates,None,DB00710
-800,ibrutinib,protein kinase inhibitors,None,DB09053
-801,ibuprofen,non-steroidal anti-inflammatory drugs,None,DB01050
-802,icatibant,None,None,DB06196
-803,ichthammol,anti-infectives,None,DB11341
-804,ichthammol; zinc oxide,anti-infectives,None,DB09321; DB11341
-805,idarubicin hydrochloride,anthracyclines and related drugs,None,DB01177
-806,idarucizumab,"antidotes and chelators, other",None,DB09264
-807,idebenone,None,None,DB09081
-808,idelalisib,protein kinase inhibitors,None,DB09054
-809,idursulfase,enzymes,None,DB01271
-810,ifosfamide,alkylating agents,None,DB01181
-811,iloprost,prostaglandins and analogues,None,DB01088
-812,imatinib,protein kinase inhibitors,None,DB00619
-813,imidapril hydrochloride,ace inhibitors,None,DB11783
-814,imiglucerase,enzymes,None,DB00053
-815,imipenem; cilastatin,carbapenems,None,DB01597; DB01598
-816,imipramine hydrochloride,tricyclic antidepressants,None,DB00458
-817,imiquimod,None,None,DB00724
-818,indacaterol,selective beta2-agonists (long-acting),None,DB05039
-819,indapamide,thiazides and related diuretics,None,DB00808
-820,indometacin,non-steroidal anti-inflammatory drugs,None,DB00328
-821,indoramin,alpha-adrenoceptor blockers,None,DB08950
-822,infliximab,tumor necrosis factor alpha (tnf-a) inhibitors,None,DB00065
-823,influenza vaccine,viral vaccines,None,
-824,ingenol mebutate,None,None,DB05013
-825,inosine pranobex,None,None,DB13156
-826,inositol nicotinate,nicotinic acid derivatives,None,DB08949
-827,inotersen,neuroprotective drugs,None,DB14713
-828,inotuzumab ozogamicin,monoclonal antibodies,None,DB05889
-829,insulin,"insulins, rapid-acting",None,DB00071; DB09456; DB00030
-830,insulin aspart,"insulins, rapid-acting",None,DB01306
-831,insulin degludec,"insulins, long-acting",None,DB09564
-832,insulin degludec; liraglutide,"insulins, long-acting",None,DB06655; DB09564
-833,insulin detemir,"insulins, long-acting",None,DB01307
-834,insulin glargine,"insulins, long-acting",None,DB00047
-835,insulin glargine; lixisenatide,"insulins, long-acting",glucagon-like peptide-1 receptor agonists,DB09265; DB00047
-836,insulin glulisine,"insulins, rapid-acting",None,DB01309
-837,insulin lispro,"insulins, rapid-acting",None,DB00046
-838,interferon alfa,interferons,None,DB05258
-839,interferon beta,interferons,None,DB00060; DB00068; DB14999
-840,interferon gamma-1b,interferons,None,DB00033
-841,intra-uterine contraceptive devices (copper),None,None,
-842,iodide; iodine,vitamins and trace elements,None,DB12754; DB05382
-843,ipilimumab,monoclonal antibodies,None,DB06186
-844,ipratropium bromide,"antimuscarinics, other",None,DB00332
-845,ipratropium; salbutamol,"antimuscarinics, other",selective beta2-agonists (short-acting),DB00332; DB01001
-846,irbesartan,angiotensin ii receptor antagonists,None,DB01029
-847,irbesartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics,DB01029; DB00999
-848,irinotecan hydrochloride,topoisomerase i inhibitors,None,DB00762
-849,iron dextran,"iron, injectable",None,DB00893
-850,iron isomaltoside 1000,"iron, injectable",None,DB12208
-851,iron sucrose,"iron, injectable",None,DB09146
-852,isavuconazole,triazole antifungals,None,DB11633
-853,isocarboxazid,"monoamine-oxidase a and b inhibitors, irreversible",None,DB01247
-854,isoflurane,volatile liquid anaesthetics,None,DB00753
-855,isoniazid,"antimycobacterials, other",None,DB00951
-856,isophane insulin,"insulins, intermediate-acting",None,
-857,isosorbide dinitrate,nitrates,None,DB00883
-858,isosorbide mononitrate,nitrates,None,DB01020
-859,isotretinoin,retinoid and related drugs,None,DB00982
-860,ispaghula husk,bulk-forming laxatives,None,DB14585
-861,itraconazole,triazole antifungals,None,DB01167
-862,ivabradine,None,None,DB09083
-863,ivacaftor,mucolytics,None,DB08820
-864,ivermectin,anthelmintics,None,DB00602
-865,ixazomib,proteasome inhibitors,None,DB09570
-866,ixekizumab,interleukin inhibitors,None,DB11569
-867,japanese encephalitis vaccine,viral vaccines,None,DB10769
-868,kaolin; morphine,antipropulsives,None,DB00295; DB01575
-869,ketamine,nmda receptor antagonists,None,DB01221
-870,ketoconazole,imidazole antifungals,None,DB01026
-871,ketoprofen,non-steroidal anti-inflammatory drugs,None,DB01009
-872,ketorolac trometamol,non-steroidal anti-inflammatory drugs,None,DB00465
-873,ketotifen,sedating antihistamines,None,DB00920
-874,labetalol hydrochloride,alpha- and beta-adrenoceptor blockers,None,DB00598
-875,lacidipine,calcium-channel blockers,None,DB09236
-876,lacosamide,antiepileptics,None,DB06218
-877,lactic acid,carboxylic acids,None,DB04398
-878,lactulose,osmotic laxatives,None,DB00581
-879,lamivudine,nucleoside reverse transcriptase inhibitors,None,DB00709
-880,lamivudine; dolutegravir,nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors,DB08930; DB00709
-881,lamivudine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,None,DB00300; DB00709
-882,lamivudine; tenofovir disoproxil; doravirine,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors,DB00300; DB00709; DB12301
-883,lamotrigine,antiepileptics,None,DB00555
-884,lanadelumab,None,None,DB14597
-885,lanreotide,somatostatin analogues,None,DB06791
-886,lansoprazole,proton pump inhibitors,None,DB00448
-887,lanthanum,phosphate binders,None,DB14579
-888,lapatinib,protein kinase inhibitors,None,DB01259
-889,laronidase,enzymes,None,DB00090
-890,larotrectinib,protein kinase inhibitors,None,DB14723
-891,latanoprost,prostaglandins and analogues,None,DB00654
-892,latanoprost; timolol,prostaglandins and analogues,"beta blocking agents, non-selective",DB00373; DB00654
-893,ledipasvir; sofosbuvir,nucleotide analogues,hcv inhibitors,DB09027; DB08934
-894,leflunomide,disease-modifying anti-rheumatic drugs,None,DB01097
-895,lenalidomide,thalidomide and related analogues,None,DB00480
-896,lenograstim,granulocyte-colony stimulating factors,None,DB13144
-897,lenvatinib,protein kinase inhibitors,None,DB09078
-898,lercanidipine hydrochloride,calcium-channel blockers,None,DB00528
-899,letermovir,"antivirals, other",None,DB12070
-900,letrozole,aromatase inhibitors,None,DB01006
-901,leuprorelin acetate,gonadotrophin-releasing hormones,None,DB00007
-902,levamisole,anthelmintics,None,DB00848
-903,levetiracetam,antiepileptics,None,DB01202
-904,levobunolol hydrochloride,"beta blocking agents, non-selective",None,DB01210
-905,levobupivacaine,"anaesthetics, local",None,DB01002
-906,levocarnitine,amino acids and derivatives,None,DB00583
-907,levocetirizine hydrochloride,non-sedating antihistamines,None,DB06282
-908,levodopa; carbidopa; entacapone,dopamine precursors,catechol-o-methyltransferase inhibitors,DB00190; DB00494; DB01235
-909,levofloxacin,quinolones,None,DB01137
-910,levofolinic acid,folates,None,DB11596
-911,levomenthol,menthol and derivatives,None,DB00825
-912,levomepromazine,"antipsychotics, first-generation",None,DB01403
-913,levonorgestrel,progestogens,None,DB00367
-914,levothyroxine sodium,thyroid hormones,None,DB00451
-915,lidocaine hydrochloride,"anaesthetics, local",None,DB00281
-916,lidocaine; adrenaline,"anaesthetics, local","sympathomimetics, vasoconstrictor",DB00668; DB00281
-917,lidocaine; cetrimide,"anaesthetics, local",None,DB01718; DB00281
-918,lidocaine; phenylephrine,"anaesthetics, local","sympathomimetics, vasoconstrictor",DB00388; DB00281
-919,lidocaine; prilocaine,"anaesthetics, local",None,DB00281; DB00750
-920,linaclotide,None,None,DB08890
-921,linagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None,DB08882
-922,linagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides,DB08882; DB00331
-923,linezolid,"antibacterials, other",None,DB00601
-924,liothyronine sodium,thyroid hormones,None,DB00279
-925,lipegfilgrastim,granulocyte-colony stimulating factors,None,DB13200
-926,liquid paraffin,softening laxatives,None,DB11057
-927,liquid paraffin; white soft paraffin; wool alcohols,ocular lubricants,None,DB09536; DB09321; DB11057; DB14181
-928,liraglutide,glucagon-like peptide-1 receptor agonists,None,DB06655
-929,lisdexamfetamine mesilate,amfetamines,None,DB01255
-930,lisinopril,ace inhibitors,None,DB00722
-931,lisinopril; hydrochlorothiazide,ace inhibitors,thiazides and related diuretics,DB00722; DB00999
-932,lithium carbonate,lithium salts,None,DB14509
-933,lithium citrate,lithium salts,None,DB14507
-934,lixisenatide,glucagon-like peptide-1 receptor agonists,None,DB09265
-935,lodoxamide,mast-cell stabilisers,None,DB06794
-936,lofepramine,tricyclic antidepressants,None,DB13411
-937,lofexidine hydrochloride,alpha2-adrenoceptor agonists,None,DB04948
-938,lomitapide,"lipid modifying drugs, other",None,DB08827
-939,lomustine,alkylating agents,None,DB01206
-940,loperamide hydrochloride,antipropulsives,None,DB00836
-941,loperamide; simeticone,antipropulsives,None,DB00836; DB09512
-942,lopinavir; ritonavir,"protease inhibitors, hiv",None,DB00503; DB01601
-943,loprazolam,benzodiazepines,None,DB13643
-944,loratadine,non-sedating antihistamines,None,DB00455
-945,lorazepam,benzodiazepines,None,DB00186
-946,lorlatinib,protein kinase inhibitors,None,DB12130
-947,lormetazepam,benzodiazepines,None,DB13872
-948,losartan potassium,angiotensin ii receptor antagonists,None,DB00678
-949,losartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics,DB00678; DB00999
-950,loteprednol etabonate,corticosteroids,None,DB14596
-951,loxapine,"antipsychotics, first-generation",None,DB00408
-952,lumacaftor; ivacaftor,mucolytics,None,DB09280; DB08820
-953,lurasidone hydrochloride,"antipsychotics, second-generation",None,DB08815
-954,lusutrombopag,thrombopoietin receptor agonists,None,DB13125
-955,lutropin alfa,gonadotrophins,None,DB00044
-956,lymecycline,tetracyclines and related drugs,None,DB00256
-957,macitentan,endothelin receptor antagonists,None,DB08932
-958,macrogol 3350,osmotic laxatives,None,DB11161; DB06811; DB09287; DB11236
-959,"macrogol 3350; anhydrous sodium sulfate, ascorbic acid, potassium chloride, sodium ascorbate; sodium chloride",osmotic laxatives,None,DB09153; DB11161; DB06811; DB09287; DB11236
-960,"macrogol 3350; anhydrous sodium sulfate, potassium chloride, sodium bicarbonate; sodium chloride",osmotic laxatives,None,DB09153; DB11161; DB06811; DB09287; DB11236
-961,"macrogol 3350; potassium chloride, sodium bicarbonate; sodium chloride",osmotic laxatives,None,DB14500; DB09153; DB11161; DB06811; DB09287; DB11236
-962,magnesium aspartate,magnesium,None,DB13359
-963,magnesium carbonate,"antacids, magnesium",None,DB09481
-964,magnesium citrate; sodium picosulfate,stimulant laxatives,None,DB11110; DB14516
-965,magnesium glycerophosphate,magnesium,None,DB14513
-966,magnesium hydroxide,osmotic laxatives,None,DB09104
-967,magnesium sulfate,magnesium,osmotic laxatives,DB00653
-968,magnesium trisilicate,"antacids, magnesium",None,DB09281
-969,magnesium trisilicate; magnesium carbonate; sodium bicarbonate,"antacids, magnesium",None,DB01390; DB09481; DB09281
-970,malathion,parasiticides,None,DB00772
-971,mannitol,None,mucolytics,DB00742
-972,maraviroc,"antivirals, other",None,DB04835
-973,"measles, mumps; rubella vaccine, live",viral vaccines,None,DB10317
-974,mebendazole,anthelmintics,None,DB00643
-975,mebeverine hydrochloride,antispasmodics,None,DB12554
-976,mebeverine; ispaghula husk,antispasmodics,bulk-forming laxatives,DB14585; DB12554
-977,medroxyprogesterone acetate,progestogens,None,DB00603
-978,mefenamic acid,non-steroidal anti-inflammatory drugs,None,DB00784
-979,mefloquine,antimalarials,None,DB00358
-980,megestrol acetate,progestogens,None,DB00351
-981,melatonin,non-benzodiazepine hypnotics and sedatives,None,DB01065
-982,meloxicam,non-steroidal anti-inflammatory drugs,None,DB00814
-983,melphalan,alkylating agents,None,DB01042
-984,memantine hydrochloride,nmda receptor antagonists,None,DB01043
-985,menadiol sodium phosphate,vitamin k,None,DB14650
-986,"meningococcal group b vaccine (rdna, component, adsorbed)",bacterial vaccines,None,DB13890
-987,meningococcal group c vaccine,bacterial vaccines,None,DB13890
-988,meningococcal groups a; c; w135; y vaccine,bacterial vaccines,None,DB00898; DB00054; DB14231; DB00126; DB13890; DB06404; DB13178; DB11183; DB01373; DB15161; DB00163; DB03017; DB00140; DB15594; DB09270; DB00135; DB14001; DB09496; DB00165; DB00318; DB06757; DB06723; DB01593; DB09130; DB09228; DB14203; DB00162; DB00201; DB00693; DB09104; DB14513; DB00115; DB08209; DB00286; DB00169; DB09241; DB14002; DB00945
-989,menotrophin,gonadotrophins,None,DB00032
-990,mepacrine hydrochloride,"antiprotozoals, other",None,DB01103
-991,mepivacaine hydrochloride,"anaesthetics, local",None,DB00961
-992,mepivacaine; adrenaline,"anaesthetics, local","sympathomimetics, vasoconstrictor",DB00668; DB00961
-993,mepolizumab,monoclonal antibodies,None,DB06612
-994,meprobamate,non-benzodiazepine hypnotics and sedatives,None,DB00371
-995,meptazinol,opioids,None,DB13478
-996,mercaptamine,amino acids and derivatives,None,DB00847
-997,mercaptopurine,antimetabolites,None,DB01033
-998,meropenem,carbapenems,None,DB00760
-999,meropenem; vaborbactam,carbapenems,None,DB00760; DB12107
-1000,mesalazine,aminosalicylates,None,DB00244
-1001,mesna,None,None,DB09110
-1002,metaraminol,"sympathomimetics, vasoconstrictor",None,DB00610
-1003,metformin hydrochloride,biguanides,None,DB00331
-1004,methadone hydrochloride,opioids,None,DB00333
-1005,methenamine hippurate,"antibacterials, other",None,DB06799
-1006,methocarbamol,"muscle relaxants, centrally acting",None,DB00423
-1007,methotrexate,antimetabolites,None,DB00563
-1008,methoxy polyethylene glycol-epoetin beta,epoetins,None,DB09107
-1009,methoxyflurane,volatile liquid anaesthetics,None,DB01028
-1010,methylcellulose,bulk-forming laxatives,None,DB11228
-1011,methyldopa,"antihypertensives, centrally acting",None,DB00968
-1012,methylnaltrexone bromide,opioid receptor antagonists,None,DB06800
-1013,methylphenidate hydrochloride,centrally acting sympathomimetics,None,DB00422
-1014,methylprednisolone,corticosteroids,None,DB00959
-1015,methylprednisolone; lidocaine,corticosteroids,"anaesthetics, local",DB00281; DB00959
-1016,methylthioninium chloride,"antidotes and chelators, other",None,DB09241
-1017,metoclopramide hydrochloride,dopamine receptor antagonists,None,DB01233
-1018,metolazone,thiazides and related diuretics,None,DB00524
-1019,metoprolol tartrate,"beta blocking agents, selective",None,DB00264
-1020,metronidazole,nitroimidazole derivatives,None,DB00916
-1021,metyrapone,enzyme inhibitors,None,DB01011
-1022,mexiletine,drugs for neuromuscular disorders,None,DB00379
-1023,mianserin hydrochloride,tetracyclic antidepressants,None,DB06148
-1024,micafungin,echinocandin antifungals,None,DB01141
-1025,miconazole,imidazole antifungals,None,DB01110
-1026,midazolam,benzodiazepines,None,DB00683
-1027,midodrine hydrochloride,"sympathomimetics, vasoconstrictor",None,DB00211
-1028,midostaurin,protein kinase inhibitors,None,DB06595
-1029,mifamurtide,"immunostimulants, other",None,DB13615
-1030,mifepristone,progesterone receptor modulators,None,DB00834
-1031,mifepristone; misoprostol,progesterone receptor modulators,prostaglandins and analogues,DB00929; DB00834
-1032,migalastat,None,None,DB05018
-1033,miglustat,glucosylceramide synthase inhibitors,None,DB00419
-1034,milrinone,phosphodiesterase type-3 inhibitors,None,DB00235
-1035,minocycline,tetracyclines and related drugs,None,DB01017
-1036,minoxidil,vasodilator antihypertensives,None,DB00350
-1037,mirabegron,None,None,DB08893
-1038,mirtazapine,tetracyclic antidepressants,None,DB00370
-1039,misoprostol,prostaglandins and analogues,None,DB00929
-1040,mitomycin,cytotoxic antibiotics and related substances,None,DB00305
-1041,mitotane,"antineoplastics, other",None,DB00648
-1042,mitoxantrone,anthracyclines and related drugs,None,DB01204
-1043,mivacurium,"neuromuscular blocking drugs, non-depolarising",None,DB01226
-1044,mizolastine,non-sedating antihistamines,None,DB12523
-1045,moclobemide,None,None,DB01171
-1046,modafinil,centrally acting sympathomimetics,None,DB00745
-1047,mogamulizumab,monoclonal antibodies,None,DB12498
-1048,mometasone furoate,corticosteroids,None,DB14512
-1049,montelukast,None,None,DB00471
-1050,morphine,opioids,None,DB00295
-1051,morphine; cyclizine,opioids,sedating antihistamines,DB00295; DB01176
-1052,moxifloxacin,quinolones,None,DB00218
-1053,moxisylyte,peripheral vasodilators,None,DB09205
-1054,moxonidine,"antihypertensives, centrally acting",None,DB09242
-1055,mupirocin,"antibacterials, other",None,DB00410
-1056,mycophenolate mofetil,None,None,DB00688
-1057,nabilone,cannabinoids,None,DB00486
-1058,nabumetone,non-steroidal anti-inflammatory drugs,None,DB00461
-1059,nadolol,"beta blocking agents, non-selective",None,DB01203
-1060,nafarelin,gonadotrophin-releasing hormones,None,DB00666
-1061,naftidrofuryl oxalate,peripheral vasodilators,None,DB13588
-1062,naldemedine,opioid receptor antagonists,None,DB11691
-1063,nalmefene,opioid receptor antagonists,None,DB06230
-1064,naloxegol,opioid receptor antagonists,None,DB09049
-1065,naloxone hydrochloride,opioid receptor antagonists,None,DB01183
-1066,naltrexone hydrochloride,opioid receptor antagonists,None,DB00704
-1067,naltrexone; bupropion,serotonin and noradrenaline re-uptake inhibitors,opioid receptor antagonists,DB00704; DB01156
-1068,nandrolone,None,None,DB13169
-1069,naproxen,non-steroidal anti-inflammatory drugs,None,DB00788
-1070,naproxen; esomeprazole,non-steroidal anti-inflammatory drugs,proton pump inhibitors,DB00788; DB00736
-1071,naratriptan,triptans,None,DB00952
-1072,natalizumab,"monoclonal antibodies, anti-lymphocyte",None,DB00108
-1073,nateglinide,meglitinides,None,DB00731
-1074,nebivolol,"beta blocking agents, selective",None,DB04861
-1075,necitumumab,monoclonal antibodies,None,DB09559
-1076,nedocromil sodium,mast-cell stabilisers,None,DB00716
-1077,nefopam hydrochloride,None,None,DB12293
-1078,nelarabine,antimetabolites,None,DB01280
-1079,neomycin sulfate,aminoglycosides,None,DB00994
-1080,neostigmine,"anticholinesterases, other",None,DB01400
-1081,neostigmine; glycopyrronium bromide,"anticholinesterases, other","antimuscarinics, other",DB00986; DB01400
-1082,nepafenac,non-steroidal anti-inflammatory drugs,None,DB06802
-1083,neratinib,protein kinase inhibitors,None,DB11828
-1084,nevirapine,non-nucleoside reverse transcriptase inhibitors,None,DB00238
-1085,nicardipine hydrochloride,calcium-channel blockers,None,DB00622
-1086,nicorandil,None,None,DB09220
-1087,nicotinamide,vitamin b group,None,DB02701
-1088,nicotine,nicotinic receptor agonists,None,DB00184
-1089,nicotinic acid,nicotinic acid derivatives,None,DB00627
-1090,nifedipine,calcium-channel blockers,None,DB01115
-1091,nilotinib,protein kinase inhibitors,None,DB04868
-1092,nimodipine,calcium-channel blockers,None,DB00393
-1093,nintedanib,protein kinase inhibitors,antifibrotics,DB09079
-1094,niraparib,"antineoplastics, other",None,DB11793
-1095,nitisinone,None,None,DB00348
-1096,nitrazepam,benzodiazepines,None,DB01595
-1097,nitrofurantoin,"antibacterials, other",None,DB00698
-1098,nitrous oxide,volatile liquid anaesthetics,None,DB06690
-1099,nivolumab,monoclonal antibodies,None,DB09035
-1100,nizatidine,h2-receptor antagonists,None,DB00585
-1101,nonoxinol,None,None,
-1102,noradrenaline/norepinephrine,"sympathomimetics, vasoconstrictor",None,
-1103,norethisterone,progestogens,None,DB00717
-1104,norethisterone; mestranol,oestrogens combined with progestogens,None,DB00717; DB01357
-1105,normal immunoglobulin,immunoglobulins,None,DB09536; DB09496
-1106,nortriptyline,tricyclic antidepressants,None,DB00540
-1107,nusinersen,drugs for neuromuscular disorders,None,DB13161
-1108,nystatin,polyene antifungals,None,DB00646
-1109,obeticholic acid,bile acids,None,DB05990
-1110,obinutuzumab,monoclonal antibodies,None,DB08935
-1111,ocrelizumab,"monoclonal antibodies, anti-lymphocyte",None,DB11988
-1112,ocriplasmin,None,None,DB08888
-1113,octreotide,somatostatin analogues,None,DB00104
-1114,ofloxacin,quinolones,None,DB01165
-1115,olanzapine,"antipsychotics, second-generation",None,DB00334
-1116,olanzapine embonate,"antipsychotics, second-generation (depot injections)",None,DB00334
-1117,olaparib,"antineoplastics, other",None,DB09074
-1118,olive oil,softening drugs,None,DB09567
-1119,olmesartan medoxomil,angiotensin ii receptor antagonists,None,DB00275
-1120,olmesartan; amlodipine,angiotensin ii receptor antagonists,calcium-channel blockers,DB00381; DB00275
-1121,olmesartan; amlodipine; hydrochlorothiazide,angiotensin ii receptor antagonists,calcium-channel blockers; thiazides and related diuretics,DB00999; DB00381; DB00275
-1122,olmesartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics,DB00999; DB00275
-1123,olodaterol,selective beta2-agonists (long-acting),None,DB09080
-1124,olopatadine,antihistamines,None,DB00768
-1125,olsalazine sodium,aminosalicylates,None,DB01250
-1126,omalizumab,monoclonal antibodies,None,DB00043
-1127,ombitasvir; paritaprevir; ritonavir,non-structural protein 5a inhibitors,"protease inhibitors, hiv; protease inhibitors, hepatitis",DB09297; DB09296; DB00503
-1128,omega-3-acid ethyl esters,"lipid modifying drugs, other",None,DB09539
-1129,omeprazole,proton pump inhibitors,None,DB00338
-1130,ondansetron,serotonin (5ht3) receptor antagonists,None,DB00904
-1131,opicapone,catechol-o-methyltransferase inhibitors,None,DB11632
-1132,orlistat,None,None,DB01083
-1133,orphenadrine hydrochloride,"antimuscarinics, other",None,DB01173
-1134,oseltamivir,neuraminidase inhibitors,None,DB00198
-1135,osimertinib,protein kinase inhibitors,None,DB09330
-1136,ospemifene,None,None,DB04938
-1137,oxaliplatin,platinum compounds,None,DB00526
-1138,oxazepam,benzodiazepines,None,DB00842
-1139,oxcarbazepine,antiepileptics,None,DB00776
-1140,oxerutins,None,None,
-1141,oxybuprocaine hydrochloride,"anaesthetics, local",None,DB00892
-1142,oxybutynin hydrochloride,"antimuscarinics, urinary",None,DB01062
-1143,oxycodone hydrochloride,opioids,None,DB00497
-1144,oxycodone; naloxone,opioids,opioid receptor antagonists,DB01183; DB00497
-1145,oxymetholone,None,None,DB06412
-1146,oxytetracycline,tetracyclines and related drugs,None,DB00595
-1147,oxytocin,oxytocin and analogues,None,DB00107
-1148,paclitaxel,taxanes,None,DB01229
-1149,palbociclib,protein kinase inhibitors,None,DB09073
-1150,paliperidone,"antipsychotics, second-generation","antipsychotics, second-generation (depot injections)",DB01267
-1151,palivizumab,monoclonal antibodies,None,DB00110
-1152,palonosetron,serotonin (5ht3) receptor antagonists,None,DB00377
-1153,palonosetron; netupitant,serotonin (5ht3) receptor antagonists,neurokinin receptor antagonists,DB09048; DB00377
-1154,pamidronate disodium,bisphosphonates,None,DB00282
-1155,pancreatin,None,None,DB00085
-1156,pancuronium bromide,"neuromuscular blocking drugs, non-depolarising",None,DB01337
-1157,panitumumab,monoclonal antibodies,None,DB01269
-1158,panobinostat,"antineoplastics, other",None,DB06603
-1159,pantoprazole,proton pump inhibitors,None,DB00213
-1160,paracetamol,"analgesics, non-opioid",None,DB00316
-1161,paracetamol; buclizine hydrochloride; codeine phosphate,sedating antihistamines,opioids,DB00318; DB00354; DB00316
-1162,paracetamol; isometheptene,"analgesics, non-opioid",None,DB06706; DB00316
-1163,paracetamol; metoclopramide,"analgesics, non-opioid",dopamine receptor antagonists,DB01233; DB00316
-1164,"paraffin, yellow, soft",ocular lubricants,None,
-1165,parathyroid hormone,parathyroid hormones and analogues,None,DB05829
-1166,parecoxib,non-steroidal anti-inflammatory drugs,None,DB08439
-1167,parenteral nutrition supplements,None,None,
-1168,paricalcitol,vitamin d and analogues,None,DB00910
-1169,paroxetine,selective serotonin re-uptake inhibitors,None,DB00715
-1170,pasireotide,somatostatin analogues,None,DB06663
-1171,patiromer calcium,cation exchange compounds,None,DB09263
-1172,patisiran,neuroprotective drugs,None,DB14582
-1173,pazopanib,protein kinase inhibitors,None,DB06589
-1174,pegaspargase,"antineoplastics, other",None,DB00059
-1175,pegfilgrastim,granulocyte-colony stimulating factors,None,DB00019
-1176,peginterferon alfa,interferons,None,DB00008
-1177,peginterferon beta-1a,interferons,None,DB09122
-1178,pegvisomant,None,None,DB00082
-1179,pembrolizumab,monoclonal antibodies,None,DB09037
-1180,pemetrexed,antimetabolites,None,DB00642
-1181,penicillamine,disease-modifying anti-rheumatic drugs,copper chelators,DB00859
-1182,pentamidine isetionate,"antiprotozoals, other",None,DB00738
-1183,pentazocine,opioids,None,DB00652
-1184,pentosan polysulfate sodium,heparinoids,None,DB00686
-1185,pentostatin,cytotoxic antibiotics and related substances,None,DB00552
-1186,pentoxifylline,peripheral vasodilators,None,DB00806
-1187,peppermint oil,antispasmodics,None,DB11198
-1188,perampanel,antiepileptics,None,DB08883
-1189,pericyazine,"antipsychotics, first-generation",None,DB01608
-1190,perindopril arginine,ace inhibitors,None,DB00790
-1191,perindopril arginine; indapamide,ace inhibitors,thiazides and related diuretics,DB00808; DB00790
-1192,perindopril erbumine,ace inhibitors,None,DB00790
-1193,permethrin,parasiticides,None,DB04930
-1194,pertuzumab,monoclonal antibodies,None,DB06366
-1195,pethidine hydrochloride,opioids,None,DB00454
-1196,phenelzine,"monoamine-oxidase a and b inhibitors, irreversible",None,DB00780
-1197,phenindione,vitamin k antagonists,None,DB00498
-1198,phenobarbital,barbiturates,None,DB01174
-1199,phenol,sclerosants,None,DB03255
-1200,phenoxybenzamine hydrochloride,peripheral vasodilators,None,DB00925
-1201,phenoxymethylpenicillin,"penicillins, beta-lactamase sensitive",None,DB00417
-1202,phenylephrine hydrochloride,"sympathomimetics, vasoconstrictor",None,DB11088; DB00388; DB11086
-1203,phenylephrine; tropicamide,"sympathomimetics, vasoconstrictor","antimuscarinics, other",DB00388; DB00809
-1204,phenytoin,antiepileptics,None,DB00252
-1205,pholcodine,cough suppressants,None,DB09209
-1206,phosphate,osmotic laxatives,None,DB14523; DB14504; DB14503; DB14573
-1207,phytomenadione,vitamin k,None,DB01022
-1208,pilocarpine,parasympathomimetics,None,DB01085
-1209,pimecrolimus,calcineurin inhibitors and related drugs,None,DB00337
-1210,pimozide,"antipsychotics, first-generation",None,DB01100
-1211,pindolol,"beta blocking agents, non-selective",None,DB00960
-1212,pioglitazone,thiazolidinediones,None,DB01132
-1213,pioglitazone; metformin,thiazolidinediones,biguanides,DB00331; DB01132
-1214,piperacillin; tazobactam,"penicillins, antipseudomonal with beta-lactamase inhibitor",None,DB01606; DB00319
-1215,piracetam,cns stimulants,None,DB09210
-1216,pirfenidone,antifibrotics,None,DB04951
-1217,piroxicam,non-steroidal anti-inflammatory drugs,None,DB00554
-1218,pitolisant,cns stimulants,None,DB11642
-1219,pivmecillinam hydrochloride,None,None,DB01605
-1220,pixantrone,anthracyclines and related drugs,None,DB06193
-1221,pizotifen,sedating antihistamines,None,DB06153
-1222,plerixafor,None,None,DB06809
-1223,pneumococcal polysaccharide conjugate vaccine (adsorbed),bacterial vaccines,None,DB10340; DB10332; DB10336; DB10335; DB10328; DB10324
-1224,pneumococcal polysaccharide vaccine,bacterial vaccines,None,DB10340; DB10332; DB10336; DB10335; DB10328; DB10324
-1225,podophyllotoxin,plant alkaloids,None,DB01179
-1226,polatuzumab vedotin,monoclonal antibodies,None,DB12240
-1227,polyvinyl alcohol,ocular lubricants,None,DB11060
-1228,pomalidomide,thalidomide and related analogues,None,DB08910
-1229,ponatinib,protein kinase inhibitors,None,DB08901
-1230,porfimer sodium,photosensitisers,None,DB00707
-1231,posaconazole,triazole antifungals,None,DB01263
-1232,potassium aminobenzoate,vitamin b group,None,DB14500
-1233,potassium bicarbonate; potassium acid tartrate,potassium,None,DB11098; DB14500
-1234,potassium chloride,potassium,None,DB00761
-1235,potassium chloride; calcium chloride dihydrate; sodium chloride,potassium,sodium chloride,DB01373; DB09153; DB00761
-1236,"potassium chloride; calcium chloride, sodium chloride; sodium lactate",potassium,carboxylic acids; sodium chloride,DB01373; DB04398; DB00761
-1237,potassium chloride; glucose,potassium,sugars,DB09341; DB00761; DB01914
-1238,potassium chloride; glucose; sodium chloride,potassium,sugars; sodium chloride,DB09153; DB09341; DB00761; DB01914
-1239,potassium chloride; potassium bicarbonate,potassium,None,DB11098; DB00761
-1240,"potassium chloride; rice powder, sodium chloride; sodium citrate",oral rehydration salts,None,DB09154; DB10563; DB00761
-1241,potassium chloride; sodium chloride,potassium,sodium chloride,DB09153; DB00761
-1242,potassium permanganate,antiseptics and disinfectants,None,DB13831
-1243,povidone-iodine,None,None,DB06812
-1244,pralidoxime chloride,"antidotes and chelators, other",None,DB00733
-1245,pramipexole,dopamine receptor agonists,None,DB00413
-1246,prasterone,oestrogens,None,DB01708
-1247,prasugrel,antiplatelet drugs,None,DB06209
-1248,pravastatin sodium,statins,None,DB00175
-1249,praziquantel,anthelmintics,None,DB01058
-1250,prazosin,alpha-adrenoceptor blockers,None,DB00457
-1251,prednisolone,corticosteroids,None,DB00860
-1252,pregabalin,antiepileptics,None,DB00230
-1253,prilocaine hydrochloride,"anaesthetics, local",None,DB00750
-1254,prilocaine; felypressin,"anaesthetics, local",vasopressin and analogues,DB00093; DB00750
-1255,primaquine,antimalarials,None,DB01087
-1256,primidone,barbiturates,None,DB00794
-1257,procarbazine,"antineoplastics, other",None,DB01168
-1258,prochlorperazine,"antipsychotics, first-generation",None,DB00433
-1259,procyclidine hydrochloride,"antimuscarinics, other",None,DB00387
-1260,proflavine,"antiseptics and disinfectants, other",None,DB01123
-1261,progesterone,progestogens,None,DB00396
-1262,proguanil hydrochloride,antimalarials,None,DB01131
-1263,promazine hydrochloride,"antipsychotics, first-generation",None,DB00420
-1264,promethazine hydrochloride,sedating antihistamines,None,DB01069
-1265,promethazine teoclate,sedating antihistamines,None,DB01069
-1266,propafenone hydrochloride,"antiarrhythmics, class ic",None,DB01182
-1267,propamidine isetionate,"antiprotozoals, other",None,DB13296
-1268,propantheline bromide,"antimuscarinics, other",None,DB00782
-1269,propiverine hydrochloride,"antimuscarinics, urinary",None,DB12278
-1270,propofol,intravenous anaesthetics,None,DB00818
-1271,propranolol hydrochloride,"beta blocking agents, non-selective",None,DB00571
-1272,propylthiouracil,None,None,DB00550
-1273,protamine sulfate,"antidotes and chelators, other",None,DB09141
-1274,protein c concentrate,coagulation proteins,None,DB11312
-1275,proxymetacaine hydrochloride,"anaesthetics, local",None,DB00807
-1276,prucalopride,None,None,DB06480
-1277,pseudoephedrine hydrochloride,"sympathomimetics, vasoconstrictor",None,DB00852
-1278,pyrazinamide,"antimycobacterials, other",None,DB00339
-1279,pyridostigmine bromide,"anticholinesterases, other",None,DB00545
-1280,pyridoxine hydrochloride,vitamin b group,None,DB00165
-1281,pyrimethamine,antiprotozoals,None,DB00205
-1282,quetiapine,"antipsychotics, second-generation",None,DB01224
-1283,quinagolide,dopamine receptor agonists,None,DB09097
-1284,quinapril,ace inhibitors,None,DB00881
-1285,quinapril; hydrochlorothiazide,ace inhibitors,thiazides and related diuretics,DB00999; DB00881
-1286,quinine,antimalarials,None,DB00468
-1287,rabeprazole sodium,proton pump inhibitors,None,DB01129
-1288,rabies immunoglobulin,immunoglobulins,None,DB11603
-1289,rabies vaccine,viral vaccines,None,DB11603
-1290,raloxifene hydrochloride,bone resorption inhibitors,None,DB00481
-1291,raltegravir,hiv-integrase inhibitors,None,DB06817
-1292,raltitrexed,"antineoplastics, other",None,DB00293
-1293,ramipril,ace inhibitors,None,DB00178
-1294,ramipril; felodipine,ace inhibitors,calcium-channel blockers,DB00178; DB01023
-1295,ramucirumab,monoclonal antibodies,None,DB05578
-1296,ranibizumab,vascular endothelial growth factor inhibitors,None,DB01270
-1297,ranitidine,h2-receptor antagonists,None,DB00863
-1298,ranolazine,None,None,DB00243
-1299,rasagiline,monoamine-oxidase b inhibitors,None,DB01367
-1300,rasburicase,None,None,DB00049
-1301,ravulizumab,monoclonal antibodies,None,DB11580
-1302,reboxetine,None,None,DB00234
-1303,regorafenib,protein kinase inhibitors,None,DB08896
-1304,remifentanil,opioids,None,DB00899
-1305,repaglinide,meglitinides,None,DB00912
-1306,reslizumab,monoclonal antibodies,None,DB06602
-1307,"retinol palmitate; white soft paraffin, light liquid paraffin, liquid paraffin; wool fat",ocular lubricants,None,DB09536; DB09321; DB11112; DB00162
-1308,ribavirin,nucleoside analogues,None,DB00811
-1309,ribociclib,protein kinase inhibitors,None,DB11730
-1310,rifabutin,rifamycins,None,DB00615
-1311,rifampicin,rifamycins,None,DB01045
-1312,"rifampicin; ethambutol, isoniazid; pyrazinamide",rifamycins,"antimycobacterials, other",DB00339; DB01045
-1313,rifampicin; isoniazid,rifamycins,"antimycobacterials, other",DB00951; DB01045
-1314,rifampicin; isoniazid; pyrazinamide,rifamycins,"antimycobacterials, other",DB00339; DB00951; DB01045
-1315,rifaximin,rifamycins,None,DB01220
-1316,rilpivirine,non-nucleoside reverse transcriptase inhibitors,None,DB08864
-1317,riluzole,neuroprotective drugs,None,DB00740
-1318,riociguat,None,None,DB08931
-1319,risankizumab,interleukin inhibitors,None,DB14762
-1320,risedronate sodium,bisphosphonates,None,DB00884
-1321,risedronate; calcium carbonate; colecalciferol,bisphosphonates,vitamin d and analogues; calcium,DB06724; DB00884; DB00169
-1322,risperidone,"antipsychotics, second-generation","antipsychotics, second-generation (depot injections)",DB00734
-1323,ritonavir,"protease inhibitors, hiv",None,DB00503
-1324,rituximab,monoclonal antibodies,None,DB00073
-1325,rivaroxaban,factor xa inhibitors,None,DB06228
-1326,rivastigmine,"anticholinesterases, centrally acting",None,DB00989
-1327,rizatriptan,triptans,None,DB00953
-1328,rocuronium bromide,"neuromuscular blocking drugs, non-depolarising",None,DB00728
-1329,roflumilast,phosphodiesterase type-4 inhibitors,None,DB01656
-1330,rolapitant,neurokinin receptor antagonists,None,DB09291
-1331,romiplostim,thrombopoietin receptor agonists,None,DB05332
-1332,romosozumab,monoclonal antibodies,None,DB11866
-1333,ropinirole,dopamine receptor agonists,None,DB00268
-1334,ropivacaine hydrochloride,"anaesthetics, local",None,DB00296
-1335,rosuvastatin,statins,None,DB01098
-1336,rotavirus vaccine,viral vaccines,None,DB10276
-1337,rotigotine,dopamine receptor agonists,None,DB05271
-1338,rucaparib,"antineoplastics, other",None,DB12332
-1339,rufinamide,antiepileptics,None,DB06201
-1340,rupatadine,non-sedating antihistamines,None,DB11614
-1341,ruxolitinib,protein kinase inhibitors,None,DB08877
-1342,sacubitril; valsartan,angiotensin ii receptor antagonists,None,DB00177; DB09292
-1343,safinamide,monoamine-oxidase b inhibitors,None,DB06654
-1344,salbutamol,selective beta2-agonists (short-acting),None,DB01001
-1345,salicylic acid,salicylic acid and derivatives,None,DB00936
-1346,salicylic acid; lactic acid,salicylic acid and derivatives,carboxylic acids,DB00936; DB04398
-1347,salicylic acid; rhubarb extract,salicylic acid and derivatives,None,DB00936; DB10651
-1348,salicylic acid; zinc oxide,salicylic acid and derivatives,None,DB00936; DB09321
-1349,salmeterol,selective beta2-agonists (long-acting),None,DB00938
-1350,sapropterin dihydrochloride,None,None,DB00360
-1351,saquinavir,"protease inhibitors, hiv",None,DB01232
-1352,sarilumab,interleukin inhibitors,None,DB11767
-1353,saxagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None,DB06335
-1354,saxagliptin; dapagliflozin,dipeptidylpeptidase-4 inhibitors (gliptins),sodium glucose co-transporter 2 inhibitors,DB06335; DB06292
-1355,saxagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides,DB06335; DB00331
-1356,secukinumab,interleukin inhibitors,None,DB09029
-1357,selegiline hydrochloride,monoamine-oxidase b inhibitors,None,DB01037
-1358,selenium,vitamins and trace elements,None,DB11135
-1359,selexipag,antiplatelet drugs,None,DB11362
-1360,semaglutide,glucagon-like peptide-1 receptor agonists,None,DB13928
-1361,senna,stimulant laxatives,None,DB11365
-1362,senna; ispaghula husk,stimulant laxatives,bulk-forming laxatives,DB11365; DB14585
-1363,sertraline,selective serotonin re-uptake inhibitors,None,DB01104
-1364,sevelamer,phosphate binders,None,DB00658
-1365,sevoflurane,volatile liquid anaesthetics,None,DB01236
-1366,sildenafil,phosphodiesterase type-5 inhibitors,None,DB00203
-1367,siltuximab,monoclonal antibodies,None,DB09036
-1368,silver nitrate,"antiseptics and disinfectants, other",None,DB11080
-1369,silver sulfadiazine,sulfonamides,None,DB05245
-1370,simeticone,antifoaming drugs,None,DB09512
-1371,simeticone; aluminium hydroxide; magnesium hydroxide,"antacids, aluminium and magnesium",antifoaming drugs,DB09104; DB06723; DB09512
-1372,simvastatin,statins,None,DB00641
-1373,simvastatin; ezetimibe,statins,cholesterol absorption inhibitors,DB00641; DB00973
-1374,simvastatin; fenofibrate,statins,fibrates,DB01039; DB00641
-1375,siponimod,immunomodulating drugs,None,DB12371
-1376,sirolimus,calcineurin inhibitors and related drugs,None,DB00877
-1377,sitagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None,DB01261
-1378,sitagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides,DB01261; DB00331
-1379,sodium acid phosphate; sodium phosphate,osmotic laxatives,None,DB09370; DB09449
-1380,sodium alginate; calcium carbonate; sodium bicarbonate,"antacids, alginate",None,DB06724; DB14516; DB01390
-1381,sodium alginate; potassium bicarbonate,"antacids, alginate",None,DB14516; DB11098
-1382,sodium aurothiomalate,disease-modifying anti-rheumatic drugs,None,DB09276
-1383,sodium bicarbonate,None,None,DB01390
-1384,sodium bicarbonate; sodium chloride,"antiseptics and disinfectants, other",None,DB09153; DB01390
-1385,sodium chloride,sodium chloride,"ocular lubricants; antiseptics and disinfectants, other; irrigating solutions",DB09153
-1386,sodium chloride; glucose,sodium chloride,sugars,DB09341; DB09153; DB01914
-1387,sodium citrate,"alkalising drugs, urinary",None,DB09154
-1388,sodium clodronate,bisphosphonates,None,DB14516
-1389,sodium cromoglicate,mast-cell stabilisers,None,DB14516
-1390,sodium feredetate,"iron, oral",None,DB13381
-1391,sodium fluoride,vitamins and trace elements,None,DB09325
-1392,sodium hyaluronate,ocular lubricants,None,DB14516
-1393,sodium hyaluronate; trehalose,ocular lubricants,None,DB14516; DB12310
-1394,sodium nitrite,"antidotes and chelators, other",None,DB09112
-1395,sodium nitroprusside,vasodilator antihypertensives,None,DB00325
-1396,sodium oxybate,None,None,DB09072
-1397,sodium phenylbutyrate,ammonia lowering drugs,None,DB06819
-1398,sodium picosulfate,stimulant laxatives,None,DB14516
-1399,sodium polystyrene sulfonate,cation exchange compounds,None,DB01344
-1400,sodium stibogluconate,"antiprotozoals, other",None,DB05630
-1401,sodium tetradecyl sulfate,sclerosants,None,DB00464
-1402,sodium thiosulfate,"antidotes and chelators, other",None,DB09499
-1403,sodium valproate,antiepileptics,None,DB14516
-1404,sodium zirconium cyclosilicate,cation exchange compounds,None,DB14048
-1405,sofosbuvir,nucleotide analogues,None,DB08934
-1406,sofosbuvir; velpatasvir,nucleotide analogues,hcv inhibitors,DB11613; DB08934
-1407,sofosbuvir; velpatasvir; voxilaprevir,nucleotide analogues,hcv inhibitors,DB12026; DB11613; DB08934
-1408,solifenacin succinate,"antimuscarinics, urinary",None,DB01591
-1409,somatropin,None,None,DB00052
-1410,sorafenib,protein kinase inhibitors,None,DB00398
-1411,sotalol hydrochloride,"beta blocking agents, non-selective",None,DB00489
-1412,soybean oil,ocular lubricants,None,DB09422
-1413,spironolactone,aldosterone antagonists,None,DB00421
-1414,spironolactone; furosemide,aldosterone antagonists,loop diuretics,DB00421; DB00695
-1415,st john's wort,None,None,DB01323
-1416,sterculia,bulk-forming laxatives,None,DB10535
-1417,sterculia; frangula,bulk-forming laxatives,None,DB15478; DB10535
-1418,stiripentol,antiepileptics,None,DB09118
-1419,streptokinase,tissue plasminogen activators,None,DB00086
-1420,streptomycin,aminoglycosides,None,DB01082
-1421,streptozocin,alkylating agents,None,DB00428
-1422,strontium ranelate,bone resorption inhibitors,None,DB09267
-1423,sucralfate,None,None,DB00364
-1424,sucroferric oxyhydroxide,phosphate binders,None,DB09146
-1425,sugammadex,"antidotes and chelators, other",None,DB06206
-1426,sulfadiazine,sulfonamides,None,DB00359
-1427,sulfasalazine,aminosalicylates,None,DB00795
-1428,sulindac,non-steroidal anti-inflammatory drugs,None,DB00605
-1429,sulpiride,"antipsychotics, first-generation",None,DB00391
-1430,sumatriptan,triptans,None,DB00669
-1431,sunitinib,protein kinase inhibitors,None,DB01268
-1432,suxamethonium chloride,None,None,DB00202
-1433,tacalcitol,vitamin d and analogues,None,DB13689
-1434,tacrolimus,calcineurin inhibitors and related drugs,None,DB00864
-1435,tadalafil,phosphodiesterase type-5 inhibitors,None,DB00820
-1436,tafamidis,neuroprotective drugs,None,DB11644
-1437,tafluprost,prostaglandins and analogues,None,DB08819
-1438,tafluprost; timolol,prostaglandins and analogues,"beta blocking agents, non-selective",DB00373; DB08819
-1439,talazoparib,"antineoplastics, other",None,DB11760
-1440,talimogene laherparepvec,"antineoplastics, other",None,DB13896
-1441,tamoxifen,anti-oestrogens,None,DB00675
-1442,tamsulosin hydrochloride,alpha-adrenoceptor blockers,None,DB00706
-1443,tamsulosin; dutasteride,alpha-adrenoceptor blockers,5α-reductase inhibitors,DB00706; DB01126
-1444,tamsulosin; solifenacin,alpha-adrenoceptor blockers,"antimuscarinics, urinary",DB00706; DB01591
-1445,tapentadol,opioids,None,DB06204
-1446,tazarotene,retinoid and related drugs,None,DB00799
-1447,tedizolid,"antibacterials, other",None,DB14569
-1448,teduglutide,amino acids and derivatives,None,DB08900
-1449,tegafur; gimeracil; oteracil,antimetabolites,None,DB09256; DB03209; DB09257
-1450,teicoplanin,glycopeptide antibacterials,None,DB06149
-1451,telavancin,glycopeptide antibacterials,None,DB06402
-1452,telbivudine,nucleoside analogues,None,DB01265
-1453,telmisartan,angiotensin ii receptor antagonists,None,DB00966
-1454,telmisartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics,DB00966; DB00999
-1455,telotristat ethyl,enzyme inhibitors,None,DB12095
-1456,temazepam,benzodiazepines,None,DB00231
-1457,temocillin,"penicillins, penicillinase-resistant",None,DB12343
-1458,temoporfin,photosensitisers,None,DB11630
-1459,temozolomide,alkylating agents,None,DB00853
-1460,temsirolimus,protein kinase inhibitors,None,DB06287
-1461,tenecteplase,tissue plasminogen activators,None,DB00031
-1462,tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,None,DB09299
-1463,tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,None,DB00300
-1464,tenoxicam,non-steroidal anti-inflammatory drugs,None,DB00469
-1465,terazosin,alpha-adrenoceptor blockers,None,DB01162
-1466,terbinafine,"antifungals, other",None,DB00857
-1467,terbutaline sulfate,selective beta2-agonists (short-acting),None,DB00871
-1468,teriflunomide,None,None,DB08880
-1469,teriparatide,parathyroid hormones and analogues,None,DB06285
-1470,terlipressin acetate,vasopressin and analogues,None,DB02638
-1471,testosterone,androgens,None,DB00624
-1472,"testosterone decanoate, isocaproate, phenylpropionate; propionate",androgens,None,DB00624
-1473,testosterone enantate,androgens,None,DB00624
-1474,testosterone propionate,androgens,None,DB01420
-1475,testosterone undecanoate,androgens,None,DB13946
-1476,tetanus immunoglobulin,immunoglobulins,None,DB11604
-1477,tetrabenazine,None,None,DB04844
-1478,tetracaine,"anaesthetics, local",None,DB09085
-1479,tetracosactide,None,None,DB01284
-1480,tetracycline,tetracyclines and related drugs,None,DB00759
-1481,tetrastarch,plasma substitutes,None,
-1482,tezacaftor; ivacaftor,mucolytics,None,DB11712; DB08820
-1483,thalidomide,thalidomide and related analogues,None,DB01041
-1484,theophylline,xanthines,None,DB00277
-1485,thiamine,vitamin b group,None,DB00152
-1486,thiopental sodium,barbiturates,barbiturates,DB00599
-1487,thiotepa,alkylating agents,None,DB04572
-1488,thyrotropin alfa,None,None,DB00024
-1489,tiagabine,antiepileptics,None,DB00906
-1490,tiaprofenic acid,non-steroidal anti-inflammatory drugs,None,DB01600
-1491,tibolone,oestrogens,None,DB09070
-1492,ticagrelor,antiplatelet drugs,None,DB08816
-1493,ticarcillin; clavulanic acid,"penicillins, antipseudomonal with beta-lactamase inhibitor",None,DB00766; DB01607
-1494,"tick-borne encephalitis vaccine, inactivated",viral vaccines,None,
-1495,tigecycline,tetracyclines and related drugs,None,DB00560
-1496,tildrakizumab,interleukin inhibitors,None,DB14004
-1497,timolol maleate,"beta blocking agents, non-selective",None,DB00373
-1498,timolol; amiloride; hydrochlorothiazide,"beta blocking agents, non-selective",thiazides and related diuretics,DB00373; DB00999; DB00594
-1499,timolol; bendroflumethiazide,"beta blocking agents, non-selective",thiazides and related diuretics,DB00373; DB00436
-1500,tinidazole,nitroimidazole derivatives,None,DB00911
-1501,tinzaparin sodium,heparins,None,DB06822
-1502,tioconazole,imidazole antifungals,None,DB01007
-1503,tioguanine,antimetabolites,None,DB00352
-1504,tiotropium,"antimuscarinics, other",None,DB01409
-1505,tiotropium; olodaterol,"antimuscarinics, other",selective beta2-agonists (long-acting),DB01409; DB09080
-1506,tipranavir,"protease inhibitors, hiv",None,DB00932
-1507,tirofiban,glycoprotein iib/iiia inhibitors,None,DB00775
-1508,tivozanib,protein kinase inhibitors,None,DB11800
-1509,tizanidine,"muscle relaxants, centrally acting",None,DB00697
-1510,tobramycin,aminoglycosides,None,DB00684
-1511,tocilizumab,interleukin inhibitors,None,DB06273
-1512,tofacitinib,jak inhibitors,None,DB08895
-1513,tolbutamide,sulfonylureas,None,DB01124
-1514,tolcapone,catechol-o-methyltransferase inhibitors,None,DB00323
-1515,tolfenamic acid,non-steroidal anti-inflammatory drugs,None,DB09216
-1516,tolterodine tartrate,"antimuscarinics, urinary",None,DB01036
-1517,tolvaptan,None,None,DB06212
-1518,topiramate,antiepileptics,None,DB00273
-1519,topotecan,topoisomerase i inhibitors,None,DB01030
-1520,torasemide,loop diuretics,None,DB00214
-1521,toremifene,anti-oestrogens,None,DB00539
-1522,trabectedin,plant alkaloids,None,DB05109
-1523,tramadol hydrochloride,opioids,None,DB00193
-1524,tramadol; dexketoprofen,opioids,non-steroidal anti-inflammatory drugs,DB09214; DB00193
-1525,tramadol; paracetamol,opioids,"analgesics, non-opioid",DB00316; DB00193
-1526,trametinib,protein kinase inhibitors,None,DB08911
-1527,trandolapril,ace inhibitors,None,DB00519
-1528,tranexamic acid,None,None,DB00302
-1529,tranylcypromine,"monoamine-oxidase a and b inhibitors, irreversible",None,DB00752
-1530,trastuzumab,monoclonal antibodies,None,DB00072
-1531,trastuzumab emtansine,monoclonal antibodies,None,DB05773
-1532,travoprost,prostaglandins and analogues,None,DB00287
-1533,travoprost; timolol,prostaglandins and analogues,"beta blocking agents, non-selective",DB00373; DB00287
-1534,trazodone hydrochloride,None,None,DB00656
-1535,tree pollen extract,allergen-type vaccines,None,DB10452
-1536,treosulfan,alkylating agents,None,DB11678
-1537,tretinoin,retinoid and related drugs,None,DB00755
-1538,tretinoin; clindamycin,retinoid and related drugs,lincosamides,DB00755; DB01190
-1539,tretinoin; erythromycin,retinoid and related drugs,macrolides,DB00755; DB00199
-1540,triamcinolone acetonide,corticosteroids,None,DB00620
-1541,triamcinolone hexacetonide,corticosteroids,None,DB00620
-1542,triamterene,"potassium-sparing diuretics, other",None,DB00384
-1543,triamterene; chlortalidone,"potassium-sparing diuretics, other",thiazides and related diuretics,DB00384; DB00310
-1544,trientine dihydrochloride,copper chelators,None,DB06824
-1545,trifluoperazine,"antipsychotics, first-generation",None,DB00831
-1546,trifluridine; tipiracil,antimetabolites,None,DB09343; DB00432
-1547,trihexyphenidyl hydrochloride,"antimuscarinics, other",None,DB00376
-1548,trimethoprim,"antibacterials, other",None,DB00440
-1549,trimipramine,tricyclic antidepressants,None,DB00726
-1550,triptorelin,gonadotrophin-releasing hormones,None,DB06825
-1551,tropicamide,"antimuscarinics, other",None,DB00809
-1552,tropicamide; phenylephrine; lidocaine,"sympathomimetics, vasoconstrictor","antimuscarinics, other; anaesthetics, local",DB00388; DB00281; DB00809
-1553,trospium chloride,"antimuscarinics, urinary",None,DB00209
-1554,tryptophan,other antidepressants,None,DB00150
-1555,tuberculin purified protein derivative,"diagnostic agents, other",None,DB11601
-1556,typhoid vaccine,bacterial vaccines,None,DB14022
-1557,ulipristal acetate,progesterone receptor modulators,None,DB08867
-1558,umeclidinium,"antimuscarinics, other",None,DB09076
-1559,umeclidinium; vilanterol,"antimuscarinics, other",selective beta2-agonists (long-acting),DB09076; DB09082
-1560,undecenoic acid; zinc undecenoate,undecenoates,None,DB11117; DB01593
-1561,upadacitinib,jak inhibitors,None,DB15091
-1562,urea (13c),"diagnostic agents, other",None,DB03904
-1563,urea hydrogen peroxide,softening drugs,None,DB11129
-1564,urofollitropin,gonadotrophins,None,DB00094
-1565,urokinase,tissue plasminogen activators,None,DB00013
-1566,ursodeoxycholic acid,bile acids,None,DB01586
-1567,ustekinumab,interleukin inhibitors,None,DB05679
-1568,valaciclovir,nucleoside analogues,None,DB00577
-1569,valganciclovir,nucleoside analogues,None,DB01610
-1570,valproic acid,antiepileptics,None,DB00313
-1571,valsartan,angiotensin ii receptor antagonists,None,DB00177
-1572,valsartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics,DB00177; DB00999
-1573,vancomycin,glycopeptide antibacterials,None,DB00512
-1574,vandetanib,protein kinase inhibitors,None,DB05294
-1575,vardenafil,phosphodiesterase type-5 inhibitors,None,DB00862
-1576,varenicline,nicotinic receptor agonists,None,DB01273
-1577,varicella-zoster immunoglobulin,immunoglobulins,None,DB11621
-1578,varicella-zoster vaccine,viral vaccines,None,DB11621
-1579,vasopressin,vasopressin and analogues,None,DB00067
-1580,vecuronium bromide,"neuromuscular blocking drugs, non-depolarising",None,DB01339
-1581,vedolizumab,"monoclonal antibodies, anti-lymphocyte",None,DB09033
-1582,velaglucerase alfa,enzymes,None,DB06720
-1583,vemurafenib,protein kinase inhibitors,None,DB08881
-1584,venetoclax,"antineoplastics, other",None,DB11581
-1585,venlafaxine,serotonin and noradrenaline re-uptake inhibitors,None,DB00285
-1586,verapamil hydrochloride,calcium-channel blockers,None,DB00661
-1587,vernakalant,"antiarrhythmics, other",None,DB06217
-1588,verteporfin,photosensitisers,None,DB00460
-1589,vigabatrin,antiepileptics,None,DB01080
-1590,vildagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None,DB04876
-1591,vildagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides,DB04876; DB00331
-1592,vinblastine sulfate,vinca alkaloids,None,DB00570
-1593,vincristine sulfate,vinca alkaloids,None,DB00541
-1594,vindesine sulfate,vinca alkaloids,None,DB00309
-1595,vinflunine,vinca alkaloids,None,DB11641
-1596,vinorelbine,vinca alkaloids,None,DB00361
-1597,vismodegib,"antineoplastics, other",None,DB08828
-1598,vitamin a,None,None,DB00162
-1599,vitamin b complex,vitamin b group,None,DB00140; DB01783; DB00121; DB03247; DB02701; DB00165; DB00122; DB00152; DB00158; DB09357; DB00115; DB13178
-1600,vitamin b substances; ascorbic acid,vitamin b group,vitamin c,DB00126
-1601,vitamins a; d,multivitamins,None,DB00320; DB00898; DB09407; DB09395; DB00761; DB06496; DB00128; DB09153; DB10584; DB09341; DB11105; DB12827; DB09158; DB01164; DB10583; DB14481; DB01390; DB02887; DB03166; DB02515
-1602,"vitamins a, c; d",multivitamins,None,DB00320; DB00898; DB09407; DB09395; DB00761; DB06496; DB00128; DB09153; DB10584; DB09341; DB11105; DB12827; DB09158; DB01164; DB10583; DB14481; DB01390; DB02887; DB03166; DB02515
-1603,vitamins; minerals; trace elements,vitamin b group,None,
-1604,volanesorsen,"lipid modifying drugs, other",None,DB15067
-1605,voriconazole,triazole antifungals,None,DB00582
-1606,vortioxetine,other antidepressants,None,DB09068
-1607,warfarin sodium,vitamin k antagonists,None,DB00682
-1608,wasp venom extract,allergen-type vaccines,None,
-1609,xipamide,thiazides and related diuretics,None,DB13803
-1610,xylometazoline hydrochloride,"sympathomimetics, vasoconstrictor",None,DB06694
-1611,"yellow fever vaccine, live",viral vaccines,None,DB11100; DB14311
-1612,zanamivir,neuraminidase inhibitors,None,DB00558
-1613,zidovudine,nucleoside reverse transcriptase inhibitors,None,DB00495
-1614,zidovudine; lamivudine,nucleoside reverse transcriptase inhibitors,None,DB00495; DB00709
-1615,zinc acetate,None,None,DB14487
-1616,zinc sulfate,None,None,DB09322
-1617,zoledronic acid,bisphosphonates,None,DB00399
-1618,zolmitriptan,triptans,None,DB00315
-1619,zolpidem tartrate,non-benzodiazepine hypnotics and sedatives,None,DB00425
-1620,zonisamide,antiepileptics,None,DB00909
-1621,zopiclone,non-benzodiazepine hypnotics and sedatives,None,DB01198
-1622,zuclopenthixol,"antipsychotics, first-generation",None,DB01624
-1623,zuclopenthixol acetate,"antipsychotics, first-generation",None,DB01624
-1624,zuclopenthixol decanoate,"antipsychotics, first-generation (depot injections)",None,DB01624
+entry,drugs,primary,secondary
+0,abacavir,nucleoside reverse transcriptase inhibitors,None
+1,abacavir; dolutegravir; lamivudine,nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors
+2,abacavir; lamivudine,nucleoside reverse transcriptase inhibitors,None
+3,abacavir; lamivudine; zidovudine,nucleoside reverse transcriptase inhibitors,None
+4,abatacept,t-cell activation inhibitors,None
+5,abemaciclib,protein kinase inhibitors,None
+6,abiraterone acetate,anti-androgens,None
+7,acamprosate calcium,None,None
+8,acarbose,None,None
+9,acebutolol,"beta blocking agents, selective",None
+10,aceclofenac,non-steroidal anti-inflammatory drugs,None
+11,acenocoumarol,vitamin k antagonists,None
+12,acetazolamide,carbonic anhydrase inhibitors,None
+13,acetylcholine chloride,parasympathomimetics,None
+14,acetylcysteine,"antidotes and chelators, other",ocular lubricants; mucolytics
+15,aciclovir,nucleoside analogues,None
+16,acipimox,nicotinic acid derivatives,None
+17,acitretin,retinoid and related drugs,None
+18,aclidinium bromide,"antimuscarinics, other",None
+19,aclidinium bromide; formoterol,"antimuscarinics, other",selective beta2-agonists (long-acting)
+20,acrivastine,non-sedating antihistamines,None
+21,adalimumab,tumor necrosis factor alpha (tnf-a) inhibitors,None
+22,adapalene,retinoid and related drugs,None
+23,adapalene; benzoyl peroxide,retinoid and related drugs,peroxides
+24,adefovir dipivoxil,nucleotide analogues,None
+25,adenosine,"antiarrhythmics, other",None
+26,adrenaline; articaine hydrochloride,"anaesthetics, local",None
+27,adrenaline/epinephrine,"sympathomimetics, vasoconstrictor",None
+28,afatinib,protein kinase inhibitors,None
+29,aflibercept,vascular endothelial growth factor inhibitors,"antineoplastics, other"
+30,agalsidase alfa,enzymes,None
+31,agalsidase beta,enzymes,None
+32,agomelatine,None,None
+33,albendazole,anthelmintics,None
+34,albumin solution,plasma products,None
+35,alclometasone dipropionate,corticosteroids,None
+36,alcohol,None,None
+37,aldesleukin,None,None
+38,alectinib,protein kinase inhibitors,None
+39,alemtuzumab,"monoclonal antibodies, anti-lymphocyte",None
+40,alendronic acid,bisphosphonates,None
+41,alendronic acid; colecalciferol,bisphosphonates,vitamin d and analogues
+42,alfacalcidol,vitamin d and analogues,None
+43,alfentanil,opioids,None
+44,alfuzosin hydrochloride,alpha-adrenoceptor blockers,None
+45,alginic acid,"antacids, alginate",None
+46,alglucosidase alfa,enzymes,None
+47,alimemazine tartrate,sedating antihistamines,None
+48,alirocumab,"lipid modifying drugs, other",None
+49,aliskiren,None,None
+50,alitretinoin,retinoid and related drugs,None
+51,allopurinol,xanthine oxidase inhibitors,None
+52,almond oil,softening drugs,None
+53,almotriptan,triptans,None
+54,alogliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None
+55,alogliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides
+56,alpha tocopherol,vitamin e,None
+57,alpha tocopheryl acetate,vitamin e,None
+58,alprazolam,benzodiazepines,None
+59,alprostadil,prostaglandins and analogues,None
+60,alteplase,tissue plasminogen activators,None
+61,aluminium acetate,astringents,None
+62,aluminium chloride hexahydrate,astringents,None
+63,alverine citrate,antispasmodics,None
+64,amantadine hydrochloride,dopamine receptor agonists,"antivirals, influenza"
+65,ambrisentan,endothelin receptor antagonists,None
+66,amifampridine,cholinergic receptor stimulating drugs,None
+67,amikacin,aminoglycosides,None
+68,amiloride hydrochloride,"potassium-sparing diuretics, other",None
+69,amiloride; bumetanide,"potassium-sparing diuretics, other",loop diuretics
+70,aminophylline,xanthines,None
+71,aminosalicylic acid,"antimycobacterials, other",None
+72,amiodarone hydrochloride,"antiarrhythmics, class iii",None
+73,amisulpride,"antipsychotics, second-generation",None
+74,amitriptyline hydrochloride,tricyclic antidepressants,None
+75,amlodipine,calcium-channel blockers,None
+76,amlodipine; valsartan,calcium-channel blockers,angiotensin ii receptor antagonists
+77,amorolfine,"antifungals, other",None
+78,amoxicillin,"penicillins, broad-spectrum",None
+79,amphotericin b,polyene antifungals,None
+80,ampicillin,"penicillins, broad-spectrum",None
+81,amsacrine,"antineoplastics, other",None
+82,anagrelide,None,None
+83,anakinra,interleukin inhibitors,None
+84,anastrozole,aromatase inhibitors,None
+85,andexanet alfa,"antidotes and chelators, other",None
+86,"anethol; borneol, camphene, cineole, fenchone; pinene",terpenes,None
+87,anidulafungin,echinocandin antifungals,None
+88,antazoline; xylometazoline,antihistamines,None
+89,anthrax vaccine,bacterial vaccines,None
+90,anti-d (rh0) immunoglobulin,immunoglobulins,None
+91,antithymocyte immunoglobulin (rabbit),immunoglobulins,None
+92,apalutamide,anti-androgens,None
+93,apixaban,factor xa inhibitors,None
+94,apomorphine hydrochloride,dopamine receptor agonists,None
+95,apraclonidine,alpha2-adrenoceptor agonists,None
+96,apremilast,phosphodiesterase type-4 inhibitors,None
+97,aprepitant,neurokinin receptor antagonists,None
+98,arachis oil,softening laxatives,None
+99,argatroban monohydrate,"thrombin inhibitors, direct",None
+100,aripiprazole,"antipsychotics, second-generation","antipsychotics, second-generation (depot injections)"
+101,arsenic trioxide,"antineoplastics, other",None
+102,artemether; lumefantrine,antimalarials,None
+103,artenimol; piperaquine phosphate,antimalarials,None
+104,ascorbic acid,vitamin c,None
+105,asenapine,"antipsychotics, second-generation",None
+106,asfotase alfa,enzymes,None
+107,asparaginase,"antineoplastics, other",None
+108,aspirin,antiplatelet drugs,non-steroidal anti-inflammatory drugs
+109,aspirin; codeine,non-steroidal anti-inflammatory drugs,opioids
+110,aspirin; metoclopramide,non-steroidal anti-inflammatory drugs,dopamine receptor antagonists
+111,ataluren,drugs for neuromuscular disorders,None
+112,atazanavir,"protease inhibitors, hiv",None
+113,atazanavir; cobicistat,"protease inhibitors, hiv",pharmacokinetic enhancers
+114,atenolol,"beta blocking agents, selective",None
+115,atenolol; nifedipine,"beta blocking agents, selective",calcium-channel blockers
+116,atezolizumab,monoclonal antibodies,None
+117,atomoxetine,centrally acting sympathomimetics,None
+118,atorvastatin,statins,None
+119,atosiban,None,None
+120,atovaquone,"antiprotozoals, other",None
+121,atovaquone; proguanil hydrochloride,antimalarials,None
+122,atracurium besilate,"neuromuscular blocking drugs, non-depolarising",None
+123,atropine sulfate,"antimuscarinics, other",None
+124,avanafil,phosphodiesterase type-5 inhibitors,None
+125,avelumab,monoclonal antibodies,None
+126,aviptadil; phentolamine mesilate,peripheral vasodilators,None
+127,axitinib,protein kinase inhibitors,None
+128,azacitidine,antimetabolites,None
+129,azathioprine,antimetabolites,None
+130,azelaic acid,None,None
+131,azelastine hydrochloride,antihistamines,None
+132,azilsartan medoxomil,angiotensin ii receptor antagonists,None
+133,azithromycin,macrolides,None
+134,aztreonam,None,None
+135,bacillus calmette-guérin,"immunostimulants, other",None
+136,bacillus calmette-guérin vaccine,bacterial vaccines,None
+137,baclofen,"muscle relaxants, centrally acting",None
+138,balsalazide sodium,aminosalicylates,None
+139,bambuterol hydrochloride,selective beta2-agonists (long-acting),None
+140,baricitinib,jak inhibitors,None
+141,barrier creams; ointments,None,None
+142,basiliximab,"monoclonal antibodies, anti-lymphocyte",None
+143,beclometasone dipropionate,corticosteroids,None
+144,beclometasone; formoterol,corticosteroids,selective beta2-agonists (long-acting)
+145,beclometasone; formoterol; glycopyrronium,corticosteroids,"selective beta2-agonists (long-acting); antimuscarinics, other"
+146,bedaquiline,"antimycobacterials, other",None
+147,bee venom extract,allergen-type vaccines,None
+148,belatacept,t-cell activation inhibitors,None
+149,belimumab,"monoclonal antibodies, anti-lymphocyte",None
+150,bendamustine hydrochloride,alkylating agents,None
+151,bendroflumethiazide,thiazides and related diuretics,None
+152,benperidol,"antipsychotics, first-generation",None
+153,benralizumab,monoclonal antibodies,None
+154,benzalkonium chloride,"antiseptics and disinfectants, other",None
+155,benzathine benzylpenicillin,"penicillins, beta-lactamase sensitive",None
+156,benzoic acid; salicylic acid,None,None
+157,"benzoin tincture, compound",None,None
+158,benzoyl peroxide,peroxides,None
+159,benzoyl peroxide; clindamycin,peroxides,lincosamides
+160,benzydamine hydrochloride,non-steroidal anti-inflammatory drugs,None
+161,benzyl benzoate,parasiticides,None
+162,"benzyl benzoate; bismuth oxide, bismuth subgallate, hydrocortisone acetate, peru balsam; zinc oxide",corticosteroids,None
+163,benzylpenicillin sodium,"penicillins, beta-lactamase sensitive",None
+164,betahistine dihydrochloride,None,None
+165,betaine,None,None
+166,betamethasone,corticosteroids,None
+167,betamethasone; clioquinol,corticosteroid combinations with anti-infectives,None
+168,betamethasone; clotrimazole,corticosteroid combinations with anti-infectives,None
+169,betamethasone; fusidic acid,corticosteroid combinations with anti-infectives,None
+170,betamethasone; neomycin,corticosteroid combinations with anti-infectives,None
+171,betamethasone; salicylic acid,corticosteroid combinations with anti-infectives,None
+172,betaxolol,"beta blocking agents, selective",None
+173,bethanechol chloride,None,None
+174,bevacizumab,monoclonal antibodies,None
+175,bexarotene,retinoid and related drugs,None
+176,bezafibrate,fibrates,None
+177,bezlotoxumab,antitoxins,None
+178,bicalutamide,anti-androgens,None
+179,bictegravir; emtricitabine; tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors
+180,bilastine,non-sedating antihistamines,None
+181,bimatoprost,prostamides,None
+182,bimatoprost; timolol,prostamides,"beta blocking agents, non-selective"
+183,binimetinib,protein kinase inhibitors,None
+184,biphasic insulin aspart,"insulins, intermediate-acting combined with rapid-acting",None
+185,biphasic insulin lispro,"insulins, intermediate-acting combined with rapid-acting",None
+186,biphasic isophane insulin,"insulins, intermediate-acting",None
+187,bisacodyl,stimulant laxatives,None
+188,bismuth subsalicylate,antacids,None
+189,bisoprolol fumarate,"beta blocking agents, selective",None
+190,bivalirudin,"thrombin inhibitors, direct",None
+191,bleomycin,cytotoxic antibiotics and related substances,None
+192,blinatumomab,monoclonal antibodies,None
+193,"borneol; camphene, cineole, menthol, menthone; pinene",terpenes,None
+194,bortezomib,proteasome inhibitors,None
+195,bosentan,endothelin receptor antagonists,None
+196,bosutinib,protein kinase inhibitors,None
+197,botulinum toxin type a,neurotoxins (botulinum toxins),None
+198,botulinum toxin type b,neurotoxins (botulinum toxins),None
+199,botulism antitoxin,antitoxins,None
+200,brentuximab vedotin,monoclonal antibodies,None
+201,brigatinib,protein kinase inhibitors,None
+202,brimonidine tartrate,alpha2-adrenoceptor agonists,None
+203,brimonidine; timolol,alpha2-adrenoceptor agonists,"beta blocking agents, non-selective"
+204,brinzolamide,carbonic anhydrase inhibitors,None
+205,brinzolamide; brimonidine,carbonic anhydrase inhibitors,alpha2-adrenoceptor agonists
+206,brinzolamide; timolol,carbonic anhydrase inhibitors,"beta blocking agents, non-selective"
+207,brivaracetam,antiepileptics,None
+208,brodalumab,interleukin inhibitors,None
+209,brolucizumab,vascular endothelial growth factor inhibitors,None
+210,bromfenac,non-steroidal anti-inflammatory drugs,None
+211,bromocriptine,dopamine receptor agonists,None
+212,budesonide,corticosteroids,None
+213,budesonide; formoterol,corticosteroids,selective beta2-agonists (long-acting)
+214,bumetanide,loop diuretics,None
+215,bupivacaine hydrochloride,"anaesthetics, local",None
+216,bupivacaine; adrenaline,"anaesthetics, local","sympathomimetics, vasoconstrictor"
+217,bupivacaine; fentanyl,"anaesthetics, local",opioids
+218,buprenorphine,opioids,None
+219,buprenorphine; naloxone,opioid receptor antagonists,opioids
+220,bupropion hydrochloride,serotonin and noradrenaline re-uptake inhibitors,None
+221,buserelin,gonadotrophin-releasing hormones,None
+222,buspirone hydrochloride,None,None
+223,busulfan,alkylating agents,None
+224,c1-esterase inhibitor,complement regulatory proteins,None
+225,cabazitaxel,taxanes,None
+226,cabergoline,dopamine receptor agonists,None
+227,cabozantinib,protein kinase inhibitors,None
+228,calamine; zinc oxide,antipruritics,None
+229,calcipotriol,vitamin d and analogues,None
+230,calcipotriol; betamethasone,corticosteroids,vitamin d and analogues
+231,calcitonin (salmon),bone resorption inhibitors,None
+232,calcitriol,vitamin d and analogues,None
+233,calcium acetate,calcium,None
+234,calcium acetate; magnesium carbonate,phosphate binders,None
+235,calcium carbonate,calcium,None
+236,calcium carbonate; calcium lactate gluconate,calcium,None
+237,calcium chloride,calcium,None
+238,calcium gluconate,calcium,None
+239,calcium lactate,calcium,None
+240,calcium phosphate,calcium,None
+241,calcium polystyrene sulfonate,cation exchange compounds,None
+242,camellia sinensis,plant alkaloids,None
+243,canagliflozin,sodium glucose co-transporter 2 inhibitors,None
+244,canagliflozin; metformin,sodium glucose co-transporter 2 inhibitors,biguanides
+245,canakinumab,monoclonal antibodies,None
+246,candesartan cilexetil,angiotensin ii receptor antagonists,None
+247,cangrelor,antiplatelet drugs,None
+248,cannabidiol,antiepileptics,None
+249,cannabis extract,cannabinoids,None
+250,capecitabine,antimetabolites,None
+251,caplacizumab,antithrombotic drugs,None
+252,capreomycin,"antimycobacterials, other",None
+253,capsaicin,plant alkaloids,None
+254,captopril,ace inhibitors,None
+255,carbamazepine,antiepileptics,None
+256,carbetocin,oxytocin and analogues,None
+257,carbimazole,None,None
+258,carbocisteine,mucolytics,None
+259,carbomers,ocular lubricants,None
+260,carboplatin,platinum compounds,None
+261,carboprost,prostaglandins and analogues,None
+262,carfilzomib,proteasome inhibitors,None
+263,carglumic acid,amino acids and derivatives,None
+264,cariprazine,"antipsychotics, second-generation",None
+265,carmellose sodium,ocular lubricants,None
+266,carmustine,alkylating agents,None
+267,carvedilol,alpha- and beta-adrenoceptor blockers,None
+268,caspofungin,echinocandin antifungals,None
+269,castor oil; collodion; colophony,None,None
+270,cefaclor,"cephalosporins, second-generation",None
+271,cefadroxil,"cephalosporins, first-generation",None
+272,cefalexin,"cephalosporins, first-generation",None
+273,cefazolin,"cephalosporins, first-generation",None
+274,cefepime,"cephalosporins, other",None
+275,cefixime,"cephalosporins, third-generation",None
+276,cefotaxime,"cephalosporins, third-generation",None
+277,cefoxitin,"cephalosporins, second-generation",None
+278,cefradine,"cephalosporins, first-generation",None
+279,ceftaroline fosamil,"cephalosporins, other",None
+280,ceftazidime,"cephalosporins, third-generation",None
+281,ceftazidime; avibactam,"cephalosporins, third-generation with beta-lactamase inhibitor",None
+282,ceftobiprole,"cephalosporins, other",None
+283,ceftolozane; tazobactam,"cephalosporins, third-generation with beta-lactamase inhibitor",None
+284,ceftriaxone,"cephalosporins, third-generation",None
+285,cefuroxime,"cephalosporins, second-generation",None
+286,celecoxib,non-steroidal anti-inflammatory drugs,None
+287,celiprolol hydrochloride,"beta blocking agents, selective",None
+288,cemiplimab,monoclonal antibodies,None
+289,cenegermin,None,None
+290,ceritinib,protein kinase inhibitors,None
+291,certolizumab pegol,tumor necrosis factor alpha (tnf-a) inhibitors,None
+292,cetirizine hydrochloride,non-sedating antihistamines,None
+293,cetrimide; undecenoic acid,undecenoates,None
+294,cetrorelix,anti-gonadotrophin-releasing hormones,None
+295,cetuximab,monoclonal antibodies,None
+296,"charcoal, activated",None,None
+297,chenodeoxycholic acid,bile acids,None
+298,chloral hydrate,non-benzodiazepine hypnotics and sedatives,None
+299,chlorambucil,alkylating agents,None
+300,chloramphenicol,"antibacterials, other",None
+301,chlordiazepoxide hydrochloride,benzodiazepines,None
+302,chlorhexidine,"antiseptics and disinfectants, other",None
+303,chlorhexidine gluconate; isopropyl alcohol,"antiseptics and disinfectants, other",None
+304,chlorhexidine; cetrimide,"antiseptics and disinfectants, other",None
+305,chlorhexidine; lidocaine,"antiseptics and disinfectants, other","anaesthetics, local"
+306,chlorhexidine; neomycin,aminoglycosides,None
+307,chlorhexidine; nystatin,"antiseptics and disinfectants, other",None
+308,chlormethine,alkylating agents,None
+309,chloroprocaine hydrochloride,"anaesthetics, local",None
+310,chloroquine,antimalarials,None
+311,chloroquine; proguanil,antimalarials,None
+312,chlorphenamine maleate,sedating antihistamines,None
+313,chlorpromazine hydrochloride,"antipsychotics, first-generation",None
+314,chlortalidone,thiazides and related diuretics,None
+315,cholera vaccine,bacterial vaccines,None
+316,cholic acid,bile acids,None
+317,choline salicylate,salicylic acid and derivatives,None
+318,choriogonadotropin alfa,gonadotrophins,None
+319,ciclesonide,corticosteroids,None
+320,ciclosporin,calcineurin inhibitors and related drugs,None
+321,cidofovir,nucleoside analogues,None
+322,cilostazol,antiplatelet drugs,None
+323,cimetidine,h2-receptor antagonists,None
+324,cinacalcet,bone resorption inhibitors,None
+325,cinchocaine hydrochloride; fluocortolone caproate; fluocortolone pivalate,corticosteroids,amides
+326,cinchocaine; hydrocortisone,corticosteroids,amides
+327,cinchocaine; prednisolone,corticosteroids,amides
+328,cinnarizine,sedating antihistamines,None
+329,cinnarizine; dimenhydrinate,sedating antihistamines,None
+330,ciprofibrate,fibrates,None
+331,ciprofloxacin,quinolones,None
+332,ciprofloxacin; dexamethasone,corticosteroid combinations with anti-infectives,None
+333,ciprofloxacin; fluocinolone acetonide,corticosteroid combinations with anti-infectives,None
+334,cisatracurium,"neuromuscular blocking drugs, non-depolarising",None
+335,cisplatin,platinum compounds,None
+336,citalopram,selective serotonin re-uptake inhibitors,None
+337,citric acid,None,None
+338,citric acid; magnesium carbonate,osmotic laxatives,None
+339,citric acid; potassium citrate,"alkalising drugs, urinary",None
+340,cladribine,antimetabolites,None
+341,clarithromycin,macrolides,None
+342,clemastine,sedating antihistamines,None
+343,clindamycin,lincosamides,None
+344,clobazam,benzodiazepines,None
+345,clobetasol propionate,corticosteroids,None
+346,clobetasol propionate; neomycin sulfate; nystatin,corticosteroid combinations with anti-infectives,None
+347,clobetasone butyrate,corticosteroids,None
+348,clobetasone butyrate; nystatin; oxytetracycline,corticosteroid combinations with anti-infectives,None
+349,clofarabine,antimetabolites,None
+350,clofazimine,"antimycobacterials, other",None
+351,clomethiazole,non-benzodiazepine hypnotics and sedatives,None
+352,clomifene citrate,None,None
+353,clomipramine hydrochloride,tricyclic antidepressants,None
+354,clonazepam,benzodiazepines,None
+355,clonidine hydrochloride,"antihypertensives, centrally acting",None
+356,clopidogrel,antiplatelet drugs,None
+357,clotrimazole,imidazole antifungals,None
+358,clozapine,"antipsychotics, second-generation",None
+359,co-amilofruse,loop diuretics,"potassium-sparing diuretics, other"
+360,co-amilozide,thiazides and related diuretics,"potassium-sparing diuretics, other"
+361,co-amoxiclav,None,None
+362,co-beneldopa,dopamine precursors,None
+363,co-careldopa,dopamine precursors,None
+364,co-codamol,opioids,None
+365,co-cyprindiol,anti-androgens,None
+366,co-danthramer,stimulant laxatives,None
+367,co-danthrusate,stimulant laxatives,softening laxatives
+368,co-fluampicil,"penicillins, broad-spectrum",None
+369,co-flumactone,aldosterone antagonists,thiazides and related diuretics
+370,co-magaldrox,"antacids, aluminium and magnesium",None
+371,co-phenotrope,antipropulsives,None
+372,co-simalcite,"antacids, aluminium and magnesium",None
+373,co-tenidone,"beta blocking agents, selective",thiazides and related diuretics
+374,co-triamterzide,thiazides and related diuretics,"potassium-sparing diuretics, other"
+375,co-trimoxazole,sulfonamides,"antibacterials, other"
+376,coal tar,tars,None
+377,coal tar; calamine,tars,antipruritics
+378,coal tar; coconut oil; salicylic acid,tars,salicylic acid and derivatives
+379,coal tar; dithranol; salicylic acid,tars,antracen derivatives; salicylic acid and derivatives
+380,coal tar; salicylic acid,tars,salicylic acid and derivatives
+381,coal tar; salicylic acid; precipitated sulfur,tars,salicylic acid and derivatives
+382,coal tar; zinc oxide,tars,astringents
+383,cobicistat,pharmacokinetic enhancers,None
+384,cobimetinib,protein kinase inhibitors,None
+385,codeine phosphate,opioids,cough suppressants
+386,colchicine,plant alkaloids,None
+387,colecalciferol,vitamin d and analogues,None
+388,colecalciferol; calcium carbonate,vitamin d and analogues,calcium
+389,colecalciferol; calcium phosphate,vitamin d and analogues,calcium
+390,colesevelam hydrochloride,bile acid sequestrants,None
+391,colestipol hydrochloride,bile acid sequestrants,None
+392,colestyramine,bile acid sequestrants,None
+393,colistimethate sodium,None,None
+394,conestat alfa,complement regulatory proteins,None
+395,conjugated oestrogens (equine),oestrogens,None
+396,conjugated oestrogens; bazedoxifene acetate,oestrogens,None
+397,conjugated oestrogens; medroxyprogesterone,oestrogens combined with progestogens,None
+398,cranberry juice,None,None
+399,crisantaspase,"antineoplastics, other",None
+400,crizotinib,protein kinase inhibitors,None
+401,crotamiton,antipruritics,None
+402,cyanocobalamin,vitamin b group,None
+403,cyclizine,antihistamines,None
+404,cyclopentolate hydrochloride,"antimuscarinics, other",None
+405,cyclophosphamide,alkylating agents,None
+406,cycloserine,"antimycobacterials, other",None
+407,cyproheptadine hydrochloride,sedating antihistamines,None
+408,cyproterone acetate,anti-androgens,None
+409,cytarabine,antimetabolites,None
+410,cytomegalovirus immunoglobulin,immunoglobulins,None
+411,dabigatran etexilate,"thrombin inhibitors, direct",None
+412,dabrafenib,protein kinase inhibitors,None
+413,dacarbazine,alkylating agents,None
+414,dacomitinib,protein kinase inhibitors,None
+415,dairy products,None,None
+416,dalbavancin,glycopeptide antibacterials,None
+417,dalteparin sodium,heparins,None
+418,danaparoid sodium,heparinoids,None
+419,danazol,anti-gonadotrophin-releasing hormones,None
+420,dantrolene sodium,None,None
+421,dapagliflozin,sodium glucose co-transporter 2 inhibitors,None
+422,dapagliflozin; metformin,sodium glucose co-transporter 2 inhibitors,biguanides
+423,dapoxetine,selective serotonin re-uptake inhibitors,None
+424,dapsone,"antimycobacterials, other",None
+425,daptomycin,"antibacterials, other",None
+426,daratumumab,monoclonal antibodies,None
+427,darbepoetin alfa,epoetins,None
+428,darifenacin,"antimuscarinics, urinary",None
+429,darolutamide,anti-androgens,None
+430,darunavir,"protease inhibitors, hiv",None
+431,darunavir; cobicistat,"protease inhibitors, hiv",pharmacokinetic enhancers
+432,"darunavir; cobicistat, emtricitabine; tenofovir alafenamide","protease inhibitors, hiv",pharmacokinetic enhancers; nucleoside reverse transcriptase inhibitors
+433,dasabuvir,"antivirals, other",None
+434,dasatinib,protein kinase inhibitors,None
+435,daunorubicin,anthracyclines and related drugs,None
+436,daunorubicin; cytarabine,anthracyclines and related drugs,antimetabolites
+437,decitabine,antimetabolites,None
+438,deferasirox,iron chelators,None
+439,deferiprone,iron chelators,None
+440,deflazacort,corticosteroids,None
+441,degarelix,anti-gonadotrophin-releasing hormones,None
+442,delafloxacin,quinolones,None
+443,delamanid,"antimycobacterials, other",None
+444,demeclocycline hydrochloride,tetracyclines and related drugs,None
+445,denosumab,monoclonal antibodies,None
+446,dequalinium chloride,"antiseptics and disinfectants, other",None
+447,desferrioxamine mesilate,iron chelators,None
+448,desflurane,volatile liquid anaesthetics,None
+449,desloratadine,non-sedating antihistamines,None
+450,desmopressin,vasopressin and analogues,None
+451,desogestrel,progestogens,None
+452,dexamethasone,corticosteroids,None
+453,dexamethasone; framycetin sulfate; gramicidin,corticosteroid combinations with anti-infectives,None
+454,dexamethasone; glacial acetic acid; neomycin sulfate,corticosteroid combinations with anti-infectives,None
+455,"dexamethasone; hypromellose, neomycin; polymyxin b sulfate",corticosteroid combinations with anti-infectives,None
+456,dexamethasone; tobramycin,corticosteroid combinations with anti-infectives,None
+457,dexamfetamine sulfate,amfetamines,None
+458,dexibuprofen,non-steroidal anti-inflammatory drugs,None
+459,dexketoprofen,non-steroidal anti-inflammatory drugs,None
+460,dexmedetomidine,non-benzodiazepine hypnotics and sedatives,None
+461,dexrazoxane,iron chelators,None
+462,diamorphine hydrochloride,opioids,None
+463,diazepam,benzodiazepines,None
+464,diazoxide,glycogenolytic hormones,None
+465,diclofenac,non-steroidal anti-inflammatory drugs,None
+466,diclofenac potassium,non-steroidal anti-inflammatory drugs,None
+467,diclofenac sodium,non-steroidal anti-inflammatory drugs,None
+468,diclofenac sodium; misoprostol,non-steroidal anti-inflammatory drugs,prostaglandins and analogues
+469,dicobalt edetate,"antidotes and chelators, other",None
+470,dicycloverine hydrochloride,"antimuscarinics, other",None
+471,"dicycloverine hydrochloride; aluminium hydroxide, magnesium oxide; simeticone","antimuscarinics, other",None
+472,dienogest,progestogens,None
+473,dienogest; estradiol valerate,oestrogens combined with progestogens,None
+474,diethyl phthalate; methyl salicylate,"antiseptics and disinfectants, other",None
+475,diethylcarbamazine,anthelmintics,None
+476,diethylstilbestrol,oestrogens,None
+477,diflucortolone valerate,corticosteroids,None
+478,digoxin,None,None
+479,digoxin-specific antibody,None,None
+480,dihydrocodeine tartrate,opioids,None
+481,dihydrocodeine; paracetamol,opioids,None
+482,dihydrotachysterol,vitamin d and analogues,None
+483,diltiazem hydrochloride,calcium-channel blockers,None
+484,dimethyl fumarate,immunomodulating drugs,None
+485,dimeticone,parasiticides,None
+486,dinoprostone,prostaglandins and analogues,None
+487,dinutuximab beta,monoclonal antibodies,None
+488,diphtheria antitoxin,antitoxins,None
+489,diphtheria; tetanus; poliomyelitis vaccine,"bacterial and viral vaccines, combined",None
+490,"diphtheria; tetanus, pertussis; poliomyelitis vaccine","bacterial and viral vaccines, combined",None
+491,"diphtheria; tetanus, pertussis, hepatitis b, poliomyelitis; haemophilus influenzae type b vaccine","bacterial and viral vaccines, combined",None
+492,"diphtheria; tetanus, pertussis, poliomyelitis; haemophilus influenzae type b vaccine","bacterial and viral vaccines, combined",None
+493,dipipanone hydrochloride; cyclizine,opioids,None
+494,dipyridamole,antiplatelet drugs,None
+495,dipyridamole; aspirin,antiplatelet drugs,None
+496,"disodium hydrogen citrate; glucose, potassium chloride; sodium chloride",oral rehydration salts,None
+497,disopyramide,None,None
+498,disulfiram,None,None
+499,dithranol,antracen derivatives,None
+500,dithranol; salicylic acid; zinc oxide,antracen derivatives,None
+501,dobutamine,"sympathomimetics, inotropic",None
+502,docetaxel,taxanes,None
+503,docusate sodium,softening laxatives,stimulant laxatives; softening drugs
+504,dolutegravir,hiv-integrase inhibitors,None
+505,dolutegravir; rilpivirine,hiv-integrase inhibitors,non-nucleoside reverse transcriptase inhibitors
+506,domperidone,dopamine receptor antagonists,None
+507,donepezil hydrochloride,"anticholinesterases, centrally acting",None
+508,dopamine hydrochloride,"sympathomimetics, inotropic",None
+509,doravirine,non-nucleoside reverse transcriptase inhibitors,None
+510,dornase alfa,mucolytics,None
+511,dorzolamide,carbonic anhydrase inhibitors,None
+512,dorzolamide; timolol,carbonic anhydrase inhibitors,"beta blocking agents, non-selective"
+513,dosulepin hydrochloride,tricyclic antidepressants,None
+514,doxapram hydrochloride,None,None
+515,doxazosin,alpha-adrenoceptor blockers,None
+516,doxepin,tricyclic antidepressants,antipruritics
+517,doxorubicin hydrochloride,anthracyclines and related drugs,None
+518,doxycycline,tetracyclines and related drugs,None
+519,doxylamine; pyridoxine,antihistamines,vitamin b group
+520,dried prothrombin complex,coagulation proteins,None
+521,dronedarone,"antiarrhythmics, class iii",None
+522,droperidol,"antipsychotics, first-generation",None
+523,dulaglutide,glucagon-like peptide-1 receptor agonists,None
+524,duloxetine,serotonin and noradrenaline re-uptake inhibitors,None
+525,dupilumab,interleukin inhibitors,None
+526,durvalumab,monoclonal antibodies,None
+527,dutasteride,5α-reductase inhibitors,None
+528,econazole nitrate,imidazole antifungals,None
+529,eculizumab,monoclonal antibodies,None
+530,edoxaban,factor xa inhibitors,None
+531,efavirenz,non-nucleoside reverse transcriptase inhibitors,None
+532,efavirenz; emtricitabine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors
+533,eflornithine,"antiprotozoals, other",None
+534,elbasvir; grazoprevir,hcv inhibitors,"protease inhibitors, hepatitis"
+535,eletriptan,triptans,None
+536,eliglustat,glucosylceramide synthase inhibitors,None
+537,elosulfase alfa,enzymes,None
+538,elotuzumab,monoclonal antibodies,None
+539,eltrombopag,thrombopoietin receptor agonists,None
+540,elvitegravir,hiv-integrase inhibitors,None
+541,"elvitegravir; cobicistat, emtricitabine; tenofovir alafenamide",nucleoside reverse transcriptase inhibitors,pharmacokinetic enhancers; hiv-integrase inhibitors
+542,"elvitegravir; cobicistat, emtricitabine; tenofovir disoproxil",nucleoside reverse transcriptase inhibitors,pharmacokinetic enhancers; hiv-integrase inhibitors
+543,emicizumab,haemostatics,None
+544,"emollient bath; shower products, antimicrobial-containing",emollients,None
+545,"emollient bath; shower products, paraffin-containing",emollients,None
+546,"emollient bath; shower products, soya-bean oil-containing",emollients,None
+547,"emollient bath; shower products, tar-containing",emollients,None
+548,"emollient creams; ointments, antimicrobial-containing",emollients,None
+549,"emollient creams; ointments, colloidal oatmeal-containing",emollients,None
+550,"emollient creams; ointments, paraffin-containing",emollients,None
+551,"emollients, urea-containing",emollients,None
+552,empagliflozin,sodium glucose co-transporter 2 inhibitors,None
+553,empagliflozin; linagliptin,sodium glucose co-transporter 2 inhibitors,dipeptidylpeptidase-4 inhibitors (gliptins)
+554,empagliflozin; metformin,sodium glucose co-transporter 2 inhibitors,biguanides
+555,emtricitabine,nucleoside reverse transcriptase inhibitors,None
+556,emtricitabine; rilpivirine; tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors
+557,emtricitabine; rilpivirine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors
+558,emtricitabine; tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,None
+559,emtricitabine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,None
+560,enalapril maleate,ace inhibitors,None
+561,enalapril; hydrochlorothiazide,ace inhibitors,thiazides and related diuretics
+562,encorafenib,protein kinase inhibitors,None
+563,enfuvirtide,None,None
+564,enoxaparin sodium,heparins,None
+565,enoximone,phosphodiesterase type-3 inhibitors,None
+566,entacapone,catechol-o-methyltransferase inhibitors,None
+567,entecavir,nucleoside analogues,None
+568,enteral feeds,None,None
+569,enzalutamide,anti-androgens,None
+570,ephedrine hydrochloride,"sympathomimetics, vasoconstrictor",None
+571,epinastine hydrochloride,antihistamines,None
+572,epirubicin hydrochloride,anthracyclines and related drugs,None
+573,eplerenone,aldosterone antagonists,None
+574,epoetin alfa,epoetins,None
+575,epoetin beta,epoetins,None
+576,epoetin zeta,epoetins,None
+577,epoprostenol,prostaglandins and analogues,None
+578,eprosartan,angiotensin ii receptor antagonists,None
+579,eptifibatide,glycoprotein iib/iiia inhibitors,None
+580,erdosteine,mucolytics,None
+581,erenumab,calcitonin gene-related peptide inhibitors,None
+582,ergocalciferol,vitamin d and analogues,None
+583,ergocalciferol; calcium lactate; calcium phosphate,vitamin d and analogues,calcium
+584,ergometrine maleate,ergot alkaloids,None
+585,ergometrine; oxytocin,ergot alkaloids,oxytocin and analogues
+586,ergotamine tartrate,ergot alkaloids,None
+587,ergotamine tartrate; caffeine hydrate; cyclizine hydrochloride,ergot alkaloids,sedating antihistamines
+588,eribulin,"antineoplastics, other",None
+589,erlotinib,protein kinase inhibitors,None
+590,ertapenem,carbapenems,None
+591,ertugliflozin,sodium glucose co-transporter 2 inhibitors,None
+592,erythromycin,macrolides,None
+593,erythromycin; zinc acetate,macrolides,None
+594,escitalopram,selective serotonin re-uptake inhibitors,None
+595,esketamine,nmda receptor antagonists,None
+596,eslicarbazepine acetate,antiepileptics,None
+597,esmolol hydrochloride,"beta blocking agents, selective",None
+598,esomeprazole,proton pump inhibitors,None
+599,estradiol,oestrogens,None
+600,estradiol; dydrogesterone,oestrogens combined with progestogens,None
+601,estradiol; levonorgestrel,oestrogens combined with progestogens,None
+602,estradiol; medroxyprogesterone,oestrogens combined with progestogens,None
+603,estradiol; nomegestrol,oestrogens combined with progestogens,None
+604,estradiol; norethisterone,oestrogens combined with progestogens,None
+605,estramustine phosphate,alkylating agents,None
+606,estriol,oestrogens,None
+607,etanercept,tumor necrosis factor alpha (tnf-a) inhibitors,None
+608,etelcalcetide,bone resorption inhibitors,None
+609,ethambutol hydrochloride,"antimycobacterials, other",None
+610,ethinylestradiol,oestrogens,None
+611,ethinylestradiol; desogestrel,oestrogens combined with progestogens,None
+612,ethinylestradiol; drospirenone,oestrogens combined with progestogens,None
+613,ethinylestradiol; etonogestrel,oestrogens combined with progestogens,None
+614,ethinylestradiol; gestodene,oestrogens combined with progestogens,None
+615,ethinylestradiol; levonorgestrel,oestrogens combined with progestogens,None
+616,ethinylestradiol; norelgestromin,oestrogens combined with progestogens,None
+617,ethinylestradiol; norethisterone,oestrogens combined with progestogens,None
+618,ethinylestradiol; norgestimate,oestrogens combined with progestogens,None
+619,ethosuximide,antiepileptics,None
+620,etodolac,non-steroidal anti-inflammatory drugs,None
+621,etomidate,intravenous anaesthetics,None
+622,etonogestrel,progestogens,None
+623,etoposide,None,None
+624,etoricoxib,non-steroidal anti-inflammatory drugs,None
+625,etravirine,non-nucleoside reverse transcriptase inhibitors,None
+626,eucalyptus; menthol,menthol and derivatives,None
+627,european viper snake venom antiserum,antitoxins,None
+628,everolimus,protein kinase inhibitors,None
+629,evolocumab,"lipid modifying drugs, other",None
+630,exemestane,aromatase inhibitors,None
+631,exenatide,glucagon-like peptide-1 receptor agonists,None
+632,ezetimibe,cholesterol absorption inhibitors,None
+633,"factor ix fraction, dried",coagulation proteins,None
+634,factor viia (recombinant),coagulation proteins,None
+635,"factor viii fraction, dried",coagulation proteins,None
+636,factor viii inhibitor bypassing fraction,None,None
+637,"factor xiii fraction, dried",coagulation proteins,None
+638,famciclovir,nucleoside analogues,None
+639,famotidine,h2-receptor antagonists,None
+640,fampridine,cholinergic receptor stimulating drugs,None
+641,febuxostat,xanthine oxidase inhibitors,None
+642,felbinac,non-steroidal anti-inflammatory drugs,None
+643,felodipine,calcium-channel blockers,None
+644,fenofibrate,fibrates,None
+645,fentanyl,opioids,None
+646,fenticonazole nitrate,imidazole antifungals,None
+647,ferric carboxymaltose,"iron, injectable",None
+648,ferric maltol,"iron, oral",None
+649,ferrous fumarate,"iron, oral",None
+650,ferrous fumarate; folic acid,"iron, oral",folates
+651,ferrous gluconate,"iron, oral",None
+652,ferrous sulfate,"iron, oral",None
+653,ferrous sulfate; ascorbic acid,"iron, oral",vitamin c
+654,ferrous sulfate; folic acid,"iron, oral",folates
+655,fesoterodine fumarate,"antimuscarinics, urinary",None
+656,fexofenadine hydrochloride,non-sedating antihistamines,None
+657,"fibrinogen, dried",coagulation proteins,None
+658,fidaxomicin,"antibacterials, other",None
+659,filgrastim,granulocyte-colony stimulating factors,None
+660,finasteride,5α-reductase inhibitors,None
+661,fingolimod,immunomodulating drugs,None
+662,flavoxate hydrochloride,"antimuscarinics, urinary",None
+663,flecainide acetate,"antiarrhythmics, class ic",None
+664,flucloxacillin,"penicillins, penicillinase-resistant",None
+665,fluconazole,triazole antifungals,None
+666,flucytosine,"antifungals, other",None
+667,fludarabine phosphate,antimetabolites,None
+668,fludrocortisone acetate,corticosteroids,None
+669,fludroxycortide,corticosteroids,None
+670,flumazenil,None,None
+671,flumetasone pivalate; clioquinol,corticosteroids,None
+672,fluocinolone acetonide,corticosteroids,None
+673,fluocinolone acetonide; clioquinol,corticosteroid combinations with anti-infectives,None
+674,fluocinolone acetonide; neomycin,corticosteroid combinations with anti-infectives,None
+675,fluocinonide,corticosteroids,None
+676,fluorescein sodium,None,None
+677,fluorescein; lidocaine,"anaesthetics, local",None
+678,fluorometholone,corticosteroids,None
+679,fluorouracil,antimetabolites,None
+680,fluorouracil; salicylic acid,antimetabolites,salicylic acid and derivatives
+681,fluoxetine,selective serotonin re-uptake inhibitors,None
+682,flupentixol,"antipsychotics, first-generation",None
+683,flupentixol decanoate,"antipsychotics, first-generation (depot injections)",None
+684,fluphenazine decanoate,"antipsychotics, first-generation (depot injections)",None
+685,flurazepam,benzodiazepines,None
+686,flurbiprofen,non-steroidal anti-inflammatory drugs,None
+687,flutamide,anti-androgens,None
+688,fluticasone,corticosteroids,None
+689,fluticasone; azelastine,corticosteroids,non-sedating antihistamines
+690,fluticasone; formoterol,corticosteroids,selective beta2-agonists (long-acting)
+691,fluticasone; salmeterol,corticosteroids,selective beta2-agonists (long-acting)
+692,fluticasone; umeclidinium; vilanterol,corticosteroids,"selective beta2-agonists (long-acting); antimuscarinics, other"
+693,fluticasone; vilanterol,corticosteroids,selective beta2-agonists (long-acting)
+694,fluvastatin,statins,None
+695,fluvoxamine maleate,selective serotonin re-uptake inhibitors,None
+696,folic acid,folates,None
+697,folinic acid,folates,None
+698,follitropin alfa,gonadotrophins,None
+699,follitropin alfa; lutropin alfa,gonadotrophins,None
+700,follitropin delta,gonadotrophins,None
+701,fondaparinux sodium,factor xa inhibitors,None
+702,formaldehyde,aldehydes and derivatives,None
+703,formoterol fumarate,selective beta2-agonists (long-acting),None
+704,fosamprenavir,"protease inhibitors, hiv",None
+705,fosaprepitant,neurokinin receptor antagonists,None
+706,foscarnet sodium,"antivirals, other",None
+707,fosfomycin,"antibacterials, other",None
+708,fosinopril sodium,ace inhibitors,None
+709,fosphenytoin sodium,antiepileptics,None
+710,fostamatinib,haemostatics,None
+711,framycetin sulfate,aminoglycosides,None
+712,fremanezumab,calcitonin gene-related peptide inhibitors,None
+713,fresh frozen plasma,plasma products,None
+714,frovatriptan,triptans,None
+715,fulvestrant,anti-oestrogens,None
+716,furosemide,loop diuretics,None
+717,furosemide; triamterene,loop diuretics,"potassium-sparing diuretics, other"
+718,fusidic acid,"antibacterials, other",None
+719,gabapentin,antiepileptics,None
+720,galantamine,"anticholinesterases, centrally acting",None
+721,galcanezumab,calcitonin gene-related peptide inhibitors,None
+722,galsulfase,enzymes,None
+723,ganciclovir,nucleoside analogues,None
+724,ganirelix,anti-gonadotrophin-releasing hormones,None
+725,gefitinib,protein kinase inhibitors,None
+726,gelatin,plasma substitutes,None
+727,gemcitabine,antimetabolites,None
+728,gemeprost,prostaglandins and analogues,None
+729,gemfibrozil,fibrates,None
+730,gemtuzumab ozogamicin,monoclonal antibodies,None
+731,gentamicin,aminoglycosides,None
+732,gentamicin; hydrocortisone,aminoglycosides,corticosteroids
+733,gilteritinib,protein kinase inhibitors,None
+734,glatiramer acetate,"immunostimulants, other",None
+735,glecaprevir; pibrentasvir,"protease inhibitors, hepatitis",non-structural protein 5a inhibitors
+736,glibenclamide,sulfonylureas,None
+737,gliclazide,sulfonylureas,None
+738,glimepiride,sulfonylureas,None
+739,glipizide,sulfonylureas,None
+740,glucagon,glycogenolytic hormones,None
+741,glucosamine,None,None
+742,glucose,sugars,None
+743,glutaraldehyde,aldehydes and derivatives,None
+744,glycerol,stimulant laxatives,None
+745,glycerol phenylbutyrate,ammonia lowering drugs,None
+746,glycerol; magnesium sulfate; phenol,"antiseptics and disinfectants, other",None
+747,glyceryl trinitrate,nitrates,None
+748,glycine,irrigating solutions,None
+749,glycopyrronium bromide,"antimuscarinics, other",None
+750,glycopyrronium; indacaterol,"antimuscarinics, other",selective beta2-agonists (long-acting)
+751,golimumab,tumor necrosis factor alpha (tnf-a) inhibitors,None
+752,gonadorelin,gonadotrophin-releasing hormones,None
+753,goserelin,gonadotrophin-releasing hormones,None
+754,granisetron,serotonin (5ht3) receptor antagonists,None
+755,grapefruit juice,None,None
+756,grass pollen extract,allergen-type vaccines,None
+757,griseofulvin,"antifungals, other",None
+758,guanfacine,alpha2-adrenoceptor agonists,None
+759,guselkumab,interleukin inhibitors,None
+760,haem arginate,None,None
+761,haemophilus influenzae type b; meningococcal group c vaccine,bacterial vaccines,None
+762,haloperidol,"antipsychotics, first-generation",None
+763,haloperidol decanoate,"antipsychotics, first-generation (depot injections)",None
+764,heparin (unfractionated),heparins,None
+765,heparinoid,heparinoids,None
+766,hepatitis a; b vaccine,viral vaccines,None
+767,hepatitis a vaccine,viral vaccines,None
+768,hepatitis a; typhoid vaccine,viral vaccines,None
+769,hepatitis b immunoglobulin,immunoglobulins,None
+770,hepatitis b vaccine,viral vaccines,None
+771,hexetidine,"antiseptics and disinfectants, other",None
+772,homatropine hydrobromide,"antimuscarinics, other",None
+773,human alpha1-proteinase inhibitor,enzyme inhibitors,None
+774,human papillomavirus vaccines,viral vaccines,None
+775,hyaluronidase,enzymes,None
+776,hydralazine hydrochloride,vasodilator antihypertensives,None
+777,hydrochlorothiazide,thiazides and related diuretics,None
+778,hydrocortisone,corticosteroids,None
+779,hydrocortisone butyrate,corticosteroids,None
+780,"hydrocortisone; benzalkonium chloride, dimeticone; nystatin",corticosteroid combinations with anti-infectives,None
+781,hydrocortisone; chlorhexidine hydrochloride; nystatin,corticosteroid combinations with anti-infectives,None
+782,hydrocortisone; clotrimazole,corticosteroid combinations with anti-infectives,None
+783,hydrocortisone; fusidic acid,corticosteroid combinations with anti-infectives,None
+784,hydrocortisone; lidocaine,corticosteroids,amides
+785,hydrocortisone; miconazole,corticosteroid combinations with anti-infectives,None
+786,hydrocortisone; neomycin; polymyxin b sulfate,corticosteroid combinations with anti-infectives,None
+787,hydrocortisone; oxytetracycline,corticosteroid combinations with anti-infectives,None
+788,hydrocortisone; pramocaine,corticosteroids,None
+789,hydrogen peroxide,"antiseptics and disinfectants, other",None
+790,hydromorphone hydrochloride,opioids,None
+791,hydroxocobalamin,vitamin b group,None
+792,hydroxycarbamide,"antineoplastics, other",None
+793,hydroxychloroquine sulfate,disease-modifying anti-rheumatic drugs,None
+794,hydroxyethylcellulose,ocular lubricants,None
+795,hydroxypropyl guar; polyethylene glycol; propylene glycol,ocular lubricants,None
+796,hydroxyzine hydrochloride,sedating antihistamines,None
+797,hyoscine butylbromide,"antimuscarinics, other",None
+798,hyoscine hydrobromide,"antimuscarinics, other",None
+799,hypromellose,ocular lubricants,None
+800,hypromellose; dextran 70,ocular lubricants,None
+801,ibandronic acid,bisphosphonates,None
+802,ibrutinib,protein kinase inhibitors,None
+803,ibuprofen,non-steroidal anti-inflammatory drugs,None
+804,icatibant,None,None
+805,ichthammol,anti-infectives,None
+806,ichthammol; zinc oxide,anti-infectives,None
+807,idarubicin hydrochloride,anthracyclines and related drugs,None
+808,idarucizumab,"antidotes and chelators, other",None
+809,idebenone,None,None
+810,idelalisib,protein kinase inhibitors,None
+811,idursulfase,enzymes,None
+812,ifosfamide,alkylating agents,None
+813,iloprost,prostaglandins and analogues,None
+814,imatinib,protein kinase inhibitors,None
+815,imidapril hydrochloride,ace inhibitors,None
+816,imiglucerase,enzymes,None
+817,imipenem; cilastatin,carbapenems,None
+818,imipramine hydrochloride,tricyclic antidepressants,None
+819,imiquimod,None,None
+820,indacaterol,selective beta2-agonists (long-acting),None
+821,indapamide,thiazides and related diuretics,None
+822,indometacin,non-steroidal anti-inflammatory drugs,None
+823,indoramin,alpha-adrenoceptor blockers,None
+824,infliximab,tumor necrosis factor alpha (tnf-a) inhibitors,None
+825,influenza vaccine,viral vaccines,None
+826,ingenol mebutate,None,None
+827,inosine pranobex,None,None
+828,inositol nicotinate,nicotinic acid derivatives,None
+829,inotersen,neuroprotective drugs,None
+830,inotuzumab ozogamicin,monoclonal antibodies,None
+831,insulin,"insulins, rapid-acting",None
+832,insulin aspart,"insulins, rapid-acting",None
+833,insulin degludec,"insulins, long-acting",None
+834,insulin degludec; liraglutide,"insulins, long-acting",None
+835,insulin detemir,"insulins, long-acting",None
+836,insulin glargine,"insulins, long-acting",None
+837,insulin glargine; lixisenatide,"insulins, long-acting",glucagon-like peptide-1 receptor agonists
+838,insulin glulisine,"insulins, rapid-acting",None
+839,insulin lispro,"insulins, rapid-acting",None
+840,interferon alfa,interferons,None
+841,interferon beta,interferons,None
+842,interferon gamma-1b,interferons,None
+843,intra-uterine contraceptive devices (copper),None,None
+844,iodide; iodine,vitamins and trace elements,None
+845,ipilimumab,monoclonal antibodies,None
+846,ipratropium bromide,"antimuscarinics, other",None
+847,ipratropium; salbutamol,"antimuscarinics, other",selective beta2-agonists (short-acting)
+848,irbesartan,angiotensin ii receptor antagonists,None
+849,irbesartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics
+850,irinotecan hydrochloride,topoisomerase i inhibitors,None
+851,iron dextran,"iron, injectable",None
+852,iron isomaltoside 1000,"iron, injectable",None
+853,iron sucrose,"iron, injectable",None
+854,isatuximab,monoclonal antibodies,None
+855,isavuconazole,triazole antifungals,None
+856,isocarboxazid,"monoamine-oxidase a and b inhibitors, irreversible",None
+857,isoflurane,volatile liquid anaesthetics,None
+858,isoniazid,"antimycobacterials, other",None
+859,isophane insulin,"insulins, intermediate-acting",None
+860,isosorbide dinitrate,nitrates,None
+861,isosorbide mononitrate,nitrates,None
+862,isotretinoin,retinoid and related drugs,None
+863,ispaghula husk,bulk-forming laxatives,None
+864,itraconazole,triazole antifungals,None
+865,ivabradine,None,None
+866,ivacaftor,mucolytics,None
+867,ivermectin,anthelmintics,None
+868,ixazomib,proteasome inhibitors,None
+869,ixekizumab,interleukin inhibitors,None
+870,japanese encephalitis vaccine,viral vaccines,None
+871,kaolin; morphine,antipropulsives,None
+872,ketamine,nmda receptor antagonists,None
+873,ketoconazole,imidazole antifungals,None
+874,ketoprofen,non-steroidal anti-inflammatory drugs,None
+875,ketorolac trometamol,non-steroidal anti-inflammatory drugs,None
+876,ketotifen,sedating antihistamines,None
+877,labetalol hydrochloride,alpha- and beta-adrenoceptor blockers,None
+878,lacidipine,calcium-channel blockers,None
+879,lacosamide,antiepileptics,None
+880,lactic acid,carboxylic acids,None
+881,lactulose,osmotic laxatives,None
+882,lamivudine,nucleoside reverse transcriptase inhibitors,None
+883,lamivudine; dolutegravir,nucleoside reverse transcriptase inhibitors,hiv-integrase inhibitors
+884,lamivudine; tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,None
+885,lamivudine; tenofovir disoproxil; doravirine,nucleoside reverse transcriptase inhibitors,non-nucleoside reverse transcriptase inhibitors
+886,lamotrigine,antiepileptics,None
+887,lanadelumab,None,None
+888,lanreotide,somatostatin analogues,None
+889,lansoprazole,proton pump inhibitors,None
+890,lanthanum,phosphate binders,None
+891,lapatinib,protein kinase inhibitors,None
+892,laronidase,enzymes,None
+893,larotrectinib,protein kinase inhibitors,None
+894,latanoprost,prostaglandins and analogues,None
+895,latanoprost; timolol,prostaglandins and analogues,"beta blocking agents, non-selective"
+896,ledipasvir; sofosbuvir,nucleotide analogues,hcv inhibitors
+897,leflunomide,disease-modifying anti-rheumatic drugs,None
+898,lenalidomide,thalidomide and related analogues,None
+899,lenograstim,granulocyte-colony stimulating factors,None
+900,lenvatinib,protein kinase inhibitors,None
+901,lercanidipine hydrochloride,calcium-channel blockers,None
+902,letermovir,"antivirals, other",None
+903,letrozole,aromatase inhibitors,None
+904,leuprorelin acetate,gonadotrophin-releasing hormones,None
+905,levamisole,anthelmintics,None
+906,levetiracetam,antiepileptics,None
+907,levobunolol hydrochloride,"beta blocking agents, non-selective",None
+908,levobupivacaine,"anaesthetics, local",None
+909,levocarnitine,amino acids and derivatives,None
+910,levocetirizine hydrochloride,non-sedating antihistamines,None
+911,levodopa; carbidopa; entacapone,dopamine precursors,catechol-o-methyltransferase inhibitors
+912,levofloxacin,quinolones,None
+913,levofolinic acid,folates,None
+914,levomenthol,menthol and derivatives,None
+915,levomepromazine,"antipsychotics, first-generation",None
+916,levonorgestrel,progestogens,None
+917,levothyroxine sodium,thyroid hormones,None
+918,lidocaine hydrochloride,"anaesthetics, local",None
+919,lidocaine; adrenaline,"anaesthetics, local","sympathomimetics, vasoconstrictor"
+920,lidocaine; cetrimide,"anaesthetics, local",None
+921,lidocaine; phenylephrine,"anaesthetics, local","sympathomimetics, vasoconstrictor"
+922,lidocaine; prilocaine,"anaesthetics, local",None
+923,linaclotide,None,None
+924,linagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None
+925,linagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides
+926,linezolid,"antibacterials, other",None
+927,liothyronine sodium,thyroid hormones,None
+928,lipegfilgrastim,granulocyte-colony stimulating factors,None
+929,liquid paraffin,softening laxatives,None
+930,liquid paraffin; white soft paraffin; wool alcohols,ocular lubricants,None
+931,liraglutide,glucagon-like peptide-1 receptor agonists,None
+932,lisdexamfetamine mesilate,amfetamines,None
+933,lisinopril,ace inhibitors,None
+934,lisinopril; hydrochlorothiazide,ace inhibitors,thiazides and related diuretics
+935,lithium carbonate,lithium salts,None
+936,lithium citrate,lithium salts,None
+937,lixisenatide,glucagon-like peptide-1 receptor agonists,None
+938,lodoxamide,mast-cell stabilisers,None
+939,lofepramine,tricyclic antidepressants,None
+940,lofexidine hydrochloride,alpha2-adrenoceptor agonists,None
+941,lomitapide,"lipid modifying drugs, other",None
+942,lomustine,alkylating agents,None
+943,loperamide hydrochloride,antipropulsives,None
+944,loperamide; simeticone,antipropulsives,None
+945,lopinavir; ritonavir,"protease inhibitors, hiv",None
+946,loprazolam,benzodiazepines,None
+947,loratadine,non-sedating antihistamines,None
+948,lorazepam,benzodiazepines,None
+949,lorlatinib,protein kinase inhibitors,None
+950,lormetazepam,benzodiazepines,None
+951,losartan potassium,angiotensin ii receptor antagonists,None
+952,losartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics
+953,loteprednol etabonate,corticosteroids,None
+954,loxapine,"antipsychotics, first-generation",None
+955,lumacaftor; ivacaftor,mucolytics,None
+956,lurasidone hydrochloride,"antipsychotics, second-generation",None
+957,lusutrombopag,thrombopoietin receptor agonists,None
+958,lutropin alfa,gonadotrophins,None
+959,lymecycline,tetracyclines and related drugs,None
+960,macitentan,endothelin receptor antagonists,None
+961,macrogol 3350,osmotic laxatives,None
+962,"macrogol 3350; anhydrous sodium sulfate, ascorbic acid, potassium chloride, sodium ascorbate; sodium chloride",osmotic laxatives,None
+963,"macrogol 3350; anhydrous sodium sulfate, potassium chloride, sodium bicarbonate; sodium chloride",osmotic laxatives,None
+964,"macrogol 3350; potassium chloride, sodium bicarbonate; sodium chloride",osmotic laxatives,None
+965,magnesium aspartate,magnesium,None
+966,magnesium carbonate,"antacids, magnesium",None
+967,magnesium citrate; sodium picosulfate,stimulant laxatives,None
+968,magnesium glycerophosphate,magnesium,None
+969,magnesium hydroxide,osmotic laxatives,None
+970,magnesium sulfate,magnesium,osmotic laxatives
+971,magnesium trisilicate,"antacids, magnesium",None
+972,magnesium trisilicate; magnesium carbonate; sodium bicarbonate,"antacids, magnesium",None
+973,malathion,parasiticides,None
+974,mannitol,None,mucolytics
+975,maraviroc,"antivirals, other",None
+976,"measles, mumps; rubella vaccine, live",viral vaccines,None
+977,mebendazole,anthelmintics,None
+978,mebeverine hydrochloride,antispasmodics,None
+979,mebeverine; ispaghula husk,antispasmodics,bulk-forming laxatives
+980,medroxyprogesterone acetate,progestogens,None
+981,mefenamic acid,non-steroidal anti-inflammatory drugs,None
+982,mefloquine,antimalarials,None
+983,megestrol acetate,progestogens,None
+984,melatonin,non-benzodiazepine hypnotics and sedatives,None
+985,meloxicam,non-steroidal anti-inflammatory drugs,None
+986,melphalan,alkylating agents,None
+987,memantine hydrochloride,nmda receptor antagonists,None
+988,menadiol sodium phosphate,vitamin k,None
+989,"meningococcal group b vaccine (rdna, component, adsorbed)",bacterial vaccines,None
+990,meningococcal group c vaccine,bacterial vaccines,None
+991,meningococcal groups a; c; w135; y vaccine,bacterial vaccines,None
+992,menotrophin,gonadotrophins,None
+993,mepacrine hydrochloride,"antiprotozoals, other",None
+994,mepivacaine hydrochloride,"anaesthetics, local",None
+995,mepivacaine; adrenaline,"anaesthetics, local","sympathomimetics, vasoconstrictor"
+996,mepolizumab,monoclonal antibodies,None
+997,meprobamate,non-benzodiazepine hypnotics and sedatives,None
+998,meptazinol,opioids,None
+999,mercaptamine,amino acids and derivatives,None
+1000,mercaptopurine,antimetabolites,None
+1001,meropenem,carbapenems,None
+1002,meropenem; vaborbactam,carbapenems,None
+1003,mesalazine,aminosalicylates,None
+1004,mesna,None,None
+1005,metaraminol,"sympathomimetics, vasoconstrictor",None
+1006,metformin hydrochloride,biguanides,None
+1007,methadone hydrochloride,opioids,None
+1008,methenamine hippurate,"antibacterials, other",None
+1009,methocarbamol,"muscle relaxants, centrally acting",None
+1010,methotrexate,antimetabolites,None
+1011,methoxy polyethylene glycol-epoetin beta,epoetins,None
+1012,methoxyflurane,volatile liquid anaesthetics,None
+1013,methylcellulose,bulk-forming laxatives,None
+1014,methyldopa,"antihypertensives, centrally acting",None
+1015,methylnaltrexone bromide,opioid receptor antagonists,None
+1016,methylphenidate hydrochloride,centrally acting sympathomimetics,None
+1017,methylprednisolone,corticosteroids,None
+1018,methylprednisolone; lidocaine,corticosteroids,"anaesthetics, local"
+1019,methylthioninium chloride,"antidotes and chelators, other",None
+1020,metoclopramide hydrochloride,dopamine receptor antagonists,None
+1021,metolazone,thiazides and related diuretics,None
+1022,metoprolol tartrate,"beta blocking agents, selective",None
+1023,metronidazole,nitroimidazole derivatives,None
+1024,metyrapone,enzyme inhibitors,None
+1025,mexiletine,drugs for neuromuscular disorders,None
+1026,mianserin hydrochloride,tetracyclic antidepressants,None
+1027,micafungin,echinocandin antifungals,None
+1028,miconazole,imidazole antifungals,None
+1029,midazolam,benzodiazepines,None
+1030,midodrine hydrochloride,"sympathomimetics, vasoconstrictor",None
+1031,midostaurin,protein kinase inhibitors,None
+1032,mifamurtide,"immunostimulants, other",None
+1033,mifepristone,progesterone receptor modulators,None
+1034,mifepristone; misoprostol,progesterone receptor modulators,prostaglandins and analogues
+1035,migalastat,None,None
+1036,miglustat,glucosylceramide synthase inhibitors,None
+1037,milrinone,phosphodiesterase type-3 inhibitors,None
+1038,minocycline,tetracyclines and related drugs,None
+1039,minoxidil,vasodilator antihypertensives,None
+1040,mirabegron,None,None
+1041,mirtazapine,tetracyclic antidepressants,None
+1042,misoprostol,prostaglandins and analogues,None
+1043,mitomycin,cytotoxic antibiotics and related substances,None
+1044,mitotane,"antineoplastics, other",None
+1045,mitoxantrone,anthracyclines and related drugs,None
+1046,mivacurium,"neuromuscular blocking drugs, non-depolarising",None
+1047,mizolastine,non-sedating antihistamines,None
+1048,moclobemide,None,None
+1049,modafinil,centrally acting sympathomimetics,None
+1050,mogamulizumab,monoclonal antibodies,None
+1051,mometasone furoate,corticosteroids,None
+1052,montelukast,None,None
+1053,morphine,opioids,None
+1054,morphine; cyclizine,opioids,sedating antihistamines
+1055,moxifloxacin,quinolones,None
+1056,moxisylyte,peripheral vasodilators,None
+1057,moxonidine,"antihypertensives, centrally acting",None
+1058,mupirocin,"antibacterials, other",None
+1059,mycophenolate mofetil,None,None
+1060,nabilone,cannabinoids,None
+1061,nabumetone,non-steroidal anti-inflammatory drugs,None
+1062,nadolol,"beta blocking agents, non-selective",None
+1063,nafarelin,gonadotrophin-releasing hormones,None
+1064,naftidrofuryl oxalate,peripheral vasodilators,None
+1065,naldemedine,opioid receptor antagonists,None
+1066,nalmefene,opioid receptor antagonists,None
+1067,naloxegol,opioid receptor antagonists,None
+1068,naloxone hydrochloride,opioid receptor antagonists,None
+1069,naltrexone hydrochloride,opioid receptor antagonists,None
+1070,naltrexone; bupropion,serotonin and noradrenaline re-uptake inhibitors,opioid receptor antagonists
+1071,nandrolone,None,None
+1072,naproxen,non-steroidal anti-inflammatory drugs,None
+1073,naproxen; esomeprazole,non-steroidal anti-inflammatory drugs,proton pump inhibitors
+1074,naratriptan,triptans,None
+1075,natalizumab,"monoclonal antibodies, anti-lymphocyte",None
+1076,nateglinide,meglitinides,None
+1077,nebivolol,"beta blocking agents, selective",None
+1078,necitumumab,monoclonal antibodies,None
+1079,nedocromil sodium,mast-cell stabilisers,None
+1080,nefopam hydrochloride,None,None
+1081,nelarabine,antimetabolites,None
+1082,neomycin sulfate,aminoglycosides,None
+1083,neostigmine,"anticholinesterases, other",None
+1084,neostigmine; glycopyrronium bromide,"anticholinesterases, other","antimuscarinics, other"
+1085,nepafenac,non-steroidal anti-inflammatory drugs,None
+1086,neratinib,protein kinase inhibitors,None
+1087,nevirapine,non-nucleoside reverse transcriptase inhibitors,None
+1088,nicardipine hydrochloride,calcium-channel blockers,None
+1089,nicorandil,None,None
+1090,nicotinamide,vitamin b group,None
+1091,nicotine,nicotinic receptor agonists,None
+1092,nicotinic acid,nicotinic acid derivatives,None
+1093,nifedipine,calcium-channel blockers,None
+1094,nilotinib,protein kinase inhibitors,None
+1095,nimodipine,calcium-channel blockers,None
+1096,nintedanib,protein kinase inhibitors,antifibrotics
+1097,niraparib,"antineoplastics, other",None
+1098,nitisinone,None,None
+1099,nitrazepam,benzodiazepines,None
+1100,nitrofurantoin,"antibacterials, other",None
+1101,nitrous oxide,volatile liquid anaesthetics,None
+1102,nivolumab,monoclonal antibodies,None
+1103,nizatidine,h2-receptor antagonists,None
+1104,nonoxinol,None,None
+1105,noradrenaline/norepinephrine,"sympathomimetics, vasoconstrictor",None
+1106,norethisterone,progestogens,None
+1107,norethisterone; mestranol,oestrogens combined with progestogens,None
+1108,normal immunoglobulin,immunoglobulins,None
+1109,nortriptyline,tricyclic antidepressants,None
+1110,nusinersen,drugs for neuromuscular disorders,None
+1111,nystatin,polyene antifungals,None
+1112,obeticholic acid,bile acids,None
+1113,obinutuzumab,monoclonal antibodies,None
+1114,ocrelizumab,"monoclonal antibodies, anti-lymphocyte",None
+1115,ocriplasmin,None,None
+1116,octreotide,somatostatin analogues,None
+1117,ofloxacin,quinolones,None
+1118,olanzapine,"antipsychotics, second-generation",None
+1119,olanzapine embonate,"antipsychotics, second-generation (depot injections)",None
+1120,olaparib,"antineoplastics, other",None
+1121,olive oil,softening drugs,None
+1122,olmesartan medoxomil,angiotensin ii receptor antagonists,None
+1123,olmesartan; amlodipine,angiotensin ii receptor antagonists,calcium-channel blockers
+1124,olmesartan; amlodipine; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics; calcium-channel blockers
+1125,olmesartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics
+1126,olodaterol,selective beta2-agonists (long-acting),None
+1127,olopatadine,antihistamines,None
+1128,olsalazine sodium,aminosalicylates,None
+1129,omalizumab,monoclonal antibodies,None
+1130,ombitasvir; paritaprevir; ritonavir,non-structural protein 5a inhibitors,"protease inhibitors, hepatitis; protease inhibitors, hiv"
+1131,omega-3-acid ethyl esters,"lipid modifying drugs, other",None
+1132,omeprazole,proton pump inhibitors,None
+1133,ondansetron,serotonin (5ht3) receptor antagonists,None
+1134,opicapone,catechol-o-methyltransferase inhibitors,None
+1135,orlistat,None,None
+1136,orphenadrine hydrochloride,"antimuscarinics, other",None
+1137,oseltamivir,neuraminidase inhibitors,None
+1138,osimertinib,protein kinase inhibitors,None
+1139,ospemifene,None,None
+1140,oxaliplatin,platinum compounds,None
+1141,oxazepam,benzodiazepines,None
+1142,oxcarbazepine,antiepileptics,None
+1143,oxerutins,None,None
+1144,oxybuprocaine hydrochloride,"anaesthetics, local",None
+1145,oxybutynin hydrochloride,"antimuscarinics, urinary",None
+1146,oxycodone hydrochloride,opioids,None
+1147,oxycodone; naloxone,opioids,opioid receptor antagonists
+1148,oxymetholone,None,None
+1149,oxytetracycline,tetracyclines and related drugs,None
+1150,oxytocin,oxytocin and analogues,None
+1151,paclitaxel,taxanes,None
+1152,palbociclib,protein kinase inhibitors,None
+1153,paliperidone,"antipsychotics, second-generation","antipsychotics, second-generation (depot injections)"
+1154,palivizumab,monoclonal antibodies,None
+1155,palonosetron,serotonin (5ht3) receptor antagonists,None
+1156,palonosetron; netupitant,serotonin (5ht3) receptor antagonists,neurokinin receptor antagonists
+1157,pamidronate disodium,bisphosphonates,None
+1158,pancreatin,None,None
+1159,pancuronium bromide,"neuromuscular blocking drugs, non-depolarising",None
+1160,panitumumab,monoclonal antibodies,None
+1161,panobinostat,"antineoplastics, other",None
+1162,pantoprazole,proton pump inhibitors,None
+1163,paracetamol,"analgesics, non-opioid",None
+1164,paracetamol; buclizine hydrochloride; codeine phosphate,sedating antihistamines,opioids
+1165,paracetamol; isometheptene,"analgesics, non-opioid",None
+1166,paracetamol; metoclopramide,"analgesics, non-opioid",dopamine receptor antagonists
+1167,"paraffin, yellow, soft",ocular lubricants,None
+1168,parathyroid hormone,parathyroid hormones and analogues,None
+1169,parecoxib,non-steroidal anti-inflammatory drugs,None
+1170,parenteral nutrition supplements,None,None
+1171,paricalcitol,vitamin d and analogues,None
+1172,paroxetine,selective serotonin re-uptake inhibitors,None
+1173,pasireotide,somatostatin analogues,None
+1174,patiromer calcium,cation exchange compounds,None
+1175,patisiran,neuroprotective drugs,None
+1176,pazopanib,protein kinase inhibitors,None
+1177,pegaspargase,"antineoplastics, other",None
+1178,pegfilgrastim,granulocyte-colony stimulating factors,None
+1179,peginterferon alfa,interferons,None
+1180,peginterferon beta-1a,interferons,None
+1181,pegvisomant,None,None
+1182,pembrolizumab,monoclonal antibodies,None
+1183,pemetrexed,antimetabolites,None
+1184,penicillamine,disease-modifying anti-rheumatic drugs,copper chelators
+1185,pentamidine isetionate,"antiprotozoals, other",None
+1186,pentazocine,opioids,None
+1187,pentosan polysulfate sodium,heparinoids,None
+1188,pentostatin,cytotoxic antibiotics and related substances,None
+1189,pentoxifylline,peripheral vasodilators,None
+1190,peppermint oil,antispasmodics,None
+1191,perampanel,antiepileptics,None
+1192,pericyazine,"antipsychotics, first-generation",None
+1193,perindopril arginine,ace inhibitors,None
+1194,perindopril arginine; indapamide,ace inhibitors,thiazides and related diuretics
+1195,perindopril erbumine,ace inhibitors,None
+1196,permethrin,parasiticides,None
+1197,pertuzumab,monoclonal antibodies,None
+1198,pethidine hydrochloride,opioids,None
+1199,phenelzine,"monoamine-oxidase a and b inhibitors, irreversible",None
+1200,phenindione,vitamin k antagonists,None
+1201,phenobarbital,barbiturates,None
+1202,phenol,sclerosants,None
+1203,phenoxybenzamine hydrochloride,peripheral vasodilators,None
+1204,phenoxymethylpenicillin,"penicillins, beta-lactamase sensitive",None
+1205,phenylephrine hydrochloride,"sympathomimetics, vasoconstrictor",None
+1206,phenylephrine; tropicamide,"sympathomimetics, vasoconstrictor","antimuscarinics, other"
+1207,phenytoin,antiepileptics,None
+1208,pholcodine,cough suppressants,None
+1209,phosphate,osmotic laxatives,None
+1210,phytomenadione,vitamin k,None
+1211,pilocarpine,parasympathomimetics,None
+1212,pimecrolimus,calcineurin inhibitors and related drugs,None
+1213,pimozide,"antipsychotics, first-generation",None
+1214,pindolol,"beta blocking agents, non-selective",None
+1215,pioglitazone,thiazolidinediones,None
+1216,pioglitazone; metformin,thiazolidinediones,biguanides
+1217,piperacillin; tazobactam,"penicillins, antipseudomonal with beta-lactamase inhibitor",None
+1218,piracetam,cns stimulants,None
+1219,pirfenidone,antifibrotics,None
+1220,piroxicam,non-steroidal anti-inflammatory drugs,None
+1221,pitolisant,cns stimulants,None
+1222,pivmecillinam hydrochloride,None,None
+1223,pixantrone,anthracyclines and related drugs,None
+1224,pizotifen,sedating antihistamines,None
+1225,plerixafor,None,None
+1226,pneumococcal polysaccharide conjugate vaccine (adsorbed),bacterial vaccines,None
+1227,pneumococcal polysaccharide vaccine,bacterial vaccines,None
+1228,podophyllotoxin,plant alkaloids,None
+1229,polatuzumab vedotin,monoclonal antibodies,None
+1230,polyvinyl alcohol,ocular lubricants,None
+1231,pomalidomide,thalidomide and related analogues,None
+1232,ponatinib,protein kinase inhibitors,None
+1233,porfimer sodium,photosensitisers,None
+1234,posaconazole,triazole antifungals,None
+1235,potassium aminobenzoate,vitamin b group,None
+1236,potassium bicarbonate; potassium acid tartrate,potassium,None
+1237,potassium chloride,potassium,None
+1238,potassium chloride; calcium chloride dihydrate; sodium chloride,potassium,sodium chloride
+1239,"potassium chloride; calcium chloride, sodium chloride; sodium lactate",potassium,sodium chloride; carboxylic acids
+1240,potassium chloride; glucose,potassium,sugars
+1241,potassium chloride; glucose; sodium chloride,potassium,sodium chloride; sugars
+1242,potassium chloride; potassium bicarbonate,potassium,None
+1243,"potassium chloride; rice powder, sodium chloride; sodium citrate",oral rehydration salts,None
+1244,potassium chloride; sodium chloride,potassium,sodium chloride
+1245,potassium permanganate,antiseptics and disinfectants,None
+1246,povidone-iodine,None,None
+1247,pralidoxime chloride,"antidotes and chelators, other",None
+1248,pramipexole,dopamine receptor agonists,None
+1249,prasterone,oestrogens,None
+1250,prasugrel,antiplatelet drugs,None
+1251,pravastatin sodium,statins,None
+1252,praziquantel,anthelmintics,None
+1253,prazosin,alpha-adrenoceptor blockers,None
+1254,prednisolone,corticosteroids,None
+1255,pregabalin,antiepileptics,None
+1256,prilocaine hydrochloride,"anaesthetics, local",None
+1257,prilocaine; felypressin,"anaesthetics, local",vasopressin and analogues
+1258,primaquine,antimalarials,None
+1259,primidone,barbiturates,None
+1260,procarbazine,"antineoplastics, other",None
+1261,prochlorperazine,"antipsychotics, first-generation",None
+1262,procyclidine hydrochloride,"antimuscarinics, other",None
+1263,proflavine,"antiseptics and disinfectants, other",None
+1264,progesterone,progestogens,None
+1265,proguanil hydrochloride,antimalarials,None
+1266,promazine hydrochloride,"antipsychotics, first-generation",None
+1267,promethazine hydrochloride,sedating antihistamines,None
+1268,promethazine teoclate,sedating antihistamines,None
+1269,propafenone hydrochloride,"antiarrhythmics, class ic",None
+1270,propamidine isetionate,"antiprotozoals, other",None
+1271,propantheline bromide,"antimuscarinics, other",None
+1272,propiverine hydrochloride,"antimuscarinics, urinary",None
+1273,propofol,intravenous anaesthetics,None
+1274,propranolol hydrochloride,"beta blocking agents, non-selective",None
+1275,propylthiouracil,None,None
+1276,protamine sulfate,"antidotes and chelators, other",None
+1277,protein c concentrate,coagulation proteins,None
+1278,proxymetacaine hydrochloride,"anaesthetics, local",None
+1279,prucalopride,None,None
+1280,pseudoephedrine hydrochloride,"sympathomimetics, vasoconstrictor",None
+1281,pyrazinamide,"antimycobacterials, other",None
+1282,pyridostigmine bromide,"anticholinesterases, other",None
+1283,pyridoxine hydrochloride,vitamin b group,None
+1284,pyrimethamine,antiprotozoals,None
+1285,quetiapine,"antipsychotics, second-generation",None
+1286,quinagolide,dopamine receptor agonists,None
+1287,quinapril,ace inhibitors,None
+1288,quinapril; hydrochlorothiazide,ace inhibitors,thiazides and related diuretics
+1289,quinine,antimalarials,None
+1290,rabeprazole sodium,proton pump inhibitors,None
+1291,rabies immunoglobulin,immunoglobulins,None
+1292,rabies vaccine,viral vaccines,None
+1293,raloxifene hydrochloride,bone resorption inhibitors,None
+1294,raltegravir,hiv-integrase inhibitors,None
+1295,raltitrexed,"antineoplastics, other",None
+1296,ramipril,ace inhibitors,None
+1297,ramipril; felodipine,ace inhibitors,calcium-channel blockers
+1298,ramucirumab,monoclonal antibodies,None
+1299,ranibizumab,vascular endothelial growth factor inhibitors,None
+1300,ranitidine,h2-receptor antagonists,None
+1301,ranolazine,None,None
+1302,rasagiline,monoamine-oxidase b inhibitors,None
+1303,rasburicase,None,None
+1304,ravulizumab,monoclonal antibodies,None
+1305,reboxetine,None,None
+1306,regorafenib,protein kinase inhibitors,None
+1307,remdesivir,"antivirals, other",None
+1308,remifentanil,opioids,None
+1309,repaglinide,meglitinides,None
+1310,reslizumab,monoclonal antibodies,None
+1311,"retinol palmitate; white soft paraffin, light liquid paraffin, liquid paraffin; wool fat",ocular lubricants,None
+1312,ribavirin,nucleoside analogues,None
+1313,ribociclib,protein kinase inhibitors,None
+1314,rifabutin,rifamycins,None
+1315,rifampicin,rifamycins,None
+1316,"rifampicin; ethambutol, isoniazid; pyrazinamide",rifamycins,"antimycobacterials, other"
+1317,rifampicin; isoniazid,rifamycins,"antimycobacterials, other"
+1318,rifampicin; isoniazid; pyrazinamide,rifamycins,"antimycobacterials, other"
+1319,rifaximin,rifamycins,None
+1320,rilpivirine,non-nucleoside reverse transcriptase inhibitors,None
+1321,riluzole,neuroprotective drugs,None
+1322,riociguat,None,None
+1323,risankizumab,interleukin inhibitors,None
+1324,risedronate sodium,bisphosphonates,None
+1325,risedronate; calcium carbonate; colecalciferol,bisphosphonates,calcium; vitamin d and analogues
+1326,risperidone,"antipsychotics, second-generation","antipsychotics, second-generation (depot injections)"
+1327,ritonavir,"protease inhibitors, hiv",None
+1328,rituximab,monoclonal antibodies,None
+1329,rivaroxaban,factor xa inhibitors,None
+1330,rivastigmine,"anticholinesterases, centrally acting",None
+1331,rizatriptan,triptans,None
+1332,rocuronium bromide,"neuromuscular blocking drugs, non-depolarising",None
+1333,roflumilast,phosphodiesterase type-4 inhibitors,None
+1334,rolapitant,neurokinin receptor antagonists,None
+1335,romiplostim,thrombopoietin receptor agonists,None
+1336,romosozumab,monoclonal antibodies,None
+1337,ropinirole,dopamine receptor agonists,None
+1338,ropivacaine hydrochloride,"anaesthetics, local",None
+1339,rosuvastatin,statins,None
+1340,rotavirus vaccine,viral vaccines,None
+1341,rotigotine,dopamine receptor agonists,None
+1342,rucaparib,"antineoplastics, other",None
+1343,rufinamide,antiepileptics,None
+1344,rupatadine,non-sedating antihistamines,None
+1345,ruxolitinib,protein kinase inhibitors,None
+1346,sacubitril; valsartan,angiotensin ii receptor antagonists,None
+1347,safinamide,monoamine-oxidase b inhibitors,None
+1348,salbutamol,selective beta2-agonists (short-acting),None
+1349,salicylic acid,salicylic acid and derivatives,None
+1350,salicylic acid; lactic acid,salicylic acid and derivatives,carboxylic acids
+1351,salicylic acid; rhubarb extract,salicylic acid and derivatives,None
+1352,salicylic acid; zinc oxide,salicylic acid and derivatives,None
+1353,salmeterol,selective beta2-agonists (long-acting),None
+1354,sapropterin dihydrochloride,None,None
+1355,saquinavir,"protease inhibitors, hiv",None
+1356,sarilumab,interleukin inhibitors,None
+1357,saxagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None
+1358,saxagliptin; dapagliflozin,dipeptidylpeptidase-4 inhibitors (gliptins),sodium glucose co-transporter 2 inhibitors
+1359,saxagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides
+1360,secukinumab,interleukin inhibitors,None
+1361,selegiline hydrochloride,monoamine-oxidase b inhibitors,None
+1362,selenium,vitamins and trace elements,None
+1363,selexipag,antiplatelet drugs,None
+1364,semaglutide,glucagon-like peptide-1 receptor agonists,None
+1365,senna,stimulant laxatives,None
+1366,senna; ispaghula husk,stimulant laxatives,bulk-forming laxatives
+1367,sertraline,selective serotonin re-uptake inhibitors,None
+1368,sevelamer,phosphate binders,None
+1369,sevoflurane,volatile liquid anaesthetics,None
+1370,sildenafil,phosphodiesterase type-5 inhibitors,None
+1371,siltuximab,monoclonal antibodies,None
+1372,silver nitrate,"antiseptics and disinfectants, other",None
+1373,silver sulfadiazine,sulfonamides,None
+1374,simeticone,antifoaming drugs,None
+1375,simeticone; aluminium hydroxide; magnesium hydroxide,"antacids, aluminium and magnesium",antifoaming drugs
+1376,simvastatin,statins,None
+1377,simvastatin; ezetimibe,statins,cholesterol absorption inhibitors
+1378,simvastatin; fenofibrate,statins,fibrates
+1379,siponimod,immunomodulating drugs,None
+1380,sirolimus,calcineurin inhibitors and related drugs,None
+1381,sitagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None
+1382,sitagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides
+1383,sodium acid phosphate; sodium phosphate,osmotic laxatives,None
+1384,sodium alginate; calcium carbonate; sodium bicarbonate,"antacids, alginate",None
+1385,sodium alginate; potassium bicarbonate,"antacids, alginate",None
+1386,sodium aurothiomalate,disease-modifying anti-rheumatic drugs,None
+1387,sodium bicarbonate,None,None
+1388,sodium bicarbonate; sodium chloride,"antiseptics and disinfectants, other",None
+1389,sodium chloride,sodium chloride,"ocular lubricants; irrigating solutions; antiseptics and disinfectants, other"
+1390,sodium chloride; glucose,sodium chloride,sugars
+1391,sodium citrate,"alkalising drugs, urinary",None
+1392,sodium clodronate,bisphosphonates,None
+1393,sodium cromoglicate,mast-cell stabilisers,None
+1394,sodium feredetate,"iron, oral",None
+1395,sodium fluoride,vitamins and trace elements,None
+1396,sodium hyaluronate,ocular lubricants,None
+1397,sodium hyaluronate; trehalose,ocular lubricants,None
+1398,sodium nitrite,"antidotes and chelators, other",None
+1399,sodium nitroprusside,vasodilator antihypertensives,None
+1400,sodium oxybate,None,None
+1401,sodium phenylbutyrate,ammonia lowering drugs,None
+1402,sodium picosulfate,stimulant laxatives,None
+1403,sodium polystyrene sulfonate,cation exchange compounds,None
+1404,sodium stibogluconate,"antiprotozoals, other",None
+1405,sodium tetradecyl sulfate,sclerosants,None
+1406,sodium thiosulfate,"antidotes and chelators, other",None
+1407,sodium valproate,antiepileptics,None
+1408,sodium zirconium cyclosilicate,cation exchange compounds,None
+1409,sofosbuvir,nucleotide analogues,None
+1410,sofosbuvir; velpatasvir,nucleotide analogues,hcv inhibitors
+1411,sofosbuvir; velpatasvir; voxilaprevir,nucleotide analogues,hcv inhibitors
+1412,solifenacin succinate,"antimuscarinics, urinary",None
+1413,somatropin,None,None
+1414,sorafenib,protein kinase inhibitors,None
+1415,sotalol hydrochloride,"beta blocking agents, non-selective",None
+1416,soybean oil,ocular lubricants,None
+1417,spironolactone,aldosterone antagonists,None
+1418,spironolactone; furosemide,aldosterone antagonists,loop diuretics
+1419,st john's wort,None,None
+1420,sterculia,bulk-forming laxatives,None
+1421,sterculia; frangula,bulk-forming laxatives,None
+1422,stiripentol,antiepileptics,None
+1423,streptokinase,tissue plasminogen activators,None
+1424,streptomycin,aminoglycosides,None
+1425,streptozocin,alkylating agents,None
+1426,strontium ranelate,bone resorption inhibitors,None
+1427,sucralfate,None,None
+1428,sucroferric oxyhydroxide,phosphate binders,None
+1429,sugammadex,"antidotes and chelators, other",None
+1430,sulfadiazine,sulfonamides,None
+1431,sulfasalazine,aminosalicylates,None
+1432,sulindac,non-steroidal anti-inflammatory drugs,None
+1433,sulpiride,"antipsychotics, first-generation",None
+1434,sumatriptan,triptans,None
+1435,sunitinib,protein kinase inhibitors,None
+1436,suxamethonium chloride,None,None
+1437,tacalcitol,vitamin d and analogues,None
+1438,tacrolimus,calcineurin inhibitors and related drugs,None
+1439,tadalafil,phosphodiesterase type-5 inhibitors,None
+1440,tafamidis,neuroprotective drugs,None
+1441,tafluprost,prostaglandins and analogues,None
+1442,tafluprost; timolol,prostaglandins and analogues,"beta blocking agents, non-selective"
+1443,talazoparib,"antineoplastics, other",None
+1444,talimogene laherparepvec,"antineoplastics, other",None
+1445,tamoxifen,anti-oestrogens,None
+1446,tamsulosin hydrochloride,alpha-adrenoceptor blockers,None
+1447,tamsulosin; dutasteride,alpha-adrenoceptor blockers,5α-reductase inhibitors
+1448,tamsulosin; solifenacin,alpha-adrenoceptor blockers,"antimuscarinics, urinary"
+1449,tapentadol,opioids,None
+1450,tazarotene,retinoid and related drugs,None
+1451,tedizolid,"antibacterials, other",None
+1452,teduglutide,amino acids and derivatives,None
+1453,tegafur; gimeracil; oteracil,antimetabolites,None
+1454,teicoplanin,glycopeptide antibacterials,None
+1455,telavancin,glycopeptide antibacterials,None
+1456,telbivudine,nucleoside analogues,None
+1457,telmisartan,angiotensin ii receptor antagonists,None
+1458,telmisartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics
+1459,telotristat ethyl,enzyme inhibitors,None
+1460,temazepam,benzodiazepines,None
+1461,temocillin,"penicillins, penicillinase-resistant",None
+1462,temoporfin,photosensitisers,None
+1463,temozolomide,alkylating agents,None
+1464,temsirolimus,protein kinase inhibitors,None
+1465,tenecteplase,tissue plasminogen activators,None
+1466,tenofovir alafenamide,nucleoside reverse transcriptase inhibitors,None
+1467,tenofovir disoproxil,nucleoside reverse transcriptase inhibitors,None
+1468,tenoxicam,non-steroidal anti-inflammatory drugs,None
+1469,terazosin,alpha-adrenoceptor blockers,None
+1470,terbinafine,"antifungals, other",None
+1471,terbutaline sulfate,selective beta2-agonists (short-acting),None
+1472,teriflunomide,None,None
+1473,teriparatide,parathyroid hormones and analogues,None
+1474,terlipressin acetate,vasopressin and analogues,None
+1475,testosterone,androgens,None
+1476,"testosterone decanoate, isocaproate, phenylpropionate; propionate",androgens,None
+1477,testosterone enantate,androgens,None
+1478,testosterone propionate,androgens,None
+1479,testosterone undecanoate,androgens,None
+1480,tetanus immunoglobulin,immunoglobulins,None
+1481,tetrabenazine,None,None
+1482,tetracaine,"anaesthetics, local",None
+1483,tetracosactide,None,None
+1484,tetracycline,tetracyclines and related drugs,None
+1485,tetrastarch,plasma substitutes,None
+1486,tezacaftor; ivacaftor,mucolytics,None
+1487,thalidomide,thalidomide and related analogues,None
+1488,theophylline,xanthines,None
+1489,thiamine,vitamin b group,None
+1490,thiopental sodium,barbiturates,barbiturates
+1491,thiotepa,alkylating agents,None
+1492,thyrotropin alfa,None,None
+1493,tiagabine,antiepileptics,None
+1494,tiaprofenic acid,non-steroidal anti-inflammatory drugs,None
+1495,tibolone,oestrogens,None
+1496,ticagrelor,antiplatelet drugs,None
+1497,ticarcillin; clavulanic acid,"penicillins, antipseudomonal with beta-lactamase inhibitor",None
+1498,"tick-borne encephalitis vaccine, inactivated",viral vaccines,None
+1499,tigecycline,tetracyclines and related drugs,None
+1500,tildrakizumab,interleukin inhibitors,None
+1501,timolol maleate,"beta blocking agents, non-selective",None
+1502,timolol; amiloride; hydrochlorothiazide,"beta blocking agents, non-selective",thiazides and related diuretics
+1503,timolol; bendroflumethiazide,"beta blocking agents, non-selective",thiazides and related diuretics
+1504,tinidazole,nitroimidazole derivatives,None
+1505,tinzaparin sodium,heparins,None
+1506,tioconazole,imidazole antifungals,None
+1507,tioguanine,antimetabolites,None
+1508,tiotropium,"antimuscarinics, other",None
+1509,tiotropium; olodaterol,"antimuscarinics, other",selective beta2-agonists (long-acting)
+1510,tipranavir,"protease inhibitors, hiv",None
+1511,tirofiban,glycoprotein iib/iiia inhibitors,None
+1512,tivozanib,protein kinase inhibitors,None
+1513,tizanidine,"muscle relaxants, centrally acting",None
+1514,tobramycin,aminoglycosides,None
+1515,tocilizumab,interleukin inhibitors,None
+1516,tofacitinib,jak inhibitors,None
+1517,tolbutamide,sulfonylureas,None
+1518,tolcapone,catechol-o-methyltransferase inhibitors,None
+1519,tolfenamic acid,non-steroidal anti-inflammatory drugs,None
+1520,tolterodine tartrate,"antimuscarinics, urinary",None
+1521,tolvaptan,None,None
+1522,topiramate,antiepileptics,None
+1523,topotecan,topoisomerase i inhibitors,None
+1524,torasemide,loop diuretics,None
+1525,toremifene,anti-oestrogens,None
+1526,trabectedin,plant alkaloids,None
+1527,tramadol hydrochloride,opioids,None
+1528,tramadol; dexketoprofen,opioids,non-steroidal anti-inflammatory drugs
+1529,tramadol; paracetamol,opioids,"analgesics, non-opioid"
+1530,trametinib,protein kinase inhibitors,None
+1531,trandolapril,ace inhibitors,None
+1532,tranexamic acid,None,None
+1533,tranylcypromine,"monoamine-oxidase a and b inhibitors, irreversible",None
+1534,trastuzumab,monoclonal antibodies,None
+1535,trastuzumab emtansine,monoclonal antibodies,None
+1536,travoprost,prostaglandins and analogues,None
+1537,travoprost; timolol,prostaglandins and analogues,"beta blocking agents, non-selective"
+1538,trazodone hydrochloride,None,None
+1539,tree pollen extract,allergen-type vaccines,None
+1540,treosulfan,alkylating agents,None
+1541,tretinoin,retinoid and related drugs,None
+1542,tretinoin; clindamycin,retinoid and related drugs,lincosamides
+1543,tretinoin; erythromycin,retinoid and related drugs,macrolides
+1544,triamcinolone acetonide,corticosteroids,None
+1545,triamcinolone hexacetonide,corticosteroids,None
+1546,triamterene,"potassium-sparing diuretics, other",None
+1547,triamterene; chlortalidone,"potassium-sparing diuretics, other",thiazides and related diuretics
+1548,trientine dihydrochloride,copper chelators,None
+1549,trifluoperazine,"antipsychotics, first-generation",None
+1550,trifluridine; tipiracil,antimetabolites,None
+1551,trihexyphenidyl hydrochloride,"antimuscarinics, other",None
+1552,trimethoprim,"antibacterials, other",None
+1553,trimipramine,tricyclic antidepressants,None
+1554,triptorelin,gonadotrophin-releasing hormones,None
+1555,tropicamide,"antimuscarinics, other",None
+1556,tropicamide; phenylephrine; lidocaine,"sympathomimetics, vasoconstrictor","anaesthetics, local; antimuscarinics, other"
+1557,trospium chloride,"antimuscarinics, urinary",None
+1558,tryptophan,other antidepressants,None
+1559,tuberculin purified protein derivative,"diagnostic agents, other",None
+1560,typhoid vaccine,bacterial vaccines,None
+1561,ulipristal acetate,progesterone receptor modulators,None
+1562,umeclidinium,"antimuscarinics, other",None
+1563,umeclidinium; vilanterol,"antimuscarinics, other",selective beta2-agonists (long-acting)
+1564,undecenoic acid; zinc undecenoate,undecenoates,None
+1565,upadacitinib,jak inhibitors,None
+1566,urea (13c),"diagnostic agents, other",None
+1567,urea hydrogen peroxide,softening drugs,None
+1568,urofollitropin,gonadotrophins,None
+1569,urokinase,tissue plasminogen activators,None
+1570,ursodeoxycholic acid,bile acids,None
+1571,ustekinumab,interleukin inhibitors,None
+1572,valaciclovir,nucleoside analogues,None
+1573,valganciclovir,nucleoside analogues,None
+1574,valproic acid,antiepileptics,None
+1575,valsartan,angiotensin ii receptor antagonists,None
+1576,valsartan; hydrochlorothiazide,angiotensin ii receptor antagonists,thiazides and related diuretics
+1577,vancomycin,glycopeptide antibacterials,None
+1578,vandetanib,protein kinase inhibitors,None
+1579,vardenafil,phosphodiesterase type-5 inhibitors,None
+1580,varenicline,nicotinic receptor agonists,None
+1581,varicella-zoster immunoglobulin,immunoglobulins,None
+1582,varicella-zoster vaccine,viral vaccines,None
+1583,vasopressin,vasopressin and analogues,None
+1584,vecuronium bromide,"neuromuscular blocking drugs, non-depolarising",None
+1585,vedolizumab,"monoclonal antibodies, anti-lymphocyte",None
+1586,velaglucerase alfa,enzymes,None
+1587,vemurafenib,protein kinase inhibitors,None
+1588,venetoclax,"antineoplastics, other",None
+1589,venlafaxine,serotonin and noradrenaline re-uptake inhibitors,None
+1590,verapamil hydrochloride,calcium-channel blockers,None
+1591,vernakalant,"antiarrhythmics, other",None
+1592,verteporfin,photosensitisers,None
+1593,vigabatrin,antiepileptics,None
+1594,vildagliptin,dipeptidylpeptidase-4 inhibitors (gliptins),None
+1595,vildagliptin; metformin,dipeptidylpeptidase-4 inhibitors (gliptins),biguanides
+1596,vinblastine sulfate,vinca alkaloids,None
+1597,vincristine sulfate,vinca alkaloids,None
+1598,vindesine sulfate,vinca alkaloids,None
+1599,vinflunine,vinca alkaloids,None
+1600,vinorelbine,vinca alkaloids,None
+1601,vismodegib,"antineoplastics, other",None
+1602,vitamin a,None,None
+1603,vitamin b complex,vitamin b group,None
+1604,vitamin b substances; ascorbic acid,vitamin b group,vitamin c
+1605,vitamins a; d,multivitamins,None
+1606,"vitamins a, c; d",multivitamins,None
+1607,vitamins; minerals; trace elements,vitamin b group,None
+1608,volanesorsen,"lipid modifying drugs, other",None
+1609,voriconazole,triazole antifungals,None
+1610,vortioxetine,other antidepressants,None
+1611,warfarin sodium,vitamin k antagonists,None
+1612,wasp venom extract,allergen-type vaccines,None
+1613,xipamide,thiazides and related diuretics,None
+1614,xylometazoline hydrochloride,"sympathomimetics, vasoconstrictor",None
+1615,"yellow fever vaccine, live",viral vaccines,None
+1616,zanamivir,neuraminidase inhibitors,None
+1617,zidovudine,nucleoside reverse transcriptase inhibitors,None
+1618,zidovudine; lamivudine,nucleoside reverse transcriptase inhibitors,None
+1619,zinc acetate,None,None
+1620,zinc sulfate,None,None
+1621,zoledronic acid,bisphosphonates,None
+1622,zolmitriptan,triptans,None
+1623,zolpidem tartrate,non-benzodiazepine hypnotics and sedatives,None
+1624,zonisamide,antiepileptics,None
+1625,zopiclone,non-benzodiazepine hypnotics and sedatives,None
+1626,zuclopenthixol,"antipsychotics, first-generation",None
+1627,zuclopenthixol acetate,"antipsychotics, first-generation",None
+1628,zuclopenthixol decanoate,"antipsychotics, first-generation (depot injections)",None
