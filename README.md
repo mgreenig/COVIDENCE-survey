@@ -179,10 +179,7 @@ and if it is run from the command line:
 python Get_BNF_classes.py
 ```
 
-it pulls drug class data from the BNF website and saves it in a Pandas DataFrame, with drug names mapped to BNF classes and DrugBank IDs. 
-Overall, 96% of the BNF drug entries were mapped to active ingredient IDs in the DrugBank dictionary.
-
-![BNF drug mappings](figures/bnf_mappings.png)
+it pulls drug class data from the BNF website and saves it in a Pandas DataFrame. 
 
 The BNF DataFrame is then converted into a CSV file and saved:
 
@@ -203,28 +200,44 @@ Some examples of classes being investigated include:
 - Proton pump inhibitors
 - Corticosteroids
 
-This script first imports the csv file `/data/bnf_drug_classifications.csv`, which contains the BNF class data:
+The script first imports the manual answer corrections file `/data/answer_mappings_complete.csv`:
+
+``` python
+# import drug dictionary and survey answers
+from Map_survey_answers import q142_cleaned, survey_data, drug_dictionary
+...
+# load in unmapped answers and map to the drug dictionary
+corrections = pd.read_csv('data/answer_mappings_complete.csv')
+```
+
+The manual corrections are added to the drug dictionary.
+
+We then provide the `PatientAnnotator()` class, which accepts a multi-indexed Pandas series of medication answers
+and a drug dictionary as arguments to initialise.
+
+``` python
+annotator = PatientAnnotator(q142_cleaned, drug_dictionary)
+```
+
+We assume that the 0th level of the index corresponds to patients. Upon initialisation the class imports the csv file `/data/bnf_drug_classifications.csv`, which contains the BNF class data:
 
 ``` python
 # import bnf class dataframe
 bnf_classes = pd.read_csv('data/bnf_drug_classifications.csv')
 ```
 
-and then imports the manual answer corrections file `/data/answer_mappings_complete.csv`:
+And maps the drug listings to the drug dictionary imported from `Map_survey_answers`. 
+Overall, 96% of BNF drug listings were successfully mapped to the drug dictionary.
 
-``` python
-# load in unmapped answers and map to the drug dictionary
-corrections = pd.read_csv('data/answer_mappings_complete.csv')
+![BNF listing mappings](figures/bnf_mappings.png)
+
+If run from the command line:
+
 ```
-
-The manual corrections are added to the drug dictionary, and each patient is labelled for each drug class. 
-The script outputs a CSV file (not included) containing the patient-level information for each drug class.
-
-This script should be run from the command line as well:
-
-```  
 python Annotate_patients.py
 ```
+
+the script outputs a CSV file (not included) containing the patient-level information for each drug class.
 
 ### Incorporating dosage data
 
@@ -238,9 +251,17 @@ as well as the updated `drug_dictionary` from [`Annotate_patients.py`](Annotate_
 
 ``` python
 from Map_survey_answers import q142_cleaned, q143_dosages, q143_units, survey_data
-from Annotate_patients import drug_dictionary, bnf_classes, drug_classes, specific_drugs
+from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, specific_drugs
 ```
 
+The script defines the class `DosageScaler()`, which inherits from `PatientAnnotater()` and provides additional methods 
+for incorporating numerical dosage data. Specifically, the class is initialised with the same first two arguments (`meds` and 
+`drug_dict`) as `PatientAnnotator()`, as well as dosage values and dosage units aligned to the index of `meds`:
+
+``` python
+# make a class instance
+scaler = DosageScaler(q142_cleaned, drug_dictionary, q143_dosages, q143_units)
+```
 Then, for each drug dosage value, we calculate a z-score relative to all dosage values for the same drug:
 
 ``` python
@@ -257,11 +278,13 @@ And normalise the output to the [0, 1] range using a probit function:
 valid_dosages_norm = pd.Series(norm.cdf(valid_dosages_scaled), index = valid_dosages.index)
 ```
 
-The script then outputs the patient-level drug scores in a CSV file (not included here). To run the script, just use:
+Again, if run from the command line:
 
 ``` 
 python Annotate_patient_dosages.py
 ```
+
+The script then outputs the patient-level drug scores in a CSV file (not included here)
 
 ## 2) Postcode data
 
