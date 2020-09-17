@@ -25,7 +25,7 @@ q143 = survey_data.loc[:, survey_data.columns.str.contains('q143')]
 no_q143_answer_mask = q143.apply(lambda row: row.isna().all(), axis=1)
 q143_filtered = q143[~no_q143_answer_mask].stack()
 
-# separate dosage values and q143_units
+# separate dosage values and units
 q143_dosages = q143_filtered[q143_filtered.index.get_level_values(1).str.contains('q1431')]
 q143_units = q143_filtered[q143_filtered.index.get_level_values(1).str.contains('q1432')]
 
