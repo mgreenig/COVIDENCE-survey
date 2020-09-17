@@ -25,15 +25,18 @@ q143 = survey_data.loc[:, survey_data.columns.str.contains('q143')]
 no_q143_answer_mask = q143.apply(lambda row: row.isna().all(), axis=1)
 q143_filtered = q143[~no_q143_answer_mask].stack()
 
+# separate dosage values and q143_units
 q143_dosages = q143_filtered[q143_filtered.index.get_level_values(1).str.contains('q1431')]
 q143_units = q143_filtered[q143_filtered.index.get_level_values(1).str.contains('q1432')]
 
+# rename the question index in the q143_units question to match the medication/dosage questions
+q143_units.rename({q_id: q_id + '_1' for q_id in q143_units.index.get_level_values(1).unique()}, level = 1, inplace = True)
+
 # add dosage answers for patients that provided medication answers but are missing in the dosage answers
 for patient, question in q142_filtered.index:
-    # get question index values for the dosage/units questions
+    # get question index values for the dosage/q143_units questions
     dosage_question = question.replace('q1421', 'q1431')
     units_question = question.replace('q1421', 'q1432')
-    units_question = re.sub('_1$', '', units_question)
     # add missing patient/question combinations to the series
     if (patient, dosage_question) not in q143_dosages.index:
         q143_dosages[(patient, dosage_question)] = -99
@@ -48,7 +51,6 @@ dosage_generator = ((patient, dosage_question) for patient, dosage_question in q
 for patient, dosage_question in dosage_generator:
     question = dosage_question.replace('q1431', 'q1421')
     units_question = dosage_question.replace('q1431', 'q1432')
-    units_question = re.sub('_1$', '', units_question)
     if (patient, question) not in q142_filtered.index:
         q143_dosages = q143_dosages.drop((patient, dosage_question))
     if (patient, units_question) not in q143_units.index:
@@ -58,8 +60,8 @@ for patient, dosage_question in dosage_generator:
 units_generator = ((patient, units_question) for patient, units_question in q143_units.index)
 # same for patients/questions in the dosage unit question
 for patient, units_question in units_generator:
-    question = units_question.replace('q1432', 'q1421') + '_1'
-    dosage_question = units_question.replace('q1432', 'q1431') + '_1'
+    question = units_question.replace('q1432', 'q1421')
+    dosage_question = units_question.replace('q1432', 'q1431')
     if (patient, question) not in q142_filtered.index:
         q143_units = q143_units.drop((patient, units_question))
     if (patient, dosage_question) not in q143_dosages.index:
@@ -73,7 +75,7 @@ weights = 'm?(milli)?(micro)?(mc)?(mic)?\s*g(ram)?'
 volumes = 'm?(milli)?(micro)?(mc)?(mic)?\s*l(iter)?'
 # weight and volume patterns combined
 units = '(({weight}|{volume}|%|unit|i\.*u\.*)s*)'.format(weight=weights, volume=volumes)
-# units pattern compiled into a regex pattern for dosages
+# q143_units pattern compiled into a regex pattern for q143_dosages
 dosage_pattern = '([\d.]+/)*([\d.]+\s*|\s+){units}((/|{units})|\s+|$)|(\s+[\d.x]+\s*/\s*[\d.]+(\s+|$))'.format(units=units)
 dosage_regex = re.compile(dosage_pattern)
 
@@ -100,9 +102,10 @@ all_patterns = [frequency_regex, dosage_regex, formulation_regex, RoA_regex, qua
 for pattern in all_patterns:
     q142_filtered = q142_filtered.str.replace(pattern, '')
 
+# remove any thing coming after a forward slash if more than two alphanumeric characters are detected
+q142_cleaned = q142_filtered.str.replace('/\w{2,}.*$', '')
+
 # post processing
-q142_cleaned = q142_filtered.str.split('/')
-q142_cleaned = q142_cleaned.apply(pd.Series).stack()
 q142_cleaned = q142_cleaned.str.strip()
 q142_cleaned = q142_cleaned.str.lower()
 
@@ -158,7 +161,7 @@ ambiguous_encodings = []
 
 # loop through the drug dictionary and encode every entry, saving the corresponding drugbank ids under the encoding
 for drug in drug_dictionary:
-    
+
     # save the encoding for each drug
     encoding = mp.encode(drug)
     drug_encodings[drug] = encoding

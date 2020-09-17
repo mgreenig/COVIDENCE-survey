@@ -31,6 +31,7 @@ This pipeline requires the following packages:
 - pandas==1.1.0
 - abydos==0.5.0
 - numpy==1.19.1
+- scipy==1.5.0
 
 For the plotting done in [`Drug_mapping_plots.ipynb`](Drug_mapping_plots.ipynb):
 - matplotlib==3.3.1
@@ -218,6 +219,49 @@ corrections = pd.read_csv('data/answer_mappings_complete.csv')
 
 The manual corrections are added to the drug dictionary, and each patient is labelled for each drug class. 
 The script outputs a CSV file (not included) containing the patient-level information for each drug class.
+
+This script should be run from the command line as well:
+
+```  
+python Annotate_patients.py
+```
+
+### Incorporating dosage data
+
+We extend the pipeline to further incorporate the drug dosage data provided for each patient. Rather than labelling each patient
+with a binary value for each drug class (1 or 0), we hope to capture a dose-response relationship between each medication
+class and the probability of developing COVID-19.
+
+We provide the [`Annotate_patient_dosages.py`](Annotate_patient_dosages.py) script to annotate individual patients with the dosages provided in the survey answers.
+It first imports both the medication question answers (`q142_cleaned`) and the dosage and units questions (`q143_dosages` and `q143_units`) from [`Map_survey_answers.py`](Map_survey_answers.py), 
+as well as the updated `drug_dictionary` from [`Annotate_patients.py`](Annotate_patients.py):
+
+``` python
+from Map_survey_answers import q142_cleaned, q143_dosages, q143_units, survey_data
+from Annotate_patients import drug_dictionary, bnf_classes, drug_classes, specific_drugs
+```
+
+Then, for each drug dosage value, we calculate a z-score relative to all dosage values for the same drug:
+
+``` python
+from scipy.stats import zscore, norm
+...
+# calculate z score
+valid_dosages_scaled = zscore(valid_dosages)
+```
+
+And normalise the output to the [0, 1] range using a probit function:
+
+``` python
+# normalised using probit function
+valid_dosages_norm = pd.Series(norm.cdf(valid_dosages_scaled), index = valid_dosages.index)
+```
+
+The script then outputs the patient-level drug scores in a CSV file (not included here). To run the script, just use:
+
+``` 
+python Annotate_patient_dosages.py
+```
 
 ## 2) Postcode data
 

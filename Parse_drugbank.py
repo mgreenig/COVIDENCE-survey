@@ -10,7 +10,7 @@ ns = '{http://www.drugbank.ca}'
 newline_pattern = re.compile('^\s*\\n\s*$')
 # pattern for parentheses (suffixes)
 parentheses_pattern = re.compile('\(+.*\)+\s*$')
-# pattern for dosages
+# pattern for q143_dosages
 dosage_pattern = re.compile('[\d.%]+\s*\w+/*\d*[\w.\s]*\s*$')
 # pattern for non alphanumeric characters at the end or beginning of string
 punctuation_pattern = re.compile('^[^\w]+|[^\w]+$')
