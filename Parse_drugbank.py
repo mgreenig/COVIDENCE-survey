@@ -6,11 +6,11 @@ root = tree.getroot()
 
 ns = '{http://www.drugbank.ca}'
 
-# pattern for newline characters
+# pattern for newline characters in drug names
 newline_pattern = re.compile('^\s*\\n\s*$')
-# pattern for parentheses (suffixes)
+# pattern for parentheses in drug names (suffixes)
 parentheses_pattern = re.compile('\(+.*\)+\s*$')
-# pattern for q143_dosages
+# pattern for dosages included in drug names
 dosage_pattern = re.compile('[\d.%]+\s*\w+/*\d*[\w.\s]*\s*$')
 # pattern for non alphanumeric characters at the end or beginning of string
 punctuation_pattern = re.compile('^[^\w]+|[^\w]+$')
