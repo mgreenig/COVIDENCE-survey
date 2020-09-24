@@ -59,7 +59,7 @@ class DosageScaler(PatientAnnotator):
             micg_mask = DosageScaler.align_mask(dosage_units == 2, dosages)
             invalid_unit_mask = DosageScaler.align_mask((dosage_units != 1) & (dosage_units != 2), dosages)
 
-            # get iqr and quantiles of the mg drug q143_dosages
+            # get iqr and quantiles of the mg drug dosages
             q1, q3 = dosages[mg_mask].quantile([0.25, 0.75])
             dose_iqr = q3 - q1
 
@@ -83,7 +83,7 @@ class DosageScaler(PatientAnnotator):
             # combine the two dosage lists
             all_dosage_values = valid_dosages_norm.append(invalid_dosages)
             all_dosage_values = all_dosage_values.sort_index()
-            all_dosage_values[all_dosage_values == -99] = 'NA'
+            all_dosage_values[(all_dosage_values == -99) | (all_dosage_values == '-99')] = 'NA'
 
             # align to the larger series
             _, drug_dosages_aligned = dosages.align(all_dosage_values, fill_value=0)
