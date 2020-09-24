@@ -77,9 +77,14 @@ python Get_EMC_drugs.py
 The survey responses listing each participant's medication(s) were collected as a CSV file (not included). 
 Overall, 23,821 medications were provided across 6,624 respondents who provided at least one medication each.
 
-The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide.
-Survey participants were allowed to provide 20 answers, resulting in a 10000-row, 20-column table as the raw data. Answers that were
-left blank can be left empty (producing NumPy NA values), or filled-in with -99.
+The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide to questions on the survey.
+Survey participants were allowed to provide 20 answers for each drug-related question. Three drug-related questions were asked, regarding:
+
+- q142. Which medications are you taking? 
+- q143_1. What dosages?
+- q143_2. What dosage units for each dosage? (referring to answers to q143_1)
+
+resulting in a ~10,000-column and 60-row table. Survey answers that were left blank can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99.
 
 This survey answer table was used to create a survey answer Pandas series used in the rest of this pipeline, which the following form:
 
