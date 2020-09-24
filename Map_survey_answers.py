@@ -199,8 +199,7 @@ class AnswerMapper:
         # manual id setting for a few medications
         self.drug_dictionary['vitamin b12'] = {'DB00115'}
         self.drug_dictionary['vitamin e'] = {'DB00163'}
-        self.drug_dictionary['vitamin d'] = {'DB00136', 'DB00153', 'DB00169', 'DB00910', 'DB01070', 'DB01436', 'DB02300',
-                                        'DB13689'}
+        self.drug_dictionary['vitamin d'] = {'DB00136', 'DB00153', 'DB00169', 'DB00910', 'DB01070', 'DB01436', 'DB02300', 'DB13689'}
         self.drug_dictionary['candesartan cilexetil'] = {'DB13919'}
         self.drug_dictionary['candesartan'] = {'DB13919'}
 
