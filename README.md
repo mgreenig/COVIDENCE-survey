@@ -78,17 +78,9 @@ The survey responses listing each participant's medication(s) were collected as 
 Overall, 23,821 medications were provided across 6,624 respondents who provided at least one medication each.
 
 We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for cleaning and mapping the survey responses to aliases in the drug dictionary. 
-First, the survey answer CSV file and the DrugBank/EMC drug dictionary are read-in:
+The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
 
-``` python
-# import the drug dictionary
-drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
-
-# import the survey data
-survey_data = pd.read_csv('data/Covidence_12Aug20_DrgExtra.csv')
-```
-
-Then, the survey answers are processed using regular expressions to remove text related to dosages, frequencies, and routes of administration from 
+Then, using the `import_and_clean()` method, the class processes the survey answers using regular expressions to remove text related to dosages, frequencies, and routes of administration from 
 the raw text. Then, the processed answers are scanned for those which match keys in the drug dictionary. 
 For the answers that are not present in the drug dictionary, we try the first word only:
 
@@ -110,18 +102,18 @@ from abydos.phonetic import Metaphone
 mp = Metaphone()
 ...
 # get survey answers whose encodings are valid
-mapped_by_encoding = [answer for answer in unmapped_survey_answers if mp.encode(answer) in encoded_drug_dict]
+self.mapped_by_encoding = [answer for answer in unmapped_survey_answers if mp.encode(answer) in encoded_drug_dict]
 
 # add answers to the drug dictionary under the encoding's drugbank ids
-for answer in mapped_by_encoding:
-    drug_dictionary[answer] = encoded_drug_dict[mp.encode(answer)]
+for answer in self.mapped_by_encoding:
+    self.drug_dictionary[answer] = encoded_drug_dict[mp.encode(answer)]
 ```
 
-Finally, the script returns a list of answers that could not be mapped using any of the methods detailed above.
+Finally, the class saves a list of answers that could not be mapped using any of the methods detailed above.
 
 ``` python
 # list for drugs still unmapped by phonetic encoding
-unmapped_by_encoding = [answer for answer in unmapped_survey_answers if answer not in mapped_by_encoding]
+self.unmapped_by_encoding = [answer for answer in self.unmapped_survey_answers if answer not in self.mapped_by_encoding]
 ```
 
 In our data set this was approximately 3,000 answers (12.5%).
@@ -212,7 +204,7 @@ corrections = pd.read_csv('data/answer_mappings_complete.csv')
 
 The manual corrections are added to the drug dictionary.
 
-We then provide the `PatientAnnotator()` class, which accepts a multi-indexed Pandas series of medication answers
+We then provide the `PatientAnnotator` class, which accepts a multi-indexed Pandas series of medication answers
 and a drug dictionary as arguments to initialise.
 
 ``` python
@@ -246,21 +238,21 @@ with a binary value for each drug class (1 or 0), we hope to capture a dose-resp
 class and the probability of developing COVID-19.
 
 We provide the [`Annotate_patient_dosages.py`](Annotate_patient_dosages.py) script to annotate individual patients with the dosages provided in the survey answers.
-It first imports both the medication question answers (`q142_cleaned`) and the dosage and units questions (`q143_dosages` and `q143_units`) from [`Map_survey_answers.py`](Map_survey_answers.py), 
-as well as the updated `drug_dictionary` from [`Annotate_patients.py`](Annotate_patients.py):
+The script imports various objects from [`Annotate_patients.py`](Annotate_patients.py), including the `mapper` instance of the
+`AnswerMapper` class and the updated drug dictionary.
 
 ``` python
-from Map_survey_answers import q142_cleaned, q143_dosages, q143_units, survey_data
-from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, specific_drugs
+from Annotate_patients import PatientAnnotator, mapper, drug_dictionary, drug_classes, specific_drugs
 ```
 
-The script defines the class `DosageScaler()`, which inherits from `PatientAnnotater()` and provides additional methods 
-for incorporating numerical dosage data. Specifically, the class is initialised with the same first two arguments (`meds` and 
-`drug_dict`) as `PatientAnnotator()`, as well as dosage values and dosage units aligned to the index of `meds`:
+The script defines the class `DosageScaler`, which inherits from `PatientAnnotator` and provides additional methods 
+for incorporating numerical dosage data. Specifically, the class is initialised with attributes from the `mapper` instance,
+corresponding to the full survey answer dataframe, medication answers, dosage answers, and dosage unit answers. 
+The final argument is a `drug_dictionary`, which was imported from [`Annotate_patients.py`](Annotate_patients.py):
 
 ``` python
 # make a class instance
-scaler = DosageScaler(q142_cleaned, drug_dictionary, q143_dosages, q143_units)
+scaler = DosageScaler(mapper.survey_data, mapper.meds_cleaned, mapper.dosages, mapper.units, drug_dictionary)
 ```
 Then, for each drug dosage value, we calculate a z-score relative to all dosage values for the same drug:
 

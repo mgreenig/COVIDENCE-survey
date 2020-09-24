@@ -3,14 +3,13 @@ import numpy as np
 from scipy.stats import zscore, norm
 
 # import the relevant data
-from Map_survey_answers import q142_cleaned, q143_dosages, q143_units, survey_data
-from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, specific_drugs
+from Annotate_patients import PatientAnnotator, mapper, drug_dictionary, drug_classes, specific_drugs, date
 
 # class for scaling dosage values
 class DosageScaler(PatientAnnotator):
 
-    # class takes in a medication question, a dosage question, and a units question
-    def __init__(self, meds, drug_dict, dosages, units):
+    # class takes in the full survey answers, medication answers, a drug dictionary, dosage answers, and dosage units answers
+    def __init__(self, survey_data, meds, dosages, units, drug_dict):
         '''
         The meds, dosages, and units series should be on the same multi-index of the form (patient_number, question_number)
 
@@ -20,6 +19,7 @@ class DosageScaler(PatientAnnotator):
         - q1432_x_x -> dosage units
         '''
         # initialise parent class to call read_bnf()
+        self.survey_data = survey_data
         super().__init__(meds, drug_dict)
         self.med_db_ids = meds.apply(lambda answer: drug_dict.get(answer) if drug_dict.get(answer) else set())
         self.dosages = dosages
@@ -133,7 +133,7 @@ class DosageScaler(PatientAnnotator):
         patient_dosages = question_dosages.groupby(level = 0).apply(DosageScaler.combine_func)
 
         # align to the total set of survey answers
-        _, patient_dosages_aligned = survey_data.align(patient_dosages, axis = 0, fill_value = 0)
+        _, patient_dosages_aligned = self.survey_data.align(patient_dosages, axis = 0, fill_value = 0)
 
         return patient_dosages_aligned
 
@@ -147,7 +147,7 @@ class DosageScaler(PatientAnnotator):
         # group by patient, summing to get the total dose per patient within each class
         patient_dosages = dosages.groupby(level = 0).apply(self.combine_func)
         # align to the total set of survey answers
-        _, patient_dosages_aligned = survey_data.align(patient_dosages, axis = 0, fill_value = 0)
+        _, patient_dosages_aligned = self.survey_data.align(patient_dosages, axis = 0, fill_value = 0)
 
         return patient_dosages_aligned
 
@@ -161,7 +161,8 @@ if __name__ == '__main__':
     specific_drug_doses = {}
 
     # make a class instance
-    scaler = DosageScaler(q142_cleaned, drug_dictionary, q143_dosages, q143_units)
+    scaler = DosageScaler(survey_data = mapper.survey_data, meds = mapper.meds_cleaned,
+                          dosages = mapper.dosages, units = mapper.units, drug_dict = drug_dictionary)
 
     # label patient drug classes
     for drug_class in drug_classes:
@@ -176,27 +177,27 @@ if __name__ == '__main__':
 
     # make a data frame
     patient_dose_feature_df = pd.DataFrame(patient_dose_feature_dict)
-    patient_dose_feature_df.insert(0, 'uid', survey_data['uid'])
+    patient_dose_feature_df.insert(0, 'uid', mapper.survey_data['uid'])
 
     patient_dose_feature_df.rename({'^calcium$': 'calcium', 'oestrogens|androgens': 'sex hormone therapy',
                                     'antimuscarinics, other': 'antimuscarinics',
                                     'non-steroidal anti-inflammatory drugs': 'nsaids'}, axis=1, inplace=True)
 
     # mask for unspecified HRT answers
-    HRT_mask = q142_cleaned.str.contains('hrt|estrogen|hormone replacement therapy|contracept')
-    HRT_idx = q142_cleaned[HRT_mask].index.get_level_values(0)
+    HRT_mask = mapper.meds_cleaned.str.contains('hrt|estrogen|hormone replacement therapy|contracept')
+    HRT_idx = mapper.meds_cleaned[HRT_mask].index.get_level_values(0)
 
     # mask for unspecified vitamin d3
-    d3_mask = q142_cleaned.str.contains('(\s|^)d3|vitamin d(\s|$)', case=False)
-    d3_idx = q142_cleaned[d3_mask].index.get_level_values(0)
+    d3_mask = mapper.meds_cleaned.str.contains('(\s|^)d3|vitamin d(\s|$)', case=False)
+    d3_idx = mapper.meds_cleaned[d3_mask].index.get_level_values(0)
 
     # mask for unspecified statin answers
-    statin_mask = q142_cleaned.str.contains('(\s|^)statin(s|\s|$)', case=False)
-    statin_idx = q142_cleaned[statin_mask].index.get_level_values(0)
+    statin_mask = mapper.meds_cleaned.str.contains('(\s|^)statin(s|\s|$)', case=False)
+    statin_idx = mapper.meds_cleaned[statin_mask].index.get_level_values(0)
 
     # mask for unspecified steroid answers
-    steroid_mask = q142_cleaned.str.contains('(\s|^)corticosteroid(s|\s|$)', case=False)
-    steroid_idx = q142_cleaned[steroid_mask].index.get_level_values(0)
+    steroid_mask = mapper.meds_cleaned.str.contains('(\s|^)corticosteroid(s|\s|$)', case=False)
+    steroid_idx = mapper.meds_cleaned[steroid_mask].index.get_level_values(0)
 
     # set unspecified medications to NA
     patient_dose_feature_df.loc[HRT_idx, 'sex hormone therapy'] = 'NA'
@@ -205,4 +206,4 @@ if __name__ == '__main__':
     patient_dose_feature_df.loc[steroid_idx, 'corticosteroids'] = 'NA'
 
     # save to csv file
-    patient_dose_feature_df.to_csv('data/Covidence_12Aug20_Drug_Dosages.csv', index = False)
+    patient_dose_feature_df.to_csv('data/Covidence_{}_Drug_Dosages.csv'.format(date), index = False)

@@ -1,10 +1,37 @@
 import pandas as pd
 import warnings
+import pickle
+import re
 from itertools import compress
 warnings.simplefilter('ignore')
 
 # import drug dictionary and survey answers
-from Map_survey_answers import q142_cleaned, survey_data, drug_dictionary
+from Map_survey_answers import AnswerMapper
+
+# import the drug dictionary
+drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
+
+# survey answers filepath
+survey_filepath = 'data/Covidence_12Aug20_DrgExtra.csv'
+# get the date from the survey answers
+date = re.search('(?<=_).+(?=_)', survey_filepath).group(0)
+
+# create instance of answer mapper class with the right survey file path
+mapper = AnswerMapper(survey_filepath = survey_filepath, drug_dict = drug_dictionary)
+
+# call map answers
+mapper.map_answers()
+
+# print mapping counts
+print('{} survey answers mapped'.format(len(mapper.mapped_survey_answers) + len(mapper.first_name_mapped_survey_answers) + len(mapper.mapped_by_encoding)))
+print('{} survey answers unmapped'.format(len(mapper.unmapped_by_encoding)))
+
+# get counts for different mapping categories
+mapping_counts = {'exact': len(mapper.mapped_survey_answers), 'first_name': len(mapper.first_name_mapped_survey_answers),
+                  'phonetic_encoding': len(mapper.mapped_by_encoding), 'unmapped': len(mapper.unmapped_by_encoding)}
+
+# set the drug dictionary to the modified instance dictionary
+drug_dictionary = mapper.drug_dictionary
 
 # manual id setting for a few medications
 drug_dictionary['vitamin b12'] = {'DB00115'}
@@ -24,7 +51,7 @@ for answer, correction in zip(corrections['answer'], corrections['correction']):
     if any([corr in drug_dictionary for corr in correction_split]):
         drug_dictionary[answer] = set().union(*[drug_dictionary.get(corr) for corr in correction_split if drug_dictionary.get(corr)])
     elif str(correction) != '0':
-        q142_cleaned[q142_cleaned == answer] = correction
+        mapper.meds_cleaned[mapper.meds_cleaned == answer] = correction
 
 # drug classes and specific drugs to investigate
 drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticosteroids', 'angiotensin ii receptor antagonists',
@@ -108,7 +135,7 @@ class PatientAnnotator:
         return patients_on_drug
 
 # initialise class instance
-annotator = PatientAnnotator(q142_cleaned, drug_dictionary)
+annotator = PatientAnnotator(meds = mapper.meds_cleaned, drug_dict = drug_dictionary)
 
 # test whether each bnf drug is in the drug dictionary
 not_found_in_drugbank = annotator.bnf_classes['drugs'].apply(lambda drugs: [drug not in drug_dictionary for drug in drugs])
@@ -158,8 +185,8 @@ if __name__ == '__main__':
     patient_feature_dict = {**patient_drug_class_dict, **patient_drug_dict}
 
     # make a data frame
-    patient_feature_df = pd.DataFrame(0, index = survey_data.index, columns = patient_feature_dict)
-    patient_feature_df.insert(0, 'uid', survey_data['uid'])
+    patient_feature_df = pd.DataFrame(0, index = mapper.survey_data.index, columns = patient_feature_dict)
+    patient_feature_df.insert(0, 'uid', mapper.survey_data['uid'])
 
     for feature in patient_feature_dict:
         patient_feature_df.loc[patient_feature_dict[feature], feature] = 1
@@ -169,24 +196,24 @@ if __name__ == '__main__':
                               axis = 1, inplace = True)
 
     # manual corrections for HRT answers not in the drug dictionary
-    HRT_mask = q142_cleaned.str.contains('hrt|estrogen|hormone replacement therapy|contracept')
-    HRT_idx = q142_cleaned[HRT_mask].index.get_level_values(0)
+    HRT_mask = mapper.meds_cleaned.str.contains('hrt|estrogen|hormone replacement therapy|contracept')
+    HRT_idx = mapper.meds_cleaned[HRT_mask].index.get_level_values(0)
     patient_feature_df.loc[HRT_idx, 'sex hormone therapy'] = 1
 
     # manual corrections for vitamin d3 answers not in the drug dictionary
-    d3_mask = q142_cleaned.str.contains('(\s|^)d3|vitamin d(\s|$)', case = False)
-    d3_idx = q142_cleaned[d3_mask].index.get_level_values(0)
+    d3_mask = mapper.meds_cleaned.str.contains('(\s|^)d3|vitamin d(\s|$)', case = False)
+    d3_idx = mapper.meds_cleaned[d3_mask].index.get_level_values(0)
     patient_feature_df.loc[d3_idx, 'vitamin d and analogues'] = 1
 
     # manual corrections for statin answers not in the drug dictionary
-    statin_mask = q142_cleaned.str.contains('(\s|^)statin(s|\s|$)', case = False)
-    statin_idx = q142_cleaned[statin_mask].index.get_level_values(0)
+    statin_mask = mapper.meds_cleaned.str.contains('(\s|^)statin(s|\s|$)', case = False)
+    statin_idx = mapper.meds_cleaned[statin_mask].index.get_level_values(0)
     patient_feature_df.loc[statin_idx, 'statins'] = 1
 
     # manual corrections for steroid answers not in the drug dictionary
-    steroid_mask = q142_cleaned.str.contains('(\s|^)corticosteroid(s|\s|$)', case = False)
-    steroid_idx = q142_cleaned[steroid_mask].index.get_level_values(0)
+    steroid_mask = mapper.meds_cleaned.str.contains('(\s|^)corticosteroid(s|\s|$)', case = False)
+    steroid_idx = mapper.meds_cleaned[steroid_mask].index.get_level_values(0)
     patient_feature_df.loc[steroid_idx, 'corticosteroids'] = 1
 
     # save the drug class data as a csv file
-    patient_feature_df.to_csv('data/Covidence_12Aug20_Drug_Dosages.csv', index = False)
+    patient_feature_df.to_csv('data/Covidence_{}_Drug_Dosages.csv'.format(date), index = False)
