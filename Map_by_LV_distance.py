@@ -23,14 +23,18 @@ if __name__ == '__main__':
     lv = Levenshtein(mode = 'osa')
     mapped_by_lv_distance = {}
     unmapped_by_lv_distance = []
+
     # loop through unmapped answers
     for i, answer in enumerate(set(mapper.unmapped_by_encoding)):
+
         # only check for answers greater than 3 letters
         if len(answer) > 3:
+
             # do not map answers that are longer than one word
             if len(answer.split(' ')) > 1:
                 unmapped_by_lv_distance.append(answer)
                 continue
+
             # narrow down potential matches as those of similar length (plus or minus 3 characters) to speed up computation
             longest_len = len(answer)+1
             shortest_len = len(answer)-1
@@ -39,15 +43,18 @@ if __name__ == '__main__':
             distances = {alias: lv.dist_abs(answer, alias) for alias in potential_matches}
             # get matches that are a distance of 1 away
             matches = [alias for alias, distance in distances.items() if distance == 1]
+
             # if there are multiple matches that are a distance of 1 away, take the one that appears at the highest frequency
             if matches:
-                best_match = max(matches, key = lambda alias: np.mean([drug_frequencies[db_id] for db_id in drug_dictionary[alias]]))
+                best_match = max(matches, key = lambda alias: np.mean([mapper.drug_frequencies[db_id] for db_id in drug_dictionary[alias]]))
                 mapped_by_lv_distance[answer] = best_match
+
             # if there are no matches 1 character away, save to the list
             else:
                 unmapped_by_lv_distance.append(answer)
         else:
             unmapped_by_lv_distance.append(answer)
+
         # print every 100 answers, for checking progress
         if i % 100 == 0:
             print('Answer number {} completed'.format(i))
