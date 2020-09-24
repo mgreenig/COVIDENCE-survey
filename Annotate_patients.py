@@ -31,7 +31,7 @@ mapping_counts = {'exact': len(mapper.mapped_survey_answers), 'first_name': len(
                   'phonetic_encoding': len(mapper.mapped_by_encoding), 'unmapped': len(mapper.unmapped_by_encoding)}
 
 # update drug dictionary with manual corrections file
-mapper.update_drug_dictionary(manual_corrections_filepath='data/answer_mappings_complete.csv')
+mapper.update_drug_dictionary(manual_corrections_filepath = 'data/answer_mappings_complete.csv')
 
 # set the drug dictionary to the updated instance dictionary
 drug_dictionary = mapper.drug_dictionary
