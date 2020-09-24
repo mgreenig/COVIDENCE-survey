@@ -72,7 +72,6 @@ To reproduce the workflow, simply run via the command line from the repository:
 python Get_EMC_drugs.py
 ```
 
-<details>
 ### Mapping medications from survey respondents
 
 The survey responses listing each participant's medication(s) were collected as a CSV file (not included). 
@@ -191,7 +190,7 @@ In our data set this was approximately 3,000 answers (12.5%).
 
 ![Survey answer mappings](figures/survey_mappings.png)
 
-</details>
+<details>
 <summary><h3>Mapping misspelled answers</h3></summary>
 <br>
 For the remaining 3,000 answers, we provide the [`Map_by_LV_distance.py`](Map_by_LV_distance.py) script, which scans the drug dictionary for aliases 
@@ -226,6 +225,7 @@ as a CSV file to `/data/answer_mappings.csv`. The unmapped answers were annotate
 
 We provide the full answer mappings as the file `/data/answer_mappings_complete.csv`, 
 containing both the distance-based and manual annotations for the misspelled survey answers.
+</details>
 
 ### Getting BNF classes
 
