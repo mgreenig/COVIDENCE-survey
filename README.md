@@ -72,6 +72,7 @@ To reproduce the workflow, simply run via the command line from the repository:
 python Get_EMC_drugs.py
 ```
 
+<details>
 ### Mapping medications from survey respondents
 
 The survey responses listing each participant's medication(s) were collected as a CSV file (not included). 
@@ -189,6 +190,8 @@ self.unmapped_by_encoding = [answer for answer in self.unmapped_survey_answers i
 In our data set this was approximately 3,000 answers (12.5%).
 
 ![Survey answer mappings](figures/survey_mappings.png)
+
+</details>
 
 ### Mapping misspelled answers
 
