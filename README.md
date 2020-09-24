@@ -77,6 +77,52 @@ python Get_EMC_drugs.py
 The survey responses listing each participant's medication(s) were collected as a CSV file (not included). 
 Overall, 23,821 medications were provided across 6,624 respondents who provided at least one medication each.
 
+The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide.
+Survey participants were allowed to provide 20 answers, resulting in a 10000-row, 20-column table as the raw data. Answers that were
+left blank can be left empty (producing NumPy NA values), or filled-in with -99.
+
+This survey answer table was used to create a survey answer Pandas series used in the rest of this pipeline, which the following form:
+
+<table>
+    <thead>
+        <tr>
+            <th colspan=2>Index</th>
+            <th>Answer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>Patient number</th>
+            <th>Question</th>
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan=2>1</td>
+            <td>q142_1_1</td>
+            <td>sertraline</td>
+        </tr>
+        <tr>
+            <td>q142_1_2</td>
+            <td>vitamin C</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>q142_1_1</td>
+            <td>omeprazole</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>q142_1_1</td>
+            <td>vitamin D</td>
+        </tr>
+        <tr>
+            <td colspan=3 align=center>...</td>
+        </tr>
+    </tbody>
+</table>	
+
+Note the multi-index corresponding to patient/question values.
+
 We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for cleaning and mapping the survey responses to aliases in the drug dictionary. 
 The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
 
@@ -184,7 +230,7 @@ We include this file in the repository, under the path shown above.
 ### Annotating patients with BNF drug classes
 
 To annotate individual patients in the survey with the BNF drug classes being investigated, we provide the [`Annotate_patients.py`](Annotate_patients.py) script.
-Each patient is annotated with more than 20 BNF drug classes to be analysed as covariates, with each covariate taking a value of 1 if the patient listed medications from that class and 0 if not.
+Each patient is annotated with more than 20 drug classes to be analysed as covariates, with each covariate taking a value of 1 if the patient listed medications from that class and 0 if not.
 Some examples of classes being investigated include:
 
 - Statins
@@ -193,9 +239,12 @@ Some examples of classes being investigated include:
 - Corticosteroids
 
 The script first imports the AnswerMapper class from [`Map_survey_answers.py`](Map_answer.py), and initialises with the pickled drug dictionary and
-the path to the raw survey answers (file not included)
+the path to the raw survey answers (file not included):
 
 ``` python
+# import class for mapping survey answers
+from Map_survey_answers import AnswerMapper
+
 # import the drug dictionary
 drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 
@@ -220,11 +269,11 @@ and also the `update_drug_dictionary()` method, which takes a filepath to a manu
 mapper.update_drug_dictionary(manual_corrections_filepath = 'data/answer_mappings_complete.csv')
 ```
 
-We then create the `PatientAnnotator` class, which accepts a multi-indexed Pandas series of medication answers
+We then create the `PatientAnnotator` class, inputting the `meds_cleaned` attribute of the `AnswerMapper` instance (the cleaned medication answers) as the first argument
 and a drug dictionary as arguments to initialise.
 
 ``` python
-annotator = PatientAnnotator(q142_cleaned, drug_dictionary)
+annotator = PatientAnnotator(mapper.meds_cleaned, drug_dictionary)
 ```
 
 We assume that the 0th level of the index corresponds to patients. Upon initialisation the class imports the csv file `/data/bnf_drug_classifications.csv`, which contains the BNF class data:
@@ -250,7 +299,7 @@ the script outputs a CSV file (not included) containing the patient-level inform
 ### Incorporating dosage data
 
 We extend the pipeline to further incorporate the drug dosage data provided for each patient. Rather than labelling each patient
-with a binary value for each drug class (1 or 0), we hope to capture a dose-response relationship between each medication
+with a binary value for each drug class (1 or 0), we aim to capture a dose-response relationship between each medication
 class and the probability of developing COVID-19.
 
 We provide the [`Annotate_patient_dosages.py`](Annotate_patient_dosages.py) script to annotate individual patients with the dosages provided in the survey answers.
@@ -262,7 +311,7 @@ from Annotate_patients import PatientAnnotator, mapper, drug_dictionary, drug_cl
 ```
 
 The script defines the class `DosageScaler`, which inherits from `PatientAnnotator` and provides additional methods 
-for incorporating numerical dosage data. Specifically, the class is initialised with attributes from the `mapper` instance,
+for incorporating numerical dosage data. Specifically, the class is initialised with arguments
 corresponding to the full survey answer dataframe, medication answers, dosage answers, and dosage unit answers. 
 The final argument is a `drug_dictionary`, which was imported from [`Annotate_patients.py`](Annotate_patients.py):
 
