@@ -190,9 +190,8 @@ In our data set this was approximately 3,000 answers (12.5%).
 
 ![Survey answer mappings](figures/survey_mappings.png)
 
-<details>
-<summary><h3>Mapping misspelled answers</h3></summary>
-<br>
+### Mapping misspelled answers
+
 For the remaining 3,000 answers, we provide the [`Map_by_LV_distance.py`](Map_by_LV_distance.py) script, which scans the drug dictionary for aliases 
 that are a Levenshtein distance of 1 unit away from each answer, in order to identify the closest match for each. 
 We use the [abydos implementation of Levenshtein distance](https://abydos.readthedocs.io/en/latest/abydos.distance.html#abydos.distance.Levenshtein) for 
@@ -225,7 +224,6 @@ as a CSV file to `/data/answer_mappings.csv`. The unmapped answers were annotate
 
 We provide the full answer mappings as the file `/data/answer_mappings_complete.csv`, 
 containing both the distance-based and manual annotations for the misspelled survey answers.
-</details>
 
 ### Getting BNF classes
 
