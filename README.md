@@ -216,7 +216,7 @@ mapper.map_answers()
 and also the `update_drug_dictionary()` method, which takes a filepath to a manual misspelling correction file as an argument:
 
 ``` python
-# call map answers
+# update drug dictionary with manual corrections file
 mapper.update_drug_dictionary(manual_corrections_filepath = 'data/answer_mappings_complete.csv')
 ```
 
