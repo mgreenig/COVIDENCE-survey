@@ -192,19 +192,35 @@ Some examples of classes being investigated include:
 - Proton pump inhibitors
 - Corticosteroids
 
-The script first imports the manual answer corrections file `/data/answer_mappings_complete.csv`:
+The script first imports the AnswerMapper class from [`Map_survey_answers.py`](Map_answer.py), and initialises with the pickled drug dictionary and
+the path to the raw survey answers (file not included)
 
 ``` python
-# import drug dictionary and survey answers
-from Map_survey_answers import q142_cleaned, survey_data, drug_dictionary
+# import the drug dictionary
+drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
+
+# survey answers filepath
+survey_filepath = 'data/Covidence_12Aug20_DrgExtra.csv'
 ...
-# load in unmapped answers and map to the drug dictionary
-corrections = pd.read_csv('data/answer_mappings_complete.csv')
+# create instance of answer mapper class with the survey file path
+mapper = AnswerMapper(survey_filepath = survey_filepath, drug_dict = drug_dictionary)
 ```
 
-The manual corrections are added to the drug dictionary.
+We then call the `map_answers()` method to map the raw survey answers to the drug dictionary:
 
-We then provide the `PatientAnnotator` class, which accepts a multi-indexed Pandas series of medication answers
+``` python
+# call map answers
+mapper.map_answers()
+```
+
+and also the `update_drug_dictionary()` method, which takes a filepath to a manual misspelling correction file as an argument:
+
+``` python
+# call map answers
+mapper.update_drug_dictionary(manual_corrections_filepath = 'data/answer_mappings_complete.csv')
+```
+
+We then create the `PatientAnnotator` class, which accepts a multi-indexed Pandas series of medication answers
 and a drug dictionary as arguments to initialise.
 
 ``` python
