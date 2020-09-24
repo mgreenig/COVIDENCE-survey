@@ -15,7 +15,7 @@ q142 = survey_data.loc[:, survey_data.columns.str.contains('q142')]
 no_q142_answer_mask = q142.apply(lambda row: row.isna().all(), axis=1)
 # filter participants that provided no answer and flatten the array
 q142_filtered = q142[~no_q142_answer_mask].stack()
-q142_filtered = q142_filtered[q142_filtered != '-99']
+q142_filtered = q142_filtered[(q142_filtered != '-99') & (q142_filtered != -99)]
 # basic preprocessing
 q142_filtered = q142_filtered.str.strip()
 q142_filtered = q142_filtered.str.lower()

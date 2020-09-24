@@ -205,4 +205,4 @@ if __name__ == '__main__':
     patient_dose_feature_df.loc[steroid_idx, 'corticosteroids'] = 'NA'
 
     # save to csv file
-    patient_dose_feature_df.to_csv('data/Covidence_12Aug20_Drug_Dosages.csv')
+    patient_dose_feature_df.to_csv('data/Covidence_12Aug20_Drug_Dosages.csv', index = False)
