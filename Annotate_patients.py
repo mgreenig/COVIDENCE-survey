@@ -16,7 +16,7 @@ survey_filepath = 'data/Covidence_12Aug20_DrgExtra.csv'
 # get the date from the survey answers
 date = re.search('(?<=_).+(?=_)', survey_filepath).group(0)
 
-# create instance of answer mapper class with the right survey file path
+# create instance of answer mapper class with the survey file path
 mapper = AnswerMapper(survey_filepath = survey_filepath, drug_dict = drug_dictionary)
 
 # call map answers
@@ -30,28 +30,11 @@ print('{} survey answers unmapped'.format(len(mapper.unmapped_by_encoding)))
 mapping_counts = {'exact': len(mapper.mapped_survey_answers), 'first_name': len(mapper.first_name_mapped_survey_answers),
                   'phonetic_encoding': len(mapper.mapped_by_encoding), 'unmapped': len(mapper.unmapped_by_encoding)}
 
-# set the drug dictionary to the modified instance dictionary
+# update drug dictionary with manual corrections file
+mapper.update_drug_dictionary(manual_corrections_filepath='data/answer_mappings_complete.csv')
+
+# set the drug dictionary to the updated instance dictionary
 drug_dictionary = mapper.drug_dictionary
-
-# manual id setting for a few medications
-drug_dictionary['vitamin b12'] = {'DB00115'}
-drug_dictionary['vitamin e'] = {'DB00163'}
-drug_dictionary['vitamin d'] = {'DB00136', 'DB00153', 'DB00169', 'DB00910', 'DB01070', 'DB01436', 'DB02300', 'DB13689'}
-drug_dictionary['candesartan cilexetil'] = {'DB13919'}
-drug_dictionary['candesartan'] = {'DB13919'}
-
-# load in unmapped answers and map to the drug dictionary
-corrections = pd.read_csv('data/answer_mappings_complete.csv')
-corrections = corrections.astype(str)
-corrections = corrections.apply(lambda col: col.str.strip(), axis = 0)
-
-# add unmapped answers to drug dictionary
-for answer, correction in zip(corrections['answer'], corrections['correction']):
-    correction_split = correction.split('; ')
-    if any([corr in drug_dictionary for corr in correction_split]):
-        drug_dictionary[answer] = set().union(*[drug_dictionary.get(corr) for corr in correction_split if drug_dictionary.get(corr)])
-    elif str(correction) != '0':
-        mapper.meds_cleaned[mapper.meds_cleaned == answer] = correction
 
 # drug classes and specific drugs to investigate
 drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticosteroids', 'angiotensin ii receptor antagonists',

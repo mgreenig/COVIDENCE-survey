@@ -6,17 +6,25 @@ import pickle
 if __name__ == '__main__':
 
     # import unmapped answers
-    from Map_survey_answers import unmapped_by_encoding, drug_frequencies
+    from Map_survey_answers import AnswerMapper
 
     # load in drug dictionary
     drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
+
+    # create instance of answer mapper class with the right survey file path
+    mapper = AnswerMapper(drug_dictionary, survey_filepath='data/Covidence_12Aug20_DrgExtra.csv')
+
+    # call map answers
+    mapper.map_answers()
+
+    drug_dictionary = mapper.drug_dictionary
 
     # final round of mapping, getting all drugs in the drug dictionary that are levenshtein distance of 1 from each answer
     lv = Levenshtein(mode = 'osa')
     mapped_by_lv_distance = {}
     unmapped_by_lv_distance = []
     # loop through unmapped answers
-    for i, answer in enumerate(set(unmapped_by_encoding)):
+    for i, answer in enumerate(set(mapper.unmapped_by_encoding)):
         # only check for answers greater than 3 letters
         if len(answer) > 3:
             # do not map answers that are longer than one word

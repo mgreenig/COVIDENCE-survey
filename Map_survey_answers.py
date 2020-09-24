@@ -193,3 +193,27 @@ class AnswerMapper:
 
         # list for drugs still unmapped by phonetic encoding
         self.unmapped_by_encoding = [answer for answer in self.unmapped_survey_answers if answer not in self.mapped_by_encoding]
+
+    def update_drug_dictionary(self, manual_corrections_filepath):
+
+        # manual id setting for a few medications
+        self.drug_dictionary['vitamin b12'] = {'DB00115'}
+        self.drug_dictionary['vitamin e'] = {'DB00163'}
+        self.drug_dictionary['vitamin d'] = {'DB00136', 'DB00153', 'DB00169', 'DB00910', 'DB01070', 'DB01436', 'DB02300',
+                                        'DB13689'}
+        self.drug_dictionary['candesartan cilexetil'] = {'DB13919'}
+        self.drug_dictionary['candesartan'] = {'DB13919'}
+
+        # load in unmapped answers and map to the drug dictionary
+        corrections = pd.read_csv(manual_corrections_filepath)
+        corrections = corrections.astype(str)
+        corrections = corrections.apply(lambda col: col.str.strip(), axis=0)
+
+        # add unmapped answers to drug dictionary
+        for answer, correction in zip(corrections['answer'], corrections['correction']):
+            correction_split = correction.split('; ')
+            if any([corr in self.drug_dictionary for corr in correction_split]):
+                self.drug_dictionary[answer] = set().union(
+                    *[self.drug_dictionary.get(corr) for corr in correction_split if self.drug_dictionary.get(corr)])
+            elif str(correction) != '0':
+                self.meds_cleaned[self.meds_cleaned == answer] = correction
