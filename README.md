@@ -80,13 +80,13 @@ Overall, 23,821 medications were provided across 6,624 respondents who provided 
 The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide to questions on the survey.
 Survey participants were allowed to provide 20 answers for each drug-related question. Three drug-related questions were asked, regarding:
 
-- q142. Which medications are you taking? 
+- q142_1. Which medications are you taking? 
 - q143_1. What dosages?
-- q143_2. What dosage units for each dosage? (referring to answers to q143_1)
+- q143_2. What dosage unit for each dosage? (referring to answers to q143_1)
 
 resulting in a ~10,000-column and 60-row table. Survey answers that were left blank can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99.
 
-This survey answer table was used to create a survey answer Pandas series used in the rest of this pipeline, which the following form:
+This survey answer table was used to create a survey answer Pandas series used in the rest of this pipeline, which takes the following form:
 
 <table>
     <thead>
@@ -102,7 +102,7 @@ This survey answer table was used to create a survey answer Pandas series used i
             <td></td>
         </tr>
         <tr>
-            <td rowspan=2>1</td>
+            <td rowspan=6>1</td>
             <td>q142_1_1</td>
             <td>sertraline</td>
         </tr>
@@ -111,14 +111,33 @@ This survey answer table was used to create a survey answer Pandas series used i
             <td>vitamin C</td>
         </tr>
         <tr>
-            <td>2</td>
+            <td>q143_1_1</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>q143_1_2</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>q143_2_1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>q143_2_2</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td rowspan=3">2</td>
             <td>q142_1_1</td>
             <td>omeprazole</td>
         </tr>
         <tr>
-            <td>3</td>
-            <td>q142_1_1</td>
-            <td>vitamin D</td>
+            <td>q143_1_1</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>q143_2_1</td>
+            <td>1</td>
         </tr>
         <tr>
             <td colspan=3 align=center>...</td>
@@ -126,7 +145,7 @@ This survey answer table was used to create a survey answer Pandas series used i
     </tbody>
 </table>	
 
-Note the multi-index corresponding to patient/question values.
+as an example. Note the multi-index corresponding to patient/question values.
 
 We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for cleaning and mapping the survey responses to aliases in the drug dictionary. 
 The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
