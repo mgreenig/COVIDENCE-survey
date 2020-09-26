@@ -228,20 +228,13 @@ containing both the distance-based and manual annotations for the misspelled sur
 ### Getting BNF classes
 
 To generate data on the [British National Formulary](https://bnf.nice.org.uk/drug/) drug classifications for different medications, we provide the [`Get_BNF_classes.py`](Get_BNF_classes.py) script. 
-This script imports the DrugBank/EMC drug dictionary pickle file:
-
-``` python
-# import drug dictionary
-drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
-```
-
-and if it is run from the command line:
+If this script is run from the command line:
 
 ``` 
 python Get_BNF_classes.py
 ```
 
-it pulls drug class data from the BNF website and saves it in a Pandas DataFrame. 
+it pulls drug class data from the BNF website using BeautifulSoup, and saves drug names, primary classifications, and secondary classifications in a Pandas DataFrame. 
 
 The BNF DataFrame is then converted into a CSV file and saved:
 

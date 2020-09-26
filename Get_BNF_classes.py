@@ -5,9 +5,6 @@ import pandas as pd
 import re
 import pickle
 
-# import drug dictionary
-drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
-
 # if running the file, pull new data
 if __name__ == '__main__':
 
