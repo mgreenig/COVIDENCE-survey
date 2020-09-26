@@ -82,7 +82,7 @@ Survey participants were allowed to provide 20 answers for each drug-related que
 
 - q1421. Which medications are you taking? 
 - q1431. What dosages?
-- q1432. What dosage unit for each dosage? (referring to answers to q143_1)
+- q1432. What dosage unit for each dosage? (referring to answers to q1431)
 
 resulting in a ~10,000-column and 60-row table. Survey answers that were left blank can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99.
 
