@@ -80,9 +80,9 @@ Overall, 23,821 medications were provided across 6,624 respondents who provided 
 The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide to questions on the survey.
 Survey participants were allowed to provide 20 answers for each drug-related question. Three drug-related questions were asked, regarding:
 
-- q142_1. Which medications are you taking? 
-- q143_1. What dosages?
-- q143_2. What dosage unit for each dosage? (referring to answers to q143_1)
+- q1421. Which medications are you taking? 
+- q1431. What dosages?
+- q1432. What dosage unit for each dosage? (referring to answers to q143_1)
 
 resulting in a ~10,000-column and 60-row table. Survey answers that were left blank can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99.
 
@@ -103,40 +103,40 @@ This survey answer table was used to create a survey answer Pandas series used i
         </tr>
         <tr>
             <td rowspan=6>1</td>
-            <td>q142_1_1</td>
+            <td>q1421_1</td>
             <td>sertraline</td>
         </tr>
         <tr>
-            <td>q142_1_2</td>
+            <td>q1421_2</td>
             <td>vitamin C</td>
         </tr>
         <tr>
-            <td>q143_1_1</td>
+            <td>q1431_1</td>
             <td>50</td>
         </tr>
         <tr>
-            <td>q143_1_2</td>
+            <td>q1431_2</td>
             <td>75</td>
         </tr>
         <tr>
-            <td>q143_2_1</td>
+            <td>q1432_1</td>
             <td>1</td>
         </tr>
         <tr>
-            <td>q143_2_2</td>
+            <td>q1432_2</td>
             <td>1</td>
         </tr>
         <tr>
             <td rowspan=3">2</td>
-            <td>q142_1_1</td>
+            <td>q1421_1</td>
             <td>omeprazole</td>
         </tr>
         <tr>
-            <td>q143_1_1</td>
+            <td>q1431_1</td>
             <td>20</td>
         </tr>
         <tr>
-            <td>q143_2_1</td>
+            <td>q1432_1</td>
             <td>1</td>
         </tr>
         <tr>

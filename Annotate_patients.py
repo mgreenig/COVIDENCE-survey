@@ -5,7 +5,7 @@ import re
 from itertools import compress
 warnings.simplefilter('ignore')
 
-# import drug dictionary and survey answers
+# import class for mapping survey answers
 from Map_survey_answers import AnswerMapper
 
 # import the drug dictionary
@@ -44,6 +44,7 @@ drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticos
 
 specific_drugs = ['paracetamol', 'metformin', 'aspirin']
 
+# class for annotating patients with BNF drug classes
 class PatientAnnotator:
 
     # function for reading in BNF data and annotating table with DB ids
@@ -148,6 +149,7 @@ print('{} BNF drugs unmapped'.format(len(first_name_unmapped)))
 
 BNF_mapping_counts = {'exact': len(mapped_bnf_drugs), 'first_name': len(first_name_mapped), 'unmapped': len(first_name_unmapped)}
 
+# if run from the command line, output a CSV file with answer mappings
 if __name__ == '__main__':
 
     # dictionary for patient drug classes
@@ -171,9 +173,11 @@ if __name__ == '__main__':
     patient_feature_df = pd.DataFrame(0, index = mapper.survey_data.index, columns = patient_feature_dict)
     patient_feature_df.insert(0, 'uid', mapper.survey_data['uid'])
 
+    # set patient indices for each feature to 1 in the full patient feature data frame
     for feature in patient_feature_dict:
         patient_feature_df.loc[patient_feature_dict[feature], feature] = 1
 
+    # rename columns
     patient_feature_df.rename({'^calcium$': 'calcium', 'oestrogens|androgens': 'sex hormone therapy',
                                'antimuscarinics, other': 'antimuscarinics', 'non-steroidal anti-inflammatory drugs': 'nsaids'},
                               axis = 1, inplace = True)

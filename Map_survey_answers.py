@@ -5,10 +5,10 @@ from abydos.phonetic import Metaphone
 # class for mapping survey answers
 class AnswerMapper:
 
-    # clean the survey answers
+    # function to import and clean the survey answers
     def import_and_clean(self, survey_filepath):
 
-        # import the survey data
+        # import the survey data csv file
         self.survey_data = pd.read_csv(survey_filepath)
 
         # filter for medication question
@@ -71,6 +71,13 @@ class AnswerMapper:
             if (patient, dosage_question) not in dosages.index:
                 units = units.drop((patient, units_question))
 
+        # trim the question index
+        dosage_idx_levels = dosages.index.get_level_values(1).str.replace('(?<=_\d)_1', '').unique()
+        dosages.index = dosages.index.set_levels(dosage_idx_levels, level=0)
+
+        units_idx_levels = units.index.get_level_values(1).str.replace('(?<=_\d)_1', '').unique()
+        units.index = units.index.set_levels(units_idx_levels, level=0)
+
         ## regex patterns for cleaning medication answers ##
 
         # pattern for drug weights (e.g. milligrams)
@@ -106,12 +113,14 @@ class AnswerMapper:
         for pattern in all_patterns:
             meds_filtered = meds_filtered.str.replace(pattern, '')
 
-        # remove any thing coming after a forward slash if more than two alphanumeric characters are detected
+        # remove anything coming after a forward slash if more than two alphanumeric characters are detected
         meds_cleaned = meds_filtered.str.replace('/\w{2,}.*$', '')
 
-        # post processing
+        # text cleaning
         meds_cleaned = meds_cleaned.str.strip()
         meds_cleaned = meds_cleaned.str.lower()
+        meds_cleaned_idx_levels = meds_cleaned.index.get_level_values(1).str.replace('(?<=_\d)_1', '').unique()
+        meds_cleaned.index = meds_cleaned.index.set_levels(meds_cleaned_idx_levels, level=0)
 
         self.meds_cleaned = meds_cleaned
         self.dosages = dosages
