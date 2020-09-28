@@ -84,7 +84,8 @@ Survey participants were allowed to provide 20 answers for each drug-related que
 - q1431. What dosages?
 - q1432. What dosage unit for each dosage? (referring to answers to q1431)
 
-resulting in a ~10,000-column and 60-row table. Survey answers that were left blank can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99.
+resulting in a ~10,000-column and 60+ row table, with unique identifiers for patients listed under the column 'uid'. 
+Survey answers that were not provided can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99.
 
 This survey answer table was used to create a survey answer Pandas series used in the rest of this pipeline, which takes the following form:
 
@@ -255,8 +256,8 @@ Some examples of classes being investigated include:
 - Proton pump inhibitors
 - Corticosteroids
 
-The script first imports the AnswerMapper class from [`Map_survey_answers.py`](Map_answer.py), and initialises with the pickled drug dictionary and
-the path to the raw survey answers (file not included):
+The script first imports the AnswerMapper class from [`Map_survey_answers.py`](Map_answer.py), and initialises with 
+the pickled drug dictionary and a filepath to the raw survey answers (given as a command line argument):
 
 ``` python
 # import class for mapping survey answers
@@ -265,11 +266,9 @@ from Map_survey_answers import AnswerMapper
 # import the drug dictionary
 drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 
-# survey answers filepath
-survey_filepath = 'data/Covidence_12Aug20_DrgExtra.csv'
 ...
 # create instance of answer mapper class with the survey file path
-mapper = AnswerMapper(survey_filepath = survey_filepath, drug_dict = drug_dictionary, meds_q = 'q1421', dosage_q = 'q1431', units_q = 'q1432')
+mapper = AnswerMapper(survey_filepath = args.filepath, drug_dict = drug_dictionary, meds_q = 'q1421', dosage_q = 'q1431', units_q = 'q1432')
 ```
 The `meds_q`, `dosage_q`, and `units_q` arguments can be modified with different text patterns for different survey answer sets.
 

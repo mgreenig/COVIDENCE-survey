@@ -85,7 +85,7 @@ class PatientAnnotator:
         self.meds = meds
         self.drug_dictionary = drug_dict
         # get bnf data from the data directory
-        self.read_in_bnf(drug_dictionary)
+        self.read_in_bnf(drug_dict)
 
     # function for updating dictionary with a list of patient indices belonging to a drug class
     def get_patients_in_class(self, drug_class):

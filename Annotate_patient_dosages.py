@@ -11,19 +11,19 @@ from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, s
 # class for scaling dosage values
 class DosageScaler(PatientAnnotator):
 
-    # class takes in the full survey answers, medication answers, a drug dictionary, dosage answers, and dosage units answers
+    # class takes in the full survey answers, medication answers, dosage answers, dosage units answers, and a drug dictionary
     def __init__(self, survey_data, meds, dosages, units, drug_dict):
         '''
         The meds, dosages, and units series should be on the same multi-index of the form (patient_number, question_number)
 
-        We use the first five letters of the question number index to distinguish between med, dosage, and unit questions, e.g.
-        - q1421_x_x -> meds
-        - q1431_x_x -> dosage values
-        - q1432_x_x -> dosage units
+        We use the first five letters of the question number index to distinguish between med, dosage, and unit questions, i.e.
+        - q1421_x -> meds
+        - q1431_x -> dosage values
+        - q1432_x -> dosage units
         '''
         # initialise parent class to call read_bnf()
-        self.survey_data = survey_data
         super().__init__(meds, drug_dict)
+        self.survey_data = survey_data
         self.med_db_ids = meds.apply(lambda answer: drug_dict.get(answer) if drug_dict.get(answer) else set())
         self.dosages = dosages
         self.units = units
@@ -40,7 +40,7 @@ class DosageScaler(PatientAnnotator):
         _, mask_aligned = series.align(mask_renamed, fill_value = False)
         return mask_aligned
 
-    # function for standardising drug q143_dosages for a drugbank ID
+    # function for getting normalised drug dosages for a drugbank ID
     def get_normalised_dosages(self, id):
 
         # if a single id is provided, convert into a set
@@ -56,7 +56,7 @@ class DosageScaler(PatientAnnotator):
         # if any drugs are hit, get the dosages
         if drug_mask.any():
 
-            # get all dosage q143_units specified for the drug
+            # get all dosage units specified for the drug
             dosage_units = self.units[drug_mask]
             mg_mask = DosageScaler.align_mask(dosage_units == 1, dosages)
             micg_mask = DosageScaler.align_mask(dosage_units == 2, dosages)
@@ -125,7 +125,10 @@ class DosageScaler(PatientAnnotator):
         # loop through ids in the class and add dosages to the dictionary of dosage data
         drug_dosages = {}
         for id in class_db_ids:
-            dosages = self.get_normalised_dosages(id)
+            try:
+                dosages = self.get_normalised_dosages(id)
+            except:
+                print(id)
             drug_dosages[id] = dosages
 
         # make data frame from the dosage data for all drugs in the class
@@ -162,13 +165,13 @@ if __name__ == '__main__':
     parser.add_argument('filepath', type=str, help='Path to the survey answers file')
     args = parser.parse_args()
 
-    # get the filename prefix from the filepath, for output file
+    # get the filename prefix from the filepath, for output file name
     filename = re.search('.+(?=_.*\.csv$)', args.filepath).group(0)
 
     # create instance of answer mapper class with the survey file path
     mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary)
 
-    # call map answers
+    # generate answer mappings
     mapper.map_answers()
 
     # update drug dictionary with manual corrections file
@@ -180,7 +183,7 @@ if __name__ == '__main__':
     # dictionary for patient drugs
     specific_drug_doses = {}
 
-    # make a class instance
+    # make a class instance with the mapped answer data
     scaler = DosageScaler(survey_data = mapper.survey_data, meds = mapper.meds_cleaned,
                           dosages = mapper.dosages, units = mapper.units, drug_dict = mapper.drug_dictionary)
 

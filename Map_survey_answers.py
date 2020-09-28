@@ -49,7 +49,7 @@ class AnswerMapper:
 
         # add dosage answers for patients that provided medication answers but are missing in the dosage answers
         for patient, question in meds.index:
-            # get question index values for the dosage/q143_units questions
+            # get question index values for the dosage/units questions
             dosage_question = question.replace(meds_q, dosage_q)
             units_question = question.replace(meds_q, units_q)
             # add missing patient/question combinations to the series
@@ -130,8 +130,6 @@ class AnswerMapper:
         # text cleaning
         meds_cleaned = meds_cleaned.str.strip()
         meds_cleaned = meds_cleaned.str.lower()
-        meds_cleaned_idx_levels = meds_cleaned.index.get_level_values(1).str.replace('(?<=_\d)_1', '').unique()
-        meds_cleaned.index = meds_cleaned.index.set_levels(meds_cleaned_idx_levels, level=1)
 
         self.meds_cleaned = meds_cleaned
 
