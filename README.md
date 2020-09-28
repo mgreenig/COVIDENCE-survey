@@ -150,7 +150,7 @@ as an example. Note the multi-index corresponding to patient/question values.
 We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for cleaning and mapping the survey responses to aliases in the drug dictionary. 
 The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
 
-Then, using the `import_and_clean()` method, the class processes the survey answers using regular expressions to remove text related to dosages, frequencies, and routes of administration from 
+Then, using the `import_data()` and `clean_meds()` methods, the class processes the survey answers using regular expressions to remove text related to dosages, frequencies, and routes of administration from 
 the raw text. Then, the processed answers are scanned for those which match keys in the drug dictionary. 
 For the answers that are not present in the drug dictionary, we try the first word only:
 
