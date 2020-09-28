@@ -269,8 +269,9 @@ drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 survey_filepath = 'data/Covidence_12Aug20_DrgExtra.csv'
 ...
 # create instance of answer mapper class with the survey file path
-mapper = AnswerMapper(survey_filepath = survey_filepath, drug_dict = drug_dictionary)
+mapper = AnswerMapper(survey_filepath = survey_filepath, drug_dict = drug_dictionary, meds_q = 'q1421', dosage_q = 'q1431', units_q = 'q1432')
 ```
+The `meds_q`, `dosage_q`, and `units_q` arguments can be modified with different text patterns for different survey answer sets.
 
 We then call the `map_answers()` method to map the raw survey answers to the drug dictionary:
 
@@ -300,15 +301,14 @@ We assume that the 0th level of the index corresponds to patients. Upon initiali
 bnf_classes = pd.read_csv('data/bnf_drug_classifications.csv')
 ```
 
-And maps the drug listings to the drug dictionary imported from `Map_survey_answers`. 
 Overall, 96% of BNF drug listings were successfully mapped to the drug dictionary.
 
 ![BNF listing mappings](figures/bnf_mappings.png)
 
-If run from the command line:
+The script should be run from the command line with the path to the survey answer file as a positional argument, for example:
 
 ```
-python Annotate_patients.py
+python Annotate_patients.py path/to/survey/answer/csv
 ```
 
 the script outputs a CSV file (not included) containing the patient-level information for each drug class.
@@ -352,10 +352,10 @@ And normalise the output to the [0, 1] range using a probit function:
 valid_dosages_norm = pd.Series(norm.cdf(valid_dosages_scaled), index = valid_dosages.index)
 ```
 
-Again, if run from the command line:
+Again, if run from the command line with a filepath to the survey answers:
 
 ``` 
-python Annotate_patient_dosages.py
+python Annotate_patient_dosages.py path/to/survey/answer/csv
 ```
 
 The script then outputs the patient-level drug scores in a CSV file (not included here)

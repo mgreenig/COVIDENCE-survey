@@ -6,41 +6,52 @@ from abydos.phonetic import Metaphone
 class AnswerMapper:
 
     # function to import and clean the survey answers
-    def import_and_clean(self, survey_filepath):
+    def import_data(self, survey_filepath, meds_q, dosage_q, units_q):
 
         # import the survey data csv file
         self.survey_data = pd.read_csv(survey_filepath)
 
         # filter for medication question
-        meds = self.survey_data.loc[:, self.survey_data.columns.str.contains('q142')]
+        meds = self.survey_data.loc[:, self.survey_data.columns.str.contains(meds_q)]
         # mask for rows (participants) that provided no medication answers
         no_q142_answer_mask = meds.apply(lambda row: row.isna().all(), axis=1)
 
         # filter participants that provided no answer and flatten the array
-        meds_filtered = meds[~no_q142_answer_mask].stack()
-        # filter for NAs or 99s
-        meds_filtered = meds_filtered[(meds_filtered != '-99') & (meds_filtered != -99) & (~meds_filtered.isna())]
+        meds = meds[~no_q142_answer_mask].stack()
+        # filter NAs or -99s
+        meds = meds[(meds != '-99') & (meds != -99) & (~meds.isna())]
         # basic preprocessing
-        meds_filtered = meds_filtered.str.strip()
-        meds_filtered = meds_filtered.str.lower()
+        meds = meds.str.strip()
+        meds = meds.str.lower()
 
         # filter for dosage question
-        dosages_and_units = self.survey_data.loc[:, self.survey_data.columns.str.contains('q143')]
-        no_dosage_unit_answer_mask = dosages_and_units.apply(lambda row: row.isna().all(), axis=1)
-        dosages_and_units_filtered = dosages_and_units[~no_dosage_unit_answer_mask].stack()
+        dosages = self.survey_data.loc[:, self.survey_data.columns.str.contains(dosage_q)]
+        no_dosage_answer_mask = dosages.apply(lambda row: row.isna().all(), axis=1)
+        dosages = dosages[~no_dosage_answer_mask].stack()
 
-        # separate dosage values and units
-        dosages = dosages_and_units_filtered[dosages_and_units_filtered.index.get_level_values(1).str.contains('q1431')]
-        units = dosages_and_units_filtered[dosages_and_units_filtered.index.get_level_values(1).str.contains('q1432')]
+        # filter for units question
+        units = self.survey_data.loc[:, self.survey_data.columns.str.contains(units_q)]
+        no_units_answer_mask = units.apply(lambda row: row.isna().all(), axis=1)
+        units = units[~no_units_answer_mask].stack()
 
-        # rename the question index in the q143_units question to match the medication/dosage questions
-        units.rename({q_id: q_id + '_1' for q_id in units.index.get_level_values(1).unique()}, level = 1, inplace = True)
+        # trim the question indices for all questions
+        meds_idx_levels = meds.index.get_level_values(1).unique()
+        meds_idx_level_mapping = {level: re.sub('(?<=_\d)_1', '', level) for level in meds_idx_levels}
+        meds.rename(meds_idx_level_mapping, level=1, inplace=True)
+
+        dosage_idx_levels = dosages.index.get_level_values(1).unique()
+        dosage_idx_level_mapping = {level: re.sub('(?<=_\d)_1', '', level) for level in dosage_idx_levels}
+        dosages.rename(dosage_idx_level_mapping, level=1, inplace=True)
+
+        unit_idx_levels = units.index.get_level_values(1).unique()
+        unit_idx_level_mapping = {level: re.sub('(?<=_\d)_1', '', level) for level in unit_idx_levels}
+        units.rename(unit_idx_level_mapping, level=1, inplace=True)
 
         # add dosage answers for patients that provided medication answers but are missing in the dosage answers
-        for patient, question in meds_filtered.index:
+        for patient, question in meds.index:
             # get question index values for the dosage/q143_units questions
-            dosage_question = question.replace('q1421', 'q1431')
-            units_question = question.replace('q1421', 'q1432')
+            dosage_question = question.replace(meds_q, dosage_q)
+            units_question = question.replace(meds_q, units_q)
             # add missing patient/question combinations to the series
             if (patient, dosage_question) not in dosages.index:
                 dosages[(patient, dosage_question)] = -99
@@ -53,30 +64,30 @@ class AnswerMapper:
         dosage_generator = ((patient, dosage_question) for patient, dosage_question in dosages.index)
         # for patients/questions that are in the dosage answer series but not the medication answer series, just drop them
         for patient, dosage_question in dosage_generator:
-            question = dosage_question.replace('q1431', 'q1421')
-            units_question = dosage_question.replace('q1431', 'q1432')
-            if (patient, question) not in meds_filtered.index:
-                dosages = dosages.drop((patient, dosage_question))
-            if (patient, units_question) not in units.index:
+            meds_question = dosage_question.replace(dosage_q, meds_q)
+            units_question = dosage_question.replace(dosage_q, units_q)
+            if (patient, meds_question) not in meds.index or (patient, units_question) not in units.index:
                 dosages = dosages.drop((patient, dosage_question))
 
         # generator to avoid modifying the global object
         units_generator = ((patient, units_question) for patient, units_question in units.index)
         # same for patients/questions in the dosage unit question
         for patient, units_question in units_generator:
-            question = units_question.replace('q1432', 'q1421')
-            dosage_question = units_question.replace('q1432', 'q1431')
-            if (patient, question) not in meds_filtered.index:
-                units = units.drop((patient, units_question))
-            if (patient, dosage_question) not in dosages.index:
+            meds_question = units_question.replace(units_q, meds_q)
+            dosage_question = units_question.replace(units_q, dosage_q)
+            if (patient, meds_question) not in meds.index or (patient, dosage_question) not in dosages.index:
                 units = units.drop((patient, units_question))
 
-        # trim the question index
-        dosage_idx_levels = dosages.index.get_level_values(1).str.replace('(?<=_\d)_1', '').unique()
-        dosages.index = dosages.index.set_levels(dosage_idx_levels, level=0)
+        # set attributes
+        self.meds = meds
+        self.dosages = dosages
+        self.units = units
 
-        units_idx_levels = units.index.get_level_values(1).str.replace('(?<=_\d)_1', '').unique()
-        units.index = units.index.set_levels(units_idx_levels, level=0)
+    # function for cleaning imported medication aswers
+    def clean_meds(self):
+
+        if not hasattr(self, 'meds'):
+            raise AttributeError('Instance has no attribute "meds". Please call import_data() first, with the filepath to a survey answer dataframe.')
 
         ## regex patterns for cleaning medication answers ##
 
@@ -86,7 +97,7 @@ class AnswerMapper:
         volumes = 'm?(milli)?(micro)?(mc)?(mic)?\s*l(iter)?'
         # weight and volume patterns combined
         dose_units = '(({weight}|{volume}|%|unit|i\.*u\.*)s*)'.format(weight=weights, volume=volumes)
-        # q143_units pattern compiled into a regex pattern for q143_dosages
+        # units pattern compiled into a regex pattern for dosages
         dosage_pattern = '([\d.]+/)*([\d.]+\s*|\s+){units}((/|{units})|\s+|$)|(\s+[\d.x]+\s*/\s*[\d.]+(\s+|$))'.format(units=dose_units)
         dosage_regex = re.compile(dosage_pattern)
 
@@ -111,27 +122,26 @@ class AnswerMapper:
 
         # loop through regex patterns and filter each one from the answers
         for pattern in all_patterns:
-            meds_filtered = meds_filtered.str.replace(pattern, '')
+            meds = self.meds.str.replace(pattern, '')
 
         # remove anything coming after a forward slash if more than two alphanumeric characters are detected
-        meds_cleaned = meds_filtered.str.replace('/\w{2,}.*$', '')
+        meds_cleaned = meds.str.replace('/\w{2,}.*$', '')
 
         # text cleaning
         meds_cleaned = meds_cleaned.str.strip()
         meds_cleaned = meds_cleaned.str.lower()
         meds_cleaned_idx_levels = meds_cleaned.index.get_level_values(1).str.replace('(?<=_\d)_1', '').unique()
-        meds_cleaned.index = meds_cleaned.index.set_levels(meds_cleaned_idx_levels, level=0)
+        meds_cleaned.index = meds_cleaned.index.set_levels(meds_cleaned_idx_levels, level=1)
 
         self.meds_cleaned = meds_cleaned
-        self.dosages = dosages
-        self.units = units
 
     # initialise with a drug dictionary and a filepath to the survey data frame
-    def __init__(self, survey_filepath, drug_dict):
+    def __init__(self, survey_filepath, drug_dict, meds_q = 'q1421', dosage_q = 'q1431', units_q = 'q1432'):
         self.drug_dictionary = drug_dict
         self.all_db_ids = set().union(*self.drug_dictionary.values())
         self.drug_frequencies = {db_id: 0 for db_id in self.all_db_ids}
-        self.import_and_clean(survey_filepath)
+        self.import_data(survey_filepath, meds_q = meds_q, dosage_q = dosage_q, units_q = units_q)
+        self.clean_meds()
 
     def map_answers(self):
 
@@ -202,6 +212,10 @@ class AnswerMapper:
 
         # list for drugs still unmapped by phonetic encoding
         self.unmapped_by_encoding = [answer for answer in self.unmapped_survey_answers if answer not in self.mapped_by_encoding]
+
+        print('{} survey answers mapped'.format(
+            len(self.mapped_survey_answers) + len(self.first_name_mapped_survey_answers) + len(self.mapped_by_encoding)))
+        print('{} survey answers unmapped'.format(len(self.unmapped_by_encoding)))
 
     def update_drug_dictionary(self, manual_corrections_filepath):
 
