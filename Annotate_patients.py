@@ -2,6 +2,7 @@ import pandas as pd
 import warnings
 import pickle
 import re
+import argparse
 from itertools import compress
 warnings.simplefilter('ignore')
 
@@ -11,36 +12,15 @@ from Map_survey_answers import AnswerMapper
 # import the drug dictionary
 drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 
-# survey answers filepath
-survey_filepath = 'data/Covidence_12Aug20_DrgExtra.csv'
-# get the date from the survey answers
-date = re.search('(?<=_).+(?=_)', survey_filepath).group(0)
-
-# create instance of answer mapper class with the survey file path
-mapper = AnswerMapper(survey_filepath = survey_filepath, drug_dict = drug_dictionary)
-
-# call map answers
-mapper.map_answers()
-
-# print mapping counts
-print('{} survey answers mapped'.format(len(mapper.mapped_survey_answers) + len(mapper.first_name_mapped_survey_answers) + len(mapper.mapped_by_encoding)))
-print('{} survey answers unmapped'.format(len(mapper.unmapped_by_encoding)))
-
-# get counts for different mapping categories
-mapping_counts = {'exact': len(mapper.mapped_survey_answers), 'first_name': len(mapper.first_name_mapped_survey_answers),
-                  'phonetic_encoding': len(mapper.mapped_by_encoding), 'unmapped': len(mapper.unmapped_by_encoding)}
-
-# update drug dictionary with manual corrections file
-mapper.update_drug_dictionary(manual_corrections_filepath = 'data/answer_mappings_complete.csv')
-
-# set the drug dictionary to the updated instance dictionary
-drug_dictionary = mapper.drug_dictionary
-
 # drug classes and specific drugs to investigate
-drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticosteroids', 'angiotensin ii receptor antagonists',
-                'vitamin k antagonists', 'beta blocking agents', 'thiazides', 'h2-receptor antagonists', 'calcium-channel blockers', 'beta2-agonists',
-                'antimuscarinics, other', 'non-steroidal anti-inflammatory drugs', 'sodium glucose co-transporter 2 inhibitors',
-                'antiplatelet drugs', 'oestrogens|androgens', 'vitamin d and analogues', '^calcium$', 'bisphosphonates']
+drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticosteroids',
+                'angiotensin ii receptor antagonists',
+                'vitamin k antagonists', 'beta blocking agents', 'thiazides', 'h2-receptor antagonists',
+                'calcium-channel blockers', 'beta2-agonists',
+                'antimuscarinics, other', 'non-steroidal anti-inflammatory drugs',
+                'sodium glucose co-transporter 2 inhibitors',
+                'antiplatelet drugs', 'oestrogens|androgens', 'vitamin d and analogues', '^calcium$',
+                'bisphosphonates']
 
 specific_drugs = ['paracetamol', 'metformin', 'aspirin']
 
@@ -65,6 +45,40 @@ class PatientAnnotator:
 
         # list of drugbank ids mapped to bnf classes
         self.bnf_db_ids = set().union(*self.bnf_classes['db_id'].tolist())
+
+    # method for counting how many BNF entries were mapped to the drug dictionary
+    def count_BNF_mappings(self):
+
+        # test whether each bnf drug is in the drug dictionary
+        not_found_in_drugbank = self.bnf_classes['drugs'].apply(
+            lambda drugs: [drug not in self.drug_dictionary for drug in drugs])
+
+        # get mapped and unmapped bnf drugs
+        unmapped_bnf_drugs = set()
+        mapped_bnf_drugs = set()
+        for drug, mask in zip(self.bnf_classes['drugs'], not_found_in_drugbank):
+            unmapped = set(compress(drug, mask))
+            mapped = set(compress(drug, [not unmapped for unmapped in mask]))
+            unmapped_bnf_drugs = unmapped_bnf_drugs.union(unmapped)
+            mapped_bnf_drugs = mapped_bnf_drugs.union(mapped)
+
+        # map first word of each drug entry in the bnf
+        first_name_unmapped = []
+        first_name_mapped = []
+        for drug in unmapped_bnf_drugs:
+            first_part = drug.split(' ')[0]
+            if first_part in self.drug_dictionary:
+                self.drug_dictionary[drug] = self.drug_dictionary[first_part]
+                first_name_mapped.append(drug)
+            else:
+                first_name_unmapped.append(drug)
+
+        print('{} BNF drugs mapped'.format(len(mapped_bnf_drugs) + len(first_name_mapped)))
+        print('{} BNF drugs unmapped'.format(len(first_name_unmapped)))
+
+        self.bnf_mapped = mapped_bnf_drugs
+        self.bnf_first_name_mapped = first_name_mapped
+        self.bnf_unmapped = first_name_unmapped
 
     # requires a series of patient answers and a dictionary of drug aliases mapped to DB ids
     def __init__(self, meds, drug_dict):
@@ -118,45 +132,34 @@ class PatientAnnotator:
 
         return patients_on_drug
 
-# initialise class instance
-annotator = PatientAnnotator(meds = mapper.meds_cleaned, drug_dict = drug_dictionary)
-
-# test whether each bnf drug is in the drug dictionary
-not_found_in_drugbank = annotator.bnf_classes['drugs'].apply(lambda drugs: [drug not in drug_dictionary for drug in drugs])
-
-# get mapped and unmapped bnf drugs
-unmapped_bnf_drugs = set()
-mapped_bnf_drugs = set()
-for drug, mask in zip(annotator.bnf_classes['drugs'], not_found_in_drugbank):
-    unmapped = set(compress(drug, mask))
-    mapped = set(compress(drug, [not unmapped for unmapped in mask]))
-    unmapped_bnf_drugs = unmapped_bnf_drugs.union(unmapped)
-    mapped_bnf_drugs = mapped_bnf_drugs.union(mapped)
-
-# map first word of each drug entry in the bnf
-first_name_unmapped = []
-first_name_mapped = []
-for drug in unmapped_bnf_drugs:
-    first_part = drug.split(' ')[0]
-    if first_part in drug_dictionary:
-        drug_dictionary[drug] = drug_dictionary[first_part]
-        first_name_mapped.append(drug)
-    else:
-        first_name_unmapped.append(drug)
-
-print('{} BNF drugs mapped'.format(len(mapped_bnf_drugs) + len(first_name_mapped)))
-print('{} BNF drugs unmapped'.format(len(first_name_unmapped)))
-
-BNF_mapping_counts = {'exact': len(mapped_bnf_drugs), 'first_name': len(first_name_mapped), 'unmapped': len(first_name_unmapped)}
-
 # if run from the command line, output a CSV file with answer mappings
 if __name__ == '__main__':
+
+    # file path argument
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filepath', type=str, help='Path to the survey answers file')
+    args = parser.parse_args()
+
+    # get the filename prefix from the filepath, for output file
+    filename = re.search('.+(?=_.*\.csv$)', args.filepath).group(0)
+
+    # create instance of answer mapper class with the survey file path
+    mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary)
+
+    # call map answers
+    mapper.map_answers()
+
+    # update drug dictionary with manual corrections file
+    mapper.update_drug_dictionary(manual_corrections_filepath='data/answer_mappings_complete.csv')
 
     # dictionary for patient drug classes
     patient_drug_class_dict = {}
 
     # dictionary for patient drugs
     patient_drug_dict = {}
+
+    # initialise class instance
+    annotator = PatientAnnotator(meds=mapper.meds_cleaned, drug_dict=mapper.drug_dictionary)
 
     # label patient drug classes
     for drug_class in drug_classes:
@@ -203,4 +206,4 @@ if __name__ == '__main__':
     patient_feature_df.loc[steroid_idx, 'corticosteroids'] = 1
 
     # save the drug class data as a csv file
-    patient_feature_df.to_csv('data/Covidence_{}_Drug_Dosages.csv'.format(date), index = False)
+    patient_feature_df.to_csv('{}_Drug_Classes.csv'.format(filename), index = False)

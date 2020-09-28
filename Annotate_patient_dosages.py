@@ -1,9 +1,12 @@
 import pandas as pd
 import numpy as np
+import re
+import argparse
 from scipy.stats import zscore, norm
 
 # import the relevant data
-from Annotate_patients import PatientAnnotator, mapper, drug_dictionary, drug_classes, specific_drugs, date
+from Map_survey_answers import AnswerMapper
+from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, specific_drugs
 
 # class for scaling dosage values
 class DosageScaler(PatientAnnotator):
@@ -154,6 +157,23 @@ class DosageScaler(PatientAnnotator):
 
 if __name__ == '__main__':
 
+    # file path argument
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filepath', type=str, help='Path to the survey answers file')
+    args = parser.parse_args()
+
+    # get the filename prefix from the filepath, for output file
+    filename = re.search('.+(?=_.*\.csv$)', args.filepath).group(0)
+
+    # create instance of answer mapper class with the survey file path
+    mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary)
+
+    # call map answers
+    mapper.map_answers()
+
+    # update drug dictionary with manual corrections file
+    mapper.update_drug_dictionary(manual_corrections_filepath='data/answer_mappings_complete.csv')
+
     # dictionary for patient drug classes
     drug_class_doses = {}
 
@@ -162,7 +182,7 @@ if __name__ == '__main__':
 
     # make a class instance
     scaler = DosageScaler(survey_data = mapper.survey_data, meds = mapper.meds_cleaned,
-                          dosages = mapper.dosages, units = mapper.units, drug_dict = drug_dictionary)
+                          dosages = mapper.dosages, units = mapper.units, drug_dict = mapper.drug_dictionary)
 
     # label patient drug classes
     for drug_class in drug_classes:
@@ -206,4 +226,4 @@ if __name__ == '__main__':
     patient_dose_feature_df.loc[steroid_idx, 'corticosteroids'] = 'NA'
 
     # save to csv file
-    patient_dose_feature_df.to_csv('data/Covidence_{}_Drug_Dosages.csv'.format(date), index = False)
+    patient_dose_feature_df.to_csv('{}_Drug_Dosages.csv'.format(filename), index = False)
