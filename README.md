@@ -288,7 +288,7 @@ mapper.update_drug_dictionary(manual_corrections_filepath = 'data/answer_mapping
 ```
 
 We then create the `PatientAnnotator` class, inputting the `meds_cleaned` attribute of the `AnswerMapper` instance (the cleaned medication answers) as the first argument
-and a drug dictionary as arguments to initialise.
+and a drug dictionary as arguments to initialise (we use the drug dictionary from `mapper` after calling `update_drug_dictionary()`).
 
 ``` python
 annotator = PatientAnnotator(mapper.meds_cleaned, mapper.drug_dictionary)
