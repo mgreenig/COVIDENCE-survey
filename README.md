@@ -291,7 +291,7 @@ We then create the `PatientAnnotator` class, inputting the `meds_cleaned` attrib
 and a drug dictionary as arguments to initialise.
 
 ``` python
-annotator = PatientAnnotator(mapper.meds_cleaned, drug_dictionary)
+annotator = PatientAnnotator(mapper.meds_cleaned, mapper.drug_dictionary)
 ```
 
 We assume that the 0th level of the index corresponds to patients. Upon initialisation the class imports the csv file `/data/bnf_drug_classifications.csv`, which contains the BNF class data:
@@ -320,11 +320,11 @@ with a binary value for each drug class (1 or 0), we aim to capture a dose-respo
 class and the probability of developing COVID-19.
 
 We provide the [`Annotate_patient_dosages.py`](Annotate_patient_dosages.py) script to annotate individual patients with the dosages provided in the survey answers.
-The script imports various objects from [`Annotate_patients.py`](Annotate_patients.py), including the `mapper` instance of the
-`AnswerMapper` class and the updated drug dictionary.
+The script imports the `AnswerMapper` class as well as various objects from [`Annotate_patients.py`](Annotate_patients.py):
 
 ``` python
-from Annotate_patients import PatientAnnotator, mapper, drug_dictionary, drug_classes, specific_drugs
+from Map_survey_answers import AnswerMapper
+from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, specific_drugs
 ```
 
 The script defines the class `DosageScaler`, which inherits from `PatientAnnotator` and provides additional methods 
@@ -334,7 +334,7 @@ The final argument is a `drug_dictionary`, which was imported from [`Annotate_pa
 
 ``` python
 # make a class instance
-scaler = DosageScaler(mapper.survey_data, mapper.meds_cleaned, mapper.dosages, mapper.units, drug_dictionary)
+scaler = DosageScaler(mapper.survey_data, mapper.meds_cleaned, mapper.dosages, mapper.units, mapper.drug_dictionary)
 ```
 Then, for each drug dosage value, we calculate a z-score relative to all dosage values for the same drug:
 
