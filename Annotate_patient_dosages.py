@@ -31,9 +31,12 @@ class DosageScaler(PatientAnnotator):
     # function for aligning question indices in a survey answer mask to another survey answer series
     @staticmethod
     def align_mask(mask, series):
+        # index pattern is everything before the first underscore in the first index entry
+        mask_idx_pattern = re.sub('_.*$', '', mask.index[0][1])
+        series_idx_pattern = re.sub('_.*$', '', series.index[0][1])
         # get the question patterns from of the first five letters of the mask and answer series indices
-        q1_pattern = mask.index[0][1][:5]
-        q2_pattern = series.index[0][1][:5]
+        q1_pattern = mask.index[0][1][:min(5, len(mask_idx_pattern))]
+        q2_pattern = series.index[0][1][:min(5, len(series_idx_pattern))]
         # rename the question index in the mask
         mask_renamed = mask.rename({q_id: q_id.replace(q1_pattern, q2_pattern) for q_id in mask.index.get_level_values(1).unique()}, level = 1)
         # align it to the series
