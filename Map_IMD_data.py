@@ -1,7 +1,8 @@
 import pandas as pd
+import numpy as np
+import argparse
 from bs4 import BeautifulSoup as bs
 from urllib.request import Request, urlopen
-import numpy as np
 from multiprocessing import Pool, cpu_count
 
 # IMD deciles for Northern irish postcodes
@@ -35,12 +36,17 @@ def get_postcode_rank(postcode):
 
 if __name__ == '__main__':
 
+    # file path argument
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filepath', type=str, help='Path to the postcodes survey answers file')
+    args = parser.parse_args()
+
     # import postcode data set
     postcode_data = pd.read_csv('data/postcode_data.csv', usecols = ['Postcode', 'In Use?', 'Country'])
     postcodes = postcode_data['Postcode']
 
     # import postcodes from COVIDENCE survey
-    survey_postcodes = pd.read_csv('data/Covidence_12Aug20_Postcodes.csv')
+    survey_postcodes = pd.read_csv(args.filepath)
     # remove trailing whitespaces
     survey_postcodes['pcode'] = survey_postcodes['pcode'].str.strip()
     # remove punctuation from the postcodes
