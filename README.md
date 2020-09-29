@@ -237,6 +237,10 @@ python Get_BNF_classes.py
 
 it pulls drug class data from the BNF website using BeautifulSoup, and saves drug names, primary classifications, and secondary classifications in a Pandas DataFrame. 
 
+Overall, 96% of BNF drug listings were successfully mapped to the drug dictionary.
+
+![BNF listing mappings](figures/bnf_mappings.png)
+
 The BNF DataFrame is then converted into a CSV file and saved:
 
 ``` python
@@ -256,59 +260,19 @@ Some examples of classes being investigated include:
 - Proton pump inhibitors
 - Corticosteroids
 
-The script first imports the AnswerMapper class from [`Map_survey_answers.py`](Map_answer.py), and initialises with 
-the pickled drug dictionary and a filepath to the raw survey answers (given as a command line argument):
-
-``` python
-# import class for mapping survey answers
-from Map_survey_answers import AnswerMapper
-
-# import the drug dictionary
-drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
-
-...
-# create instance of answer mapper class with the survey file path
-mapper = AnswerMapper(survey_filepath = args.filepath, drug_dict = drug_dictionary, meds_q = 'q1421', dosage_q = 'q1431', units_q = 'q1432')
-```
-The `meds_q`, `dosage_q`, and `units_q` arguments can be modified with different text patterns for different survey answer sets.
-
-We then call the `map_answers()` method to map the raw survey answers to the drug dictionary:
-
-``` python
-# call map answers
-mapper.map_answers()
-```
-
-and also the `update_drug_dictionary()` method, which takes a filepath to a manual misspelling correction file as an argument:
-
-``` python
-# update drug dictionary with manual corrections file
-mapper.update_drug_dictionary(manual_corrections_filepath = 'data/answer_mappings_complete.csv')
-```
-
-We then create the `PatientAnnotator` class, inputting the `meds_cleaned` attribute of the `AnswerMapper` instance (the cleaned medication answers) as the first argument
-and a drug dictionary as arguments to initialise (we use the drug dictionary from `mapper` after calling `update_drug_dictionary()`).
-
-``` python
-annotator = PatientAnnotator(mapper.meds_cleaned, mapper.drug_dictionary)
-```
-
-We assume that the 0th level of the index corresponds to patients. Upon initialisation the class imports the csv file `/data/bnf_drug_classifications.csv`, which contains the BNF class data:
-
-``` python
-# import bnf class dataframe
-bnf_classes = pd.read_csv('data/bnf_drug_classifications.csv')
-```
-
-Overall, 96% of BNF drug listings were successfully mapped to the drug dictionary.
-
-![BNF listing mappings](figures/bnf_mappings.png)
-
 The script should be run from the command line with the path to the survey answer file as a positional argument, for example:
 
 ```
 python Annotate_patients.py path/to/survey/answer/csv
 ```
+
+You can add the names of the medication, dosage, and unit question columns as follows:
+
+```
+python Annotate_patients.py path/to/survey/answer/csv -q med_q_column dosage_q_column units_q_column
+```
+
+The arguments default to 'q1421', 'q1431', and 'q1432', the column names in our case.
 
 the script outputs a CSV file (not included) containing the patient-level information for each drug class.
 
@@ -318,24 +282,7 @@ We extend the pipeline to further incorporate the drug dosage data provided for 
 with a binary value for each drug class (1 or 0), we aim to capture a dose-response relationship between each medication
 class and the probability of developing COVID-19.
 
-We provide the [`Annotate_patient_dosages.py`](Annotate_patient_dosages.py) script to annotate individual patients with the dosages provided in the survey answers.
-The script imports the `AnswerMapper` class as well as various objects from [`Annotate_patients.py`](Annotate_patients.py):
-
-``` python
-from Map_survey_answers import AnswerMapper
-from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, specific_drugs
-```
-
-The script defines the class `DosageScaler`, which inherits from `PatientAnnotator` and provides additional methods 
-for incorporating numerical dosage data. Specifically, the class is initialised with arguments
-corresponding to the full survey answer dataframe, medication answers, dosage answers, and dosage unit answers. 
-The final argument is a `drug_dictionary`, which was imported from [`Annotate_patients.py`](Annotate_patients.py):
-
-``` python
-# make a class instance
-scaler = DosageScaler(mapper.survey_data, mapper.meds_cleaned, mapper.dosages, mapper.units, mapper.drug_dictionary)
-```
-Then, for each drug dosage value, we calculate a z-score relative to all dosage values for the same drug:
+For each drug dosage value, we calculate a z-score relative to all dosage values for the same drug:
 
 ``` python
 from scipy.stats import zscore, norm
@@ -356,6 +303,8 @@ Again, if run from the command line with a filepath to the survey answers:
 ``` 
 python Annotate_patient_dosages.py path/to/survey/answer/csv
 ```
+
+As with [`Annotate_patients.py`](Annotate_patients.py), the medication, dosage, and units column names can be specified with the `-q` argument.
 
 The script then outputs the patient-level drug scores in a CSV file (not included here)
 
