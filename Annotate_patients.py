@@ -135,7 +135,7 @@ class PatientAnnotator:
 # if run from the command line, output a CSV file with answer mappings
 if __name__ == '__main__':
 
-    # file path argument
+    # file path and question column name arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', type=str, help='Path to the survey answers file')
     parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432'], nargs = 3, type = str,
