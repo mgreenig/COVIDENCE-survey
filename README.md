@@ -274,7 +274,7 @@ python Annotate_patients.py path/to/survey/answer/csv -q med_q_column dosage_q_c
 
 The arguments default to 'q1421', 'q1431', and 'q1432', the column names in our case.
 
-the script outputs a CSV file (not included) containing the patient-level information for each drug class.
+The script outputs a CSV file (not included) containing the patient-level information for each drug class.
 
 ### Incorporating dosage data
 
@@ -327,5 +327,7 @@ welsh_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'welsh
 
 and maps the respondent postcodes to IMD deciles and ranks. 
 For Northern Irish postcodes, we use urllib and BeautifulSoup to input the respondent postcodes into the [web API](https://deprivation.nisra.gov.uk/) provided by the Northern Irish government and save the resulting output.
+
+The script should be run frm the command line
 
 The patient mappings to IMD ranks and deciles are saved as a CSV file (not included in this repository).

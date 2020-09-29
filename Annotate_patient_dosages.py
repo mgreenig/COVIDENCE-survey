@@ -165,7 +165,7 @@ if __name__ == '__main__':
 
     # file path and column name arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument('filepath', type=str, help='Path to the survey answers file')
+    parser.add_argument('filepath', type=str, help='Path to the medication survey answers file')
     parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432'], nargs = 3, type = str,
                         help = 'Column names for medication, dosage, and unit questions')
     args = parser.parse_args()
