@@ -163,14 +163,16 @@ if __name__ == '__main__':
     # file path argument
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', type=str, help='Path to the survey answers file')
+    parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432'], nargs = 3, type = str,
+                        help = 'Column names for medication, dosage, and unit questions')
     args = parser.parse_args()
 
     # get the filename prefix from the filepath, for output file name
     filename = re.search('.+(?=_.*\.csv$)', args.filepath).group(0)
 
     # create instance of answer mapper class with the survey file path
-    mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary)
-
+    mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary, meds_q = args.questions[0],
+                          dosage_q = args.questions[1], units_q = args.questions[2])
     # generate answer mappings
     mapper.map_answers()
 
