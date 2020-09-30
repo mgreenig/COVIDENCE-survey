@@ -39,6 +39,7 @@ if __name__ == '__main__':
     # file path argument
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', type=str, help='Path to the postcodes survey answers file')
+    parser.add_argument('-p', '--postcode_column', type=str, default='pcode', help='Name of the column containing postcodes in the answer CSV file')
     args = parser.parse_args()
 
     # import postcode data set
@@ -48,9 +49,9 @@ if __name__ == '__main__':
     # import postcodes from COVIDENCE survey
     survey_postcodes = pd.read_csv(args.filepath)
     # remove trailing whitespaces
-    survey_postcodes['pcode'] = survey_postcodes['pcode'].str.strip()
+    survey_postcodes[args.postcode_column] = survey_postcodes[args.postcode_column].str.strip()
     # remove punctuation from the postcodes
-    survey_postcodes['pcode'] = survey_postcodes['pcode'].str.replace('[^\w\s]', '')
+    survey_postcodes[args.postcode_column] = survey_postcodes[args.postcode_column].str.replace('[^\w\s]', '')
 
     # dictionary for storing postcodes without spaces
     postcodes_space_removed = {}
@@ -65,7 +66,7 @@ if __name__ == '__main__':
             postcodes_space_removed[postcode_joined].append(postcode)
 
     # isolate survey postcodes that do not map to the postcode data set
-    unmapped_postcodes = survey_postcodes.loc[~survey_postcodes['pcode'].isin(postcodes), 'pcode']
+    unmapped_postcodes = survey_postcodes.loc[~survey_postcodes[args.postcode_column].isin(postcodes), args.postcode_column]
     # remove spaces
     unmapped_postcodes_space_removed = unmapped_postcodes.str.replace(' ', '')
 
@@ -84,8 +85,8 @@ if __name__ == '__main__':
 
     # map the postcodes using the mapping dictionary
     mapped_postcodes = unmapped_postcodes_space_removed[mappable_pcode_mask].apply(lambda pcode: postcode_mappings[pcode])
-    survey_postcodes.loc[mappable_pcode_idx, 'pcode'] = mapped_postcodes
-    survey_postcodes_mapped = postcode_data[postcode_data['Postcode'].isin(survey_postcodes['pcode'])]
+    survey_postcodes.loc[mappable_pcode_idx, args.postcode_column] = mapped_postcodes
+    survey_postcodes_mapped = postcode_data[postcode_data['Postcode'].isin(survey_postcodes[args.postcode_column])]
     england_postcodes = survey_postcodes_mapped.loc[survey_postcodes_mapped['Country'] == 'England', 'Postcode']
     scotland_postcodes = survey_postcodes_mapped.loc[survey_postcodes_mapped['Country'] == 'Scotland', 'Postcode']
     wales_postcodes = survey_postcodes_mapped.loc[survey_postcodes_mapped['Country'] == 'Wales', 'Postcode']
@@ -147,7 +148,7 @@ if __name__ == '__main__':
     imd_data_concatenated = pd.concat([english_postcode_imds, scottish_postcode_imds, welsh_postcode_imds, NI_postcode_imds])
 
     # merge all countries imd data into a single data frame
-    survey_imd_data = survey_postcodes.merge(imd_data_concatenated, how = 'left', left_on = 'pcode', right_on = 'Postcode')
+    survey_imd_data = survey_postcodes.merge(imd_data_concatenated, how = 'left', left_on = args.postcode_column, right_on = 'Postcode')
     # standardise NA values
     survey_imd_data.loc[survey_imd_data['IMD rank'].isna(), 'IMD rank'] = np.nan
     survey_imd_data.loc[survey_imd_data['IMD decile'].isna(), 'IMD decile'] = np.nan

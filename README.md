@@ -263,16 +263,22 @@ Some examples of classes being investigated include:
 The script should be run from the command line with the path to the survey answer file as a positional argument, for example:
 
 ```
-python Annotate_patients.py path/to/survey/answer/csv
+python Annotate_patients.py path/to/medication/answer/csv
 ```
 
-You can add the names of the medication, dosage, and unit question columns as follows:
+You can add the names of the medication, dosage, and unit question columns with the `-q` argument as follows:
 
 ```
-python Annotate_patients.py path/to/survey/answer/csv -q med_q_column dosage_q_column units_q_column
+python Annotate_patients.py path/to/medication/answer/csv -q med_q_column dosage_q_column units_q_column
 ```
 
-The arguments default to 'q1421', 'q1431', and 'q1432', the column names in our case.
+The `-q` arguments default to 'q1421', 'q1431', and 'q1432', the column names in our case.
+
+You can also add the name of the unique patient identifier column with the `-id` command:
+
+```
+python Annotate_patients.py path/to/medication/answer/csv -id uid
+```
 
 The script outputs a CSV file (not included) containing the patient-level information for each drug class.
 
@@ -298,13 +304,14 @@ And normalise the output to the [0, 1] range using a probit function:
 valid_dosages_norm = pd.Series(norm.cdf(valid_dosages_scaled), index = valid_dosages.index)
 ```
 
-Again, if run from the command line with a filepath to the survey answers:
+Again, the script should be run from the command line with a filepath to the survey answers:
 
 ``` 
-python Annotate_patient_dosages.py path/to/survey/answer/csv
+python Annotate_patient_dosages.py path/to/medication/answer/csv
 ```
 
-As with [`Annotate_patients.py`](Annotate_patients.py), the medication, dosage, and units column names can be specified with the `-q` argument.
+As with [`Annotate_patients.py`](Annotate_patients.py), the medication, dosage, and unit column names can be specified with the `-q` argument, 
+while the patient identifier column name can be specified with the `-id` argument.
 
 The script then outputs the patient-level drug scores in a CSV file (not included here)
 
@@ -328,6 +335,16 @@ welsh_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'welsh
 and maps the respondent postcodes to IMD deciles and ranks. 
 For Northern Irish postcodes, we use urllib and BeautifulSoup to input the respondent postcodes into the [web API](https://deprivation.nisra.gov.uk/) provided by the Northern Irish government and save the resulting output.
 
-The script should be run frm the command line
+The script should be run from the command line with a path to a CSV file containing the postcode answers as the first positional argument:
+
+``` 
+python Map_IMD_data.py path/to/postcode/answer/csv
+```
+
+You can specify the name of the column containing the postcodes with the `-p` argument:
+
+``` 
+python Map_IMD_data.py path/to/postcode/answer/csv -p pcode
+```
 
 The patient mappings to IMD ranks and deciles are saved as a CSV file (not included in this repository).

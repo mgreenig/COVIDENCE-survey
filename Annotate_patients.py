@@ -140,6 +140,7 @@ if __name__ == '__main__':
     parser.add_argument('filepath', type=str, help='Path to the medication survey answers file')
     parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432'], nargs = 3, type = str,
                         help = 'Column names for medication, dosage, and unit questions')
+    parser.add_argument('-id', '--patient_id', default='uid', type=str, help='Column name for unique patient identifiers')
     args = parser.parse_args()
 
     # get the filename prefix from the filepath, for output file
@@ -177,7 +178,7 @@ if __name__ == '__main__':
 
     # make a data frame
     patient_feature_df = pd.DataFrame(0, index = mapper.survey_data.index, columns = patient_feature_dict)
-    patient_feature_df.insert(0, 'uid', mapper.survey_data['uid'])
+    patient_feature_df.insert(0, args.patient_id, mapper.survey_data[args.patient_id])
 
     # set patient indices for each feature to 1 in the full patient feature data frame
     for feature in patient_feature_dict:
