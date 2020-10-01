@@ -211,10 +211,6 @@ class AnswerMapper:
         # list for drugs still unmapped by phonetic encoding
         self.unmapped_by_encoding = [answer for answer in self.unmapped_survey_answers if answer not in self.mapped_by_encoding]
 
-        print('{} survey answers mapped'.format(
-            len(self.mapped_survey_answers) + len(self.first_name_mapped_survey_answers) + len(self.mapped_by_encoding)))
-        print('{} survey answers unmapped'.format(len(self.unmapped_by_encoding)))
-
     def update_drug_dictionary(self, manual_corrections_filepath):
 
         # manual id setting for a few medications

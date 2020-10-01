@@ -22,7 +22,7 @@ drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticos
                 'antiplatelet drugs', 'oestrogens|androgens', 'vitamin d and analogues', '^calcium$',
                 'bisphosphonates']
 
-specific_drugs = ['paracetamol', 'metformin', 'aspirin']
+specific_drugs = ['paracetamol', 'metformin', 'aspirin', 'digoxin']
 
 # class for annotating patients with BNF drug classes
 class PatientAnnotator:

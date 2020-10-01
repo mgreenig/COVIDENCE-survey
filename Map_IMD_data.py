@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 import argparse
+import re
 from bs4 import BeautifulSoup as bs
 from urllib.request import Request, urlopen
-from multiprocessing import Pool, cpu_count
 
 # IMD deciles for Northern irish postcodes
 NI_imd_deciles = np.array([np.percentile(np.linspace(0, 890, 890), i) for i in range(0, 100, 10)])
@@ -31,7 +31,10 @@ def get_postcode_rank(postcode):
     postcode_for_url = postcode.replace(' ', '+')
     url = base_url + postcode_for_url
     html = get_html(url)
-    imd_rank = html.find('span', {'style': 'font-size:48px; font-weight:bold;'})
+    try:
+        imd_rank = html.find('span', {'style': 'font-size:48px; font-weight:bold;'}).text
+    except:
+        imd_rank = None
     return imd_rank
 
 if __name__ == '__main__':
@@ -41,6 +44,9 @@ if __name__ == '__main__':
     parser.add_argument('filepath', type=str, help='Path to the postcodes survey answers file')
     parser.add_argument('-p', '--postcode_column', type=str, default='pcode', help='Name of the column containing postcodes in the answer CSV file')
     args = parser.parse_args()
+
+    # get the filename prefix from the filepath, for output file
+    filename = re.search('.+(?=_.*\.csv$)', args.filepath).group(0)
 
     # import postcode data set
     postcode_data = pd.read_csv('data/postcode_data.csv', usecols = ['Postcode', 'In Use?', 'Country'])
@@ -95,6 +101,9 @@ if __name__ == '__main__':
     # scramble england postcodes for confidentiality
     england_postcodes = england_postcodes.reindex(np.random.permutation(england_postcodes.index))
 
+    # save to CSV for use input into English gov web API
+    england_postcodes.to_csv('data/england_postcodes.csv', header = False, index = False)
+
     # load in the data generated from the English IMD web api
     england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
 
@@ -133,10 +142,7 @@ if __name__ == '__main__':
     welsh_postcode_imds = wales_postcode_df.reset_index(drop = True)
 
     # loop through northern irish postcodes and get IMD ranks using the get_postcode_rank() function
-    pool = Pool(cpu_count())
-    postcode_ranks = pool.imap(get_postcode_rank, NI_postcodes)
-    NI_postcode_imd_ranks = {postcode: rank for postcode, rank in zip(NI_postcodes, postcode_ranks)}
-    pool.close()
+    NI_postcode_imd_ranks = {postcode: get_postcode_rank(postcode) for postcode in NI_postcodes}
 
     # put into data frame
     NI_postcode_imds = pd.DataFrame([(k, v) for k, v in NI_postcode_imd_ranks.items()], columns = ['Postcode', 'IMD rank'])
@@ -156,4 +162,4 @@ if __name__ == '__main__':
     # remove extra column
     survey_imd_data.drop('Postcode', axis = 1, inplace = True)
     # save as csv
-    survey_imd_data.to_csv('data/Covidence_12Aug20_IMD.csv', index = False)
+    survey_imd_data.to_csv('{}_IMD.csv'.format(filename), index = False)
