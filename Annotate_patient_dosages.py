@@ -2,11 +2,15 @@ import pandas as pd
 import numpy as np
 import re
 import argparse
+import pickle
 from scipy.stats import zscore, norm
 
-# import the relevant data
+# import the drug dictionary
+drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
+
+# import the relevant objects
 from Map_survey_answers import AnswerMapper
-from Annotate_patients import PatientAnnotator, drug_dictionary, drug_classes, specific_drugs
+from Annotate_patients import PatientAnnotator, drug_classes, specific_drugs
 
 # class for scaling dosage values
 class DosageScaler(PatientAnnotator):
@@ -51,43 +55,61 @@ class DosageScaler(PatientAnnotator):
 
         # make copy of the dosage question so the global object is not modified
         dosages = self.dosages.copy()
-        # filter for answers with the same DB id(s)
-        drug_mask = self.med_db_ids.apply(lambda drug_ids: True if ids == drug_ids else False)
+        # filter for answers containing the same DB id(s)
+        drug_mask = self.med_db_ids.apply(lambda drug_ids: True if ids.issubset(drug_ids) else False)
         # change index name
         drug_mask = DosageScaler.align_mask(drug_mask, self.units)
 
         # if any drugs are hit, get the dosages
         if drug_mask.any():
 
-            # get all dosage units specified for the drug
-            dosage_units = self.units[drug_mask]
-            mg_mask = DosageScaler.align_mask(dosage_units == 1, dosages)
-            micg_mask = DosageScaler.align_mask(dosage_units == 2, dosages)
-            invalid_unit_mask = DosageScaler.align_mask((dosage_units != 1) & (dosage_units != 2), dosages)
+            # filter for answers containing the same DB id(s)
+            exact_drug_mask = self.med_db_ids.apply(lambda drug_ids: True if ids == drug_ids else False)
+            # change index name
+            exact_drug_mask = DosageScaler.align_mask(exact_drug_mask, self.units)
 
-            # get iqr and quantiles of the mg drug dosages
-            q1, q3 = dosages[mg_mask].quantile([0.25, 0.75])
-            dose_iqr = q3 - q1
+            # get mixture compounds
+            mixture_mask = DosageScaler.align_mask(drug_mask != exact_drug_mask, dosages)
 
-            # change the microgram values in the actual dosage values if the resulting answers are not outliers
-            dosages[micg_mask] = np.where((dosages[micg_mask] / 1000 < q1-dose_iqr) | (dosages[micg_mask] / 1000 > q3+dose_iqr),
-                                          dosages[micg_mask], dosages[micg_mask] / 1000)
+            # if there are any exact matches, scale the drug dosages
+            if exact_drug_mask.any():
 
-            # get all dosage values with valid dosage units
-            valid_unit_mask = mg_mask | micg_mask
-            valid_dosages = dosages[valid_unit_mask]
+                # get all dosage units specified for the drug
+                dosage_units = self.units[exact_drug_mask].copy()
+                mg_mask = DosageScaler.align_mask(dosage_units == 1, dosages)
+                micg_mask = DosageScaler.align_mask(dosage_units == 2, dosages)
+                # get invalid units
+                invalid_unit_mask = DosageScaler.align_mask((dosage_units != 1) & (dosage_units != 2), dosages)
 
-            # calculate z score
-            valid_dosages_scaled = zscore(valid_dosages)
+                # get iqr and quantiles of the mg drug dosages
+                q1, q3 = dosages[mg_mask].quantile([0.25, 0.75])
+                dose_iqr = q3 - q1
 
-            # normalised using probit function
-            valid_dosages_norm = pd.Series(norm.cdf(valid_dosages_scaled), index = valid_dosages.index)
+                # change the microgram values in the actual dosage values if the resulting answers are not outliers
+                dosages[micg_mask] = np.where((dosages[micg_mask] / 1000 < q1-dose_iqr) | (dosages[micg_mask] / 1000 > q3+dose_iqr),
+                                              dosages[micg_mask], dosages[micg_mask] / 1000)
+
+                # get all dosage values with valid dosage units
+                valid_unit_mask = mg_mask | micg_mask
+                valid_dosages = dosages[valid_unit_mask]
+
+                # calculate z score
+                valid_dosages_scaled = zscore(valid_dosages)
+
+                # normalised using probit function
+                valid_dosages_norm = pd.Series(norm.cdf(valid_dosages_scaled), index = valid_dosages.index)
+            else:
+                invalid_unit_mask = pd.Series(False, index = dosages.index)
+                valid_dosages_norm = pd.Series()
+
+            # NA values are either mixtures or invalid dosages
+            NA_mask = invalid_unit_mask | mixture_mask
 
             # get invalid dosages
-            invalid_dosages = dosages[invalid_unit_mask].apply(lambda dosage: 'NA')
+            invalid_dosages = dosages[NA_mask].apply(lambda dosage: 'NA')
 
             # combine the two dosage lists
-            all_dosage_values = valid_dosages_norm.append(invalid_dosages)
+            all_dosage_values = invalid_dosages.append(valid_dosages_norm)
             all_dosage_values = all_dosage_values.sort_index()
             all_dosage_values[(all_dosage_values == -99) | (all_dosage_values == '-99')] = 'NA'
 
@@ -128,10 +150,7 @@ class DosageScaler(PatientAnnotator):
         # loop through ids in the class and add dosages to the dictionary of dosage data
         drug_dosages = {}
         for id in class_db_ids:
-            try:
-                dosages = self.get_normalised_dosages(id)
-            except:
-                print(id)
+            dosages = self.get_normalised_dosages(id)
             drug_dosages[id] = dosages
 
         # make data frame from the dosage data for all drugs in the class
@@ -177,6 +196,7 @@ if __name__ == '__main__':
     # create instance of answer mapper class with the survey file path
     mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary, meds_q = args.questions[0],
                           dosage_q = args.questions[1], units_q = args.questions[2])
+
     # generate answer mappings
     mapper.map_answers()
 
