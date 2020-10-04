@@ -106,12 +106,12 @@ class DosageScaler(PatientAnnotator):
             NA_mask = invalid_unit_mask | mixture_mask
 
             # get invalid dosages
-            invalid_dosages = dosages[NA_mask].apply(lambda dosage: 'NA')
+            invalid_dosages = dosages[NA_mask].apply(lambda dosage: -1)
 
             # combine the two dosage lists
             all_dosage_values = invalid_dosages.append(valid_dosages_norm)
             all_dosage_values = all_dosage_values.sort_index()
-            all_dosage_values[(all_dosage_values == -99) | (all_dosage_values == '-99')] = 'NA'
+            all_dosage_values[(all_dosage_values == -99) | (all_dosage_values == '-99')] = -1
 
             # align to the larger series
             _, drug_dosages_aligned = dosages.align(all_dosage_values, fill_value=0)
@@ -125,12 +125,12 @@ class DosageScaler(PatientAnnotator):
     @staticmethod
     # function for checking if a series of dosage answers consists of only NA and 0 values
     def is_na(row):
-        return False if all(row == 0) else False if all(row != 'NA') else True
+        return False if all(row == 0) else False if all(row != -1) else True
 
     @staticmethod
     # function for combining dosage data across multiple drugs into a single value (either a sum or NA)
     def combine_func(row):
-        return 'NA' if DosageScaler.is_na(row) else row[row != 'NA'].sum()
+        return -1 if DosageScaler.is_na(row) else row[row != -1].sum()
 
     # function for getting the dosage values for each class
     def get_class_doses(self, drug_class):
@@ -249,10 +249,10 @@ if __name__ == '__main__':
     steroid_idx = mapper.meds_cleaned[steroid_mask].index.get_level_values(0)
 
     # set unspecified medications to NA
-    patient_dose_feature_df.loc[HRT_idx, 'sex hormone therapy'] = 'NA'
-    patient_dose_feature_df.loc[d3_idx, 'vitamin d and analogues'] = 'NA'
-    patient_dose_feature_df.loc[statin_idx, 'statins'] = 'NA'
-    patient_dose_feature_df.loc[steroid_idx, 'corticosteroids'] = 'NA'
+    patient_dose_feature_df.loc[HRT_idx, 'sex hormone therapy'] = -1
+    patient_dose_feature_df.loc[d3_idx, 'vitamin d and analogues'] = -1
+    patient_dose_feature_df.loc[statin_idx, 'statins'] = -1
+    patient_dose_feature_df.loc[steroid_idx, 'corticosteroids'] = -1
 
     # save to csv file
     patient_dose_feature_df.to_csv('{}_Drug_Dosages.csv'.format(filename), index = False)
