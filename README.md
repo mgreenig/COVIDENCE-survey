@@ -78,77 +78,25 @@ The survey responses listing each participant's medication(s) were collected as 
 Overall, 23,821 medications were provided across 6,624 respondents who provided at least one medication each.
 
 The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide to questions on the survey.
-Survey participants were allowed to provide 20 answers for each drug-related question. Three drug-related questions were asked, regarding:
+Survey participants were allowed to provide 20 answers (corresponding to 20 columns) for each drug-related question. Three drug-related questions were asked, regarding:
 
 - q1421. Which medications are you taking? 
 - q1431. What dosages?
-- q1432. What dosage unit for each dosage? (referring to answers to q1431)
+- q1432. What dosage unit for each dosage? (referring to answers to q1431 - 1 indicates milligrams, 2 indicates micrograms)
 
 resulting in a ~10,000-column and 60+ row table, with unique identifiers for patients listed under the column 'uid'. 
-Survey answers that were not provided can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99.
 
-This survey answer table was used to create a survey answer Pandas series used in the rest of this pipeline, which takes the following form:
+We use 5-letter identifiers at the start of the column names to distinguish different entries under the same question from
+entries for different questions (e.g. q1431_1 and q1432_1 correspond to different questions, while q1431_1 and q1431_2 correspond to two answers to the same question).
+Survey answers that were not provided can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99. 
+Overall, the input CSV should look like this:
 
-<table>
-    <thead>
-        <tr>
-            <th colspan=2>Index</th>
-            <th>Answer</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>Patient number</th>
-            <th>Question</th>
-            <td></td>
-        </tr>
-        <tr>
-            <td rowspan=6>1</td>
-            <td>q1421_1</td>
-            <td>sertraline</td>
-        </tr>
-        <tr>
-            <td>q1421_2</td>
-            <td>vitamin C</td>
-        </tr>
-        <tr>
-            <td>q1431_1</td>
-            <td>50</td>
-        </tr>
-        <tr>
-            <td>q1431_2</td>
-            <td>75</td>
-        </tr>
-        <tr>
-            <td>q1432_1</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>q1432_2</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td rowspan=3">2</td>
-            <td>q1421_1</td>
-            <td>omeprazole</td>
-        </tr>
-        <tr>
-            <td>q1431_1</td>
-            <td>20</td>
-        </tr>
-        <tr>
-            <td>q1432_1</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td colspan=3 align=center>...</td>
-        </tr>
-    </tbody>
-</table>	
+| uid | q1421_1 | ... | q142_20 | q1431_1 | ... | q143_20 | q1432_1 | ... | q143_2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | ---|
+| 001 | paracetamol | ... | -99 | 500 | ... | -99 | 1 | ... | -99 |
+| 002 | lisinopril | ... | -99 | 5 | ... | -99 | 1 | ... | -99 |
 
-as an example. Note the multi-index corresponding to patient/question values.
-
-We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for cleaning and mapping the survey responses to aliases in the drug dictionary. 
+We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for mapping the raw answers. 
 The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
 
 Then, using the `import_data()` and `clean_meds()` methods, the class processes the survey answers using regular expressions to remove text related to dosages, frequencies, and routes of administration from 
