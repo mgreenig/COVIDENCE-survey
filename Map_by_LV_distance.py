@@ -2,8 +2,16 @@ from abydos.distance import Levenshtein
 import numpy as np
 import pandas as pd
 import pickle
+import argparse
 
 if __name__ == '__main__':
+
+    # command line input for answer file
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filepath', type=str, help='Path to the medication survey answers file')
+    parser.add_argument('-q', '--questions', default=['q1421', 'q1431', 'q1432'], nargs=3, type=str,
+                        help='Column names for medication, dosage, and unit questions')
+    args = parser.parse_args()
 
     # import unmapped answers
     from Map_survey_answers import AnswerMapper
@@ -12,14 +20,16 @@ if __name__ == '__main__':
     drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 
     # create instance of answer mapper class with the right survey file path
-    mapper = AnswerMapper(drug_dictionary, survey_filepath='data/Covidence_12Aug20_DrgExtra.csv')
+    mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary, meds_q=args.questions[0],
+                          dosage_q=args.questions[1], units_q=args.questions[2])
 
     # call map answers
     mapper.map_answers()
 
+    # set drug dictionary as the updated drug dictionary
     drug_dictionary = mapper.drug_dictionary
 
-    # final round of mapping, getting all drugs in the drug dictionary that are levenshtein distance of 1 from each answer
+    # getting all drugs in the drug dictionary that are levenshtein distance of 1 from each unmapped answer
     lv = Levenshtein(mode = 'osa')
     mapped_by_lv_distance = {}
     unmapped_by_lv_distance = []
