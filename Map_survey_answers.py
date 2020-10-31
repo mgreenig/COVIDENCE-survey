@@ -9,7 +9,7 @@ class AnswerMapper:
     def import_data(self, survey_filepath, meds_q, dosage_q, units_q):
 
         # import the survey data csv file
-        self.survey_data = pd.read_csv(survey_filepath)
+        self.survey_data = pd.read_csv(survey_filepath, engine = 'python')
 
         # filter for medication question
         meds = self.survey_data.loc[:, self.survey_data.columns.str.contains(meds_q)]
