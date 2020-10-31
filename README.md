@@ -96,44 +96,9 @@ Overall, the input CSV should look like this:
 | 001 | paracetamol | ... | -99 | 500 | ... | -99 | 1 | ... | -99 |
 | 002 | lisinopril | ... | -99 | 5 | ... | -99 | 1 | ... | -99 |
 
-We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for mapping the raw answers. 
+We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for mapping the raw answers to the drug dictionary. 
 The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
-
-Then, using the `import_data()` and `clean_meds()` methods, the class processes the survey answers using regular expressions to remove text related to dosages, frequencies, and routes of administration from 
-the raw text. Then, the processed answers are scanned for those which match keys in the drug dictionary. 
-For the answers that are not present in the drug dictionary, we try the first word only:
-
-``` python
-import re
-...
-# regex pattern to isolate first word
-first_word = re.sub('[^\w]+.*$', '', answer)
-```
-
-We then try a phonetic encoding for the remaining unmapped answers, to identify misspelled names in the answers that are phonetically-identical to aliases in the drug dictionary.
-The [abydos implementation](https://abydos.readthedocs.io/en/latest/abydos.phonetic.html#abydos.phonetic.Metaphone) of the [Metaphone](https://en.wikipedia.org/wiki/Metaphone)
-algorithm was applied to generate phonetic encodings of the answer list and drug dictionary aliases, which were cross-referenced for 
-matches.
-
-``` python
-from abydos.phonetic import Metaphone
-...
-mp = Metaphone()
-...
-# get survey answers whose encodings are valid
-self.mapped_by_encoding = [answer for answer in unmapped_survey_answers if mp.encode(answer) in encoded_drug_dict]
-
-# add answers to the drug dictionary under the encoding's drugbank ids
-for answer in self.mapped_by_encoding:
-    self.drug_dictionary[answer] = encoded_drug_dict[mp.encode(answer)]
-```
-
-Finally, the class saves a list of answers that could not be mapped using any of the methods detailed above.
-
-``` python
-# list for drugs still unmapped by phonetic encoding
-self.unmapped_by_encoding = [answer for answer in self.unmapped_survey_answers if answer not in self.mapped_by_encoding]
-```
+The class checks for exact matches and phonetic matches between the survey answers and the drug dictionary and saves a list of answers that could not be mapped.
 
 In our data set this was approximately 3,000 answers (12.5%).
 
@@ -160,7 +125,7 @@ if matches:
 For this final round of mapping, the script should be executed as follows:
 
 ```
-python Map_by_LV_distance.py
+python Map_by_LV_distance.py path/to/medication/answer/csv
 ```
 
 The Levenshtein distance-mapped and the remaining unmapped answers (with distance > 1 for all drug dictionary aliases) are outputted 
