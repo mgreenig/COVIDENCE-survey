@@ -134,7 +134,7 @@ class AnswerMapper:
         self.meds_cleaned = meds_cleaned
 
     # initialise with a drug dictionary and a filepath to the survey data frame
-    def __init__(self, survey_filepath, drug_dict, meds_q = 'q1421', dosage_q = 'q1431', units_q = 'q1432'):
+    def __init__(self, survey_filepath, drug_dict, meds_q, dosage_q, units_q):
         self.drug_dictionary = drug_dict
         self.all_db_ids = set().union(*self.drug_dictionary.values())
         self.drug_frequencies = {db_id: 0 for db_id in self.all_db_ids}
