@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import argparse
 import re
+from math import ceil
 from bs4 import BeautifulSoup as bs
 from urllib.request import Request, urlopen
 
@@ -102,7 +103,9 @@ if __name__ == '__main__':
     england_postcodes = england_postcodes.reindex(np.random.permutation(england_postcodes.index))
 
     # save to CSV for use input into English gov web API
-    england_postcodes.to_csv('data/england_postcodes.csv', header = False, index = False)
+    for i in range(0, ceil(len(england_postcodes)/10000)):
+        df = england_postcodes.iloc[i:min(i*10000, len(england_postcodes))]
+        df.to_csv(f'data/england_postcodes_{i+1}.csv', header = False, index = False)
 
     # load in the data generated from the English IMD web api
     england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
