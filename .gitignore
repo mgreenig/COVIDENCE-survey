@@ -147,8 +147,7 @@ docs/
 Scrapbook.ipynb
 data/Covidence*
 data/Monthly*
-data/england_postcodes.csv
+data/england_postcodes*
 data/drugbank.xml
-data/england_postcodes.csv
 data/postcode_data.csv
 scrapped/
