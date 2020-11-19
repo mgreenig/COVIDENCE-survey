@@ -146,6 +146,7 @@ docs/
 .ipynb_checkpoints/
 Scrapbook.ipynb
 data/Covidence*
+data/Monthly*
 data/england_postcodes.csv
 data/drugbank.xml
 data/england_postcodes.csv
