@@ -54,12 +54,7 @@ which returns a dictionary - `drug_dictionary` - containing medication names as 
 ### Electronic Medicines Compendium (EMC)
 
 Because DrugBank is a North American organisation, the database does not include the names of certain European medications. 
-To fill these gaps, we provide the [`Get_EMC_drugs.py`](Get_EMC_drugs.py) script, which imports the drug dictionary from [`Parse_drugbank.py`](Parse_drugbank.py):
-
-``` python
-# get the DrugBank drug dictionary
-from Parse_drugbank import drug_dictionary
-```
+To fill these gaps, we provide the [`Get_EMC_drugs.py`](Get_EMC_drugs.py) script, which imports the drug dictionary from [`Parse_drugbank.py`](Parse_drugbank.py).
 
 and scans the [EMC drug list](https://www.medicines.org.uk/emc/browse-medicines) to identify medications listed on the EMC that are not present in the drug dictionary.
 The script pulls the active ingredients of these missing medications and adds an entry to the drug dictionary for each medication name, mapping it to the IDs
@@ -110,17 +105,7 @@ For the remaining 3,000 answers, we provide the [`Map_by_LV_distance.py`](Map_by
 that are a Levenshtein distance of 1 unit away from each answer, in order to identify the closest match for each. 
 We use the [abydos implementation of Levenshtein distance](https://abydos.readthedocs.io/en/latest/abydos.distance.html#abydos.distance.Levenshtein) for 
 the distance calculations. For answers with more than one alias
-with a distance of 1, we take the alias with the active ingredients appearing at the highest frequency in the rest of the survey answers:
-
-``` python
-# get matches that are a distance of 1 away
-matches = [alias for alias, distance in distances.items() if distance == 1]
-
-# if there are multiple matches that are a distance of 1 away, take the one that appears at the highest frequency
-if matches:
-    best_match = max(matches, key = lambda alias: np.mean([drug_frequencies[db_id] for db_id in drug_dictionary[alias]]))
-    mapped_by_lv_distance[answer] = best_match
-```
+with a distance of 1, we take the alias with the active ingredients appearing at the highest frequency in the rest of the survey answers.
 
 For this final round of mapping, the script should be executed as follows:
 
@@ -201,21 +186,8 @@ We extend the pipeline to further incorporate the drug dosage data provided for 
 with a binary value for each drug class (1 or 0), we aim to capture a dose-response relationship between each medication
 class and the probability of developing COVID-19.
 
-For each drug dosage value, we calculate a z-score relative to all dosage values for the same drug:
-
-``` python
-from scipy.stats import zscore, norm
-...
-# calculate z score
-valid_dosages_scaled = zscore(valid_dosages)
-```
-
-And normalise the output to the [0, 1] range using a probit function:
-
-``` python
-# normalised using probit function
-valid_dosages_norm = pd.Series(norm.cdf(valid_dosages_scaled), index = valid_dosages.index)
-```
+For each drug dosage value, we calculate a z-score relative to all dosage values for the same drug 
+and normalise the output to the [0, 1] range using a probit function.
 
 Again, the script should be run from the command line with a filepath to the survey answers:
 
