@@ -2,7 +2,7 @@
 
 [COVIDENCE](https://www.qmul.ac.uk/covidence/) is a COVID-19 UK national study being conducted by researchers at Queen Mary University of London,
 King's College London, University of Edinburgh, Swansea University, Queen's University Belfast, and the London School of Hygiene and Tropical Medicine.
-The first part of the study follows a cohort of approximately 10,000 UK residents with monthly surveys related to lifestyle, 
+The first part of the study follows a cohort of over 10,000 UK residents with monthly surveys related to lifestyle, 
 physical wellbeing, and mental health. If you are interested in participating, please follow the link above. For any specific inquiries
 about the study please contact Chief Investigator Adrian Martineau (a.martineau@qmul.ac.uk) or Principal Investigator Hayley Holt (h.holt@qmul.ac.uk).
 
@@ -69,9 +69,6 @@ python Get_EMC_drugs.py
 
 ### Mapping medications from survey respondents
 
-The survey responses listing each participant's medication(s) were collected as a CSV file (not included). 
-Overall, 23,821 medications were provided across 6,624 respondents who provided at least one medication each.
-
 The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide to questions on the survey.
 Survey participants were allowed to provide 20 answers (corresponding to 20 columns) for each drug-related question. Three drug-related questions were asked, regarding:
 
@@ -79,7 +76,7 @@ Survey participants were allowed to provide 20 answers (corresponding to 20 colu
 - q1431. What dosages?
 - q1432. What dosage unit for each dosage? (referring to answers to q1431 - 1 indicates milligrams, 2 indicates micrograms)
 
-resulting in a ~10,000-column and 60+ row table, with unique identifiers for patients listed under the column 'uid'. 
+resulting in a 60+ column table, with unique identifiers for patients listed under the column 'uid'. 
 
 We use 5-letter identifiers at the start of the column names to distinguish different entries under the same question from
 entries for different questions (e.g. q1431_1 and q1432_1 correspond to different questions, while q1431_1 and q1431_2 correspond to two answers to the same question).
@@ -95,13 +92,11 @@ We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for mappi
 The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
 The class checks for exact matches and phonetic matches between the survey answers and the drug dictionary and saves a list of answers that could not be mapped.
 
-In our data set this was approximately 3,000 answers (12.5%).
-
 ![Survey answer mappings](figures/survey_mappings.png)
 
 ### Mapping misspelled answers
 
-For the remaining 3,000 answers, we provide the [`Map_by_LV_distance.py`](Map_by_LV_distance.py) script, which scans the drug dictionary for aliases 
+For remaining unmapped answers we provide the [`Map_by_LV_distance.py`](Map_by_LV_distance.py) script, which scans the drug dictionary for aliases 
 that are a Levenshtein distance of 1 unit away from each answer, in order to identify the closest match for each. 
 We use the [abydos implementation of Levenshtein distance](https://abydos.readthedocs.io/en/latest/abydos.distance.html#abydos.distance.Levenshtein) for 
 the distance calculations. For answers with more than one alias
