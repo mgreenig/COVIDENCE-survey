@@ -185,7 +185,7 @@ if __name__ == '__main__':
     # file path and column name arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', type=str, help='Path to the medication survey answers file')
-    parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432'], nargs = 3, type = str,
+    parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432', 'q1442'], nargs = 4, type = str,
                         help = 'Column names for medication, dosage, and unit questions')
     parser.add_argument('-id', '--patient_id', default='uid', type=str, help='Column name for unique patient identifiers')
     args = parser.parse_args()
@@ -195,7 +195,7 @@ if __name__ == '__main__':
 
     # create instance of answer mapper class with the survey file path
     mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary, meds_q = args.questions[0],
-                          dosage_q = args.questions[1], units_q = args.questions[2])
+                          dosage_q = args.questions[1], units_q = args.questions[2], RoAs_q = args.questions[3])
 
     # generate answer mappings
     mapper.map_answers()

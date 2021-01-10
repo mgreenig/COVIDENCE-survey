@@ -6,7 +6,7 @@ from abydos.phonetic import Metaphone
 class AnswerMapper:
 
     # function to import and clean the survey answers
-    def import_data(self, survey_filepath, meds_q, dosage_q, units_q):
+    def import_data(self, survey_filepath, meds_q, dosage_q, units_q, RoAs_q):
 
         # import the survey data csv file
         self.survey_data = pd.read_csv(survey_filepath, engine = 'python')
@@ -34,6 +34,11 @@ class AnswerMapper:
         no_units_answer_mask = units.apply(lambda row: row.isna().all(), axis=1)
         units = units[~no_units_answer_mask].stack()
 
+        # filter for roa question
+        RoAs = self.survey_data.loc[:, self.survey_data.columns.str.contains(RoAs_q)]
+        no_RoA_answer_mask = RoAs.apply(lambda row: row.isna().all(), axis=1)
+        RoAs = RoAs[~no_RoA_answer_mask].stack()
+
         # trim the question indices for all questions
         meds_idx_levels = meds.index.get_level_values(1).unique()
         meds_idx_level_mapping = {level: re.sub('(?<=_\d)_1', '', level) for level in meds_idx_levels}
@@ -47,11 +52,16 @@ class AnswerMapper:
         unit_idx_level_mapping = {level: re.sub('(?<=_\d)_1', '', level) for level in unit_idx_levels}
         units.rename(unit_idx_level_mapping, level=1, inplace=True)
 
+        RoA_idx_levels = RoAs.index.get_level_values(1).unique()
+        RoA_idx_level_mapping = {level: re.sub('(?<=_\d)_1', '', level) for level in RoA_idx_levels}
+        RoAs.rename(RoA_idx_level_mapping, level=1, inplace=True)
+
         # add dosage answers for patients that provided medication answers but are missing in the dosage answers
         for patient, question in meds.index:
             # get question index values for the dosage/units questions
             dosage_question = question.replace(meds_q, dosage_q)
             units_question = question.replace(meds_q, units_q)
+            RoAs_question = question.replace(meds_q, RoAs_q)
             # add missing patient/question combinations to the series
             if (patient, dosage_question) not in dosages.index:
                 dosages[(patient, dosage_question)] = -99
@@ -59,6 +69,9 @@ class AnswerMapper:
             if (patient, units_question) not in units.index:
                 units[(patient, units_question)] = -99
                 units = units.sort_index()
+            if (patient, RoAs_question) not in RoAs.index:
+                RoAs[(patient, RoAs_question)] = -99
+                RoAs = RoAs.sort_index()
 
         # generator to avoid modifying the global object
         dosage_generator = ((patient, dosage_question) for patient, dosage_question in dosages.index)
@@ -66,7 +79,9 @@ class AnswerMapper:
         for patient, dosage_question in dosage_generator:
             meds_question = dosage_question.replace(dosage_q, meds_q)
             units_question = dosage_question.replace(dosage_q, units_q)
-            if (patient, meds_question) not in meds.index or (patient, units_question) not in units.index:
+            RoAs_question = dosage_question.replace(dosage_q, RoAs_q)
+            if (patient, meds_question) not in meds.index or (patient, units_question) \
+                    not in units.index or (patient, RoAs_question) not in RoAs.index:
                 dosages = dosages.drop((patient, dosage_question))
 
         # generator to avoid modifying the global object
@@ -75,13 +90,27 @@ class AnswerMapper:
         for patient, units_question in units_generator:
             meds_question = units_question.replace(units_q, meds_q)
             dosage_question = units_question.replace(units_q, dosage_q)
-            if (patient, meds_question) not in meds.index or (patient, dosage_question) not in dosages.index:
+            RoAs_question = units_question.replace(units_q, RoAs_q)
+            if (patient, meds_question) not in meds.index or (patient, dosage_question) \
+                    not in dosages.index or (patient, RoAs_question) not in RoAs.index:
                 units = units.drop((patient, units_question))
+
+        # generator to avoid modifying the global object
+        RoAs_generator = ((patient, units_question) for patient, units_question in RoAs.index)
+        # same for patients/questions in the dosage unit question
+        for patient, RoAs_question in RoAs_generator:
+            meds_question = RoAs_question.replace(RoAs_q, meds_q)
+            units_question = RoAs_question.replace(RoAs_q, units_q)
+            dosage_question = RoAs_question.replace(RoAs_q, dosage_q)
+            if (patient, meds_question) not in meds.index or (patient, dosage_question) \
+                    not in dosages.index or (patient, units_question) not in units.index:
+                RoAs = RoAs.drop((patient, RoAs_question))
 
         # set attributes
         self.meds = meds
         self.dosages = dosages
         self.units = units
+        self.RoAs = RoAs
 
     # function for cleaning imported medication aswers
     def clean_meds(self):
@@ -134,11 +163,11 @@ class AnswerMapper:
         self.meds_cleaned = meds_cleaned
 
     # initialise with a drug dictionary and a filepath to the survey data frame
-    def __init__(self, survey_filepath, drug_dict, meds_q, dosage_q, units_q):
+    def __init__(self, survey_filepath, drug_dict, meds_q, dosage_q, units_q, RoAs_q):
         self.drug_dictionary = drug_dict
         self.all_db_ids = set().union(*self.drug_dictionary.values())
         self.drug_frequencies = {db_id: 0 for db_id in self.all_db_ids}
-        self.import_data(survey_filepath, meds_q = meds_q, dosage_q = dosage_q, units_q = units_q)
+        self.import_data(survey_filepath, meds_q = meds_q, dosage_q = dosage_q, units_q = units_q, RoAs_q = RoAs_q)
         self.clean_meds()
 
     def map_answers(self):

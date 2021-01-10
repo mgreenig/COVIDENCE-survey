@@ -14,7 +14,7 @@ drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 
 # drug classes and specific drugs to investigate
 drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticosteroids',
-                'angiotensin ii receptor antagonists',
+                'angiotensin ii receptor antagonists', 'selective serotonin re-uptake inhibitors',
                 'vitamin k antagonists', 'beta blocking agents', 'thiazides', 'h2-receptor antagonists',
                 'calcium-channel blockers', 'beta2-agonists',
                 'antimuscarinics, other', 'non-steroidal anti-inflammatory drugs',
@@ -81,14 +81,15 @@ class PatientAnnotator:
         self.bnf_unmapped = first_name_unmapped
 
     # requires a series of patient answers and a dictionary of drug aliases mapped to DB ids
-    def __init__(self, meds, drug_dict):
+    def __init__(self, meds, RoAs, drug_dict):
         self.meds = meds
+        self.RoAs = RoAs
         self.drug_dictionary = drug_dict
         # get bnf data from the data directory
         self.read_in_bnf(drug_dict)
 
     # function for updating dictionary with a list of patient indices belonging to a drug class
-    def get_patients_in_class(self, drug_class):
+    def get_patients_in_class(self, drug_class, roa = None):
 
         valid_bnf_classes = self.bnf_classes[self.bnf_classes['db_id'].apply(lambda ids: len(ids) > 0)]
 
@@ -102,12 +103,24 @@ class PatientAnnotator:
         class_db_ids = set().union(*class_drugs['db_id'][single_id_mask])
 
         # function for checking if a patient's answers are in a drug class
-        is_in_class = lambda patient: patient.apply(
-            lambda answer: any([db_id in class_db_ids for db_id in self.drug_dictionary.get(answer)]) if self.drug_dictionary.get(
-                answer) else False).any()
-
-        # group by patient and apply the is_in_class function to each patient
-        patient_class_mask = self.meds.groupby(level = 0).aggregate(func = is_in_class)
+        # if roa not specified take all members from the class
+        if roa is None:
+            is_in_class = lambda patient: patient.apply(
+                lambda answer: any([db_id in class_db_ids for db_id in self.drug_dictionary.get(answer)])
+                if self.drug_dictionary.get(answer) else False).any()
+            # group by patient and apply the is_in_class function to each patient
+            patient_class_mask = self.meds.groupby(level=0).aggregate(func=is_in_class)
+        # otherwise match by roa as well
+        else:
+            is_in_class = lambda meds, roas: any([any([db_id in class_db_ids for db_id in self.drug_dictionary.get(patient_med)])
+                                                  and patient_roa == roa if self.drug_dictionary.get(patient_med) else False
+                                                  for patient_med, patient_roa in zip(meds, roas)])
+            patient_class_mask = []
+            for patient in self.meds.index.get_level_values(0):
+                in_class = is_in_class(self.meds[patient], self.RoAs[patient])
+                patient_class_mask.append(in_class)
+                
+            patient_class_mask = pd.Series(patient_class_mask, index = self.meds.index.get_level_values(0))
 
         # get the indices of patients in the class
         patients_in_class = patient_class_mask.index[patient_class_mask].tolist()
@@ -138,8 +151,8 @@ if __name__ == '__main__':
     # file path and question column name arguments
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', type=str, help='Path to the medication survey answers file')
-    parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432'], nargs = 3, type = str,
-                        help = 'Column names for medication, dosage, and unit questions')
+    parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432', 'q1442'], nargs = 4, type = str,
+                        help = 'Column names for medication, dosage, unit, and route of administration questions')
     parser.add_argument('-id', '--patient_id', default='uid', type=str, help='Column name for unique patient identifiers')
     args = parser.parse_args()
 
@@ -148,7 +161,7 @@ if __name__ == '__main__':
 
     # create instance of answer mapper class with the survey file path
     mapper = AnswerMapper(survey_filepath=args.filepath, drug_dict=drug_dictionary, meds_q = args.questions[0],
-                          dosage_q = args.questions[1], units_q = args.questions[2])
+                          dosage_q = args.questions[1], units_q = args.questions[2], RoAs_q = args.questions[3])
 
     # call map answers
     mapper.map_answers()
@@ -163,11 +176,14 @@ if __name__ == '__main__':
     patient_drug_dict = {}
 
     # initialise class instance
-    annotator = PatientAnnotator(meds=mapper.meds_cleaned, drug_dict=mapper.drug_dictionary)
+    annotator = PatientAnnotator(meds=mapper.meds_cleaned, RoAs=mapper.RoAs, drug_dict=mapper.drug_dictionary)
 
     # label patient drug classes
     for drug_class in drug_classes:
         patient_drug_class_dict[drug_class] = annotator.get_patients_in_class(drug_class)
+
+    patient_drug_class_dict['inhaled_corticosteroids'] = annotator.get_patients_in_class('corticosteroids', roa = 2)
+    patient_drug_class_dict['oral_corticosteroids'] = annotator.get_patients_in_class('corticosteroids', roa=1)
 
     # label patient drugs
     for drug in specific_drugs:
