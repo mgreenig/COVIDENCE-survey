@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import warnings
 import pickle
 import re
@@ -16,7 +17,11 @@ drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 drug_classes = ['statins', 'ace inhibitors', 'proton pump inhibitors', 'corticosteroids',
                 'angiotensin ii receptor antagonists', 'selective serotonin re-uptake inhibitors',
                 'vitamin k antagonists', 'beta blocking agents', 'thiazides', 'h2-receptor antagonists',
-                'calcium-channel blockers', 'beta2-agonists',
+                'calcium-channel blockers', 'beta2-agonists', 'antimetabolites',
+                'calcineurin inhibitors', 'tumor necrosis factor alpha (tnf-a) inhibitors',
+                'tricyclic antidepressants', 'serotonin and noradrenaline re-uptake inhibitors',
+                'monoamine-oxidase a and b inhibitors, irreversible',
+                'interleukin inhibitors', 'disease-modifying anti-rheumatic drugs',
                 'antimuscarinics, other', 'non-steroidal anti-inflammatory drugs',
                 'sodium glucose co-transporter 2 inhibitors',
                 'antiplatelet drugs', 'oestrogens|androgens', 'vitamin d and analogues', '^calcium$',
@@ -224,6 +229,18 @@ if __name__ == '__main__':
     steroid_mask = mapper.meds_cleaned.str.contains('(\s|^)corticosteroid(s|\s|$)', case = False)
     steroid_idx = mapper.meds_cleaned[steroid_mask].index.get_level_values(0)
     patient_feature_df.loc[steroid_idx, 'corticosteroids'] = 1
+
+    patient_feature_df['Systemic immunosuppressants'] = np.where((patient_feature_df['tumor necrosis factor alpha (tnf-a) inhibitors'] == 1) |
+                                                                 (patient_feature_df['disease-modifying anti-rheumatic drugs'] == 1) |
+                                                                 (patient_feature_df['interleukin inhibitors'] == 1) |
+                                                                 (patient_feature_df['calcineurin inhibitors'] == 1) |
+                                                                 (patient_feature_df['antimetabolites'] == 1) |
+                                                                 (patient_feature_df['oral_corticosteroids'] == 1), 1, 0)
+
+    patient_feature_df['Non-SSRI antidepressants'] = np.where((patient_feature_df['tricyclic antidepressants'] == 1) |
+                                                              (patient_feature_df['monoamine-oxidase a and b inhibitors, irreversible'] == 1) |
+                                                              (patient_feature_df['serotonin and noradrenaline re-uptake inhibitors'] == 1),
+                                                              1, 0)
 
     # save the drug class data as a csv file
     patient_feature_df.to_csv('{}_Drug_Classes.csv'.format(filename), index = False)

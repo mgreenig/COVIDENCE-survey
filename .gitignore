@@ -150,5 +150,6 @@ data/Monthly*
 data/england_postcodes*
 data/drugbank.xml
 data/postcode_data.csv
+data/epracurr*
 scrapped/
 *.docx
