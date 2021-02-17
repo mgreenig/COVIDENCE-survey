@@ -54,8 +54,7 @@ which returns a dictionary - `drug_dictionary` - containing medication names as 
 ### Electronic Medicines Compendium (EMC)
 
 Because DrugBank is a North American organisation, the database does not include the names of certain European medications. 
-To fill these gaps, we provide the [`Get_EMC_drugs.py`](Get_EMC_drugs.py) script, which imports the drug dictionary from [`Parse_drugbank.py`](Parse_drugbank.py).
-
+To fill these gaps, we provide the [`Get_EMC_drugs.py`](Get_EMC_drugs.py) script, which imports the drug dictionary from [`Parse_drugbank.py`](Parse_drugbank.py) 
 and scans the [EMC drug list](https://www.medicines.org.uk/emc/browse-medicines) to identify medications listed on the EMC that are not present in the drug dictionary.
 The script pulls the active ingredients of these missing medications and adds an entry to the drug dictionary for each medication name, mapping it to the IDs
 of its active ingredients. This generates an updated version of the drug dictionary that contains aliases from both the 
@@ -93,31 +92,6 @@ The script defines the `AnswerMapper` class, which takes a drug dictionary and s
 The class checks for exact matches and phonetic matches between the survey answers and the drug dictionary and saves a list of answers that could not be mapped.
 
 ![Survey answer mappings](figures/survey_mappings.png)
-
-### Mapping misspelled answers
-
-For remaining unmapped answers we provide the [`Map_by_LV_distance.py`](Map_by_LV_distance.py) script, which scans the drug dictionary for aliases 
-that are a Levenshtein distance of 1 unit away from each answer, in order to identify the closest match for each. 
-We use the [abydos implementation of Levenshtein distance](https://abydos.readthedocs.io/en/latest/abydos.distance.html#abydos.distance.Levenshtein) for 
-the distance calculations. For answers with more than one alias
-with a distance of 1, we take the alias with the active ingredients appearing at the highest frequency in the rest of the survey answers.
-
-For this final round of mapping, the script should be executed as follows:
-
-```
-python Map_by_LV_distance.py path/to/medication/answer/csv
-```
-
-The Levenshtein distance-mapped and the remaining unmapped answers (with distance > 1 for all drug dictionary aliases) are outputted 
-as a CSV file to `/data/answer_mappings.csv`. The unmapped answers were annotated manually, with the help of four medical students at Queen Mary:
-
-- Sultan Saeed Rajpoot
-- Philipa Jane Lloyd
-- Sarah El Rifai
-- Ahmed Ali Kayyale
-
-We provide the full answer mappings as the file `/data/answer_mappings_complete.csv`, 
-containing both the distance-based and manual annotations for the misspelled survey answers.
 
 ### Getting BNF classes
 
