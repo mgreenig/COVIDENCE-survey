@@ -87,10 +87,6 @@ Overall, the input CSV should look like this:
 | 001 | paracetamol | ... | -99 | 500 | ... | -99 | 1 | ... | -99 |
 | 002 | lisinopril | ... | -99 | 5 | ... | -99 | 1 | ... | -99 |
 
-We provide the [`Map_survey_answers.py`](Map_survey_answers.py) script for mapping the raw answers to the drug dictionary. 
-The script defines the `AnswerMapper` class, which takes a drug dictionary and survey answer filepath as input.
-The class checks for exact matches and phonetic matches between the survey answers and the drug dictionary and saves a list of answers that could not be mapped.
-
 ![Survey answer mappings](figures/survey_mappings.png)
 
 ### Getting BNF classes
