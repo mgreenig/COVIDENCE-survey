@@ -5,6 +5,7 @@ import re
 from math import ceil
 from bs4 import BeautifulSoup as bs
 from urllib.request import Request, urlopen
+from sys import exit
 
 # IMD deciles for Northern irish postcodes
 NI_imd_deciles = np.array([np.percentile(np.linspace(0, 890, 890), i) for i in range(0, 100, 10)])
@@ -44,6 +45,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', type=str, help='Path to the postcodes survey answers file')
     parser.add_argument('-p', '--postcode_column', type=str, default='pcode', help='Name of the column containing postcodes in the answer CSV file')
+    parser.add_argument('-g', '--generate_files_only', action='store_true',
+                        help='Only generate postcode files for use with the england IMD web API')
     args = parser.parse_args()
 
     # get the filename prefix from the filepath, for output file
@@ -103,9 +106,12 @@ if __name__ == '__main__':
     england_postcodes = england_postcodes.reindex(np.random.permutation(england_postcodes.index))
 
     # save to CSV for use input into English gov web API
-    for i in range(0, ceil(len(england_postcodes)/10000)):
-        df = england_postcodes.iloc[i:min(i*10000, len(england_postcodes))]
-        df.to_csv(f'data/england_postcodes_{i+1}.csv', header = False, index = False)
+    for i in range(0, len(england_postcodes), 10000):
+        df = england_postcodes.iloc[i:min((i+10000), len(england_postcodes))].copy()
+        df.to_csv(f'data/england_postcodes_{int((i/10000)+1)}.csv', header = False, index = False)
+
+    if args.generate_files_only:
+        exit('Postcode files generated.')
 
     # load in the data generated from the English IMD web api
     england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
