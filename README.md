@@ -129,13 +129,13 @@ The script should be run from the command line with the path to the survey answe
 python Annotate_patients.py path/to/medication/answer/csv
 ```
 
-You can add the names of the medication, dosage, and unit question columns with the `-q` argument as follows:
+You can add the names of the medication, dosage, unit, and route of administration (roa) question columns with the `-q` argument as follows:
 
 ```
-python Annotate_patients.py path/to/medication/answer/csv -q med_q_column dosage_q_column units_q_column
+python Annotate_patients.py path/to/medication/answer/csv -q med_q_column dosage_q_column units_q_column roa_q_column
 ```
 
-The `-q` arguments default to 'q1421', 'q1431', and 'q1432', the column names in our case.
+The `-q` arguments default to 'q1421', 'q1431', 'q1432', and 'q1442', the column names in our case.
 
 You can also add the name of the unique patient identifier column with the `-id` command:
 
