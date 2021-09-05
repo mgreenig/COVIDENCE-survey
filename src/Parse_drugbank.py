@@ -1,7 +1,7 @@
 import re
 import xml.etree.ElementTree as ET
 
-tree = ET.parse('data/drugbank.xml')
+tree = ET.parse('../data/drugbank.xml')
 root = tree.getroot()
 
 ns = '{http://www.drugbank.ca}'

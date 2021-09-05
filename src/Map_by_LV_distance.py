@@ -73,4 +73,4 @@ if __name__ == '__main__':
     mapped_answer_df = pd.DataFrame([(answer, mapping) for answer, mapping in mapped_by_lv_distance.items()], columns = ['answer', 'correction'])
     unmapped_answer_df = pd.DataFrame([(answer, 0) for answer in unmapped_by_lv_distance], columns = ['answer', 'correction'])
     full_mapping_df = pd.concat([mapped_answer_df, unmapped_answer_df])
-    full_mapping_df.to_csv('data/answer_mappings.csv', index = False)
+    full_mapping_df.to_csv('../data/answer_mappings.csv', index = False)

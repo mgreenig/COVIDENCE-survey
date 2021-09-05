@@ -202,7 +202,7 @@ if __name__ == '__main__':
     mapper.map_answers()
 
     # update drug dictionary with manual corrections file
-    mapper.update_drug_dictionary(manual_corrections_filepath='data/answer_mappings_complete.csv')
+    mapper.update_drug_dictionary(manual_corrections_filepath='../data/answer_mappings_complete.csv')
 
     # dictionary for patient drug classes
     drug_class_doses = {}

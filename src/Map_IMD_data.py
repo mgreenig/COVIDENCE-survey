@@ -109,13 +109,13 @@ if __name__ == '__main__':
     # save to CSV for use input into English gov web API
     for i in range(0, len(england_postcodes), 10000):
         df = england_postcodes.iloc[i:min((i+10000), len(england_postcodes))].copy()
-        df.to_csv(f'data/england_postcodes_{int((i/10000)+1)}.csv', header = False, index = False)
+        df.to_csv(f'../data/england_postcodes_{int((i/10000)+1)}.csv', header = False, index = False)
 
     if args.generate_files_only:
         exit('Postcode files generated.')
 
     # load in the data generated from the English IMD web api
-    england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
+    england_imd_data = pd.read_excel('../data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
 
     # function for standardising IMD column names
     def rename_imd_cols(df, imd_rank_col, imd_decile_col):
