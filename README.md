@@ -37,6 +37,22 @@ For the plotting done in [`Drug_mapping_plots.ipynb`](notebooks/Drug_mapping_plo
 - matplotlib==3.3.1
 - seaborn==0.10.1
 
+## Getting started
+
+[Install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
+if you don't have it already, and from your command line type:
+
+```
+git clone https://github.com/mgreenig/COVIDENCE-survey
+```
+
+To pull the repository and store it inside your current directory. 
+Then move into the repository folder:
+
+```
+cd COVIDENCE-survey
+```
+
 ## 1) Medication data
 
 ### DrugBank
@@ -63,7 +79,7 @@ EMC and DrugBank. This updated file is saved as a pickle file under `/data/drug_
 To reproduce the workflow, simply run via the command line from the repository:
 
 ``` 
-python Get_EMC_drugs.py
+python scripts/Get_EMC_drugs.py
 ```
 
 ### Mapping medications from survey respondents
@@ -95,7 +111,7 @@ To generate data on the [British National Formulary](https://bnf.nice.org.uk/dru
 If this script is run from the command line:
 
 ``` 
-python Get_BNF_classes.py
+python scripts/Get_BNF_classes.py
 ```
 
 it pulls drug class data from the BNF website using BeautifulSoup, and saves drug names, primary classifications, and secondary classifications in a Pandas DataFrame. 
@@ -126,13 +142,13 @@ Some examples of classes being investigated include:
 The script should be run from the command line with the path to the survey answer file as a positional argument, for example:
 
 ```
-python Annotate_patients.py path/to/medication/answer/csv
+python scripts/Annotate_patients.py path/to/medication/answer/csv
 ```
 
 You can add the names of the medication, dosage, unit, and route of administration (roa) question columns with the `-q` argument as follows:
 
 ```
-python Annotate_patients.py path/to/medication/answer/csv -q med_q_column dosage_q_column units_q_column roa_q_column
+python scripts/Annotate_patients.py path/to/medication/answer/csv -q med_q_column dosage_q_column units_q_column roa_q_column
 ```
 
 The `-q` arguments default to 'q1421', 'q1431', 'q1432', and 'q1442', the column names in our case.
@@ -140,7 +156,7 @@ The `-q` arguments default to 'q1421', 'q1431', 'q1432', and 'q1442', the column
 You can also add the name of the unique patient identifier column with the `-id` command:
 
 ```
-python Annotate_patients.py path/to/medication/answer/csv -id uid
+python scripts/Annotate_patients.py path/to/medication/answer/csv -id uid
 ```
 
 The script outputs a CSV file (not included) containing the patient-level information for each drug class.
@@ -157,7 +173,7 @@ and normalise the output to the [0, 1] range using a probit function.
 Again, the script should be run from the command line with a filepath to the survey answers:
 
 ``` 
-python Annotate_patient_dosages.py path/to/medication/answer/csv
+python scripts/Annotate_patient_dosages.py path/to/medication/answer/csv
 ```
 
 As with [`Annotate_patients.py`](src/Annotate_patients.py), the medication, dosage, and unit column names can be specified with the `-q` argument, 
@@ -170,31 +186,21 @@ The script then outputs the patient-level drug scores in a CSV file (not include
 ### Mapping postcodes to Index of Multiple Deprivation (IMD)
 
 We also provide the [`Map_IMD_data.py`](src/Map_IMD_data.py) script for mapping the patient postcodes provided to the survey (not included) to values of the [Index of Multiple Deprivation](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019) (IMD).
-This script first imports a postcode metadata set (not included due to size constraints) - `/data/postcode_data.csv` - obtained from [this](https://www.doogal.co.uk/ukpostcodes.php) website.
-
+This script first imports a postcode metadata set (not included due to size constraints) obtained from [this website](https://www.doogal.co.uk/ukpostcodes.php). 
 It then imports the excel spreadsheet `/data/UK_postcode_IMDs.xlsx` (included), which contains postcode-IMD pairs in for postcodes in England, Wales, and Scotland: 
-
-``` python
-england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
-...
-scotland_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'scottish_postcode_IMDs')
-...
-welsh_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'welsh_postcode_IMDs')
-```
-
 and maps the respondent postcodes to IMD deciles and ranks. 
 For Northern Irish postcodes, we use urllib and BeautifulSoup to input the respondent postcodes into the [web API](https://deprivation.nisra.gov.uk/) provided by the Northern Irish government and save the resulting output.
 
 The script should be run from the command line with a path to a CSV file containing the postcode answers as the first positional argument:
 
 ``` 
-python Map_IMD_data.py path/to/postcode/answer/csv
+python scripts/Map_IMD_data.py path/to/postcode/answer/csv
 ```
 
 You can specify the name of the column containing the postcodes with the `-p` argument:
 
 ``` 
-python Map_IMD_data.py path/to/postcode/answer/csv -p pcode
+python scripts/Map_IMD_data.py path/to/postcode/answer/csv -p pcode
 ```
 
 The patient mappings to IMD ranks and deciles are saved as a CSV file (not included in this repository).
