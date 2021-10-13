@@ -6,7 +6,7 @@ import pickle
 from scipy.stats import zscore, norm
 
 # import the drug dictionary
-drug_dictionary = pickle.load(open('../data/drug_dictionary.p', 'rb'))
+drug_dictionary = pickle.load(open('data/drug_dictionary.p', 'rb'))
 
 # import the relevant objects
 from utils.answer_mapping import AnswerMapper
@@ -202,7 +202,7 @@ if __name__ == '__main__':
     mapper.map_answers()
 
     # update drug dictionary with manual corrections file
-    mapper.update_drug_dictionary(manual_corrections_filepath='../data/answer_mappings_complete.csv')
+    mapper.update_drug_dictionary(manual_corrections_filepath='data/answer_mappings_complete.csv')
 
     # dictionary for patient drug classes
     drug_class_doses = {}
@@ -256,4 +256,4 @@ if __name__ == '__main__':
     patient_dose_feature_df.loc[steroid_idx, 'corticosteroids'] = -1
 
     # save to csv file
-    patient_dose_feature_df.to_csv('../{}_Drug_Dosages.csv'.format(filename), index = False)
+    patient_dose_feature_df.to_csv('{}_Drug_Dosages.csv'.format(filename), index = False)

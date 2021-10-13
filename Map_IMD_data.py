@@ -54,7 +54,7 @@ if __name__ == '__main__':
     filename = re.search('.+(?=_.*\.csv$)', args.filepath).group(0)
 
     # import postcode data set
-    postcode_data = pd.read_csv('../data/postcode_data.csv', usecols = ['Postcode', 'In Use?', 'Country'])
+    postcode_data = pd.read_csv('data/postcode_data.csv', usecols = ['Postcode', 'In Use?', 'Country'])
     postcodes = postcode_data['Postcode']
 
     # import postcodes from COVIDENCE survey
@@ -109,13 +109,13 @@ if __name__ == '__main__':
     # save to CSV for use input into English gov web API
     for i in range(0, len(england_postcodes), 10000):
         df = england_postcodes.iloc[i:min((i+10000), len(england_postcodes))].copy()
-        df.to_csv(f'../data/england_postcodes_{int((i/10000)+1)}.csv', header = False, index = False)
+        df.to_csv(f'data/england_postcodes_{int((i/10000)+1)}.csv', header = False, index = False)
 
     if args.generate_files_only:
         exit('Postcode files generated.')
 
     # load in the data generated from the English IMD web api
-    england_imd_data = pd.read_excel('../data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
+    england_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'english_postcode_IMDs')
 
     # function for standardising IMD column names
     def rename_imd_cols(df, imd_rank_col, imd_decile_col):
@@ -128,13 +128,13 @@ if __name__ == '__main__':
     english_postcode_imds = rename_imd_cols(english_postcode_imds, *england_imd_columns)
 
     # load in scotland IMD data and change column names
-    scotland_imd_data = pd.read_excel('../data/UK_postcode_IMDs.xlsx', sheet_name = 'scottish_postcode_IMDs')
+    scotland_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'scottish_postcode_IMDs')
     scotland_imd_columns = ['SIMD2020v2_Rank', 'SIMD2020v2_Decile']
     scottish_postcode_imds = scotland_imd_data.loc[scotland_imd_data['Postcode'].isin(scotland_postcodes), ['Postcode'] + scotland_imd_columns]
     scottish_postcode_imds = rename_imd_cols(scottish_postcode_imds, *scotland_imd_columns)
 
     # load in wales IMD data and change column names
-    wales_imd_data = pd.read_excel('../data/UK_postcode_IMDs.xlsx', sheet_name = 'welsh_postcode_IMDs')
+    wales_imd_data = pd.read_excel('data/UK_postcode_IMDs.xlsx', sheet_name = 'welsh_postcode_IMDs')
     wales_imd_columns = ['WIMD 2019 LSOA Rank', 'WIMD 2019 Overall Decile']
     welsh_postcode_imds = wales_imd_data.loc[wales_imd_data['Welsh Postcode '].isin(wales_postcodes.str.replace(' ', '')), ['Welsh Postcode '] + wales_imd_columns]
     welsh_postcode_imds = rename_imd_cols(welsh_postcode_imds, *wales_imd_columns)
@@ -174,4 +174,4 @@ if __name__ == '__main__':
     # remove extra column
     survey_imd_data.drop('Postcode', axis = 1, inplace = True)
     # save as csv
-    survey_imd_data.to_csv('../{}_IMD.csv'.format(filename), index = False)
+    survey_imd_data.to_csv('{}_IMD.csv'.format(filename), index = False)

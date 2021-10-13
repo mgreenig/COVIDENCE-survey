@@ -36,7 +36,7 @@ class PatientAnnotator:
     def read_in_bnf(self, drug_dictionary):
 
         # import bnf class dataframe
-        bnf_classes = pd.read_csv('../data/bnf_drug_classifications.csv')
+        bnf_classes = pd.read_csv('data/bnf_drug_classifications.csv')
         bnf_classes['drugs'] = bnf_classes['drugs'].str.split('; ')
 
         # map bnf columns to drugbank ids
@@ -173,7 +173,7 @@ if __name__ == '__main__':
     mapper.map_answers()
 
     # update drug dictionary with manual corrections file
-    mapper.update_drug_dictionary(manual_corrections_filepath='../data/answer_mappings_complete.csv')
+    mapper.update_drug_dictionary(manual_corrections_filepath='data/answer_mappings_complete.csv')
 
     # dictionary for patient drug classes
     patient_drug_class_dict = {}
@@ -245,4 +245,4 @@ if __name__ == '__main__':
                                                               1, 0)
 
     # save the drug class data as a csv file
-    patient_feature_df.to_csv('../{}_Drug_Classes.csv'.format(filename), index = False)
+    patient_feature_df.to_csv('{}_Drug_Classes.csv'.format(filename), index = False)

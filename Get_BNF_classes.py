@@ -57,4 +57,4 @@ if __name__ == '__main__':
     bnf_classes['primary'] = bnf_classes['primary'].str.join('; ')
     bnf_classes['secondary'] = bnf_classes['secondary'].str.join('; ')
 
-    bnf_classes.to_csv('../data/bnf_drug_classifications.csv', index_label='entry')
+    bnf_classes.to_csv('data/bnf_drug_classifications.csv', index_label='entry')

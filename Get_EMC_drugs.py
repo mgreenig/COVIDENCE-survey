@@ -133,4 +133,4 @@ if __name__ == '__main__':
             drug_dictionary[drug] = alias_drugbank_IDs[drug]
 
     # save the dictionary to a pickle
-    pickle.dump(drug_dictionary, open('../data/drug_dictionary.p', 'wb'))
+    pickle.dump(drug_dictionary, open('data/drug_dictionary.p', 'wb'))
