@@ -186,9 +186,22 @@ It then imports the excel spreadsheet `/data/UK_postcode_IMDs.xlsx` (included), 
 and maps the respondent postcodes to IMD deciles and ranks. 
 For Northern Irish postcodes, we use urllib and BeautifulSoup to input the respondent postcodes into the [web API](https://deprivation.nisra.gov.uk/) provided by the Northern Irish government and save the resulting output.
 
-The script should be run from the command line with a path to a CSV file containing the postcode answers as the first positional argument:
+The script should be run from the command line with a path to a CSV file containing the postcode answers as the first positional argument.
+If the script is being run for the first time with a new data set, use the `--generate_files_only` argument
+to output the participant postcodes as a CSV file:
 
 ``` 
+python Map_IMD_data.py path/to/postcode/answer/csv --generate_files_only
+```
+
+This step is necessary because English postcode IMDs can only be obtained with
+a pre-defined list of postcodes, using the API [here](https://imd-by-postcode.opendatacommunities.org/imd/2019).
+Once you have the postcode IMDs for English postcodes, copy them into the "english_postcode_IMDs" sheet of the 
+excel file provided in this repository: [`data/UK_postcode_IMDs.xlsx`](data/UK_postcode_IMDs.xlsx).
+
+Now that you have obtained all the postcode IMDs, run the script again without the `--generate_files_only` argument:
+
+```
 python Map_IMD_data.py path/to/postcode/answer/csv
 ```
 
