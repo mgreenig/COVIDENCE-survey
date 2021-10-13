@@ -2,7 +2,7 @@
 
 [COVIDENCE](https://www.qmul.ac.uk/covidence/) is a COVID-19 UK national study being conducted by researchers at Queen Mary University of London,
 King's College London, University of Edinburgh, Swansea University, Queen's University Belfast, and the London School of Hygiene and Tropical Medicine.
-The first part of the study follows a cohort of over 10,000 UK residents with monthly surveys related to lifestyle, 
+The first part of the study follows a cohort of over 20,000 UK residents with monthly surveys related to lifestyle, 
 physical wellbeing, and mental health. If you are interested in participating, please follow the link above. For any specific inquiries
 about the study please contact Chief Investigator Adrian Martineau (a.martineau@qmul.ac.uk) or Principal Investigator Hayley Holt (h.holt@qmul.ac.uk).
 
