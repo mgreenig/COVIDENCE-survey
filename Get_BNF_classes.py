@@ -3,7 +3,6 @@ from urllib.parse import quote
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import re
-import pickle
 
 # if running the file, pull new data
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ from itertools import compress
 warnings.simplefilter('ignore')
 
 # import class for mapping survey answers
-from Map_survey_answers import AnswerMapper
+from utils.answer_mapping import AnswerMapper
 
 # import the drug dictionary
 drug_dictionary = pickle.load(open('../data/drug_dictionary.p', 'rb'))

@@ -14,7 +14,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # import unmapped answers
-    from Map_survey_answers import AnswerMapper
+    from utils.answer_mapping import AnswerMapper
 
     # load in drug dictionary
     drug_dictionary = pickle.load(open('../data/drug_dictionary.p', 'rb'))

@@ -6,7 +6,7 @@ from math import ceil
 import pickle
 
 # get the DrugBank drug dictionary
-from Parse_drugbank import drug_dictionary
+from utils.parse_db import drug_dictionary
 
 print('DrugBank XML tree parsed, pulling compounds from EMC...')
 

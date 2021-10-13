@@ -47,7 +47,7 @@ git clone https://github.com/mgreenig/COVIDENCE-survey
 ```
 
 To pull the repository and store it inside your current directory. 
-Then move into the repository folder:
+Then move into the repository folder if you want to run the code:
 
 ```
 cd COVIDENCE-survey
@@ -64,13 +64,13 @@ However, because these data are not publicly available, they have been omitted f
 Users can request a download [here](https://www.drugbank.ca/releases/latest). 
 In order to reproduce this workflow, the downloaded XML file should be named `drugbank.xml` and moved to the `/data` directory.
 
-To parse the XML file and map drug aliases to the IDs of their active ingredients, we provide the [`Parse_drugbank.py`](src/Parse_drugbank.py) script,
+To parse the XML file and map drug aliases to the IDs of their active ingredients, we provide the [`Parse_drugbank.py`](Parse_drugbank.py) script,
 which returns a dictionary - `drug_dictionary` - containing medication names as keys mapped to the DrugBank IDs of their active ingredients.
 
 ### Electronic Medicines Compendium (EMC)
 
 Because DrugBank is a North American organisation, the database does not include the names of certain European medications. 
-To fill these gaps, we provide the [`Get_EMC_drugs.py`](src/Get_EMC_drugs.py) script, which imports the drug dictionary from [`Parse_drugbank.py`](src/Parse_drugbank.py) 
+To fill these gaps, we provide the [`Get_EMC_drugs.py`](Get_EMC_drugs.py) script, which imports the drug dictionary from [`Parse_drugbank.py`](Parse_drugbank.py) 
 and scans the [EMC drug list](https://www.medicines.org.uk/emc/browse-medicines) to identify medications listed on the EMC that are not present in the drug dictionary.
 The script pulls the active ingredients of these missing medications and adds an entry to the drug dictionary for each medication name, mapping it to the IDs
 of its active ingredients. This generates an updated version of the drug dictionary that contains aliases from both the 
@@ -79,7 +79,7 @@ EMC and DrugBank. This updated file is saved as a pickle file under `/data/drug_
 To reproduce the workflow, simply run via the command line from the repository:
 
 ``` 
-python scripts/Get_EMC_drugs.py
+python Get_EMC_drugs.py
 ```
 
 ### Mapping medications from survey respondents
@@ -107,11 +107,11 @@ Overall, the input CSV should look like this:
 
 ### Getting BNF classes
 
-To generate data on the [British National Formulary](https://bnf.nice.org.uk/drug/) drug classifications for different medications, we provide the [`Get_BNF_classes.py`](src/Get_BNF_classes.py) script. 
+To generate data on the [British National Formulary](https://bnf.nice.org.uk/drug/) drug classifications for different medications, we provide the [`Get_BNF_classes.py`](Get_BNF_classes.py) script. 
 If this script is run from the command line:
 
 ``` 
-python scripts/Get_BNF_classes.py
+python Get_BNF_classes.py
 ```
 
 it pulls drug class data from the BNF website using BeautifulSoup, and saves drug names, primary classifications, and secondary classifications in a Pandas DataFrame. 
@@ -120,17 +120,12 @@ Overall, 96% of BNF drug listings were successfully mapped to the drug dictionar
 
 ![BNF listing mappings](figures/bnf_mappings.png)
 
-The BNF DataFrame is then converted into a CSV file and saved:
-
-``` python
-bnf_classes.to_csv('data/bnf_drug_classifications.csv', index_label='entry')
-```
-
-We include this file in the repository, under the path shown above.
+The BNF DataFrame is then converted into a CSV file and saved.
+We include this file in the repository [here](data/bnf_drug_classifications.csv).
 
 ### Annotating patients with BNF drug classes
 
-To annotate individual patients in the survey with the BNF drug classes being investigated, we provide the [`Annotate_patients.py`](src/Annotate_patients.py) script.
+To annotate individual patients in the survey with the BNF drug classes being investigated, we provide the [`Annotate_patients.py`](Annotate_patients.py) script.
 Each patient is annotated with more than 20 drug classes to be analysed as covariates, with each covariate taking a value of 1 if the patient listed medications from that class and 0 if not.
 Some examples of classes being investigated include:
 
@@ -142,13 +137,13 @@ Some examples of classes being investigated include:
 The script should be run from the command line with the path to the survey answer file as a positional argument, for example:
 
 ```
-python scripts/Annotate_patients.py path/to/medication/answer/csv
+python Annotate_patients.py path/to/medication/answer/csv
 ```
 
 You can add the names of the medication, dosage, unit, and route of administration (roa) question columns with the `-q` argument as follows:
 
 ```
-python scripts/Annotate_patients.py path/to/medication/answer/csv -q med_q_column dosage_q_column units_q_column roa_q_column
+python Annotate_patients.py path/to/medication/answer/csv -q med_q_column dosage_q_column units_q_column roa_q_column
 ```
 
 The `-q` arguments default to 'q1421', 'q1431', 'q1432', and 'q1442', the column names in our case.
@@ -156,7 +151,7 @@ The `-q` arguments default to 'q1421', 'q1431', 'q1432', and 'q1442', the column
 You can also add the name of the unique patient identifier column with the `-id` command:
 
 ```
-python scripts/Annotate_patients.py path/to/medication/answer/csv -id uid
+python Annotate_patients.py path/to/medication/answer/csv -id uid
 ```
 
 The script outputs a CSV file (not included) containing the patient-level information for each drug class.
@@ -173,10 +168,10 @@ and normalise the output to the [0, 1] range using a probit function.
 Again, the script should be run from the command line with a filepath to the survey answers:
 
 ``` 
-python scripts/Annotate_patient_dosages.py path/to/medication/answer/csv
+python Annotate_patient_dosages.py path/to/medication/answer/csv
 ```
 
-As with [`Annotate_patients.py`](src/Annotate_patients.py), the medication, dosage, and unit column names can be specified with the `-q` argument, 
+As with [`Annotate_patients.py`](Annotate_patients.py), the medication, dosage, and unit column names can be specified with the `-q` argument, 
 while the patient identifier column name can be specified with the `-id` argument.
 
 The script then outputs the patient-level drug scores in a CSV file (not included here)
@@ -185,7 +180,7 @@ The script then outputs the patient-level drug scores in a CSV file (not include
 
 ### Mapping postcodes to Index of Multiple Deprivation (IMD)
 
-We also provide the [`Map_IMD_data.py`](src/Map_IMD_data.py) script for mapping the patient postcodes provided to the survey (not included) to values of the [Index of Multiple Deprivation](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019) (IMD).
+We also provide the [`Map_IMD_data.py`](Map_IMD_data.py) script for mapping the patient postcodes provided to the survey (not included) to values of the [Index of Multiple Deprivation](https://www.gov.uk/government/statistics/english-indices-of-deprivation-2019) (IMD).
 This script first imports a postcode metadata set (not included due to size constraints) obtained from [this website](https://www.doogal.co.uk/ukpostcodes.php). 
 It then imports the excel spreadsheet `/data/UK_postcode_IMDs.xlsx` (included), which contains postcode-IMD pairs in for postcodes in England, Wales, and Scotland: 
 and maps the respondent postcodes to IMD deciles and ranks. 
@@ -194,13 +189,13 @@ For Northern Irish postcodes, we use urllib and BeautifulSoup to input the respo
 The script should be run from the command line with a path to a CSV file containing the postcode answers as the first positional argument:
 
 ``` 
-python scripts/Map_IMD_data.py path/to/postcode/answer/csv
+python Map_IMD_data.py path/to/postcode/answer/csv
 ```
 
 You can specify the name of the column containing the postcodes with the `-p` argument:
 
 ``` 
-python scripts/Map_IMD_data.py path/to/postcode/answer/csv -p pcode
+python Map_IMD_data.py path/to/postcode/answer/csv -p pcode
 ```
 
 The patient mappings to IMD ranks and deciles are saved as a CSV file (not included in this repository).

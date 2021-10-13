@@ -9,7 +9,7 @@ from scipy.stats import zscore, norm
 drug_dictionary = pickle.load(open('../data/drug_dictionary.p', 'rb'))
 
 # import the relevant objects
-from Map_survey_answers import AnswerMapper
+from utils.answer_mapping import AnswerMapper
 from Annotate_patients import PatientAnnotator, drug_classes, specific_drugs
 
 # class for scaling dosage values
