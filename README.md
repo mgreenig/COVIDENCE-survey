@@ -98,7 +98,7 @@ entries for different questions (e.g. q1431_1 and q1432_1 correspond to differen
 Survey answers that were not provided can be left empty in the CSV file (producing NumPy NA values), or filled-in with -99. 
 Overall, the input CSV should look like this:
 
-| uid | q1421_1 | ... | q142_20 | q1431_1 | ... | q143_20 | q1432_1 | ... | q143_2 |
+| uid | q1421_1 | ... | q1421_20 | q1431_1 | ... | q1431_20 | q1432_1 | ... | q1432_20 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---|
 | 001 | paracetamol | ... | -99 | 500 | ... | -99 | 1 | ... | -99 |
 | 002 | lisinopril | ... | -99 | 5 | ... | -99 | 1 | ... | -99 |
