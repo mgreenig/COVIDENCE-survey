@@ -53,35 +53,6 @@ Then move into the repository folder if you want to run the code:
 cd COVIDENCE-survey
 ```
 
-## 1) Medication data
-
-### DrugBank
-
-We use data from the [DrugBank](https://www.drugbank.ca/)
-database as a list of drug names mapped to standard identifiers for active ingredients. 
-DrugBank kindly makes their entire database available as an XML file to users who sign up, request a download, and specify how the data will be used. 
-However, because these data are not publicly available, they have been omitted from this repository. 
-Users can request a download [here](https://www.drugbank.ca/releases/latest). 
-In order to reproduce this workflow, the downloaded XML file should be named `drugbank.xml` and moved to the `/data` directory.
-
-To parse the XML file and map drug aliases to the IDs of their active ingredients, we provide the [`Parse_drugbank.py`](Parse_drugbank.py) script,
-which returns a dictionary - `drug_dictionary` - containing medication names as keys mapped to the DrugBank IDs of their active ingredients.
-
-### Electronic Medicines Compendium (EMC)
-
-Because DrugBank is a North American organisation, the database does not include the names of certain European medications. 
-To fill these gaps, we provide the [`Get_EMC_drugs.py`](Get_EMC_drugs.py) script, which imports the drug dictionary from [`Parse_drugbank.py`](Parse_drugbank.py) 
-and scans the [EMC drug list](https://www.medicines.org.uk/emc/browse-medicines) to identify medications listed on the EMC that are not present in the drug dictionary.
-The script pulls the active ingredients of these missing medications and adds an entry to the drug dictionary for each medication name, mapping it to the IDs
-of its active ingredients. This generates an updated version of the drug dictionary that contains aliases from both the 
-EMC and DrugBank. This updated file is saved as a pickle file under `/data/drug_dictionary.p`. This file is included in the repository.
-
-To reproduce the workflow, simply run via the command line from the repository:
-
-``` 
-python Get_EMC_drugs.py
-```
-
 ### Mapping medications from survey respondents
 
 The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide to questions on the survey.
@@ -104,24 +75,6 @@ Overall, the input CSV should look like this:
 | 002 | lisinopril | ... | -99 | 5 | ... | -99 | 1 | ... | -99 |
 
 ![Survey answer mappings](figures/survey_mappings.png)
-
-### Getting BNF classes
-
-To generate data on the [British National Formulary](https://bnf.nice.org.uk/drug/) drug classifications for different medications, we provide the [`Get_BNF_classes.py`](Get_BNF_classes.py) script. 
-If this script is run from the command line:
-
-``` 
-python Get_BNF_classes.py
-```
-
-it pulls drug class data from the BNF website using BeautifulSoup, and saves drug names, primary classifications, and secondary classifications in a Pandas DataFrame. 
-
-Overall, 96% of BNF drug listings were successfully mapped to the drug dictionary.
-
-![BNF listing mappings](figures/bnf_mappings.png)
-
-The BNF DataFrame is then converted into a CSV file and saved.
-We include this file in the repository [here](data/bnf_drug_classifications.csv).
 
 ### Annotating patients with BNF drug classes
 
@@ -212,3 +165,58 @@ python Map_IMD_data.py path/to/postcode/answer/csv -p pcode
 ```
 
 The patient mappings to IMD ranks and deciles are saved as a CSV file (not included in this repository).
+
+## Data collection details
+
+Note that the workflow steps described below are **not necessary** to
+run if the pipeline is just being used to annotate patient medication and/or
+IMD features. The information is included solely for reproducibility purposes.
+
+### DrugBank
+
+We use data from the [DrugBank](https://www.drugbank.ca/)
+database as a list of drug names mapped to standard identifiers for active ingredients. 
+DrugBank kindly makes their entire database available as an XML file to users who sign up, request a download, and specify how the data will be used. 
+However, because these data are not publicly available, they have been omitted from this repository. 
+Users can request a download [here](https://www.drugbank.ca/releases/latest). 
+In order to fully reproduce our data collection, the downloaded XML file should be named `drugbank.xml` and moved to the `/data` directory.
+
+To parse the XML file and map drug aliases to the IDs of their active ingredients, we provide the [`Parse_drugbank.py`](Parse_drugbank.py) script,
+which returns a dictionary - `drug_dictionary` - containing medication names as keys mapped to the DrugBank IDs of their active ingredients.
+
+### Electronic Medicines Compendium (EMC)
+
+Because DrugBank is a North American organisation, the database does not include the names of certain European medications. 
+To fill these gaps, we provide the [`Get_EMC_drugs.py`](Get_EMC_drugs.py) script, 
+which scans the [EMC drug list](https://www.medicines.org.uk/emc/browse-medicines) to identify medications listed on the EMC that are not present in drugbank.
+The script pulls the active ingredients of these missing medications and adds an entry to the drug dictionary for each medication name, mapping it to the IDs
+of its active ingredients. This generates an updated version of the drug dictionary that contains aliases from both the 
+EMC and DrugBank. This updated file is saved as a pickle file under `/data/drug_dictionary.p`. This file is included in the repository.
+
+To reproduce the workflow, simply run via the command line from the repository:
+
+``` 
+python Get_EMC_drugs.py
+```
+
+Note that since the drug dictionary is included here, this step is not necessary to run the patient
+medication and postcode annotation scripts.
+
+### British National Formulary
+
+To generate data on the [British National Formulary](https://bnf.nice.org.uk/drug/) drug classifications for different medications, we provide the [`Get_BNF_classes.py`](Get_BNF_classes.py) script. 
+If this script is run from the command line:
+
+``` 
+python Get_BNF_classes.py
+```
+
+it pulls drug class data from the BNF website using BeautifulSoup, and saves drug names, primary classifications, and secondary classifications in a Pandas DataFrame. 
+
+Overall, 96% of BNF drug listings were successfully mapped to the drug dictionary.
+
+![BNF listing mappings](figures/bnf_mappings.png)
+
+The BNF DataFrame is then converted into a CSV file and saved.
+Since we include this file in the repository [here](data/bnf_drug_classifications.csv),
+it is not necessary to run this step when annotating patients.
