@@ -53,6 +53,8 @@ Then move into the repository folder if you want to run the code:
 cd COVIDENCE-survey
 ```
 
+## 1) Medication data
+
 ### Mapping medications from survey respondents
 
 The raw survey data takes the form of a csv file with patients as rows and columns for the answers they provide to questions on the survey.
