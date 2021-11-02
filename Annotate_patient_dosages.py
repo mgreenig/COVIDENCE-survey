@@ -16,7 +16,7 @@ from Annotate_patients import PatientAnnotator, drug_classes, specific_drugs
 class DosageScaler(PatientAnnotator):
 
     # class takes in the full survey answers, medication answers, dosage answers, dosage units answers, and a drug dictionary
-    def __init__(self, survey_data, meds, dosages, units, drug_dict):
+    def __init__(self, survey_data, meds, dosages, units, RoAs, drug_dict):
         '''
         The meds, dosages, and units series should be on the same multi-index of the form (patient_number, question_number)
 
@@ -26,7 +26,7 @@ class DosageScaler(PatientAnnotator):
         - q1432_x -> dosage units
         '''
         # initialise parent class to call read_bnf()
-        super().__init__(meds, drug_dict)
+        super().__init__(meds, RoAs, drug_dict)
         self.survey_data = survey_data
         self.med_db_ids = meds.apply(lambda answer: drug_dict.get(answer) if drug_dict.get(answer) else set())
         self.dosages = dosages
@@ -187,7 +187,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', type=str, help='Path to the medication survey answers file')
     parser.add_argument('-q', '--questions', default = ['q1421', 'q1431', 'q1432', 'q1442'], nargs = 4, type = str,
-                        help = 'Column names for medication, dosage, and unit questions')
+                        help = 'Column names for medication, dosage, unit, and RoA questions')
     parser.add_argument('-id', '--patient_id', default='uid', type=str, help='Column name for unique patient identifiers')
     args = parser.parse_args()
 
@@ -212,7 +212,8 @@ if __name__ == '__main__':
 
     # make a class instance with the mapped answer data
     scaler = DosageScaler(survey_data = mapper.survey_data, meds = mapper.meds_cleaned,
-                          dosages = mapper.dosages, units = mapper.units, drug_dict = mapper.drug_dictionary)
+                          dosages = mapper.dosages, units = mapper.units,
+                          RoAs = mapper.RoAs, drug_dict = mapper.drug_dictionary)
 
     # label patient drug classes
     for drug_class in drug_classes:
